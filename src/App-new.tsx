@@ -16,14 +16,15 @@ import { AuthProvider, RequireRole, useAuth } from './auth/AuthContext';
 import LoginPage from './auth/LoginPage';
 import InstructorDashboard from './auth/InstructorDashboard';
 import EMTBFlashcards from './components/emtb/EMTBFlashcards';
-import EMTBStudyNotesFixed from './components/emtb/EMTBStudyNotesFixed';
+import EMTBStudyNotesEnhanced from './components/emtb/EMTBStudyNotesEnhanced';
 import EMTBStudyNotesNew from './components/emtb/EMTBStudyNotesNew';
 import EMTBStudyNotesClean from './components/emtb/EMTBStudyNotesClean';
 import TestStudyNotes from './components/emtb/TestStudyNotes';
 import EMSChatbot from './components/EMSChatbot';
-import SimpleTestHeader from './SimpleTestHeader';
 import MedicalDisclaimer from './components/MedicalDisclaimer';
 import DisclaimerPage from './components/DisclaimerPage';
+import WelcomePage from './components/WelcomePage';
+import { InstallPrompt } from './components/MobileUtils';
 import { clinicalCalculators } from './data/clinical-calculators';
 import { medicationSimulations } from './data/medication-simulations';
 import { searchEngine } from './utils/search';
@@ -1246,14 +1247,27 @@ function App() {
     streak: 7
   });
 
+  const [showWelcome, setShowWelcome] = useState(() => {
+    return !localStorage.getItem('promedix_welcome_seen');
+  });
+
   const [showDisclaimerBanner, setShowDisclaimerBanner] = useState(() => {
     return !localStorage.getItem('promedix_disclaimer_accepted');
   });
 
+  const handleWelcomeComplete = () => {
+    setShowWelcome(false);
+    localStorage.setItem('promedix_welcome_seen', 'true');
+  };
+
+  if (showWelcome) {
+    return <WelcomePage onComplete={handleWelcomeComplete} />;
+  }
+
   return (
     <AuthProvider>
       <Router>
-        <div className="min-h-screen font-roboto pb-16 lg:pb-0">
+        <div className="min-h-screen font-roboto pb-16 lg:pb-0 mobile-scroll">
           {showDisclaimerBanner && (
             <MedicalDisclaimer 
               variant="banner" 
@@ -1261,8 +1275,8 @@ function App() {
               showOnce={true}
             />
           )}
-          <SimpleTestHeader />
-          <div className="max-w-7xl mx-auto pb-4">
+          <ProMedixHeader />
+          <div className="max-w-7xl mx-auto pb-4 px-4 sm:px-6 lg:px-8">
             <Routes>
             <Route path="/" element={<Dashboard progress={progress} />} />
             <Route path="/modules" element={<StudyModulesPage />} />
@@ -1296,7 +1310,7 @@ function App() {
             <Route path="/search" element={<SearchResultsPage />} />
             <Route path="/emtb/debug" element={<div style={{backgroundColor: 'yellow', padding: '50px', fontSize: '30px'}}>🐛 DEBUG ROUTE WORKS!</div>} />
             <Route path="/emtb/flashcards" element={<EMTBFlashcards />} />
-            <Route path="/emtb/study-notes" element={<EMTBStudyNotesFixed />} />
+            <Route path="/emtb/study-notes" element={<EMTBStudyNotesEnhanced />} />
             <Route path="/emtb/study-notes/new" element={<EMTBStudyNotesNew />} />
             <Route path="/emtb/study-notes/clean" element={<EMTBStudyNotesClean />} />
             <Route path="/emtb/study-notes/test" element={<TestStudyNotes />} />
@@ -1305,6 +1319,9 @@ function App() {
             </Routes>
           </div>
           
+          {/* Install Prompt for PWA */}
+          <InstallPrompt />
+          
           {/* Footer */}
           <footer className="hidden lg:block bg-gray-50 border-t border-gray-200 mt-12">
             <div className="max-w-7xl mx-auto py-8 px-6">
@@ -1312,8 +1329,9 @@ function App() {
                 <div>
                   <h3 className="text-sm font-semibold text-gray-900 mb-4">ProMedix EMS™</h3>
                   <p className="text-xs text-gray-600 leading-relaxed">
-                    Professional Emergency Medical Training Platform for EMT, AEMT, and Paramedic education.
-                    For training purposes only.
+                    EMT-Basic focused training platform designed to supplement formal EMS education. 
+                    AEMT and Paramedic modules coming soon! This platform enhances classroom learning 
+                    and should not replace formal training, certification courses, or clinical experience.
                   </p>
                 </div>
                 <div>
@@ -1351,7 +1369,10 @@ function App() {
               </div>
               <div className="border-t border-gray-200 mt-8 pt-6 text-center">
                 <p className="text-xs text-gray-500">
-                  © 2025 ProMedix EMS™ - FOR EDUCATIONAL PURPOSES ONLY
+                  © 2025 ProMedix EMS™ - EMT-Basic Training Platform (v1.0)
+                </p>
+                <p className="text-xs text-blue-600 font-medium mt-1">
+                  Designed to supplement formal EMS education - AEMT & Paramedic coming soon!
                 </p>
                 <p className="text-xs text-red-600 font-medium mt-1">
                   Always follow current local EMS protocols and medical direction
@@ -1607,11 +1628,6 @@ const ProMedixHeader = () => {
 
   return (
     <header className="bg-white dark:bg-[#0f141a] border-b border-gray-200 dark:border-gray-800 shadow-sm sticky top-0 z-50">
-      {/* TEST BANNER - Remove this once build works */}
-      <div style={{backgroundColor: '#ff0000', color: 'white', padding: '5px', textAlign: 'center', fontSize: '14px', fontWeight: 'bold'}}>
-        🔥 REACT BUILD TEST - Build timestamp: {new Date().toISOString()} 🔥
-      </div>
-      
       {/* Mobile Header */}
       <div className="lg:hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
@@ -1636,7 +1652,7 @@ const ProMedixHeader = () => {
                 <span className="text-primary">ProMedix</span>
                 <span className="text-gray-500 dark:text-gray-400">EMS</span>
               </h1>
-              <div className="text-xs text-gray-500 dark:text-gray-400 -mt-1">EMT-B Platform</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 -mt-1">EMS Training Platform</div>
             </div>
           </Link>
 
@@ -1691,12 +1707,12 @@ const ProMedixHeader = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => searchQuery.length > 1 && setShowSuggestions(true)}
-                    className="w-full pl-10 pr-16 py-2.5 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-800 dark:text-gray-100"
+                    className="w-full pl-10 pr-16 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-800 dark:text-gray-100 text-base mobile-tap-highlight"
                     autoFocus
                   />
                   <button
                     type="submit"
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-blue-600 text-white text-sm rounded-md hover-only:hover:bg-blue-700 mobile-tap-highlight min-h-10 min-w-12"
                   >
                     Go
                   </button>
@@ -1704,15 +1720,15 @@ const ProMedixHeader = () => {
               </form>
               {/* Mobile Search Suggestions */}
               {showSuggestions && suggestions.length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 max-h-48 overflow-y-auto">
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 max-h-48 overflow-y-auto mobile-scroll">
                   <div className="py-1">
                     {suggestions.slice(0, 6).map((suggestion, index) => (
                       <button
                         key={index}
                         onClick={() => handleSuggestionClick(suggestion)}
-                        className="w-full px-3 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors flex items-center text-sm"
+                        className="w-full px-4 py-3 text-left hover-only:hover:bg-gray-100 dark:hover-only:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors flex items-center text-base mobile-tap-highlight min-h-12"
                       >
-                        <Search className="w-3 h-3 text-gray-400 mr-2" />
+                        <Search className="w-4 h-4 text-gray-400 mr-3 flex-shrink-0" />
                         <span className="truncate">{suggestion}</span>
                       </button>
                     ))}
@@ -1769,9 +1785,8 @@ const ProMedixHeader = () => {
 
         {/* Fixed Bottom Mobile Navigation */}
         <nav
-          className={`fixed bottom-0 inset-x-0 bg-white/95 dark:bg-[#0f141a]/95 backdrop-blur border-t border-gray-200 dark:border-gray-800 z-50 transition-transform duration-200 ${hideMobileNav ? 'translate-y-full' : 'translate-y-0'}`}
-          aria-label="Primary mobile"
-          style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+          className={`lg:hidden fixed bottom-0 inset-x-0 bg-white/95 dark:bg-[#0f141a]/95 backdrop-blur border-t border-gray-200 dark:border-gray-800 z-50 transition-transform duration-200 safe-area-inset-bottom ${hideMobileNav ? 'translate-y-full' : 'translate-y-0'}`}
+          aria-label="Primary mobile navigation"
         >
           <ul className="grid grid-cols-5">
             {mobileTabs.map((tab) => {
@@ -1781,14 +1796,17 @@ const ProMedixHeader = () => {
                 <li key={tab.id}>
                   <Link
                     to={tab.path}
-                    className={`flex flex-col items-center justify-center py-2.5 text-xs font-medium transition-colors ${
+                    className={`flex flex-col items-center justify-center py-2 px-1 text-xs font-medium transition-colors mobile-tap-highlight min-h-16 ${
                       isActive
-                        ? 'text-primary'
-                        : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+                        ? 'text-blue-600 dark:text-blue-400'
+                        : 'text-gray-600 dark:text-gray-300 hover-only:hover:text-gray-900 dark:hover-only:hover:text-white'
                     }`}
                   >
-                    <tab.icon className="w-5 h-5" />
-                    <span className="mt-0.5">{tab.label}</span>
+                    <tab.icon className="w-5 h-5 mb-1" />
+                    <span className="text-center leading-tight text-[10px] px-1">{tab.label}</span>
+                    {isActive && (
+                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-blue-600 dark:bg-blue-400 rounded-b-full"></div>
+                    )}
                   </Link>
                 </li>
               );
@@ -1802,46 +1820,44 @@ const ProMedixHeader = () => {
         {/* Top Bar with Navigation Menu, Logo, and Login */}
         <div className="border-b border-gray-100 dark:border-gray-800">
           <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="grid grid-cols-3 items-center">
+            <div className="flex items-center justify-between">
               {/* Left: Navigation Menu Only */}
               <div className="flex items-center space-x-4">
                 <MoreMenu items={tabs} />
               </div>
 
               {/* Center: ProMedix Logo (Dead Center) */}
-              <div className="flex justify-center">
-                <Link to="/" className="flex flex-col items-center">
-                  <div className="flex items-center space-x-3 mb-1">
-                    <div className="relative">
-                      <svg width="48" height="48" viewBox="0 0 100 100" className="text-primary">
-                        <rect x="35" y="10" width="30" height="80" rx="4" fill="currentColor" />
-                        <rect x="10" y="35" width="80" height="30" rx="4" fill="currentColor" />
-                        <path
-                          d="M15 50 L25 50 L30 40 L35 60 L40 30 L45 70 L50 50 L85 50"
-                          stroke="#60A5FA"
-                          strokeWidth="3"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h1 className="text-2xl font-bold">
-                        <span className="text-primary">ProMedix</span>
-                        <span className="text-gray-500 dark:text-gray-400">EMS</span>
-                        <sup className="text-sm text-gray-400 dark:text-gray-500">™</sup>
-                      </h1>
-                    </div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                <Link to="/" className="flex items-center space-x-3">
+                  <div className="relative">
+                    <svg width="48" height="48" viewBox="0 0 100 100" className="text-primary">
+                      <rect x="35" y="10" width="30" height="80" rx="4" fill="currentColor" />
+                      <rect x="10" y="35" width="80" height="30" rx="4" fill="currentColor" />
+                      <path
+                        d="M15 50 L25 50 L30 40 L35 60 L40 30 L45 70 L50 50 L85 50"
+                        stroke="#60A5FA"
+                        strokeWidth="3"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                    The Next-Gen Education Tool for Emergency Medical Services
+                  <div className="text-center">
+                    <h1 className="text-2xl font-bold">
+                      <span className="text-primary">ProMedix</span>
+                      <span className="text-gray-500 dark:text-gray-400">EMS</span>
+                      <sup className="text-sm text-gray-400 dark:text-gray-500">™</sup>
+                    </h1>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 font-medium -mt-1">
+                      Next-Gen EMS Education Platform
+                    </div>
                   </div>
                 </Link>
               </div>
 
               {/* Right: Dark Mode, Notifications & Login Dropdown */}
-              <div className="flex items-center justify-end space-x-3">
+              <div className="flex items-center space-x-3">
                 <button
                   onClick={() => setIsDark(v => !v)}
                   className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/60"
@@ -1853,13 +1869,6 @@ const ProMedixHeader = () => {
                   ) : (
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
                   )}
-                </button>
-                
-                <button
-                  className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/60"
-                  title="Notifications"
-                >
-                  <Bell className="w-5 h-5" />
                 </button>
                 
                 <LoginDropdown />
