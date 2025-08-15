@@ -16,7 +16,7 @@ import { AuthProvider, RequireRole, useAuth } from './auth/AuthContext';
 import LoginPage from './auth/LoginPage';
 import InstructorDashboard from './auth/InstructorDashboard';
 import EMTBFlashcards from './components/emtb/EMTBFlashcards';
-import EMTBStudyNotesFixed from './components/emtb/EMTBStudyNotesFixed';
+import EMTBStudyNotesEnhanced from './components/emtb/EMTBStudyNotesEnhanced';
 import EMTBStudyNotesNew from './components/emtb/EMTBStudyNotesNew';
 import EMTBStudyNotesClean from './components/emtb/EMTBStudyNotesClean';
 import TestStudyNotes from './components/emtb/TestStudyNotes';
@@ -1295,7 +1295,7 @@ function App() {
             <Route path="/search" element={<SearchResultsPage />} />
             <Route path="/emtb/debug" element={<div style={{backgroundColor: 'yellow', padding: '50px', fontSize: '30px'}}>🐛 DEBUG ROUTE WORKS!</div>} />
             <Route path="/emtb/flashcards" element={<EMTBFlashcards />} />
-            <Route path="/emtb/study-notes" element={<EMTBStudyNotesFixed />} />
+            <Route path="/emtb/study-notes" element={<EMTBStudyNotesEnhanced />} />
             <Route path="/emtb/study-notes/new" element={<EMTBStudyNotesNew />} />
             <Route path="/emtb/study-notes/clean" element={<EMTBStudyNotesClean />} />
             <Route path="/emtb/study-notes/test" element={<TestStudyNotes />} />
@@ -7930,6 +7930,7 @@ const SearchResultsPage = () => {
 };
 
 export default App;
+
 
 
 
