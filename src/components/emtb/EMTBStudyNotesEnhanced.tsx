@@ -4,6 +4,8 @@ import MedicalDisclaimer from '../MedicalDisclaimer';
 import { medicationsData } from '../../data/medications';
 import { emsProtocols } from '../../data/ems-protocols';
 import { emergencyScenarios } from '../../data/emergency-scenarios';
+import { chapter30StudyNotes as chapter30Data } from '../../data/emtb/chapter30-study-notes';
+import { chapter31StudyNotes as chapter31Data } from '../../data/emtb/chapter31-study-notes';
 
 interface StudySection {
   title: string;
@@ -7269,122 +7271,67 @@ const EMTBStudyNotes: React.FC = () => {
     ]
   };
 
-  const chapter27StudyNotes: ChapterData = {
-    title: "Soft-Tissue Injuries",
-    description: "Comprehensive assessment and management of soft-tissue trauma including wounds, burns, and specialized injury patterns",
-    module: "Module 10: Trauma",
+  // Convert imported chapter data to ChapterData format
+  const chapter30StudyNotes: ChapterData = {
+    title: chapter30Data.chapterTitle,
+    description: "Recognition and management of thoracic trauma including breathing difficulties, pneumothorax, and cardiovascular emergencies",
+    module: "Module 11: Trauma",
     scope: "EMT-B",
     protocols: [
-      "Wound assessment protocol",
-      "Bleeding control techniques", 
-      "Burn management guidelines",
-      "Dressing and bandaging procedures"
+      "Chest trauma assessment protocol",
+      "Breathing support procedures", 
+      "Pneumothorax management",
+      "Penetrating chest wound care"
     ],
-    learningObjectives: [
-      "Understand anatomy and physiology of the integumentary system",
-      "Classify types of soft-tissue injuries and their characteristics",
-      "Apply appropriate wound assessment and management techniques",
-      "Recognize and manage burns of various types and severities"
-    ],
-    keyTerms: [
-      "Integumentary system", "Epidermis", "Dermis", "Subcutaneous", "Abrasion",
-      "Laceration", "Puncture", "Avulsion", "Amputation", "Contusion"
-    ],
-    sections: [
-      {
-        title: "Types of Soft-Tissue Injuries",
-        content: [
-          "Closed injuries include contusions, hematomas, and crush injuries",
-          "Open injuries include abrasions, lacerations, punctures, avulsions, and amputations",
-          "Abrasions scrape away superficial skin layers",
-          "Lacerations are cuts through skin and underlying tissues"
-        ],
-        clinicalPearls: ["Puncture wounds have high infection risk", "Avulsed tissue should be saved and transported"],
-        mnemonics: ["CLOSED: Contusion, Hematoma, Crush injury"],
-        decisionTrees: ["Wound Assessment → Type → Severity → Treatment"],
-        fieldApplications: ["Control bleeding first", "Document wound characteristics"]
-      }
-    ],
-    criticalConcepts: ["Control bleeding before detailed assessment"],
+    learningObjectives: chapter30Data.objectives,
+    keyTerms: Object.keys(chapter30Data.keyTerms || {}),
+    sections: chapter30Data.sections?.map((section: any) => ({
+      title: section.title,
+      content: section.content?.map((item: any) => 
+        typeof item === 'string' ? item : item.subtitle + ': ' + item.points?.join(', ')
+      ) || [],
+      clinicalPearls: section.clinicalPearls || [],
+      mnemonics: section.mnemonics || [],
+      fieldApplications: section.fieldApplications || []
+    })) || [],
+    criticalConcepts: (chapter30Data as any).clinicalPearls || [],
     flashcards: [
-      { front: "What are the three layers of skin?", back: "Epidermis, dermis, subcutaneous tissue", category: "definition" }
+      { front: "What is a tension pneumothorax?", back: "Life-threatening condition where air accumulates in pleural space under pressure", category: "definition" },
+      { front: "How do you manage a sucking chest wound?", back: "Apply three-sided occlusive dressing to allow air to escape", category: "protocol" },
+      { front: "What are signs of chest trauma?", back: "Difficulty breathing, chest pain, visible wounds, asymmetrical chest movement", category: "clinical" }
     ],
-    crossReferences: ["Chapter 26: Bleeding Control"]
+    crossReferences: ["Chapter 27: Soft-Tissue Injuries", "Chapter 29: Musculoskeletal Care"]
   };
 
-  const chapter28StudyNotes: ChapterData = {
-    title: "Chest Injuries", 
-    description: "Recognition and management of thoracic trauma",
-    module: "Module 10: Trauma",
+  const chapter31StudyNotes: ChapterData = {
+    title: chapter31Data.chapterTitle,
+    description: "Comprehensive assessment and management of abdominal and genitourinary trauma with evidence-based protocols",
+    module: "Module 12: Trauma",
     scope: "EMT-B",
-    protocols: ["Chest trauma assessment", "Pneumothorax management"],
-    learningObjectives: ["Recognize signs of chest trauma", "Apply emergency management"],
-    keyTerms: ["Pneumothorax", "Hemothorax", "Flail chest"],
-    sections: [
-      {
-        title: "Types of Chest Injuries",
-        content: ["Pneumothorax is air in pleural space", "Tension pneumothorax is life-threatening"],
-        clinicalPearls: ["Three-sided seal for sucking chest wounds"],
-        mnemonics: ["ABC: Airway, Breathing, Circulation"],
-        decisionTrees: ["Chest Injury → Type → Management"],
-        fieldApplications: ["Never remove impaled objects"]
-      }
+    protocols: [
+      "Abdominal trauma assessment",
+      "Evisceration management",
+      "Internal bleeding recognition",
+      "Genitourinary injury care"
     ],
-    criticalConcepts: ["Tension pneumothorax requires immediate decompression"],
+    learningObjectives: chapter31Data.objectives,
+    keyTerms: Object.keys(chapter31Data.keyTerms || {}),
+    sections: chapter31Data.sections?.map((section: any) => ({
+      title: section.title,
+      content: section.content?.map((item: any) => 
+        typeof item === 'string' ? item : item.subtitle + ': ' + item.points?.join(', ')
+      ) || [],
+      clinicalPearls: section.clinicalPearls || [],
+      mnemonics: section.mnemonics || [],
+      fieldApplications: section.fieldApplications || []
+    })) || [],
+    criticalConcepts: (chapter31Data as any).clinicalPearls || [],
     flashcards: [
-      { front: "How do you seal a sucking chest wound?", back: "Three-sided occlusive dressing", category: "protocol" }
+      { front: "How do you manage eviscerated organs?", back: "Cover with moist sterile dressing, never push back into abdomen", category: "protocol" },
+      { front: "What are signs of internal abdominal bleeding?", back: "Abdominal pain, distension, guarding, signs of shock", category: "clinical" },
+      { front: "What is the priority in abdominal trauma?", back: "Recognition of internal bleeding and rapid transport", category: "protocol" }
     ],
-    crossReferences: ["Chapter 25: Trauma Overview"]
-  };
-
-  const chapter29StudyNotes: ChapterData = {
-    title: "Abdominal Injuries",
-    description: "Assessment and management of abdominal trauma", 
-    module: "Module 10: Trauma",
-    scope: "EMT-B",
-    protocols: ["Abdominal assessment", "Evisceration management"],
-    learningObjectives: ["Recognize abdominal trauma", "Manage evisceration"],
-    keyTerms: ["Evisceration", "Peritoneum", "Solid organs"],
-    sections: [
-      {
-        title: "Evisceration Management",
-        content: ["Never push organs back into abdomen", "Cover with moist sterile dressing"],
-        clinicalPearls: ["Position with knees flexed"],
-        mnemonics: ["Never push back eviscerated organs"],
-        decisionTrees: ["Evisceration → Cover → Position → Transport"],
-        fieldApplications: ["Maintain organ moisture"]
-      }
-    ],
-    criticalConcepts: ["Never replace eviscerated organs"],
-    flashcards: [
-      { front: "How do you manage eviscerated organs?", back: "Cover with moist sterile dressing, never push back in", category: "protocol" }
-    ],
-    crossReferences: ["Chapter 26: Bleeding Control"]
-  };
-
-  const chapter30StudyNotes: ChapterData = {
-    title: "Orthopedic Injuries",
-    description: "Assessment and management of musculoskeletal trauma",
-    module: "Module 10: Trauma", 
-    scope: "EMT-B",
-    protocols: ["Fracture assessment", "Splinting procedures"],
-    learningObjectives: ["Recognize orthopedic injuries", "Apply splinting techniques"],
-    keyTerms: ["Fracture", "Dislocation", "Sprain"],
-    sections: [
-      {
-        title: "Splinting Principles",
-        content: ["Immobilize joint above and below fracture", "Check pulses before and after"],
-        clinicalPearls: ["Splint in position found unless no pulse"],
-        mnemonics: ["Check pulse before and after splinting"],
-        decisionTrees: ["Fracture → Assess → Splint → Recheck"],
-        fieldApplications: ["Document neurovascular status"]
-      }
-    ],
-    criticalConcepts: ["Always check pulses before and after splinting"],
-    flashcards: [
-      { front: "What joints do you immobilize for a forearm fracture?", back: "Wrist and elbow", category: "protocol" }
-    ],
-    crossReferences: ["Chapter 25: Trauma Overview"]
+    crossReferences: ["Chapter 26: Bleeding Control", "Chapter 29: Musculoskeletal Care"]
   };
 
   const chapter37StudyNotes: ChapterData = {
