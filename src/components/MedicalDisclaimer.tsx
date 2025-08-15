@@ -67,20 +67,19 @@ const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({
       )}
 
       {variant === 'banner' && (
-        <div className="container mx-auto px-4 py-3">
+        <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <AlertTriangle className="h-5 w-5 text-red-600 flex-shrink-0" />
-              <p className="text-sm font-medium text-red-800">
-                <span className="font-bold">MEDICAL DISCLAIMER:</span> This platform is for educational purposes only. 
-                Always follow current local protocols and medical direction.
+            <div className="flex items-center space-x-2">
+              <AlertTriangle className="h-4 w-4 text-red-600 flex-shrink-0" />
+              <p className="text-xs md:text-sm font-medium text-red-800">
+                <span className="font-bold">DISCLAIMER:</span> Educational only. Follow local protocols.
               </p>
             </div>
             <button 
               onClick={handleClose}
-              className="p-1 hover:bg-red-100 rounded transition-colors"
+              className="p-1 hover:bg-red-100 rounded transition-colors ml-2 flex-shrink-0"
             >
-              <X className="h-4 w-4 text-red-600" />
+              <X className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
             </button>
           </div>
         </div>

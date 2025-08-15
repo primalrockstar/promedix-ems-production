@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
+﻿import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 export type Role = 'student' | 'instructor' | 'admin';
 
@@ -90,7 +90,7 @@ export const useAuth = () => {
 
 export const RequireRole: React.FC<{ role: Role; children: React.ReactNode }> = ({ role, children }) => {
   const { user, loading } = useAuth();
-  if (loading) return <div className="p-6">Loading…</div>;
+  if (loading) return <div className="p-6">Loadingâ€¦</div>;
   if (!user || (role !== user.role && user.role !== 'admin')) {
     // Redirect by rendering a simple link prompt for SPA simplicity
     return (
@@ -113,3 +113,4 @@ export const RequireRole: React.FC<{ role: Role; children: React.ReactNode }> = 
   }
   return <>{children}</>;
 };
+

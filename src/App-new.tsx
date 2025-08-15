@@ -21,7 +21,6 @@ import EMTBStudyNotesNew from './components/emtb/EMTBStudyNotesNew';
 import EMTBStudyNotesClean from './components/emtb/EMTBStudyNotesClean';
 import TestStudyNotes from './components/emtb/TestStudyNotes';
 import EMSChatbot from './components/EMSChatbot';
-import SimpleTestHeader from './SimpleTestHeader';
 import MedicalDisclaimer from './components/MedicalDisclaimer';
 import DisclaimerPage from './components/DisclaimerPage';
 import { clinicalCalculators } from './data/clinical-calculators';
@@ -1261,7 +1260,7 @@ function App() {
               showOnce={true}
             />
           )}
-          <SimpleTestHeader />
+          
           <div className="max-w-7xl mx-auto pb-4">
             <Routes>
             <Route path="/" element={<Dashboard progress={progress} />} />
@@ -7931,6 +7930,7 @@ const SearchResultsPage = () => {
 };
 
 export default App;
+
 
 
 

@@ -1,4 +1,4 @@
-console.error("🚨 NEW APP-NEW.TSX IS RUNNING!");
+﻿console.error("ðŸš¨ NEW APP-NEW.TSX IS RUNNING!");
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import ARMedicationVisualization from './components/ARMedicationVisualization';
@@ -283,10 +283,10 @@ const Skills = () => {
       {/* Skills Categories */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { category: "Airway", icon: "🫁", count: 3, color: "blue" },
-          { category: "Cardiac", icon: "❤️", count: 2, color: "red" },
-          { category: "Trauma", icon: "🩹", count: 4, color: "orange" },
-          { category: "Assessment", icon: "🔍", count: 3, color: "green" }
+          { category: "Airway", icon: "ðŸ«", count: 3, color: "blue" },
+          { category: "Cardiac", icon: "â¤ï¸", count: 2, color: "red" },
+          { category: "Trauma", icon: "ðŸ©¹", count: 4, color: "orange" },
+          { category: "Assessment", icon: "ðŸ”", count: 3, color: "green" }
         ].map(cat => (
           <div key={cat.category} className="bg-white rounded-lg border border-slate-200 p-6 hover:border-blue-300 transition-colors cursor-pointer">
             <div className="text-center">
@@ -470,4 +470,5 @@ const App = () => {
 };
 
 export default App;
+
 

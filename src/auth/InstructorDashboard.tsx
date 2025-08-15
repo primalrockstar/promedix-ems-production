@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+﻿import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 import { ClipboardList, CheckSquare, Gamepad2, Users, Settings } from 'lucide-react';
@@ -54,22 +54,22 @@ const InstructorDashboard: React.FC = () => {
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
         {active === 'quizzes' && (
           <div>
-            <ListRow title="EMT-B Chapter 1 Quiz" subtitle="15 questions • Last edited 2 days ago" right={<button className="px-3 py-1 rounded border">Manage</button>} />
-            <ListRow title="Pharmacology Basics" subtitle="10 questions • Draft" right={<button className="px-3 py-1 rounded border">Manage</button>} />
+            <ListRow title="EMT-B Chapter 1 Quiz" subtitle="15 questions â€¢ Last edited 2 days ago" right={<button className="px-3 py-1 rounded border">Manage</button>} />
+            <ListRow title="Pharmacology Basics" subtitle="10 questions â€¢ Draft" right={<button className="px-3 py-1 rounded border">Manage</button>} />
             <div className="p-4"><button className="px-4 py-2 rounded bg-blue-600 text-white">Create new quiz</button></div>
           </div>
         )}
         {active === 'tests' && (
           <div>
-            <ListRow title="Midterm Exam" subtitle="50 questions • Published" right={<button className="px-3 py-1 rounded border">Manage</button>} />
+            <ListRow title="Midterm Exam" subtitle="50 questions â€¢ Published" right={<button className="px-3 py-1 rounded border">Manage</button>} />
             <ListRow title="Final Practical" subtitle="Stations setup" right={<button className="px-3 py-1 rounded border">Manage</button>} />
             <div className="p-4"><button className="px-4 py-2 rounded bg-blue-600 text-white">Create new test</button></div>
           </div>
         )}
         {active === 'games' && (
           <div>
-            <ListRow title="Medication Bingo" subtitle="12 cards • Draft" right={<button className="px-3 py-1 rounded border">Launch</button>} />
-            <ListRow title="Airway Jeopardy" subtitle="5 categories • Published" right={<button className="px-3 py-1 rounded border">Launch</button>} />
+            <ListRow title="Medication Bingo" subtitle="12 cards â€¢ Draft" right={<button className="px-3 py-1 rounded border">Launch</button>} />
+            <ListRow title="Airway Jeopardy" subtitle="5 categories â€¢ Published" right={<button className="px-3 py-1 rounded border">Launch</button>} />
             <div className="p-4"><button className="px-4 py-2 rounded bg-blue-600 text-white">Create new game</button></div>
           </div>
         )}
@@ -82,7 +82,7 @@ const InstructorDashboard: React.FC = () => {
         )}
         {active === 'settings' && (
           <div className="p-4 text-sm text-gray-600">
-            <div>Organization: ProMedixEMS™</div>
+            <div>Organization: ProMedixEMSâ„¢</div>
             <div>Default grading scheme: 70% passing</div>
           </div>
         )}
@@ -92,3 +92,4 @@ const InstructorDashboard: React.FC = () => {
 };
 
 export default InstructorDashboard;
+

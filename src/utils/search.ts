@@ -1,4 +1,4 @@
-// ProMedix EMS Search Engine (clean minimal version)
+﻿// ProMedix EMS Search Engine (clean minimal version)
 export interface SearchResult {
   id: string;
   title: string;
@@ -187,3 +187,4 @@ class SearchEngine {
 
 export const searchEngine = new SearchEngine();
 export default searchEngine;
+

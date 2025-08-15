@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 
@@ -39,10 +39,11 @@ const LoginPage: React.FC = () => {
           </>
         )}
         <button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded px-4 py-2">Sign in</button>
-        <div className="mt-4 text-xs text-gray-500">Tip: Demo users — instructor@example.com / student@example.com (password: password123)</div>
+        <div className="mt-4 text-xs text-gray-500">Tip: Demo users â€” instructor@example.com / student@example.com (password: password123)</div>
       </form>
     </main>
   );
 };
 
 export default LoginPage;
+

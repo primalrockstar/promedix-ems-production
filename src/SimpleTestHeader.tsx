@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, ChevronDown, User, Shield, Bell, Sun, Moon, Search, Home, BookOpen, FileText, Pill, Settings } from 'lucide-react';
 
@@ -38,7 +38,7 @@ const SimpleTestHeader = () => {
     <>
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div style={{backgroundColor: '#00ff00', color: 'black', padding: '10px', textAlign: 'center', fontWeight: 'bold'}}>
-          🎯 HEADER + BOTTOM NAV TEST! - {new Date().toLocaleTimeString()}
+          ðŸŽ¯ HEADER + BOTTOM NAV TEST! - {new Date().toLocaleTimeString()}
         </div>
 
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -55,11 +55,11 @@ const SimpleTestHeader = () => {
         <div style={{marginTop: '50px'}}>
           <h3>Bottom Navigation Features:</h3>
           <ul>
-            <li>✅ 5 navigation items: Dashboard, Modules, Protocols, Medications, Tools</li>
-            <li>✅ Auto-hide on scroll down</li>
-            <li>✅ Show on scroll up</li>
-            <li>✅ Active state highlighting</li>
-            <li>✅ Icons with labels</li>
+            <li>âœ… 5 navigation items: Dashboard, Modules, Protocols, Medications, Tools</li>
+            <li>âœ… Auto-hide on scroll down</li>
+            <li>âœ… Show on scroll up</li>
+            <li>âœ… Active state highlighting</li>
+            <li>âœ… Icons with labels</li>
           </ul>
         </div>
       </div>

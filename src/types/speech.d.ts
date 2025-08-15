@@ -1,4 +1,4 @@
-// TypeScript declarations for Web Speech API
+﻿// TypeScript declarations for Web Speech API
 interface SpeechRecognition extends EventTarget {
   continuous: boolean;
   interimResults: boolean;
