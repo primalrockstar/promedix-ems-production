@@ -28,8 +28,6 @@ import { clinicalCalculators } from './data/clinical-calculators';
 import { medicationSimulations } from './data/medication-simulations';
 import { searchEngine } from './utils/search';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import EnhancedLMSNavigation from './components/navigation/EnhancedLMSNavigation';
-import ProfessionalCurriculumHub from './components/curriculum/ProfessionalCurriculumHub';
 
 const StudentDashboard: React.FC = () => {
   const { user } = useAuth();
@@ -1238,22 +1236,7 @@ const CalculatorRunner = ({ calculator }: { calculator: any }) => {
 
 // Main App Component
 function App() {
-    // Dark mode state management
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const saved = localStorage.getItem('darkMode');
-    return saved ? JSON.parse(saved) : false;
-  });
-
-  const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    localStorage.setItem('darkMode', JSON.stringify(newMode));
-  };
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDarkMode);
-  }, [isDarkMode]);
-const [progress, setProgress] = useState({
+  const [progress, setProgress] = useState({
     modulesCompleted: 2,
     totalModules: 14,
     chaptersCompleted: 8,
@@ -1313,12 +1296,11 @@ const [progress, setProgress] = useState({
             <Route path="/search" element={<SearchResultsPage />} />
             <Route path="/emtb/debug" element={<div style={{backgroundColor: 'yellow', padding: '50px', fontSize: '30px'}}>🐛 DEBUG ROUTE WORKS!</div>} />
             <Route path="/emtb/flashcards" element={<EMTBFlashcards />} />
-            <Route path="/emtb/study-notes" element={<EMTBStudyNotesClean />} />
+            <Route path="/emtb/study-notes" element={<EMTBStudyNotesEnhanced />} />
             <Route path="/emtb/study-notes/new" element={<EMTBStudyNotesNew />} />
             <Route path="/emtb/study-notes/clean" element={<EMTBStudyNotesClean />} />
             <Route path="/emtb/study-notes/test" element={<TestStudyNotes />} />
-            <Route path="/emtb" element={<EMTBNavigation />
-             <Route path="/curriculum" element={<ProfessionalCurriculumHub isDarkMode={isDarkMode} />} />
+            <Route path="/emtb" element={<EMTBNavigation />} />
             <Route path="*" element={<div style={{backgroundColor: 'orange', padding: '50px', fontSize: '20px'}}>🚨 CATCH-ALL ROUTE: {window.location.pathname} not matched!</div>} />
             </Routes>
           </div>
@@ -7949,14 +7931,6 @@ const SearchResultsPage = () => {
 };
 
 export default App;
-
-
-
-
-
-
-
-
 
 
 
