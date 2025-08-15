@@ -24,6 +24,7 @@ import TestStudyNotes from './components/emtb/TestStudyNotes';
 import EMSChatbot from './components/EMSChatbot';
 import MedicalDisclaimer from './components/MedicalDisclaimer';
 import DisclaimerPage from './components/DisclaimerPage';
+import WelcomePage from './components/WelcomePage';
 import { clinicalCalculators } from './data/clinical-calculators';
 import { medicationSimulations } from './data/medication-simulations';
 import { searchEngine } from './utils/search';
@@ -1267,9 +1268,21 @@ const [progress, setProgress] = useState({
     return !localStorage.getItem('promedix_disclaimer_accepted');
   });
 
+  const [showWelcome, setShowWelcome] = useState(() => {
+    return !localStorage.getItem('promedix_welcome_seen');
+  });
+
+  const handleWelcomeComplete = () => {
+    localStorage.setItem('promedix_welcome_seen', 'true');
+    setShowWelcome(false);
+  };
+
   return (
     <AuthProvider>
       <Router>
+        {showWelcome && (
+          <WelcomePage onComplete={handleWelcomeComplete} />
+        )}
         <div className="min-h-screen font-roboto pb-16 lg:pb-0">
           {showDisclaimerBanner && (
             <MedicalDisclaimer 
@@ -1313,9 +1326,10 @@ const [progress, setProgress] = useState({
             <Route path="/search" element={<SearchResultsPage />} />
             <Route path="/emtb/debug" element={<div style={{backgroundColor: 'yellow', padding: '50px', fontSize: '30px'}}>🐛 DEBUG ROUTE WORKS!</div>} />
             <Route path="/emtb/flashcards" element={<EMTBFlashcards />} />
-            <Route path="/emtb/study-notes" element={<EMTBStudyNotesClean />} />
+            <Route path="/emtb/study-notes" element={<EMTBStudyNotesEnhanced />} />
             <Route path="/emtb/study-notes/new" element={<EMTBStudyNotesNew />} />
             <Route path="/emtb/study-notes/clean" element={<EMTBStudyNotesClean />} />
+            <Route path="/emtb/study-notes/enhanced" element={<EMTBStudyNotesEnhanced />} />
             <Route path="/emtb/study-notes/test" element={<TestStudyNotes />} />
             <Route path="/emtb" element={<EMTBNavigation />} />
             {/* Temporarily disabled due to syntax errors - <Route path="/curriculum" element={<ProfessionalCurriculumHub isDarkMode={isDarkMode} />} /> */}
