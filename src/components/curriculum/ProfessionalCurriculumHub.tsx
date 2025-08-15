@@ -132,9 +132,9 @@ const ProfessionalCurriculumHub: React.FC<ProfessionalCurriculumHubProps> = ({ i
   };
 
   return (
-    <div className={min-h-screen transition-colors duration-200 {isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}}>
+    <div className={`min-h-screen transition-colors duration-200 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
       {/* Header Section */}
-      <div className={{isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-b}>
+      <div className={`${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-b`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-center justify-between">
             <div>
@@ -212,7 +212,8 @@ const ProfessionalCurriculumHub: React.FC<ProfessionalCurriculumHubProps> = ({ i
             return (
               <div
                 key={module.id}
-                className={elative rounded-xl border transition-all duration-200 hover:shadow-lg {
+                className={
+elative rounded-xl border transition-all duration-200 hover:shadow-lg {
                   isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
                 } {isCompleted ? 'ring-2 ring-green-500' : ''} {isCurrent ? 'ring-2 ring-blue-500' : ''}}
               >

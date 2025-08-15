@@ -29,7 +29,7 @@ import { medicationSimulations } from './data/medication-simulations';
 import { searchEngine } from './utils/search';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import EnhancedLMSNavigation from './components/navigation/EnhancedLMSNavigation';
-import ProfessionalCurriculumHub from './components/curriculum/ProfessionalCurriculumHub';
+// import ProfessionalCurriculumHub from './components/curriculum/ProfessionalCurriculumHub';
 
 const StudentDashboard: React.FC = () => {
   const { user } = useAuth();
@@ -1318,7 +1318,7 @@ const [progress, setProgress] = useState({
             <Route path="/emtb/study-notes/clean" element={<EMTBStudyNotesClean />} />
             <Route path="/emtb/study-notes/test" element={<TestStudyNotes />} />
             <Route path="/emtb" element={<EMTBNavigation />} />
-            <Route path="/curriculum" element={<ProfessionalCurriculumHub isDarkMode={isDarkMode} />} />
+            {/* Temporarily disabled due to syntax errors - <Route path="/curriculum" element={<ProfessionalCurriculumHub isDarkMode={isDarkMode} />} /> */}
             <Route path="*" element={<div style={{backgroundColor: 'orange', padding: '50px', fontSize: '20px'}}>🚨 CATCH-ALL ROUTE: {window.location.pathname} not matched!</div>} />
             </Routes>
           </div>
