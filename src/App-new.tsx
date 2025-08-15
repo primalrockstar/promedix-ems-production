@@ -1317,8 +1317,8 @@ const [progress, setProgress] = useState({
             <Route path="/emtb/study-notes/new" element={<EMTBStudyNotesNew />} />
             <Route path="/emtb/study-notes/clean" element={<EMTBStudyNotesClean />} />
             <Route path="/emtb/study-notes/test" element={<TestStudyNotes />} />
-            <Route path="/emtb" element={<EMTBNavigation />
-             <Route path="/curriculum" element={<ProfessionalCurriculumHub isDarkMode={isDarkMode} />} />
+            <Route path="/emtb" element={<EMTBNavigation />} />
+            <Route path="/curriculum" element={<ProfessionalCurriculumHub isDarkMode={isDarkMode} />} />
             <Route path="*" element={<div style={{backgroundColor: 'orange', padding: '50px', fontSize: '20px'}}>🚨 CATCH-ALL ROUTE: {window.location.pathname} not matched!</div>} />
             </Routes>
           </div>
