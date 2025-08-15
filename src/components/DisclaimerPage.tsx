@@ -1,33 +1,89 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Shield, AlertTriangle, FileText, ExternalLink, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import MedicalDisclaimer from './MedicalDisclaimer';
 
-const DisclaimerPage: React.FC = () => {
+interface DisclaimerPageProps {
+  onComplete?: () => void;
+  autoAdvance?: boolean;
+}
+
+const DisclaimerPage: React.FC<DisclaimerPageProps> = ({ onComplete, autoAdvance = false }) => {
+  const [countdown, setCountdown] = useState(autoAdvance ? 5 : 0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    if (!autoAdvance) return;
+
+    const timer = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          handleComplete();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [autoAdvance]);
+
+  const handleComplete = () => {
+    if (autoAdvance && onComplete) {
+      setIsVisible(false);
+      setTimeout(() => {
+        onComplete();
+      }, 300);
+    }
+  };
+
+  const handleAccept = () => {
+    if (onComplete) {
+      onComplete();
+    }
+  };
+
+  if (autoAdvance && !isVisible) return null;
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className={`min-h-screen bg-gray-50 ${autoAdvance ? 'fixed inset-0 z-[100] transition-opacity duration-300' : ''} ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <div className="max-w-4xl mx-auto py-8 px-4">
         {/* Header */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
-          <div className="flex items-center space-x-4 mb-4">
-            <Link 
-              to="/"
-              className="flex items-center px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Dashboard
-            </Link>
-          </div>
+          {!autoAdvance && (
+            <div className="flex items-center space-x-4 mb-4">
+              <Link 
+                to="/"
+                className="flex items-center px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Dashboard
+              </Link>
+            </div>
+          )}
           
           <div className="flex items-center space-x-4">
             <div className="p-3 bg-red-100 rounded-xl">
               <Shield className="h-8 w-8 text-red-600" />
             </div>
-            <div>
+            <div className="flex-1">
               <h1 className="text-3xl font-bold text-gray-900">Medical & Protocol Disclaimer</h1>
               <p className="text-gray-600 mt-2">
                 Complete legal and medical disclaimer for ProMedix EMS™ educational platform
               </p>
+              {autoAdvance && countdown > 0 && (
+                <div className="mt-4 flex items-center space-x-2">
+                  <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Auto-advancing in {countdown} seconds
+                  </div>
+                  <button 
+                    onClick={handleComplete}
+                    className="text-sm text-blue-600 hover:text-blue-800 underline"
+                  >
+                    Skip
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -136,6 +192,17 @@ const DisclaimerPage: React.FC = () => {
           <p>ProMedix EMS™ - Educational Training Platform</p>
           <p className="font-medium">FOR TRAINING PURPOSES ONLY</p>
           <p className="mt-2">Last Updated: August 12, 2025</p>
+          
+          {autoAdvance && (
+            <div className="mt-6">
+              <button 
+                onClick={handleAccept}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              >
+                I Understand & Accept
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

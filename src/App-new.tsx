@@ -1272,9 +1272,18 @@ const [progress, setProgress] = useState({
     return !localStorage.getItem('promedix_welcome_seen');
   });
 
+  const [showFullDisclaimer, setShowFullDisclaimer] = useState(false);
+
   const handleWelcomeComplete = () => {
     localStorage.setItem('promedix_welcome_seen', 'true');
     setShowWelcome(false);
+    setShowFullDisclaimer(true);
+  };
+
+  const handleDisclaimerComplete = () => {
+    localStorage.setItem('promedix_disclaimer_accepted', 'true');
+    setShowFullDisclaimer(false);
+    setShowDisclaimerBanner(false);
   };
 
   return (
@@ -1283,8 +1292,11 @@ const [progress, setProgress] = useState({
         {showWelcome && (
           <WelcomePage onComplete={handleWelcomeComplete} />
         )}
+        {showFullDisclaimer && (
+          <DisclaimerPage onComplete={handleDisclaimerComplete} autoAdvance={true} />
+        )}
         <div className="min-h-screen font-roboto pb-16 lg:pb-0">
-          {showDisclaimerBanner && (
+          {showDisclaimerBanner && !showWelcome && !showFullDisclaimer && (
             <MedicalDisclaimer 
               variant="banner" 
               onClose={() => setShowDisclaimerBanner(false)}
