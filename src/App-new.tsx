@@ -22,6 +22,7 @@ import EMTBStudyNotesNew from './components/emtb/EMTBStudyNotesNew';
 import EMTBStudyNotesClean from './components/emtb/EMTBStudyNotesClean';
 import TestStudyNotes from './components/emtb/TestStudyNotes';
 import PracticeQuizSystem from './components/PracticeQuizSystem';
+import BottomNavigation from './components/BottomNavigation';
 // Removed EMSChatbot - using voice module for search instead
 import MedicalDisclaimer from './components/MedicalDisclaimer';
 import DisclaimerPage from './components/DisclaimerPage';
@@ -1296,7 +1297,7 @@ const [progress, setProgress] = useState({
         ) : showFullDisclaimer ? (
           <DisclaimerPage onComplete={handleDisclaimerComplete} autoAdvance={true} />
         ) : (
-          <div className="min-h-screen font-roboto pb-16 lg:pb-0">
+          <div className="min-h-screen font-roboto pb-20 lg:pb-0">
             {showDisclaimerBanner && (
               <MedicalDisclaimer 
                 variant="banner" 
@@ -1407,6 +1408,9 @@ const [progress, setProgress] = useState({
               </div>
             </div>
           </footer>
+          
+          {/* Mobile Bottom Navigation */}
+          <BottomNavigation />
           
           {/* Chatbot removed - voice search now integrated into search bar */}
         </div>

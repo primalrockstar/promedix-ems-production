@@ -1,4 +1,8 @@
-﻿// Bottom Navigation Component for Mobile
+﻿import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Home, BookOpen, Heart, Calculator, Menu } from 'lucide-react';
+
+// Bottom Navigation Component for Mobile
 const BottomNavigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -38,3 +42,5 @@ const BottomNavigation = () => {
     </nav>
   );
 };
+
+export default BottomNavigation;

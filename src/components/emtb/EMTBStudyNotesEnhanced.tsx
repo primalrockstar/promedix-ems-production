@@ -8749,7 +8749,7 @@ const EMTBStudyNotes: React.FC = () => {
             Global Search Results ({globalSearchResults.length} found)
           </h3>
         </div>
-        <div className="text-sm text-yellow-700 mb-3">
+        <div className="text-base text-yellow-700 mb-3">
           Showing results from all chapters, protocols, medications, flashcards, and clinical content
         </div>
         <div className="max-h-96 overflow-y-auto space-y-3">
@@ -8777,7 +8777,7 @@ const EMTBStudyNotes: React.FC = () => {
                 </span>
               </div>
               <h4 className="font-medium text-gray-900 mb-1">{result.title}</h4>
-              <p className="text-sm text-gray-600 overflow-hidden" style={{
+              <p className="text-base text-gray-600 overflow-hidden" style={{
                 display: '-webkit-box',
                 WebkitLineClamp: 2,
                 WebkitBoxOrient: 'vertical' as const
@@ -8823,10 +8823,10 @@ const EMTBStudyNotes: React.FC = () => {
               {currentChapter.description}
             </p>
             <div className="flex items-center mt-2 space-x-4">
-              <span className="text-blue-600 text-sm font-medium">
+              <span className="text-blue-600 text-base font-medium">
                 📚 Module {currentChapter.module}
               </span>
-              <span className="text-blue-600 text-sm font-medium">
+              <span className="text-blue-600 text-base font-medium">
                 🎯 Scope: {currentChapter.scope}
               </span>
             </div>
@@ -8865,7 +8865,7 @@ const EMTBStudyNotes: React.FC = () => {
                       <span className="text-red-500 mr-3 mt-1">•</span>
                       <span>{termObj.term}</span>
                     </div>
-                    <div className="text-red-600 text-sm ml-6 leading-relaxed">
+                    <div className="text-red-600 text-base ml-6 leading-relaxed">
                       {termObj.definition}
                     </div>
                   </>
@@ -8932,7 +8932,7 @@ const EMTBStudyNotes: React.FC = () => {
                 <ul className="space-y-4">
                   {section.content.map((item, itemIndex) => (
                     <li key={itemIndex} className="text-gray-800 text-base leading-relaxed flex items-start">
-                      <span className="text-blue-500 mr-3 mt-2 text-sm">•</span>
+                      <span className="text-blue-500 mr-3 mt-2 text-base">•</span>
                       <span 
                         dangerouslySetInnerHTML={{ 
                           __html: item.replace(/\\*\\*(.*?)\\*\\*/g, '<strong class="font-semibold text-blue-700 bg-blue-50 px-1 rounded">$1</strong>') 
@@ -9045,7 +9045,7 @@ const EMTBStudyNotes: React.FC = () => {
             <div key={index} className="bg-yellow-50 border-l-4 border-yellow-400 p-4 shadow-sm rounded-r-lg">
               <div className="flex">
                 <AlertCircle className="h-5 w-5 text-yellow-500 mr-3 mt-0.5 flex-shrink-0" />
-                <p className="text-yellow-800 text-sm font-medium leading-relaxed" 
+                <p className="text-yellow-800 text-base font-medium leading-relaxed" 
                    dangerouslySetInnerHTML={{ __html: concept.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>') }} />
               </div>
             </div>
@@ -9059,7 +9059,7 @@ const EMTBStudyNotes: React.FC = () => {
           <h3 className="text-lg font-semibold text-gray-900 mb-4 mt-8">📋 Clinical Decision Rules</h3>
           {currentChapter.clinicalDecisionRules.map((rule, index) => (
             <div key={index} className="bg-blue-50 border-l-4 border-blue-400 p-4 shadow-sm rounded-r-lg">
-              <p className="text-blue-800 text-sm font-medium leading-relaxed"
+              <p className="text-blue-800 text-base font-medium leading-relaxed"
                  dangerouslySetInnerHTML={{ __html: rule.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>') }} />
             </div>
           ))}
@@ -9072,7 +9072,7 @@ const EMTBStudyNotes: React.FC = () => {
           <h3 className="text-lg font-semibold text-gray-900 mb-4 mt-8">❌ Common Misconceptions</h3>
           {currentChapter.commonMisconceptions.map((misconception, index) => (
             <div key={index} className="bg-red-50 border-l-4 border-red-400 p-4 shadow-sm rounded-r-lg">
-              <p className="text-red-800 text-sm font-medium leading-relaxed">
+              <p className="text-red-800 text-base font-medium leading-relaxed">
                 {misconception}
               </p>
             </div>
@@ -9086,7 +9086,7 @@ const EMTBStudyNotes: React.FC = () => {
           <h3 className="text-lg font-semibold text-gray-900 mb-4 mt-8">📝 Exam Tips</h3>
           {currentChapter.examTips.map((tip, index) => (
             <div key={index} className="bg-green-50 border-l-4 border-green-400 p-4 shadow-sm rounded-r-lg">
-              <p className="text-green-800 text-sm font-medium leading-relaxed">
+              <p className="text-green-800 text-base font-medium leading-relaxed">
                 {tip}
               </p>
             </div>
@@ -9100,7 +9100,7 @@ const EMTBStudyNotes: React.FC = () => {
           <h3 className="text-lg font-semibold text-gray-900 mb-4 mt-8">🔗 Cross References</h3>
           {currentChapter.crossReferences.map((ref, index) => (
             <div key={index} className="bg-purple-50 border-l-4 border-purple-400 p-4 shadow-sm rounded-r-lg">
-              <p className="text-purple-800 text-sm font-medium leading-relaxed">
+              <p className="text-purple-800 text-base font-medium leading-relaxed">
                 {ref}
               </p>
             </div>
@@ -9150,7 +9150,7 @@ const EMTBStudyNotes: React.FC = () => {
           onClick={() => setIsFlipped(!isFlipped)}
         >
           <div className="text-center">
-            <div className="text-sm text-gray-500 mb-4">
+            <div className="text-base text-gray-500 mb-4">
               {isFlipped ? 'Answer' : 'Question'} - Click to flip
             </div>
             <div className="text-lg text-gray-900">
