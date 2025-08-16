@@ -144,7 +144,7 @@ const EMTBStudyNotes: React.FC = () => {
     let convertedSections: StudySection[] = [];
 
     // Handle enhanced chapter structure (like Chapter 1)
-    if (studyData.systemComponents || studyData.historicalOverview || studyData.futureDirections) {
+    if (studyData.systemComponents || studyData.historicalOverview || studyData.emergingTrends || studyData.regulatoryFramework || studyData.serviceModels) {
       // Historical Overview Section
       if (studyData.historicalOverview) {
         const historyContent: string[] = [];
@@ -191,6 +191,17 @@ const EMTBStudyNotes: React.FC = () => {
             }
             if (component.applications) content.push(...component.applications);
             if (component.goals) content.push(...component.goals);
+            if (component.onlineDirection) {
+              content.push("**Online Direction**: " + component.onlineDirection.definition);
+              if (component.onlineDirection.methods) content.push("Methods: " + component.onlineDirection.methods.join(", "));
+              if (component.onlineDirection.benefits) content.push("Benefits: " + component.onlineDirection.benefits.join(", "));
+            }
+            if (component.offlineDirection) {
+              content.push("**Offline Direction**: " + component.offlineDirection.definition);
+              if (component.offlineDirection.components) content.push("Components: " + component.offlineDirection.components.join(", "));
+            }
+            if (component.responsibilities) content.push(...component.responsibilities);
+            if (component.variations) content.push(...component.variations);
             
             convertedSections.push({
               title: component.component || component.title || key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()),
@@ -203,19 +214,76 @@ const EMTBStudyNotes: React.FC = () => {
         });
       }
 
-      // Future Directions Section
-      if (studyData.futureDirections) {
+      // Regulatory Framework Section
+      if (studyData.regulatoryFramework) {
+        Object.entries(studyData.regulatoryFramework).forEach(([key, section]: [string, any]) => {
+          if (key !== 'title' && typeof section === 'object') {
+            const content: string[] = [];
+            if (section.description) content.push(section.description);
+            if (section.agencies) {
+              content.push("**Key Agencies**:");
+              Object.entries(section.agencies).forEach(([agency, description]) => {
+                content.push(`**${agency}**: ${description}`);
+              });
+            }
+            if (section.responsibilities) content.push(...section.responsibilities);
+            if (section.variations) content.push(...section.variations);
+            
+            convertedSections.push({
+              title: key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()),
+              content,
+              clinicalPearls: [],
+              mnemonics: [],
+              fieldApplications: []
+            });
+          }
+        });
+      }
+
+      // Service Models Section
+      if (studyData.serviceModels) {
+        Object.entries(studyData.serviceModels).forEach(([key, model]: [string, any]) => {
+          if (key !== 'title' && typeof model === 'object') {
+            const content: string[] = [];
+            if (model.description) content.push(model.description);
+            if (model.advantages) {
+              content.push("**Advantages**:");
+              content.push(...model.advantages);
+            }
+            if (model.challenges) {
+              content.push("**Challenges**:");
+              content.push(...model.challenges);
+            }
+            if (typeof model === 'string') content.push(model);
+            
+            convertedSections.push({
+              title: key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()),
+              content,
+              clinicalPearls: [],
+              mnemonics: [],
+              fieldApplications: []
+            });
+          }
+        });
+      }
+
+      // Emerging Trends / Future Directions Section
+      if (studyData.emergingTrends || studyData.futureDirections) {
+        const trendsData = studyData.emergingTrends || studyData.futureDirections;
         const futureContent: string[] = [];
-        Object.entries(studyData.futureDirections).forEach(([key, section]: [string, any]) => {
+        Object.entries(trendsData).forEach(([key, section]: [string, any]) => {
           if (key !== 'title' && typeof section === 'object') {
             futureContent.push(`**${section.description || key}**`);
             if (section.trends) futureContent.push(...section.trends);
             if (section.applications) futureContent.push(...section.applications);
             if (section.goals) futureContent.push(...section.goals);
+          } else if (Array.isArray(section)) {
+            futureContent.push(`**${key.replace(/([A-Z])/g, ' $1')}**:`);
+            futureContent.push(...section);
           }
         });
         convertedSections.push({
-          title: "Future Directions in EMS",
+          title: trendsData.title || "Future Directions in EMS",
           content: futureContent,
           clinicalPearls: [],
           mnemonics: [],
