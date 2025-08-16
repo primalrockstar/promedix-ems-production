@@ -1,7 +1,8 @@
 ﻿import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from './AuthContext';
-import { ClipboardList, CheckSquare, Gamepad2, Users, Settings } from 'lucide-react';
+import { ClipboardList, CheckSquare, Gamepad2, Users, Settings, BookOpen } from 'lucide-react';
+import ModuleManagement from '../components/curriculum/ModuleManagement';
 
 const TabButton: React.FC<{ id: string; active: string; setActive: (id: string) => void; icon: any; label: string; }>=({ id, active, setActive, icon: Icon, label }) => (
   <button onClick={() => setActive(id)} className={`px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 ${active === id ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
@@ -46,6 +47,7 @@ const InstructorDashboard: React.FC = () => {
       <div className="flex items-center gap-2 mb-4 overflow-x-auto">
         <TabButton id="quizzes" active={active} setActive={setActive} icon={ClipboardList} label="Quizzes" />
         <TabButton id="tests" active={active} setActive={setActive} icon={CheckSquare} label="Tests" />
+        <TabButton id="modules" active={active} setActive={setActive} icon={BookOpen} label="Modules" />
         <TabButton id="games" active={active} setActive={setActive} icon={Gamepad2} label="Games" />
         <TabButton id="roster" active={active} setActive={setActive} icon={Users} label="Class Roster" />
         <TabButton id="settings" active={active} setActive={setActive} icon={Settings} label="Settings" />
@@ -64,6 +66,11 @@ const InstructorDashboard: React.FC = () => {
             <ListRow title="Midterm Exam" subtitle="50 questions â€¢ Published" right={<button className="px-3 py-1 rounded border">Manage</button>} />
             <ListRow title="Final Practical" subtitle="Stations setup" right={<button className="px-3 py-1 rounded border">Manage</button>} />
             <div className="p-4"><button className="px-4 py-2 rounded bg-blue-600 text-white">Create new test</button></div>
+          </div>
+        )}
+        {active === 'modules' && (
+          <div>
+            <ModuleManagement />
           </div>
         )}
         {active === 'games' && (

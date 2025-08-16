@@ -42,12 +42,12 @@ const EMTBNavigation: React.FC = () => {
   },
     {
       title: 'EMT-B Study Notes',
-      description: 'Structured study notes and chapter downloads',
+      description: '14 comprehensive modules with 41 chapters plus bonus content',
       icon: BookOpen,
       path: '/emtb/study-notes',
       color: 'bg-yellow-50 border-yellow-200 hover:bg-yellow-100',
       iconColor: 'text-yellow-600',
-      items: ['Fixed Notes', 'New Layout', 'Clean Layout']
+      items: ['14 Core Modules', '41 Study Chapters', 'Bonus: Human Body Systems', 'Interactive Flashcards', 'Clinical Pearls']
     },
     {
       title: 'Medication Simulations',
@@ -63,8 +63,9 @@ const EMTBNavigation: React.FC = () => {
   const quickStats = [
     { label: 'Calculators', value: '5', icon: Calculator, color: 'text-blue-600' },
     { label: 'Protocols', value: '5', icon: FileText, color: 'text-green-600' },
-    { label: 'Medications', value: '8', icon: Heart, color: 'text-red-600' },{ label: 'Modules', value: '14', icon: Users, color: 'text-purple-600' },
-    { label: 'Flashcards', value: '210', icon: Brain, color: 'text-indigo-600' }
+    { label: 'Medications', value: '8', icon: Heart, color: 'text-red-600' },
+    { label: 'Study Chapters', value: '55+', icon: Users, color: 'text-purple-600' },
+    { label: 'Flashcards', value: '500+', icon: Brain, color: 'text-indigo-600' }
   ];
 
   return (
@@ -82,7 +83,7 @@ const EMTBNavigation: React.FC = () => {
           </div>
         </div>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Comprehensive training tools and resources designed specifically for EMT-B scope practice.
+          Comprehensive training with 14 modules, 41 detailed chapters, bonus content, and professional EMT-B scope practice tools.
         </p>
       </div>
 

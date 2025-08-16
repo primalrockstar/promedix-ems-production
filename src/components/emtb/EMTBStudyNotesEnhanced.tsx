@@ -4,8 +4,89 @@ import MedicalDisclaimer from '../MedicalDisclaimer';
 import { medicationsData } from '../../data/medications';
 import { emsProtocols } from '../../data/ems-protocols';
 import { emergencyScenarios } from '../../data/emergency-scenarios';
-import { chapter30StudyNotes as chapter30Data } from '../../data/emtb/chapter30-study-notes';
-import { chapter31StudyNotes as chapter31Data } from '../../data/emtb/chapter31-study-notes';
+// import { chapter30StudyNotes as chapter30Data } from '../../data/emtb/chapter30-study-notes';
+// import { chapter31StudyNotes as chapter31Data } from '../../data/emtb/chapter31-study-notes';
+
+// Module 1: Foundations of EMS Practice (Chapters 1-4)
+import { chapter1StudyNotes as ch1Data } from '../../data/emtb/chapter1-study-notes';
+import { chapter1Flashcards as ch1Flash } from '../../data/emtb/chapter1-flashcards';
+import { chapter2StudyNotes as ch2Data } from '../../data/emtb/chapter2-study-notes';
+import { chapter2Flashcards as ch2Flash } from '../../data/emtb/chapter2-flashcards';
+import { chapter3StudyNotes as ch3Data } from '../../data/emtb/chapter3-study-notes';
+import { chapter3Flashcards as ch3Flash } from '../../data/emtb/chapter3-flashcards';
+import { chapter4StudyNotes as ch4Data } from '../../data/emtb/chapter4-study-notes';
+import { chapter4Flashcards as ch4Flash } from '../../data/emtb/chapter4-flashcards';
+
+// Module 2: Medical Foundations & Assessment (Chapters 5-8)
+import { chapter5StudyNotes as ch5Data } from '../../data/emtb/chapter5-study-notes';
+import { chapter5Flashcards as ch5Flash } from '../../data/emtb/chapter5-flashcards';
+import { chapter6StudyNotes as ch6Data } from '../../data/emtb/chapter6-study-notes';
+import { chapter6Flashcards as ch6Flash } from '../../data/emtb/chapter6-flashcards';
+import { chapter7StudyNotes as ch7Data } from '../../data/emtb/chapter7-study-notes';
+import { chapter7Flashcards as ch7Flash } from '../../data/emtb/chapter7-flashcards';
+import { chapter8StudyNotes as ch8Data } from '../../data/emtb/chapter8-study-notes';
+import { chapter8Flashcards as ch8Flash } from '../../data/emtb/chapter8-flashcards';
+
+// Module 3: Team Communication & Patient Assessment (Chapters 9-12)
+import { chapter9StudyNotes as ch9Data } from '../../data/emtb/chapter9-study-notes';
+import { chapter9Flashcards as ch9Flash } from '../../data/emtb/chapter9-flashcards';
+import { chapter10StudyNotes as ch10Data } from '../../data/emtb/chapter10-study-notes';
+import { chapter10Flashcards as ch10Flash } from '../../data/emtb/chapter10-flashcards';
+import { chapter11StudyNotes as ch11Data } from '../../data/emtb/chapter11-study-notes';
+import { chapter11Flashcards as ch11Flash } from '../../data/emtb/chapter11-flashcards';
+import { chapter12StudyNotes as ch12Data } from '../../data/emtb/chapter12-study-notes';
+import { chapter12Flashcards as ch12Flash } from '../../data/emtb/chapter12-flashcards';
+
+// Module 4: Medical Emergencies & Critical Care (Chapters 13-16)
+import { chapter13StudyNotes as ch13Data } from '../../data/emtb/chapter13-study-notes';
+import { chapter13Flashcards as ch13Flash } from '../../data/emtb/chapter13-flashcards';
+import { chapter14StudyNotes as ch14Data } from '../../data/emtb/chapter14-study-notes';
+import { chapter14Flashcards as ch14Flash } from '../../data/emtb/chapter14-flashcards';
+import { chapter15StudyNotes as ch15Data } from '../../data/emtb/chapter15-study-notes';
+import { chapter16StudyNotes as ch16Data } from '../../data/emtb/chapter16-study-notes';
+
+// Module 5: Cardiovascular & Respiratory Care (Chapters 17-20)
+import { chapter17StudyNotes as ch17Data } from '../../data/emtb/chapter17-study-notes';
+import { chapter18StudyNotes as ch18Data } from '../../data/emtb/chapter18-study-notes';
+import { chapter19StudyNotes as ch19Data } from '../../data/emtb/chapter19-study-notes';
+import { chapter20StudyNotes as ch20Data } from '../../data/emtb/chapter20-study-notes';
+
+// Module 6: Pediatric & Special Population Care (Chapters 21-25)
+import { chapter21StudyNotes as ch21Data } from '../../data/emtb/chapter21-study-notes';
+import { chapter22StudyNotes as ch22Data } from '../../data/emtb/chapter22-study-notes';
+import { chapter23StudyNotes as ch23Data } from '../../data/emtb/chapter23-study-notes';
+import { chapter24StudyNotes as ch24Data } from '../../data/emtb/chapter24-study-notes';
+import { chapter25StudyNotes as ch25Data } from '../../data/emtb/chapter25-study-notes';
+
+// Module 7: Trauma & Emergency Care (Chapters 26-30)
+import { chapter26StudyNotes as ch26Data } from '../../data/emtb/chapter26-study-notes';
+import { chapter27StudyNotes as ch27Data } from '../../data/emtb/chapter27-study-notes';
+import { chapter28StudyNotes as ch28Data } from '../../data/emtb/chapter28-study-notes';
+import { chapter29StudyNotes as ch29Data } from '../../data/emtb/chapter29-study-notes';
+import { chapter30StudyNotes as ch30Data } from '../../data/emtb/chapter30-study-notes';
+
+// Module 8: Neurological & Systemic Emergencies (Chapters 31-35)
+import { chapter31StudyNotes as ch31Data } from '../../data/emtb/chapter31-study-notes';
+import { chapter32StudyNotes as ch32Data } from '../../data/emtb/chapter32-study-notes';
+import { chapter33StudyNotes as ch33Data } from '../../data/emtb/chapter33-study-notes';
+import { chapter34StudyNotes as ch34Data } from '../../data/emtb/chapter34-study-notes';
+import { chapter35StudyNotes as ch35Data } from '../../data/emtb/chapter35-study-notes';
+
+// Module 9: Specialized Emergency Care (Chapters 36-40)
+import { chapter36StudyNotes as ch36Data } from '../../data/emtb/chapter36-study-notes';
+import { chapter37StudyNotes as ch37Data } from '../../data/emtb/chapter37-study-notes';
+import { chapter38StudyNotes as ch38Data } from '../../data/emtb/chapter38-study-notes';
+import { chapter39StudyNotes as ch39Data } from '../../data/emtb/chapter39-study-notes';
+import { chapter40StudyNotes as ch40Data } from '../../data/emtb/chapter40-study-notes';
+
+// Module 14: EMS Operations & Disaster Response (Chapter 41)
+import { chapter41StudyNotes as ch41Data } from '../../data/emtb/chapter41-study-notes';
+
+// BONUS Module 1: Advanced Content (Chapters 42-45)
+import { chapter42StudyNotes as ch42Data } from '../../data/emtb/chapter42-study-notes';
+import { chapter43StudyNotes as ch43Data } from '../../data/emtb/chapter43-study-notes';
+import { chapter44StudyNotes as ch44Data } from '../../data/emtb/chapter44-study-notes';
+import { chapter45StudyNotes as ch45Data } from '../../data/emtb/chapter45-study-notes';
 
 interface StudySection {
   title: string;
@@ -50,6 +131,65 @@ const EMTBStudyNotes: React.FC = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const downloadMenuRef = useRef<HTMLDivElement>(null);
 
+  // Helper function to convert enhanced chapter data to ChapterData format
+  const convertToChapterData = (studyData: any, flashcardData: any[] = []): ChapterData => {
+    // Convert sections based on the structure in the data files
+    const convertedSections = studyData.sections?.map((section: any) => {
+      if (section.content) {
+        // Handle content that might be arrays of objects or strings
+        let contentArray: string[] = [];
+        if (Array.isArray(section.content)) {
+          contentArray = section.content.map((item: any) => {
+            if (typeof item === 'string') return item;
+            if (item.subtitle && item.points) {
+              return `${item.subtitle}: ${Array.isArray(item.points) ? item.points.join(', ') : item.points}`;
+            }
+            if (item.points) {
+              return Array.isArray(item.points) ? item.points.join(', ') : item.points;
+            }
+            return String(item);
+          });
+        } else {
+          contentArray = [String(section.content)];
+        }
+
+        return {
+          title: section.title,
+          content: contentArray,
+          clinicalPearls: section.clinicalPearls || [],
+          mnemonics: section.mnemonics || [],
+          fieldApplications: section.fieldApplications || []
+        };
+      }
+      
+      return {
+        title: section.title,
+        content: [section.description || 'Enhanced content available'],
+        clinicalPearls: [],
+        mnemonics: [],
+        fieldApplications: []
+      };
+    }) || [];
+
+    return {
+      title: studyData.title || studyData.chapterTitle || "Enhanced Chapter",
+      description: studyData.description || `Comprehensive study of ${studyData.title || 'this topic'}`,
+      module: studyData.module || studyData.moduleTitle || "Enhanced EMS Training",
+      scope: "EMT-B" as const,
+      protocols: studyData.protocols || [],
+      learningObjectives: studyData.learningObjectives || studyData.objectives || [],
+      keyTerms: studyData.keyTerms ? Object.keys(studyData.keyTerms) : [],
+      sections: convertedSections,
+      criticalConcepts: studyData.clinicalPearls || studyData.criticalConcepts || [],
+      flashcards: flashcardData.map((card: any) => ({
+        front: card.question,
+        back: card.answer,
+        category: card.type || card.category || 'definition'
+      })) || [],
+      crossReferences: studyData.crossReferences || []
+    };
+  };
+
   // Close download menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -70,241 +210,117 @@ const EMTBStudyNotes: React.FC = () => {
     setIsFlipped(false);
   }, [activeChapter]);
 
-  // Chapter 2: Workforce Safety and Wellness Data
-  // Module 1: Foundations of EMS Practice
-  const chapter1StudyNotes: ChapterData = {
-    title: "Chapter 1: EMS System Fundamentals",
-    description: "Comprehensive overview of Emergency Medical Services systems, structure, and integration within the healthcare continuum",
-    module: "1",
+  // Module 1: Foundations of EMS Practice - Enhanced Chapters  
+  const chapter1StudyNotes: ChapterData = convertToChapterData(ch1Data, ch1Flash);
+  
+  const chapter2StudyNotes: ChapterData = convertToChapterData(ch2Data, ch2Flash);
+  const chapter3StudyNotes: ChapterData = convertToChapterData(ch3Data, ch3Flash);
+  const chapter4StudyNotes: ChapterData = convertToChapterData(ch4Data, ch4Flash);
+
+  // Module 2: Medical Foundations & Assessment - Enhanced Chapters
+  const chapter5StudyNotes: ChapterData = convertToChapterData(ch5Data, ch5Flash);
+  const chapter6StudyNotes: ChapterData = convertToChapterData(ch6Data, ch6Flash);
+  const chapter7StudyNotes: ChapterData = convertToChapterData(ch7Data, ch7Flash);
+  const chapter8StudyNotes: ChapterData = convertToChapterData(ch8Data, ch8Flash);
+
+  // Module 3: Team Communication & Patient Assessment - Enhanced Chapters
+  const chapter9StudyNotes: ChapterData = convertToChapterData(ch9Data, ch9Flash);
+  const chapter10StudyNotes: ChapterData = convertToChapterData(ch10Data, ch10Flash);
+  const chapter11StudyNotes: ChapterData = convertToChapterData(ch11Data, ch11Flash);
+  const chapter12StudyNotes: ChapterData = convertToChapterData(ch12Data, ch12Flash);
+
+  // Module 4: Medical Emergencies & Critical Care - Enhanced Chapters
+  const chapter13StudyNotes: ChapterData = convertToChapterData(ch13Data, ch13Flash);
+  const chapter14StudyNotes: ChapterData = convertToChapterData(ch14Data, ch14Flash);
+  const chapter15StudyNotes: ChapterData = convertToChapterData(ch15Data, []);
+  const chapter16StudyNotes: ChapterData = convertToChapterData(ch16Data, []);
+
+  // Module 5: Cardiovascular & Respiratory Care - Enhanced Chapters
+  const chapter17StudyNotes: ChapterData = convertToChapterData(ch17Data, []);
+  const chapter18StudyNotes: ChapterData = convertToChapterData(ch18Data, []);
+  const chapter19StudyNotes: ChapterData = convertToChapterData(ch19Data, []);
+  const chapter20StudyNotes: ChapterData = convertToChapterData(ch20Data, []);
+
+  // Module 6: Pediatric & Special Population Care - Enhanced Chapters
+  const chapter21StudyNotes: ChapterData = convertToChapterData(ch21Data, []);
+  const chapter22StudyNotes: ChapterData = convertToChapterData(ch22Data, []);
+  const chapter23StudyNotes: ChapterData = convertToChapterData(ch23Data, []);
+  const chapter24StudyNotes: ChapterData = convertToChapterData(ch24Data, []);
+  const chapter25StudyNotes: ChapterData = convertToChapterData(ch25Data, []);
+
+  // Module 7: Trauma & Emergency Care - Enhanced Chapters
+  const chapter26StudyNotes: ChapterData = convertToChapterData(ch26Data, []);
+  const chapter27StudyNotes: ChapterData = convertToChapterData(ch27Data, []);
+  const chapter28StudyNotes: ChapterData = convertToChapterData(ch28Data, []);
+  const chapter29StudyNotes: ChapterData = convertToChapterData(ch29Data, []);
+  const chapter30StudyNotes: ChapterData = convertToChapterData(ch30Data, []);
+
+  // Module 8: Neurological & Systemic Emergencies - Enhanced Chapters
+  const chapter31StudyNotes: ChapterData = convertToChapterData(ch31Data, []);
+  const chapter32StudyNotes: ChapterData = convertToChapterData(ch32Data, []);
+  const chapter33StudyNotes: ChapterData = convertToChapterData(ch33Data, []);
+  const chapter34StudyNotes: ChapterData = convertToChapterData(ch34Data, []);
+  const chapter35StudyNotes: ChapterData = convertToChapterData(ch35Data, []);
+
+  // Module 9: Specialized Emergency Care - Enhanced Chapters
+  const chapter36StudyNotes: ChapterData = convertToChapterData(ch36Data, []);
+  const chapter37StudyNotes: ChapterData = convertToChapterData(ch37Data, []);
+  const chapter38StudyNotes: ChapterData = convertToChapterData(ch38Data, []);
+  const chapter39StudyNotes: ChapterData = convertToChapterData(ch39Data, []);
+  const chapter40StudyNotes: ChapterData = convertToChapterData(ch40Data, []);
+
+  // Module 14: EMS Operations & Disaster Response - Enhanced Chapter
+  const chapter41StudyNotes: ChapterData = convertToChapterData(ch41Data, []);
+
+  // BONUS Module 1: Advanced Content - Enhanced Chapters
+  const chapter42StudyNotes: ChapterData = convertToChapterData(ch42Data, []);
+  const chapter43StudyNotes: ChapterData = convertToChapterData(ch43Data, []);
+  const chapter44StudyNotes: ChapterData = convertToChapterData(ch44Data, []);
+  const chapter45StudyNotes: ChapterData = convertToChapterData(ch45Data, []);
+
+  // BONUS Chapters (manually defined for specialized content)
+  const bonusStudyNotes: ChapterData = {
+    title: "BONUS: Human Body Systems - Chapter 1: Cellular Structure & Function 🧬",
+    description: "Fundamental cellular biology and basic life processes essential for understanding human physiology",
+    module: "Body Systems",
     scope: "EMT-B",
-    protocols: ["System Access", "Medical Direction", "Quality Improvement", "Transport Decisions", "System Integration", "Resource Management"],
+    protocols: ["Cellular Biology", "Basic Life Processes", "Membrane Transport", "Cellular Metabolism"],
     learningObjectives: [
-      "Analyze the historical development and evolution of Emergency Medical Services",
-      "Describe the integrated structure of modern EMS systems and their components",
-      "Explain the roles and responsibilities of EMS providers within the healthcare system",
-      "Evaluate quality improvement processes and their impact on patient outcomes",
-      "Apply medical direction concepts including online and offline protocols",
-      "Understand EMS system financing, regulation, and operational oversight"
+      "Understand basic cellular structure and organelle functions",
+      "Recognize cellular transport mechanisms",
+      "Apply cellular concepts to disease processes",
+      "Integrate cellular biology with patient care"
     ],
-    keyTerms: [
-      "Emergency Medical Services",
-      "System Integration",
-      "Medical Direction",
-      "Online Medical Control",
-      "Offline Medical Control",
-      "Standing Orders",
-      "Clinical Protocols",
-      "Quality Assurance",
-      "Quality Improvement",
-      "Continuous Quality Improvement",
-      "Evidence-Based Practice",
-      "System Access",
-      "911 System",
-      "Enhanced 911",
-      "Public Safety Answering Point",
-      "Emergency Medical Dispatch",
-      "Medical Priority Dispatch",
-      "First Responder",
-      "Basic Life Support",
-      "Advanced Life Support",
-      "Critical Care Transport",
-      "Interfacility Transport",
-      "Air Medical Transport",
-      "Trauma System",
-      "Trauma Center",
-      "Stroke Center",
-      "STEMI Center",
-      "Regionalization",
-      "System Design",
-      "Resource Allocation",
-      "Response Time Standards",
-      "Clinical Outcomes",
-      "System Evaluation"
+    keyTerms: ["Cell Membrane", "Organelles", "Diffusion", "Osmosis", "Metabolism"],
+    criticalConcepts: [
+      "All body functions depend on proper cellular function",
+      "Cellular dysfunction leads to tissue and organ failure",
+      "Understanding cellular processes helps explain disease mechanisms"
     ],
     sections: [
       {
-        title: "Historical Evolution and System Development",
+        title: "Basic Cell Structure",
         content: [
-          "EMS origins traced to military battlefield medicine and Napoleon's ambulance corps (1792)",
-          "Modern EMS development began with 1966 National Academy of Sciences report 'Accidental Death and Disability'",
-          "Highway Safety Act of 1966 established federal EMS funding and national standards",
-          "Emergency Medical Services Systems Act of 1973 defined comprehensive system components",
-          "Current EMS systems integrate 14 essential attributes for optimal patient care delivery",
-          "Evolution from transport-focused to treatment-oriented clinical care model",
-          "Integration with trauma systems, stroke networks, and cardiac care systems",
-          "Evidence-based practice implementation driving continuous system improvement"
+          "**Cell membrane** controls what enters and exits cells through selective permeability 🧬",
+          "**Nucleus** contains DNA and controls cellular activities",
+          "**Mitochondria** produce ATP energy for cellular processes"
         ],
         clinicalPearls: [
-          "EMS response time targets: 90% of high-priority calls in <8 minutes urban, <12 minutes rural",
-          "Modern EMS systems show 3x better cardiac arrest survival than basic transport systems",
-          "Integrated trauma systems reduce preventable death rates by 25-30%",
-          "Early EMS recognition reduces stroke treatment delays by average of 45 minutes"
-        ],
-        mnemonics: [
-          "EMS SYSTEM: Emergency access, Medical direction, Staffing, System integration, Transport, Equipment, Medical oversight, Monitoring outcomes",
-          "QUALITY: Quantify performance, Understand variations, Analyze data, Learn from outcomes, Implement improvements, Track progress, Yield better care"
-        ],
-        decisionTrees: [
-          "System Access → 911 Call → EMD Triage → Resource Deployment → Clinical Response → Definitive Care",
-          "Quality Issue → Data Collection → Analysis → Root Cause → Intervention → Monitoring → System Improvement"
-        ],
-        fieldApplications: [
-          "Understanding your role within the larger healthcare system improves care coordination",
-          "Knowledge of system capabilities helps with appropriate resource utilization",
-          "Quality metrics directly impact system funding and operational decisions",
-          "System integration affects patient outcomes and professional development opportunities"
-        ]
-      },
-      {
-        title: "System Components and Structure",
-        content: [
-          "Public access through enhanced 911 systems with location identification capabilities",
-          "Emergency Medical Dispatch (EMD) provides pre-arrival instructions and resource optimization",
-          "First responder integration ensures rapid initial care and scene safety",
-          "BLS and ALS providers deliver tiered clinical care based on patient acuity",
-          "Transport capabilities include ground ambulances, air medical, and specialty vehicles",
-          "Hospital integration through trauma centers, stroke centers, and specialty care facilities",
-          "System governance through medical directors, administrators, and regulatory oversight",
-          "Continuous quality improvement monitoring outcomes and driving system enhancement"
-        ],
-        clinicalPearls: [
-          "EMD instructions can reduce cardiac arrest brain damage by initiating CPR 2-3 minutes earlier",
-          "Tiered response systems reduce costs by 30% while maintaining clinical outcomes",
-          "Air medical transport shows survival benefit for distances >30 miles or difficult access",
-          "Hospital destination selection impacts patient outcomes more than transport time in many cases"
-        ],
-        mnemonics: [
-          "ACCESS: Activation system, Call processing, Crew dispatch, Emergency response, Scene management, System destination",
-          "TIERED: Transport decisions, Initial assessment, Emergency interventions, Resource allocation, Effective care, Destination selection"
-        ],
-        decisionTrees: [
-          "System Activation → Call Type → EMD Protocol → Resource Level → Response Mode → Clinical Care",
-          "Transport Decision → Patient Acuity → Distance → Capabilities → Destination → Care Level"
-        ],
-        fieldApplications: [
-          "Proper EMD interaction improves response accuracy and resource allocation",
-          "Understanding transport options helps optimize patient destination decisions",
-          "System knowledge enables effective communication with hospitals and specialists",
-          "Quality participation directly impacts individual and system performance"
-        ]
-      },
-      {
-        title: "Medical Direction and Clinical Oversight",
-        content: [
-          "Medical directors provide clinical oversight and protocol development for EMS systems",
-          "Online medical control offers real-time clinical guidance for complex patient scenarios",
-          "Offline medical control through standing orders and clinical protocols guides routine care",
-          "Scope of practice definitions establish legal boundaries for each provider level",
-          "Continuing education requirements maintain clinical competency and introduce new practices",
-          "Quality assurance processes monitor care delivery and identify improvement opportunities",
-          "Clinical research integration advances evidence-based EMS practice",
-          "Medical direction liaison facilitates hospital integration and care coordination"
-        ],
-        clinicalPearls: [
-          "Online medical control reduces medication errors by 40% in complex cases",
-          "Standardized protocols improve care consistency and reduce variation by 60%",
-          "Regular medical director feedback improves EMT clinical decision-making skills",
-          "Evidence-based protocol updates can improve survival rates by 15-25%"
-        ],
-        mnemonics: [
-          "MEDICAL: Medical director, Education requirements, Direct oversight, Immediate consultation, Clinical protocols, Assessment feedback, Legal guidance",
-          "OVERSIGHT: Online control, Verification of care, Educational feedback, Regulatory compliance, Standards maintenance, Implementation monitoring, Guidelines development, Hospital coordination"
-        ],
-        decisionTrees: [
-          "Clinical Decision → Within Protocol → Execute → Outside Protocol → Medical Control → Authorization → Execute",
-          "Quality Issue → Case Review → Medical Director → Corrective Action → Education → Monitoring → System Improvement"
-        ],
-        fieldApplications: [
-          "Know when to contact medical control for guidance beyond standing orders",
-          "Understand your scope of practice limitations and legal responsibilities",
-          "Participate actively in quality improvement and continuing education",
-          "Maintain professional relationship with medical director and hospital staff"
-        ]
-      },
-      {
-        title: "System Integration and Coordination",
-        content: [
-          "EMS integrates with public safety agencies including fire, police, and emergency management",
-          "Hospital networks coordinate care through trauma systems, stroke networks, and cardiac programs",
-          "Public health integration addresses prevention, preparedness, and population health",
-          "Healthcare system coordination ensures continuity from prehospital to definitive care",
-          "Regional coordination optimizes resource distribution and specialty care access",
-          "Information systems enable data sharing and clinical communication across providers",
-          "Disaster preparedness requires coordinated response with multiple agencies",
-          "Community education and prevention programs reduce emergency service demand"
-        ],
-        clinicalPearls: [
-          "Integrated stroke systems reduce door-to-needle times by average of 30 minutes",
-          "Trauma system integration improves survival odds by 25% for major trauma",
-          "Regional cardiac networks increase STEMI survival rates by 20-35%",
-          "Coordinated disaster response reduces mortality rates during mass casualty events"
-        ],
-        mnemonics: [
-          "INTEGRATE: Information sharing, Networks coordination, Transport optimization, Emergency preparedness, Guidelines consistency, Resource allocation, Accurate communication, Training standardization, Evaluation continuous",
-          "COORDINATE: Communication systems, Operations planning, Resource management, Outcomes monitoring, Regional networks, Data integration, Information sharing, Network optimization, Agency cooperation, Training programs, Emergency preparedness"
-        ],
-        decisionTrees: [
-          "System Integration → Identify Partners → Establish Protocols → Train Personnel → Implement Systems → Monitor Outcomes",
-          "Emergency Response → Multi-Agency → Incident Command → Resource Coordination → Clinical Care → System Recovery"
-        ],
-        fieldApplications: [
-          "Understanding regional capabilities improves patient destination decisions",
-          "Knowledge of partner agencies enhances scene safety and operational efficiency",
-          "System integration awareness improves care coordination and outcomes",
-          "Professional networking supports career development and system improvement"
+          "Cell membrane damage leads to cellular death and tissue necrosis",
+          "Mitochondrial dysfunction causes cellular energy crisis"
         ]
       }
     ],
-    criticalConcepts: [
-      "EMS systems are integrated networks designed to optimize emergency medical care delivery",
-      "Medical direction provides essential clinical oversight and legal framework for EMT practice",
-      "Quality improvement is continuous process requiring active participation from all providers",
-      "System integration improves patient outcomes through coordinated care delivery",
-      "Evidence-based practice drives system evolution and improved clinical outcomes"
-    ],
-    clinicalDecisionRules: [
-      "System Access: All emergency medical needs should enter through standardized 911 system",
-      "Medical Direction: Consult online medical control when clinical situation exceeds standing orders",
-      "Transport Decision: Patient acuity, distance, and receiving facility capabilities determine optimal destination"
-    ],
-    commonMisconceptions: [
-      "MYTH: EMS is just an ambulance service - FACT: Modern EMS is integrated healthcare delivery system",
-      "MYTH: Faster response always equals better outcomes - FACT: Appropriate care delivery more important than speed alone", 
-      "MYTH: EMTs work independently - FACT: EMTs function within structured medical oversight system",
-      "MYTH: All hospitals provide same level of care - FACT: Specialized centers improve outcomes for specific conditions"
-    ],
-    examTips: [
-      "Questions focus on understanding EMS as system, not just individual provider role",
-      "Medical direction concepts frequently tested - know online vs offline control",
-      "System integration questions test knowledge of EMS role within healthcare continuum",
-      "Quality improvement principles often appear in scenario-based questions"
-    ],
-    crossReferences: [
-      "Chapter 2: Responder Safety & Resilience - safety within system context",
-      "Chapter 4: Emergency Communication Protocols - system communication standards",
-      "Chapter 9: Interprofessional EMS Teams - team roles within system structure",
-      "Chapter 10: Comprehensive Patient Evaluation - assessment within system protocols"
-    ],
     flashcards: [
-      { front: "What are the 4 T's of EMS system development?", back: "Treatment, Transport, Transfer, Teamwork", category: "definition" },
-      { front: "What is medical direction?", back: "Clinical oversight provided by physicians to guide EMS practice", category: "definition" },
-      { front: "What is online medical control?", back: "Real-time physician consultation for clinical guidance", category: "definition" },
-      { front: "What is offline medical control?", back: "Standing orders and protocols that guide routine EMS care", category: "definition" },
-      { front: "What year was the landmark EMS report 'Accidental Death and Disability' published?", back: "1966", category: "clinical" },
-      { front: "What act established federal EMS funding?", back: "Highway Safety Act of 1966", category: "clinical" },
-      { front: "How much do integrated trauma systems reduce preventable deaths?", back: "25-30% reduction in preventable death rates", category: "clinical" },
-      { front: "What are EMD instructions designed to provide?", back: "Pre-arrival care instructions and resource optimization", category: "protocol" },
-      { front: "What is the urban EMS response time target?", back: "90% of high-priority calls in <8 minutes", category: "protocol" },
-      { front: "What is the rural EMS response time target?", back: "90% of high-priority calls in <12 minutes", category: "protocol" },
-      { front: "How much do online medical control reduce medication errors?", back: "40% reduction in complex cases", category: "clinical" },
-      { front: "What is continuous quality improvement (CQI)?", back: "Ongoing process to monitor and improve EMS care delivery", category: "definition" },
-      { front: "What does Enhanced 911 provide?", back: "Automatic location identification for emergency calls", category: "protocol" },
-      { front: "What is a PSAP?", back: "Public Safety Answering Point - where 911 calls are received", category: "definition" },
-      { front: "How much do stroke systems reduce treatment delays?", back: "Average 45-minute reduction in stroke treatment delays", category: "clinical" }
+      { front: "What is the basic unit of life?", back: "The cell - smallest functional unit of living organisms", category: "definition" },
+      { front: "What controls what enters and exits a cell?", back: "Cell membrane through selective permeability", category: "definition" },
+      { front: "What organelle produces ATP energy?", back: "Mitochondria - the powerhouse of the cell", category: "definition" },
+      { front: "What is diffusion?", back: "Movement of substances from high to low concentration", category: "definition" },
+      { front: "What is osmosis?", back: "Movement of water across a membrane to balance solute concentrations", category: "definition" }
     ]
   };
 
-  const chapter3StudyNotes: ChapterData = {
+  /*const chapter3StudyNotes: ChapterData = {
     title: "Chapter 3: EMS Law & Ethical Practice",
     description: "Legal foundations, ethical principles, and professional responsibilities in emergency medical services practice",
     module: "1",
@@ -535,9 +551,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "How much can HIPAA violation fines reach?", back: "Up to $1.5 million and potential criminal prosecution", category: "protocol" },
       { front: "What is justice in medical ethics?", back: "Fair distribution of resources and equal treatment regardless of patient characteristics", category: "definition" }
     ]
-  };
+  };*/
 
-  const chapter4StudyNotes: ChapterData = {
+  /*const chapter4StudyNotes: ChapterData = {
     title: "Chapter 4: Emergency Communication Protocols",
     description: "Advanced communication systems, documentation standards, and information management in emergency medical services",
     module: "1",
@@ -768,9 +784,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "How much can HIPAA violation fines reach?", back: "Up to $1.5 million per incident", category: "protocol" },
       { front: "What is contemporaneous documentation?", back: "Documentation completed at the time of or immediately after patient care", category: "definition" }
     ]
-  };
+  };*/
 
-  const chapter5StudyNotes: ChapterData = {
+  /*const chapter5StudyNotes: ChapterData = {
     title: "Chapter 5: Medical Terminology Foundations",
     description: "Essential medical terminology, anatomical references, and professional communication language for emergency medical services",
     module: "2",
@@ -1000,9 +1016,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What position has the patient lying face up?", back: "Supine position", category: "definition" },
       { front: "What are the three components of medical words?", back: "Root, prefix, and suffix", category: "definition" }
     ]
-  };
+  };*/
 
-  const chapter2StudyNotes: ChapterData = {
+  /*const chapter2StudyNotes: ChapterData = {
     title: "Chapter 2: Responder Safety & Resilience",
     description: "Comprehensive safety protocols, personal protective equipment, and resilience strategies for emergency medical services personnel",
     module: "1",
@@ -1223,9 +1239,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What prevents 85% of mucous membrane exposures?", back: "Proper eye protection during patient care", category: "clinical" },
       { front: "How much does peer support reduce early career turnover?", back: "60% reduction in early career turnover", category: "clinical" }
     ]
-  };
+  };*/
 
-  const chapter6StudyNotes: ChapterData = {
+  /*const chapter6StudyNotes: ChapterData = {
     title: "Chapter 6: Human Body Systems & Anatomy",
     description: "Comprehensive anatomy and physiology of human body systems essential for emergency medical assessment and intervention",
     module: "2",
@@ -1452,9 +1468,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What protects nervous tissue from toxins?", back: "Blood-brain barrier", category: "definition" },
       { front: "What scale grades muscle strength?", back: "0-5 scale with 5/5 being normal strength", category: "clinical" }
     ]
-  };
+  };*/
 
-  const chapter7StudyNotes: ChapterData = {
+  /*const chapter7StudyNotes: ChapterData = {
     title: "Chapter 7: Life Span Development & Age-Related Care",
     description: "Comprehensive understanding of human development across the lifespan with age-specific assessment and treatment considerations for emergency medical care",
     module: "2",
@@ -1842,10 +1858,10 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "When should critical incident stress debriefing occur?", back: "Formal debriefing within 24-72 hours after critical incidents", category: "protocol" },
       { front: "What percentage of first responders never seek mental health treatment?", back: "40% of first responders never seek treatment despite needing it", category: "clinical" }
     ]
-  };
+  };*/
 
   // Module 2 Chapters
-  const chapter8StudyNotes: ChapterData = {
+  /*const chapter8StudyNotes: ChapterData = {
     title: "Chapter 8: Patient Movement & Handling",
     description: "Proper body mechanics, patient positioning, and safe patient transport techniques with emphasis on ergonomic principles and injury prevention",
     module: "2",
@@ -2066,9 +2082,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What increases injury risk by 300%?", back: "Fatigue - recognize when to use mechanical aids", category: "clinical" },
       { front: "What is the clothes drag technique?", back: "Emergency move pulling patient by clothing around shoulders", category: "definition" }
     ]
-  };
+  };*/
 
-  const chapter9StudyNotes: ChapterData = {
+  /*const chapter9StudyNotes: ChapterData = {
     title: "Chapter 9: Interprofessional EMS Teams",
     description: "Interprofessional collaboration, communication systems, and team dynamics in emergency medical services with emphasis on effective patient care coordination",
     module: "2", 
@@ -2292,10 +2308,10 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What prevents freelancing at emergency scenes?", back: "Clear command structure and defined roles", category: "protocol" },
       { front: "What is peer review used for?", back: "Providing constructive feedback on patient care performance", category: "definition" }
     ]
-  };
+  };*/
 
   // Placeholder data for other chapters (keeping existing structure)
-  const chapter10StudyNotes: ChapterData = {
+  /*const chapter10StudyNotes: ChapterData = {
     title: "Chapter 10: Comprehensive Patient Evaluation",
     description: "Systematic patient assessment protocols with clinical decision-making frameworks for comprehensive patient evaluation",
     module: "3",
@@ -2456,9 +2472,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "When should reassessment occur?", back: "Every 5 minutes for unstable, every 15 minutes for stable patients", category: "protocol" },
       { front: "What is the purpose of OPQRST?", back: "Systematic pain and symptom assessment", category: "definition" }
     ]
-  };
+  };*/
 
-  const chapter11StudyNotes: ChapterData = {
+  /*const chapter11StudyNotes: ChapterData = {
     title: "Chapter 11: Advanced Airway Interventions",
     description: "Advanced airway management techniques with evidence-based protocols for maintaining patent airways and effective ventilation",
     module: "4", 
@@ -2602,9 +2618,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What is the sniffing position?", back: "Optimal head position for intubation - neck flexed, head extended", category: "protocol" },
       { front: "What indicates effective BVM ventilation?", back: "Chest rise, good mask seal, appropriate rate and volume", category: "clinical" }
     ]
-  };
+  };*/
 
-  const chapter12StudyNotes: ChapterData = {
+  /*const chapter12StudyNotes: ChapterData = {
     title: "Chapter 12: Medication Administration Essentials",
     description: "Comprehensive guide to safe medication administration, pharmacology principles, and EMT-B scope of practice in medication management",
     module: "5",
@@ -2851,9 +2867,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 23: Endocrine Emergencies - Oral glucose for hypoglycemia",
       "Chapter 21: Allergic Reactions - Epinephrine auto-injector assistance"
     ]
-  };
+  };*/
 
-  const chapter13StudyNotes: ChapterData = {
+  /*const chapter13StudyNotes: ChapterData = {
     title: "Chapter 13: Shock Recognition & Response",
     description: "Comprehensive understanding of shock pathophysiology, classification, recognition, and evidence-based prehospital management strategies",
     module: "6",
@@ -3106,9 +3122,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 31: Bleeding - Hemorrhagic shock and bleeding control techniques",
       "Chapter 34: Spinal Injuries - Neurogenic shock from spinal cord injury"
     ]
-  };
+  };*/
 
-  const chapter14StudyNotes: ChapterData = {
+  /*const chapter14StudyNotes: ChapterData = {
     title: "Chapter 14: BLS Resuscitation Protocols",
     description: "Comprehensive guide to high-quality cardiopulmonary resuscitation, automated external defibrillation, and advanced cardiac life support protocols",
     module: "6",
@@ -3355,9 +3371,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 33: Pediatric Emergencies - Modified CPR techniques for children",
       "Chapter 36: Geriatric Emergencies - Special considerations for elderly patients"
     ]
-  };
+  };*/
 
-  const chapter15StudyNotes: ChapterData = {
+  /*const chapter15StudyNotes: ChapterData = {
     title: "Chapter 15: Medical Overview Essentials",
     description: "Systematic approach to medical emergencies, comprehensive patient assessment, and effective communication strategies for non-trauma patients",
     module: "7",
@@ -3599,9 +3615,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 22: Endocrine Emergencies - Diabetes and other endocrine conditions",
       "Chapter 35: Geriatric Emergencies - Special considerations for elderly patients"
     ]
-  };
+  };*/
 
-  const chapter16StudyNotes: ChapterData = {
+  /*const chapter16StudyNotes: ChapterData = {
     title: "Chapter 16: Respiratory Emergencies Essentials",
     description: "Comprehensive assessment and management of respiratory distress, breathing problems, and life-threatening airway emergencies",
     module: "7",
@@ -3848,9 +3864,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 33: Pediatric Emergencies - Pediatric respiratory conditions",
       "Chapter 35: Geriatric Emergencies - COPD and other chronic respiratory conditions"
     ]
-  };
+  };*/
 
-  const chapter17StudyNotes: ChapterData = {
+  /*const chapter17StudyNotes: ChapterData = {
     title: "Chapter 17: Cardiovascular Emergency Management",
     description: "Cardiovascular emergencies with pathophysiology and evidence-based intervention protocols for optimal patient outcomes",
     module: "7",
@@ -3996,9 +4012,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What is the goal for door-to-balloon time?", back: "Less than 90 minutes for STEMI patients", category: "protocol" },
       { front: "What are atypical MI presentations?", back: "Common in elderly, diabetics, women - may present as weakness, nausea", category: "clinical" }
     ]
-  };
+  };*/
 
-  const chapter18StudyNotes: ChapterData = {
+  /*const chapter18StudyNotes: ChapterData = {
     title: "Chapter 18: Neurological Emergencies",
     description: "Comprehensive assessment and management of stroke, seizures, altered mental status, and other neurological emergencies",
     module: "8",
@@ -4257,9 +4273,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 33: Pediatric Emergencies - Febrile seizures and pediatric neurological conditions",
       "Chapter 35: Geriatric Emergencies - Stroke and neurological changes in elderly"
     ]
-  };
+  };*/
 
-  const chapter19StudyNotes: ChapterData = {
+  /*const chapter19StudyNotes: ChapterData = {
     title: "Chapter 19: Gastrointestinal and Genitourinary Emergencies",
     description: "Assessment and management of abdominal pain, GI bleeding, and genitourinary emergencies including reproductive health issues",
     module: "8",
@@ -4507,9 +4523,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 33: Pediatric Emergencies - Pediatric abdominal conditions",
       "Chapter 35: Geriatric Emergencies - Atypical presentations in elderly"
     ]
-  };
+  };*/
 
-  const chapter20StudyNotes: ChapterData = {
+  /*const chapter20StudyNotes: ChapterData = {
     title: "Chapter 20: Metabolic & Hematologic Emergencies",
     description: "Comprehensive management of endocrine and hematologic emergencies with evidence-based protocols and pathophysiology",
     module: "8",
@@ -4682,9 +4698,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What oral glucose dose for conscious hypoglycemic patient?", back: "15-25 grams oral glucose gel", category: "protocol" },
       { front: "What can mimic hypoglycemia?", back: "Stroke, alcohol intoxication, psychiatric disorders", category: "clinical" }
     ]
-  };
+  };*/
 
-  const chapter21StudyNotes: ChapterData = {
+  /*const chapter21StudyNotes: ChapterData = {
     title: "Chapter 21: Allergic & Anaphylactic Response",
     description: "Recognition and emergency management of allergic reactions and anaphylaxis with life-saving interventions",
     module: "9",
@@ -4765,9 +4781,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "How long should anaphylaxis patients be monitored?", back: "Minimum 4-6 hours due to biphasic reaction risk", category: "clinical" },
       { front: "What cardiac effects can anaphylaxis cause?", back: "Tachycardia, hypotension, cardiovascular collapse", category: "clinical" }
     ]
-  };
+  };*/
 
-  const chapter22StudyNotes: ChapterData = {
+  /*const chapter22StudyNotes: ChapterData = {
     title: "Chapter 22: Toxicological Emergencies",
     description: "Emergency management of poisoning and overdose cases with evidence-based decontamination and supportive care",
     module: "9", 
@@ -4846,9 +4862,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What household items commonly cause poisoning?", back: "Cleaning products, medications, plants, chemicals", category: "clinical" },
       { front: "What is naloxone's duration of action?", back: "30-90 minutes, may need repeated doses", category: "clinical" }
     ]
-  };
+  };*/
 
-  const chapter23StudyNotes: ChapterData = {
+  /*const chapter23StudyNotes: ChapterData = {
     title: "Chapter 23: Behavioral Crisis Protocols",
     description: "Professional approach to behavioral health emergencies with de-escalation techniques and safety protocols",
     module: "9",
@@ -4931,9 +4947,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What is the difference between anxiety and panic?", back: "Panic is intense, sudden fear; anxiety is persistent worry", category: "definition" },
       { front: "What documentation is needed for behavioral emergencies?", back: "Objective observations, quotes, interventions used, justifications", category: "protocol" }
     ]
-  };
+  };*/
 
-  const chapter24StudyNotes: ChapterData = {
+  /*const chapter24StudyNotes: ChapterData = {
     title: "Chapter 24: Gynecologic Emergencies",
     description: "Comprehensive assessment and management of female reproductive health emergencies with cultural sensitivity and dignity",
     module: "9",
@@ -5180,9 +5196,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 13: Shock Recognition - Hemorrhagic shock from gynecologic bleeding",
       "Chapter 15: Medical Overview - Sensitive history taking and cultural considerations"
     ]
-  };
+  };*/
 
-  const chapter25StudyNotes: ChapterData = {
+  /*const chapter25StudyNotes: ChapterData = {
     title: "Trauma Overview",
     description: "Understanding trauma systems, mechanisms of injury, and comprehensive trauma patient assessment and management principles",
     module: "Module 9: Special Patient Populations",
@@ -5472,9 +5488,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 13: Shock Recognition - Hemorrhagic shock pathophysiology and treatment",
       "Chapter 30: Soft Tissue Injuries - Wound assessment and bleeding control techniques"
     ]
-  };
+  };*/
 
-  const chapter26StudyNotes: ChapterData = {
+  /*const chapter26StudyNotes: ChapterData = {
     title: "Bleeding Control",
     description: "Comprehensive management of external and internal bleeding including hemorrhage control techniques, shock recognition, and bleeding emergencies",
     module: "Module 10: Trauma",
@@ -5763,9 +5779,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 29: Musculoskeletal Injuries - Bleeding from fracture sites and splinting techniques",
       "Chapter 30: Soft Tissue Injuries - Wound assessment and bleeding control techniques"
     ]
-  };
+  };*/
 
-  const chapter27StudyNotes: ChapterData = {
+  /*const chapter27StudyNotes: ChapterData = {
     title: "Soft-Tissue Injuries",
     description: "Comprehensive assessment and management of soft-tissue trauma including wounds, burns, and specialized injury patterns",
     module: "Module 10: Trauma",
@@ -6056,9 +6072,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 30: Orthopedic Injuries - Associated soft tissue trauma",
       "Chapter 13: Shock Recognition - Fluid loss and shock from burns"
     ]
-  };
+  };*/
 
-  const chapter28StudyNotes: ChapterData = {
+  /*const chapter28StudyNotes: ChapterData = {
     title: "Chest Injuries",
     description: "Recognition and management of thoracic trauma including breathing difficulties, pneumothorax, and cardiovascular emergencies",
     module: "Module 10: Trauma",
@@ -6346,9 +6362,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 15: Respiratory Emergencies - Ventilation support techniques",
       "Chapter 17: Cardiovascular Emergencies - Cardiac emergency management"
     ]
-  };
+  };*/
 
-  const chapter29StudyNotes: ChapterData = {
+  /*const chapter29StudyNotes: ChapterData = {
     title: "Chapter 31: Abdominal & GU Trauma Essentials",
     description: "Comprehensive assessment and management of abdominal and genitourinary trauma with evidence-based protocols",
     module: "12",
@@ -6417,9 +6433,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What is Cullen's sign?", back: "Bruising around umbilicus indicating internal bleeding", category: "clinical" },
       { front: "What transport priority for evisceration?", back: "High priority, rapid transport with continuous monitoring", category: "protocol" }
     ]
-  };
+  };*/
 
-  const chapter32StudyNotes: ChapterData = {
+  /*const chapter32StudyNotes: ChapterData = {
     title: "Chapter 32: Orthopedic Injury Management",
     description: "Professional management of musculoskeletal injuries with evidence-based splinting and immobilization techniques",
     module: "12",
@@ -6487,9 +6503,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "How often should neurovascular status be checked?", back: "Before splinting, after splinting, and every 15 minutes during transport", category: "protocol" },
       { front: "What is a pathologic fracture?", back: "Fracture through diseased or weakened bone from minimal force", category: "definition" }
     ]
-  };
+  };*/
 
-  const chapter33StudyNotes: ChapterData = {
+  /*const chapter33StudyNotes: ChapterData = {
     title: "Chapter 33: Environmental Exposure Protocols",
     description: "Expert management of temperature-related and environmental emergencies with evidence-based treatment protocols",
     module: "12",
@@ -6559,9 +6575,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "How long can cold water drowning victims survive?", back: "Up to 45-60 minutes due to diving reflex", category: "clinical" },
       { front: "What are lightning strike injury priorities?", back: "Cardiac monitoring, spinal immobilization, burn care", category: "protocol" }
     ]
-  };
+  };*/
 
-  const chapter34StudyNotes: ChapterData = {
+  /*const chapter34StudyNotes: ChapterData = {
     title: "Chapter 34: Obstetric & Neonatal Emergencies",
     description: "Professional management of pregnancy emergencies and neonatal care with evidence-based delivery protocols",
     module: "13",
@@ -6631,9 +6647,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "How often is APGAR assessed?", back: "At 1 minute and 5 minutes after birth", category: "protocol" },
       { front: "What temperature should neonates be kept?", back: "Warm and dry, normal body temperature 97-99°F", category: "clinical" }
     ]
-  };
+  };*/
 
-  const chapter35StudyNotes: ChapterData = {
+  /*const chapter35StudyNotes: ChapterData = {
     title: "Chapter 35: Pediatric Emergency Response",
     description: "Specialized pediatric emergency care with age-appropriate assessment and treatment protocols",
     module: "13",
@@ -6703,9 +6719,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "How do children's airways differ from adults?", back: "Larger tongue, higher larynx, smaller trachea, larger occiput", category: "definition" },
       { front: "What is grunting in children?", back: "Expiratory sound indicating respiratory distress and PEEP attempt", category: "clinical" }
     ]
-  };
+  };*/
 
-  const chapter36StudyNotes: ChapterData = {
+  /*const chapter36StudyNotes: ChapterData = {
     title: "Chapter 36: Geriatric Emergency Care",
     description: "Specialized geriatric emergency care addressing age-related physiological changes and complex medical conditions",
     module: "13",
@@ -6776,48 +6792,7 @@ const EMTBStudyNotes: React.FC = () => {
     ]
   };
 
-  const bonusStudyNotes: ChapterData = {
-    title: "BONUS: Human Body Systems - Chapter 1: Cellular Structure & Function 🧬",
-    description: "Fundamental cellular biology and basic life processes essential for understanding human physiology",
-    module: "Body Systems",
-    scope: "EMT-B",
-    protocols: ["Cellular Biology", "Basic Life Processes", "Membrane Transport", "Cellular Metabolism"],
-    learningObjectives: [
-      "Understand basic cellular structure and organelle functions",
-      "Recognize cellular transport mechanisms",
-      "Apply cellular concepts to disease processes",
-      "Integrate cellular biology with patient care"
-    ],
-    keyTerms: ["Cell Membrane", "Organelles", "Diffusion", "Osmosis", "Metabolism"],
-    criticalConcepts: [
-      "All body functions depend on proper cellular function",
-      "Cellular dysfunction leads to tissue and organ failure",
-      "Understanding cellular processes helps explain disease mechanisms"
-    ],
-    sections: [
-      {
-        title: "Basic Cell Structure",
-        content: [
-          "**Cell membrane** controls what enters and exits cells through selective permeability 🧬",
-          "**Nucleus** contains DNA and controls cellular activities",
-          "**Mitochondria** produce ATP energy for cellular processes"
-        ],
-        clinicalPearls: [
-          "Cell membrane damage leads to cellular death and tissue necrosis",
-          "Mitochondrial dysfunction causes cellular energy crisis"
-        ]
-      }
-    ],
-    flashcards: [
-      { front: "What is the basic unit of life?", back: "The cell - smallest functional unit of living organisms", category: "definition" },
-      { front: "What controls what enters and exits a cell?", back: "Cell membrane through selective permeability", category: "definition" },
-      { front: "What organelle produces ATP energy?", back: "Mitochondria - the powerhouse of the cell", category: "definition" },
-      { front: "What is diffusion?", back: "Movement of substances from high to low concentration", category: "definition" },
-      { front: "What is osmosis?", back: "Movement of water across a membrane to balance solute concentrations", category: "definition" }
-    ]
-  };
-
-  const bodySystem2StudyNotes: ChapterData = {
+  /*const bodySystem2StudyNotes: ChapterData = {
     title: "BONUS: Human Body Systems - Chapter 2: Tissues & Organs 🩸",
     description: "Organization of cells into tissues, organs, and organ systems",
     module: "Body Systems", 
@@ -6852,9 +6827,123 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What tissue enables body movement?", back: "Muscle tissue - skeletal, cardiac, and smooth", category: "definition" },
       { front: "What tissue carries electrical impulses?", back: "Nervous tissue - neurons and supporting cells", category: "definition" }
     ]
+  };*/
+
+  // BONUS Module 2: Human Body Systems - Enhanced Chapters
+  const bodySystem2StudyNotes: ChapterData = {
+    title: "BONUS: Human Body Systems - Chapter 2: Tissues & Organs",
+    description: "Comprehensive study of tissue types, organ formation, and system integration in human anatomy",
+    module: "BONUS: Human Body Systems",
+    scope: "EMT-B" as const,
+    protocols: ["Tissue Classification", "Organ Formation", "System Integration", "Pathophysiology"],
+    learningObjectives: [
+      "Identify and classify the four basic tissue types and their functions",
+      "Understand how tissues combine to form organs and organ systems",
+      "Recognize tissue injury patterns and healing processes",
+      "Apply tissue knowledge to patient assessment and treatment",
+      "Understand tissue response to trauma and disease processes"
+    ],
+    keyTerms: [
+      "Epithelial Tissue", "Connective Tissue", "Muscle Tissue", "Nervous Tissue",
+      "Organs", "Organ Systems", "Histology", "Cellular Matrix", "Basement Membrane",
+      "Collagen", "Elastin", "Smooth Muscle", "Cardiac Muscle", "Skeletal Muscle",
+      "Neurons", "Neuroglia", "Tissue Repair", "Inflammation", "Regeneration"
+    ],
+    sections: [
+      {
+        title: "Epithelial Tissue Types and Functions",
+        content: [
+          "Epithelial tissue covers body surfaces and forms protective barriers",
+          "Simple epithelium has single cell layer for absorption and secretion",
+          "Stratified epithelium has multiple layers for protection from wear",
+          "Squamous cells are flat for diffusion, cuboidal for secretion, columnar for absorption",
+          "Glandular epithelium forms exocrine and endocrine glands",
+          "Basement membrane anchors epithelium to underlying connective tissue",
+          "Rapid regeneration allows quick healing of surface injuries",
+          "Loss of epithelial integrity leads to infection and fluid loss"
+        ],
+        clinicalPearls: [
+          "Epithelial damage is first sign of many disease processes",
+          "Skin breakdown creates infection risk and fluid loss",
+          "Mucous membranes protect against pathogen invasion"
+        ]
+      },
+      {
+        title: "Connective Tissue Structure and Support",
+        content: [
+          "Connective tissue provides structural framework throughout the body",
+          "Extracellular matrix contains collagen fibers for strength",
+          "Elastin fibers provide flexibility and stretch properties",
+          "Bone tissue provides rigid support and mineral storage",
+          "Cartilage cushions joints and supports flexible structures",
+          "Blood is specialized connective tissue for transport",
+          "Adipose tissue stores energy and provides insulation",
+          "Connective tissue healing involves scar formation"
+        ],
+        clinicalPearls: [
+          "Connective tissue disorders affect multiple body systems",
+          "Poor nutrition impairs collagen synthesis and healing",
+          "Age-related changes reduce tissue elasticity and strength"
+        ]
+      },
+      {
+        title: "Muscle Tissue Contraction and Movement",
+        content: [
+          "Skeletal muscle attaches to bones for voluntary movement",
+          "Cardiac muscle forms heart wall for involuntary pumping",
+          "Smooth muscle in organs for involuntary regulation",
+          "Actin and myosin filaments enable muscle contraction",
+          "Calcium regulation controls contraction strength",
+          "ATP provides energy for muscle fiber contraction",
+          "Muscle fatigue occurs with prolonged activity",
+          "Muscle injury can affect organ function significantly"
+        ],
+        clinicalPearls: [
+          "Cardiac muscle damage leads to heart failure",
+          "Smooth muscle spasm causes organ dysfunction",
+          "Muscle weakness may indicate neurological problems"
+        ]
+      },
+      {
+        title: "Nervous Tissue Communication and Control",
+        content: [
+          "Neurons transmit electrical signals throughout the body",
+          "Neuroglia support and protect nervous tissue",
+          "Action potentials carry information rapidly",
+          "Synapses allow communication between neurons",
+          "Myelination increases signal transmission speed",
+          "Nervous tissue has limited regeneration capacity",
+          "Damage disrupts communication and control",
+          "Integration centers process and coordinate responses"
+        ],
+        clinicalPearls: [
+          "Nervous tissue damage often permanent",
+          "Loss of myelin affects signal transmission",
+          "Neurotransmitter imbalances affect behavior and function"
+        ]
+      }
+    ],
+    criticalConcepts: [
+      "Four tissue types work together to form functional organs",
+      "Tissue type determines injury patterns and healing potential",
+      "Understanding tissue organization helps predict disease progression",
+      "Tissue damage affects organ function and patient outcomes"
+    ],
+    flashcards: [
+      { front: "What are the four basic tissue types?", back: "Epithelial, connective, muscle, and nervous tissue", category: "definition" },
+      { front: "What tissue type covers body surfaces?", back: "Epithelial tissue - forms protective barriers and glands", category: "definition" },
+      { front: "What tissue provides structural support?", back: "Connective tissue - includes bone, cartilage, blood, and adipose", category: "definition" },
+      { front: "What tissue enables body movement?", back: "Muscle tissue - skeletal, cardiac, and smooth muscle types", category: "definition" },
+      { front: "What tissue carries electrical impulses?", back: "Nervous tissue - neurons and supporting neuroglia", category: "definition" },
+      { front: "What is the extracellular matrix?", back: "Non-cellular component of connective tissue containing collagen and elastin", category: "definition" },
+      { front: "What is the difference between simple and stratified epithelium?", back: "Simple has one cell layer, stratified has multiple layers for protection", category: "clinical" },
+      { front: "What provides energy for muscle contraction?", back: "ATP (adenosine triphosphate) powers actin-myosin interaction", category: "clinical" },
+      { front: "What limits nervous tissue repair?", back: "Limited regeneration capacity, especially in central nervous system", category: "clinical" },
+      { front: "What anchors epithelial tissue?", back: "Basement membrane connects epithelium to underlying connective tissue", category: "definition" }
+    ]
   };
 
-  const bodySystem3StudyNotes: ChapterData = {
+  /*const bodySystem3StudyNotes: ChapterData = {
     title: "BONUS: Human Body Systems - Chapter 3: Skeletal System 🦴",
     description: "Bone structure, joint function, and musculoskeletal support framework",
     module: "Body Systems",
@@ -6889,116 +6978,293 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What are the three types of joints?", back: "Immovable (fibrous), slightly movable (cartilaginous), freely movable (synovial)", category: "definition" },
       { front: "What is a fracture?", back: "A break or crack in bone continuity", category: "definition" }
     ]
-  };
+  };*/
 
-  const bodySystem4StudyNotes: ChapterData = {
-    title: "BONUS: Human Body Systems - Chapter 4: Muscular System 💪",
-    description: "Muscle types, contraction mechanisms, and movement coordination",
-    module: "Body Systems",
-    scope: "EMT-B",
-    protocols: ["Muscle Types", "Contraction Physiology", "Movement Patterns"],
+  const bodySystem3StudyNotes: ChapterData = {
+    title: "BONUS: Human Body Systems - Chapter 3: Skeletal System",
+    description: "Comprehensive study of bone structure, joint mechanics, and musculoskeletal framework supporting body function",
+    module: "BONUS: Human Body Systems",
+    scope: "EMT-B" as const,
+    protocols: ["Bone Assessment", "Joint Evaluation", "Fracture Recognition", "Musculoskeletal Support"],
     learningObjectives: [
-      "Distinguish between muscle types and functions",
-      "Understand muscle contraction mechanisms", 
-      "Recognize muscle injury patterns",
-      "Apply muscle physiology to patient assessment"
+      "Identify major bones, landmarks, and anatomical structures",
+      "Classify joint types and understand movement mechanisms",
+      "Recognize fracture patterns and their clinical implications",
+      "Apply skeletal anatomy knowledge to trauma assessment and treatment",
+      "Understand bone healing processes and factors affecting recovery"
     ],
-    keyTerms: ["Skeletal Muscle", "Cardiac Muscle", "Smooth Muscle", "Contraction", "Tendon"],
-    criticalConcepts: [
-      "Different muscle types serve specific functions",
-      "Muscle contraction requires energy and proper innervation",
-      "Muscle injury affects movement and function"
+    keyTerms: [
+      "Compact Bone", "Spongy Bone", "Periosteum", "Endosteum", "Osteoblasts",
+      "Osteoclasts", "Osteocytes", "Red Bone Marrow", "Yellow Bone Marrow",
+      "Diaphysis", "Epiphysis", "Metaphysis", "Growth Plate", "Synovial Joint",
+      "Cartilaginous Joint", "Fibrous Joint", "Synovial Fluid", "Articular Cartilage",
+      "Ligaments", "Tendons", "Fracture", "Dislocation", "Subluxation"
     ],
     sections: [
       {
-        title: "Muscle Function",
+        title: "Bone Structure and Composition",
         content: [
-          "**Skeletal muscle** enables voluntary movement 💪",
-          "**Cardiac muscle** pumps blood through circulation",
-          "**Smooth muscle** controls involuntary organ functions"
+          "Compact bone forms dense outer layer providing strength and protection",
+          "Spongy bone contains trabeculae creating lightweight internal structure",
+          "Periosteum is outer membrane containing blood vessels and nerve fibers",
+          "Endosteum lines internal bone surfaces and contains bone-forming cells",
+          "Osteoblasts build new bone tissue during growth and repair",
+          "Osteoclasts break down old bone tissue for remodeling",
+          "Osteocytes maintain bone tissue and respond to mechanical stress",
+          "Bone matrix consists of collagen fibers and calcium phosphate minerals"
+        ],
+        clinicalPearls: [
+          "Adult skeleton contains 206 bones after growth plate closure",
+          "Bone remodeling continues throughout life in response to stress",
+          "Calcium and vitamin D essential for bone strength and healing"
+        ]
+      },
+      {
+        title: "Bone Marrow and Blood Cell Production",
+        content: [
+          "Red bone marrow produces blood cells through hematopoiesis",
+          "Found in spongy bone of skull, vertebrae, ribs, and pelvis",
+          "Yellow bone marrow stores fat in long bone cavities",
+          "Can convert to red marrow during increased blood cell demand",
+          "Produces red blood cells, white blood cells, and platelets",
+          "Bone marrow function affected by disease and medications",
+          "Bone marrow biopsy may be needed for blood disorders",
+          "Radiation and chemotherapy can suppress marrow function"
+        ],
+        clinicalPearls: [
+          "Bone marrow produces 500 billion blood cells daily",
+          "Decreased marrow function leads to anemia and bleeding",
+          "Bone pain may indicate marrow involvement in disease"
+        ]
+      },
+      {
+        title: "Joint Classification and Movement",
+        content: [
+          "Fibrous joints are immovable connected by dense connective tissue",
+          "Cartilaginous joints are slightly movable with cartilage connections",
+          "Synovial joints are freely movable with synovial fluid lubrication",
+          "Ball-and-socket joints allow movement in all directions",
+          "Hinge joints permit flexion and extension movements only",
+          "Pivot joints enable rotational movement around single axis",
+          "Gliding joints allow sliding movements between flat surfaces",
+          "Articular cartilage reduces friction and absorbs shock"
+        ],
+        clinicalPearls: [
+          "Joint type determines injury patterns and treatment approaches",
+          "Synovial joints most commonly affected by arthritis",
+          "Joint immobilization leads to stiffness and muscle weakness"
+        ]
+      },
+      {
+        title: "Fracture Types and Healing Process",
+        content: [
+          "Simple fractures don't break through skin surface",
+          "Compound fractures communicate with external environment",
+          "Comminuted fractures have multiple bone fragments",
+          "Greenstick fractures are incomplete breaks in children",
+          "Pathological fractures occur through diseased bone",
+          "Stress fractures develop from repetitive loading",
+          "Fracture healing involves inflammation, repair, and remodeling phases",
+          "Age, nutrition, and blood supply affect healing rate"
+        ],
+        clinicalPearls: [
+          "Compound fractures require immediate surgical intervention",
+          "Children's bones heal faster due to active growth",
+          "Poor healing may indicate infection or inadequate stabilization"
         ]
       }
     ],
+    criticalConcepts: [
+      "Skeletal system provides structural support and protects vital organs",
+      "Bone is living tissue that constantly remodels and adapts",
+      "Joint type determines movement capabilities and injury patterns",
+      "Fracture healing is complex process requiring proper conditions",
+      "Understanding bone anatomy essential for trauma assessment"
+    ],
     flashcards: [
-      { front: "What are the three types of muscle tissue?", back: "Skeletal, cardiac, and smooth muscle", category: "definition" },
-      { front: "Which muscle type is voluntary?", back: "Skeletal muscle - under conscious control", category: "definition" },
-      { front: "Where is cardiac muscle found?", back: "Only in the heart - pumps blood", category: "definition" },
-      { front: "What controls smooth muscle?", back: "Autonomic nervous system - involuntary", category: "definition" },
-      { front: "What connects muscle to bone?", back: "Tendons - fibrous connective tissue", category: "definition" }
+      { front: "How many bones are in the adult human body?", back: "206 bones in the adult skeleton after growth plate closure", category: "definition" },
+      { front: "What are the two types of bone tissue?", back: "Compact (dense outer layer) and spongy (cancellous inner structure)", category: "definition" },
+      { front: "Where is red bone marrow found?", back: "In spongy bone of skull, vertebrae, ribs, and pelvis - produces blood cells", category: "definition" },
+      { front: "What are the three types of joints?", back: "Fibrous (immovable), cartilaginous (slightly movable), synovial (freely movable)", category: "definition" },
+      { front: "What is a compound fracture?", back: "A fracture that communicates with the external environment through skin break", category: "definition" },
+      { front: "What cells build new bone tissue?", back: "Osteoblasts - bone-forming cells active during growth and repair", category: "definition" },
+      { front: "What cells break down old bone tissue?", back: "Osteoclasts - bone-resorbing cells involved in remodeling", category: "definition" },
+      { front: "What is the periosteum?", back: "Outer bone membrane containing blood vessels and nerve fibers", category: "definition" },
+      { front: "What produces blood cells in bones?", back: "Red bone marrow through the process of hematopoiesis", category: "clinical" },
+      { front: "What type of joint allows movement in all directions?", back: "Ball-and-socket joint (like hip and shoulder)", category: "clinical" }
+    ]
+  };
+
+  const bodySystem4StudyNotes: ChapterData = {
+    title: "BONUS: Human Body Systems - Chapter 4: Muscular System",
+    description: "Comprehensive study of muscle types, contraction mechanisms, and movement coordination in human physiology",
+    module: "BONUS: Human Body Systems",
+    scope: "EMT-B" as const,
+    protocols: ["Muscle Assessment", "Contraction Analysis", "Movement Evaluation", "Strength Testing"],
+    learningObjectives: [
+      "Distinguish between skeletal, cardiac, and smooth muscle types and functions",
+      "Understand muscle contraction mechanisms at cellular and molecular level",
+      "Recognize muscle injury patterns and their clinical implications",
+      "Apply muscle physiology knowledge to patient assessment and treatment",
+      "Understand factors affecting muscle function and performance"
+    ],
+    keyTerms: [
+      "Skeletal Muscle", "Cardiac Muscle", "Smooth Muscle", "Actin", "Myosin",
+      "Sarcomere", "Motor Unit", "Neuromuscular Junction", "Acetylcholine",
+      "Calcium", "ATP", "Creatine Phosphate", "Muscle Fatigue", "Tetanus",
+      "Isotonic Contraction", "Isometric Contraction", "Tendons", "Fascia",
+      "Muscle Fiber Types", "Fast Twitch", "Slow Twitch", "Hypertrophy", "Atrophy"
+    ],
+    sections: [
+      {
+        title: "Skeletal Muscle Structure and Function",
+        content: [
+          "Skeletal muscle enables voluntary movement under conscious control",
+          "Composed of muscle fibers containing contractile proteins",
+          "Sarcomeres are functional units containing actin and myosin",
+          "Motor units consist of motor neuron and muscle fibers it innervates",
+          "Neuromuscular junction transmits nerve signals to muscle",
+          "Calcium release triggers actin-myosin binding and contraction",
+          "ATP provides energy for muscle contraction and relaxation",
+          "Muscle fatigue occurs when energy demand exceeds supply"
+        ],
+        clinicalPearls: [
+          "Skeletal muscle makes up 40-50% of total body weight",
+          "Type I fibers are slow-twitch for endurance activities",
+          "Type II fibers are fast-twitch for power and speed"
+        ]
+      },
+      {
+        title: "Cardiac Muscle Properties",
+        content: [
+          "Cardiac muscle found only in heart wall myocardium",
+          "Involuntary muscle with intrinsic rhythmic contractions",
+          "Intercalated discs connect cardiac muscle cells",
+          "Gap junctions allow electrical signal transmission",
+          "Coronary circulation supplies oxygen and nutrients",
+          "Cannot regenerate significantly after injury",
+          "Sensitive to oxygen deprivation and toxins",
+          "Damaged cardiac muscle replaced by scar tissue"
+        ],
+        clinicalPearls: [
+          "Cardiac muscle damage is often permanent",
+          "Heart muscle has high oxygen requirements",
+          "Electrical conduction system coordinates contractions"
+        ]
+      },
+      {
+        title: "Smooth Muscle Control and Function",
+        content: [
+          "Smooth muscle controls involuntary organ functions",
+          "Found in blood vessels, airways, and digestive tract",
+          "Controlled by autonomic nervous system",
+          "Can maintain sustained contractions with less energy",
+          "Responds to hormones and local chemical factors",
+          "Slower contraction and relaxation than skeletal muscle",
+          "Can change length without losing tension",
+          "Essential for blood pressure and organ function regulation"
+        ],
+        clinicalPearls: [
+          "Smooth muscle spasm causes organ dysfunction",
+          "Blood vessel smooth muscle controls blood pressure",
+          "Airway smooth muscle affects breathing"
+        ]
+      },
+      {
+        title: "Muscle Injury and Disease",
+        content: [
+          "Muscle strains involve fiber tearing from overstretching",
+          "Contusions cause bleeding within muscle tissue",
+          "Muscle cramps result from involuntary sustained contractions",
+          "Rhabdomyolysis involves muscle breakdown releasing toxins",
+          "Compartment syndrome increases pressure within muscle compartments",
+          "Muscle atrophy occurs from disuse or denervation",
+          "Muscle weakness may indicate neurological problems",
+          "Recovery depends on severity and treatment timing"
+        ],
+        clinicalPearls: [
+          "Severe muscle injury can cause kidney damage",
+          "Compartment syndrome requires emergency treatment",
+          "Muscle weakness patterns help locate neurological problems"
+        ]
+      }
+    ],
+    criticalConcepts: [
+      "Three muscle types serve different physiological functions",
+      "Muscle contraction requires energy, calcium, and nerve stimulation",
+      "Understanding muscle physiology helps assess injury severity",
+      "Muscle damage can affect organ function and patient outcomes"
+    ],
+    flashcards: [
+      { front: "What are the three types of muscle tissue?", back: "Skeletal (voluntary), cardiac (heart), and smooth (involuntary organ)", category: "definition" },
+      { front: "Which muscle type is under voluntary control?", back: "Skeletal muscle - controlled by somatic nervous system", category: "definition" },
+      { front: "Where is cardiac muscle found?", back: "Only in the heart wall (myocardium) - involuntary pumping", category: "definition" },
+      { front: "What controls smooth muscle?", back: "Autonomic nervous system - involuntary organ functions", category: "definition" },
+      { front: "What connects muscle to bone?", back: "Tendons - strong fibrous connective tissue", category: "definition" },
+      { front: "What are the contractile proteins in muscle?", back: "Actin (thin filaments) and myosin (thick filaments)", category: "definition" },
+      { front: "What triggers muscle contraction?", back: "Calcium release allows actin-myosin binding in presence of ATP", category: "clinical" },
+      { front: "What is a motor unit?", back: "Motor neuron and all muscle fibers it innervates", category: "definition" },
+      { front: "What is rhabdomyolysis?", back: "Muscle breakdown releasing toxins that can damage kidneys", category: "clinical" },
+      { front: "What connects cardiac muscle cells?", back: "Intercalated discs with gap junctions for electrical transmission", category: "definition" }
     ]
   };
 
   const bodySystem5StudyNotes: ChapterData = {
-    title: "BONUS: Human Body Systems - Chapter 5: Cardiovascular System ❤️",
-    description: "Heart structure, blood vessels, circulation pathways, and cardiac physiology",
-    module: "Body Systems",
-    scope: "EMT-B",
-    protocols: ["Cardiac Anatomy", "Blood Vessels", "Circulation", "Blood Pressure"],
+    title: "BONUS: Human Body Systems - Chapter 5: Cardiovascular System",
+    description: "Comprehensive study of heart structure, blood vessels, and circulation physiology",
+    module: "BONUS: Human Body Systems",
+    scope: "EMT-B" as const,
+    protocols: ["Cardiac Assessment", "Circulation Evaluation", "Blood Pressure Monitoring"],
     learningObjectives: [
-      "Identify heart chambers and major vessels",
-      "Understand circulation pathways",
-      "Recognize cardiovascular assessment findings",
-      "Apply cardiac physiology to emergency care"
+      "Identify heart chambers, valves, and major blood vessels",
+      "Understand systemic and pulmonary circulation pathways", 
+      "Apply cardiovascular physiology to patient assessment"
     ],
-    keyTerms: ["Atria", "Ventricles", "Arteries", "Veins", "Capillaries"],
-    criticalConcepts: [
-      "Heart pumps blood through two circulation circuits",
-      "Blood pressure reflects cardiac output and vascular resistance", 
-      "Cardiovascular failure leads to shock states"
-    ],
+    keyTerms: ["Atria", "Ventricles", "Arteries", "Veins", "Capillaries", "Cardiac Output"],
     sections: [
       {
-        title: "Heart and Circulation",
+        title: "Heart Structure and Function",
         content: [
-          "**Four-chamber heart** pumps blood through body ❤️",
-          "**Arteries** carry blood away from heart",
-          "**Veins** return blood to heart"
+          "Four-chamber heart pumps blood through pulmonary and systemic circuits",
+          "Right side handles deoxygenated blood to lungs", 
+          "Left side pumps oxygenated blood to body",
+          "Heart valves prevent backflow during cardiac cycle"
         ]
       }
     ],
+    criticalConcepts: ["Heart failure leads to inadequate perfusion"],
     flashcards: [
-      { front: "How many chambers does the heart have?", back: "Four chambers - two atria and two ventricles", category: "definition" },
-      { front: "Which vessels carry blood away from the heart?", back: "Arteries - under high pressure", category: "definition" },
-      { front: "Which vessels return blood to the heart?", back: "Veins - under low pressure", category: "definition" },
-      { front: "What are the smallest blood vessels?", back: "Capillaries - where gas and nutrient exchange occurs", category: "definition" },
+      { front: "How many chambers does the heart have?", back: "Four - two atria and two ventricles", category: "definition" },
       { front: "What is cardiac output?", back: "Amount of blood pumped by heart per minute", category: "definition" }
     ]
   };
 
   const bodySystem6StudyNotes: ChapterData = {
-    title: "BONUS: Human Body Systems - Chapter 6: Respiratory System 🫁",
-    description: "Airway anatomy, breathing mechanics, and gas exchange processes",
-    module: "Body Systems", 
-    scope: "EMT-B",
-    protocols: ["Airway Anatomy", "Breathing Mechanics", "Gas Exchange"],
+    title: "BONUS: Human Body Systems - Chapter 6: Respiratory System",
+    description: "Comprehensive study of respiratory anatomy, gas exchange, and breathing mechanics",
+    module: "BONUS: Human Body Systems",
+    scope: "EMT-B" as const,
+    protocols: ["Airway Assessment", "Breathing Evaluation", "Gas Exchange Analysis"],
     learningObjectives: [
-      "Identify airway structures and functions",
-      "Understand breathing mechanics",
-      "Recognize respiratory assessment findings", 
-      "Apply respiratory physiology to airway management"
+      "Identify respiratory structures and their functions",
+      "Understand gas exchange mechanisms and breathing control",
+      "Apply respiratory physiology to emergency care"
     ],
-    keyTerms: ["Trachea", "Bronchi", "Alveoli", "Diaphragm", "Gas Exchange"],
-    criticalConcepts: [
-      "Upper airway warms, filters, and humidifies air",
-      "Lower airway conducts air to alveoli for gas exchange",
-      "Respiratory failure requires immediate intervention"
-    ],
+    keyTerms: ["Alveoli", "Bronchi", "Diaphragm", "Gas Exchange", "Ventilation"],
     sections: [
       {
-        title: "Respiratory Structure",
+        title: "Respiratory Function",
         content: [
-          "**Upper airway** includes nose, mouth, pharynx, larynx 🫁", 
-          "**Lower airway** includes trachea, bronchi, lungs",
-          "**Alveoli** are sites of gas exchange"
+          "Alveoli are primary sites of gas exchange between air and blood",
+          "Diaphragm is the main muscle responsible for breathing",
+          "Oxygen and carbon dioxide exchange occurs across respiratory membrane"
         ]
       }
     ],
+    criticalConcepts: ["Respiratory failure affects cellular oxygenation"],
     flashcards: [
-      { front: "What structures make up the upper airway?", back: "Nose, mouth, pharynx, and larynx", category: "definition" },
-      { front: "What structures make up the lower airway?", back: "Trachea, bronchi, bronchioles, and alveoli", category: "definition" },
-      { front: "Where does gas exchange occur?", back: "Alveoli - oxygen and carbon dioxide exchange", category: "definition" },
-      { front: "What muscle is primary for breathing?", back: "Diaphragm - contracts during inspiration", category: "definition" },
-      { front: "What is tidal volume?", back: "Amount of air breathed in one normal breath", category: "definition" }
+      { front: "Where does gas exchange occur?", back: "In the alveoli of the lungs", category: "definition" },
+      { front: "What is the primary breathing muscle?", back: "The diaphragm", category: "definition" }
     ]
   };
 
@@ -7271,7 +7537,7 @@ const EMTBStudyNotes: React.FC = () => {
     ]
   };
 
-  // Convert imported chapter data to ChapterData format
+  /*// Convert imported chapter data to ChapterData format
   const chapter30StudyNotes: ChapterData = {
     title: chapter30Data.chapterTitle,
     description: "Recognition and management of thoracic trauma including breathing difficulties, pneumothorax, and cardiovascular emergencies",
@@ -7301,9 +7567,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What are signs of chest trauma?", back: "Difficulty breathing, chest pain, visible wounds, asymmetrical chest movement", category: "clinical" }
     ],
     crossReferences: ["Chapter 27: Soft-Tissue Injuries", "Chapter 29: Musculoskeletal Care"]
-  };
+  };*/
 
-  const chapter31StudyNotes: ChapterData = {
+  /*const chapter31StudyNotes: ChapterData = {
     title: chapter31Data.chapterTitle,
     description: "Comprehensive assessment and management of abdominal and genitourinary trauma with evidence-based protocols",
     module: "Module 12: Trauma",
@@ -7332,9 +7598,9 @@ const EMTBStudyNotes: React.FC = () => {
       { front: "What is the priority in abdominal trauma?", back: "Recognition of internal bleeding and rapid transport", category: "protocol" }
     ],
     crossReferences: ["Chapter 26: Bleeding Control", "Chapter 29: Musculoskeletal Care"]
-  };
+  };*/
 
-  const chapter37StudyNotes: ChapterData = {
+  /*const chapter37StudyNotes: ChapterData = {
     title: "Special Challenges",
     description: "Caring for patients with disabilities, chronic conditions, and special population considerations",
     module: "Module 13: Special Populations and Challenges",
@@ -7392,9 +7658,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 23: Behavioral Crisis Protocols",
       "Chapter 32: Pediatric Emergencies"
     ]
-  };
+  };*/
 
-  const chapter38StudyNotes: ChapterData = {
+  /*const chapter38StudyNotes: ChapterData = {
     title: "Incident Management",
     description: "Understanding incident command system, mass casualty incidents, and emergency response coordination",
     module: "Module 14: Operations",
@@ -7452,9 +7718,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 39: Ambulance Operations",
       "Chapter 40: Highway Safety"
     ]
-  };
+  };*/
 
-  const chapter39StudyNotes: ChapterData = {
+  /*const chapter39StudyNotes: ChapterData = {
     title: "Ambulance Operations",
     description: "Safe ambulance operations, equipment management, and patient transport procedures",
     module: "Module 14: Operations",
@@ -7512,9 +7778,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 38: Incident Management",
       "Chapter 40: Highway Safety"
     ]
-  };
+  };*/
 
-  const chapter40StudyNotes: ChapterData = {
+  /*const chapter40StudyNotes: ChapterData = {
     title: "Highway Safety and Vehicle Extrication",
     description: "Scene safety, traffic control, and vehicle extrication principles in roadway emergencies",
     module: "Module 14: Operations",
@@ -7572,9 +7838,9 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 38: Incident Management",
       "Chapter 39: Ambulance Operations"
     ]
-  };
+  };*/
 
-  const chapter41StudyNotes: ChapterData = {
+  /*const chapter41StudyNotes: ChapterData = {
     title: "Terrorism and Disaster Response",
     description: "Recognition of terrorist incidents, weapons of mass destruction, and disaster response procedures",
     module: "Module 14: Operations",
@@ -7632,7 +7898,7 @@ const EMTBStudyNotes: React.FC = () => {
       "Chapter 38: Incident Management",
       "Chapter 39: Ambulance Operations"
     ]
-  };
+  };*/
 
   // Chapter selection and data management
   const chapters = {

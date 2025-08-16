@@ -25,6 +25,7 @@ import EMSChatbot from './components/EMSChatbot';
 import MedicalDisclaimer from './components/MedicalDisclaimer';
 import DisclaimerPage from './components/DisclaimerPage';
 import WelcomePage from './components/WelcomePage';
+import StudentProgress from './components/student/StudentProgress';
 import { clinicalCalculators } from './data/clinical-calculators';
 import { medicationSimulations } from './data/medication-simulations';
 import { searchEngine } from './utils/search';
@@ -36,10 +37,7 @@ const StudentDashboard: React.FC = () => {
   const { user } = useAuth();
   return (
     <main className="p-6">
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-        <h1 className="text-2xl font-bold mb-2">Student Dashboard</h1>
-        <p className="text-gray-600">Welcome{user?.name ? `, ${user.name}` : ''}. Track progress, join quizzes, and continue learning.</p>
-      </div>
+      <StudentProgress />
     </main>
   );
 }
