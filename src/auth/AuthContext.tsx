@@ -67,7 +67,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         : email.includes('admin')
         ? 'admin'
         : 'student';
-      const mockUser: User = { id: 'u_' + Date.now(), name: email.split('@')[0], role, email };
+      
+      // Auto-verify demo instructor accounts for easy teacher access
+      const isInstructorVerified = email === 'instructor@example.com' || (role === 'instructor' && password === 'password123');
+      
+      const mockUser: User = { 
+        id: 'u_' + Date.now(), 
+        name: email.split('@')[0], 
+        role, 
+        email,
+        emailVerified: true,
+        isInstructorVerified 
+      };
       setUser(mockUser);
       localStorage.setItem('promedix.auth', JSON.stringify({ user: mockUser }));
     }

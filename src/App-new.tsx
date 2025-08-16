@@ -1879,7 +1879,7 @@ const ProMedixHeader = () => {
                       </h1>
                     </div>
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                  <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">
                     The Next-Gen Education Tool for Emergency Medical Services
                   </div>
                 </Link>

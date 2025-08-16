@@ -7,7 +7,7 @@ const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation() as any;
   const [email, setEmail] = useState(location.state?.prefillEmail || 'instructor@example.com');
-  const [password, setPassword] = useState('password');
+  const [password, setPassword] = useState('password123');
   const [instructorCode, setInstructorCode] = useState('');
   const [error, setError] = useState<string | null>(null);
 
@@ -16,7 +16,7 @@ const LoginPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-  await login(email, password, instructorCode || undefined);
+      await login(email, password, instructorCode || undefined);
       navigate(from, { replace: true });
     } catch (err) {
       setError('Login failed');
@@ -39,7 +39,14 @@ const LoginPage: React.FC = () => {
           </>
         )}
         <button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded px-4 py-2">Sign in</button>
-        <div className="mt-4 text-xs text-gray-500">Tip: Demo users â€” instructor@example.com / student@example.com (password: password123)</div>
+        <div className="mt-4 text-xs text-gray-500">
+          <div className="mb-2"><strong>For Teachers/Instructors:</strong></div>
+          <div>Email: instructor@example.com</div>
+          <div>Password: password123</div>
+          <div className="mt-2"><strong>For Students:</strong></div>
+          <div>Email: student@example.com</div>
+          <div>Password: password123</div>
+        </div>
       </form>
     </main>
   );

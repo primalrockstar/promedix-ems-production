@@ -7943,6 +7943,10 @@ const EMTBStudyNotes: React.FC = () => {
     chapter39: chapter39StudyNotes,
     chapter40: chapter40StudyNotes,
     chapter41: chapter41StudyNotes,
+    chapter42: chapter42StudyNotes,
+    chapter43: chapter43StudyNotes,
+    chapter44: chapter44StudyNotes,
+    chapter45: chapter45StudyNotes,
     bonus: bonusStudyNotes,
     bodySystem2: bodySystem2StudyNotes,
     bodySystem3: bodySystem3StudyNotes,
@@ -9001,6 +9005,10 @@ const EMTBStudyNotes: React.FC = () => {
               <option value="chapter39">Chapter 39: Ambulance Operations</option>
               <option value="chapter40">Chapter 40: Highway Safety and Vehicle Extrication</option>
               <option value="chapter41">Chapter 41: Terrorism and Disaster Response</option>
+              <option value="chapter42">Chapter 42: Advanced Cardiovascular Anatomy 🔬</option>
+              <option value="chapter43">Chapter 43: Advanced Respiratory Physiology 🫁</option>
+              <option value="chapter44">Chapter 44: Nervous System in Depth 🧠</option>
+              <option value="chapter45">Chapter 45: Endocrine and Metabolic Systems ⚗️</option>
               <option value="bonus">BONUS: Human Body Systems - Chapter 1: Cellular Structure & Function 🧬</option>
               <option value="bodySystem2">BONUS: Human Body Systems - Chapter 2: Tissues & Organs 🩸</option>
               <option value="bodySystem3">BONUS: Human Body Systems - Chapter 3: Skeletal System 🦴</option>
