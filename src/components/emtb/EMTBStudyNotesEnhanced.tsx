@@ -329,6 +329,14 @@ const EMTBStudyNotes: React.FC = () => {
           fieldApplications: []
         };
       });
+    } else {
+      convertedSections = [{
+        title: "Content",
+        content: ["No enhanced content structure found"],
+        clinicalPearls: [],
+        mnemonics: [],
+        fieldApplications: []
+      }];
     }
 
     return {
