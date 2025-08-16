@@ -1,6 +1,6 @@
 ﻿import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App-new'
+import App from './App-working-simple'
 import './index.css'
 
 console.log('ProMedix EMS Loading...')
