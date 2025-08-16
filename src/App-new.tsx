@@ -1640,7 +1640,7 @@ const ProMedixHeader = () => {
     { id: 'protocols', label: 'Protocols', path: '/protocols', icon: ClipboardList },
     { id: 'medications', label: 'Medications', path: '/medications', icon: Heart },
     { id: 'tools', label: 'Tools & Reference', path: '/tools', icon: Calculator },
-    { id: 'quiz', label: 'Practice Quiz', path: '/quiz', icon: CheckSquare },
+    { id: 'quiz', label: 'Practice Quiz', path: '/practice-quiz', icon: CheckSquare },
     { id: 'ai', label: 'AI Assistant', path: '/ai-assistant', icon: MessageCircle },
     { id: 'progress', label: 'Progress', path: '/progress', icon: BarChart3 },
     // Auth quick actions are handled by the top-right AuthMenu
