@@ -30,6 +30,21 @@
 			"type": "shell",
 			"command": "git push origin main",
 			"group": "build"
+		},
+		{
+			"label": "Commit Tasks",
+			"type": "shell",
+			"command": "git commit -m 'Add VS Code git helper tasks'",
+			"group": "build"
+		},
+		{
+			"label": "Final Push",
+			"type": "shell",
+			"command": "git add . && git commit -m 'Update VS Code tasks' && git push origin main",
+			"args": [
+				"-Command"
+			],
+			"group": "build"
 		}
 	]
 }
