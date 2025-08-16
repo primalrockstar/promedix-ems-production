@@ -12,6 +12,24 @@
 			"type": "shell",
 			"command": "git add .",
 			"group": "build"
+		},
+		{
+			"label": "Git Commit",
+			"type": "shell",
+			"command": "git commit -m \"Remove dashboard statistics cards\"",
+			"group": "build"
+		},
+		{
+			"label": "Git Commit Fixed",
+			"type": "shell",
+			"command": "git commit -m 'Remove dashboard statistics cards'",
+			"group": "build"
+		},
+		{
+			"label": "Git Push",
+			"type": "shell",
+			"command": "git push origin main",
+			"group": "build"
 		}
 	]
 }
