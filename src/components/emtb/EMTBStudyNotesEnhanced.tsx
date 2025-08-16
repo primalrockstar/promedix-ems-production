@@ -141,43 +141,127 @@ const EMTBStudyNotes: React.FC = () => {
 
   // Helper function to convert enhanced chapter data to ChapterData format
   const convertToChapterData = (studyData: any, flashcardData: any[] = []): ChapterData => {
-    // Convert sections based on the structure in the data files
-    const convertedSections = studyData.sections?.map((section: any) => {
-      if (section.content) {
-        // Handle content that might be arrays of objects or strings
-        let contentArray: string[] = [];
-        if (Array.isArray(section.content)) {
-          contentArray = section.content.map((item: any) => {
-            if (typeof item === 'string') return item;
-            if (item.subtitle && item.points) {
-              return `${item.subtitle}: ${Array.isArray(item.points) ? item.points.join(', ') : item.points}`;
-            }
-            if (item.points) {
-              return Array.isArray(item.points) ? item.points.join(', ') : item.points;
-            }
-            return String(item);
-          });
-        } else {
-          contentArray = [String(section.content)];
-        }
+    let convertedSections: StudySection[] = [];
 
+    // Handle enhanced chapter structure (like Chapter 1)
+    if (studyData.systemComponents || studyData.historicalOverview || studyData.futureDirections) {
+      // Historical Overview Section
+      if (studyData.historicalOverview) {
+        const historyContent: string[] = [];
+        if (studyData.historicalOverview.description) {
+          historyContent.push(studyData.historicalOverview.description);
+        }
+        if (studyData.historicalOverview.militaryInfluence) {
+          historyContent.push("**Military Influence**: " + studyData.historicalOverview.militaryInfluence.description);
+          if (studyData.historicalOverview.militaryInfluence.keyDevelopments) {
+            historyContent.push(...studyData.historicalOverview.militaryInfluence.keyDevelopments);
+          }
+        }
+        if (studyData.historicalOverview.civilianDevelopment) {
+          historyContent.push("**Civilian Development Timeline**:");
+          Object.entries(studyData.historicalOverview.civilianDevelopment).forEach(([year, development]) => {
+            historyContent.push(`**${year}**: ${development}`);
+          });
+        }
+        convertedSections.push({
+          title: studyData.historicalOverview.title || "History and Development of EMS",
+          content: historyContent,
+          clinicalPearls: [],
+          mnemonics: [],
+          fieldApplications: []
+        });
+      }
+
+      // System Components Section
+      if (studyData.systemComponents) {
+        Object.entries(studyData.systemComponents).forEach(([key, component]: [string, any]) => {
+          if (key !== 'title' && typeof component === 'object') {
+            const content: string[] = [];
+            if (component.description) content.push(component.description);
+            if (component.elements) content.push(...component.elements);
+            if (component.levels) {
+              content.push("**Training Levels**:");
+              Object.entries(component.levels).forEach(([level, details]: [string, any]) => {
+                content.push(`**${level}**: ${details.scope} (Training: ${details.training})`);
+              });
+            }
+            if (component.qualityIndicators) {
+              content.push("**Quality Indicators**:");
+              content.push(...component.qualityIndicators);
+            }
+            if (component.applications) content.push(...component.applications);
+            if (component.goals) content.push(...component.goals);
+            
+            convertedSections.push({
+              title: component.component || component.title || key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()),
+              content,
+              clinicalPearls: [],
+              mnemonics: [],
+              fieldApplications: []
+            });
+          }
+        });
+      }
+
+      // Future Directions Section
+      if (studyData.futureDirections) {
+        const futureContent: string[] = [];
+        Object.entries(studyData.futureDirections).forEach(([key, section]: [string, any]) => {
+          if (key !== 'title' && typeof section === 'object') {
+            futureContent.push(`**${section.description || key}**`);
+            if (section.trends) futureContent.push(...section.trends);
+            if (section.applications) futureContent.push(...section.applications);
+            if (section.goals) futureContent.push(...section.goals);
+          }
+        });
+        convertedSections.push({
+          title: "Future Directions in EMS",
+          content: futureContent,
+          clinicalPearls: [],
+          mnemonics: [],
+          fieldApplications: []
+        });
+      }
+    }
+    // Handle standard sections structure
+    else if (studyData.sections) {
+      convertedSections = studyData.sections.map((section: any) => {
+        if (section.content) {
+          // Handle content that might be arrays of objects or strings
+          let contentArray: string[] = [];
+          if (Array.isArray(section.content)) {
+            contentArray = section.content.map((item: any) => {
+              if (typeof item === 'string') return item;
+              if (item.subtitle && item.points) {
+                return `${item.subtitle}: ${Array.isArray(item.points) ? item.points.join(', ') : item.points}`;
+              }
+              if (item.points) {
+                return Array.isArray(item.points) ? item.points.join(', ') : item.points;
+              }
+              return String(item);
+            });
+          } else {
+            contentArray = [String(section.content)];
+          }
+
+          return {
+            title: section.title,
+            content: contentArray,
+            clinicalPearls: section.clinicalPearls || [],
+            mnemonics: section.mnemonics || [],
+            fieldApplications: section.fieldApplications || []
+          };
+        }
+        
         return {
           title: section.title,
-          content: contentArray,
-          clinicalPearls: section.clinicalPearls || [],
-          mnemonics: section.mnemonics || [],
-          fieldApplications: section.fieldApplications || []
+          content: [section.description || 'Enhanced content available'],
+          clinicalPearls: [],
+          mnemonics: [],
+          fieldApplications: []
         };
-      }
-      
-      return {
-        title: section.title,
-        content: [section.description || 'Enhanced content available'],
-        clinicalPearls: [],
-        mnemonics: [],
-        fieldApplications: []
-      };
-    }) || [];
+      });
+    }
 
     return {
       title: studyData.title || studyData.chapterTitle || "Enhanced Chapter",
@@ -186,10 +270,18 @@ const EMTBStudyNotes: React.FC = () => {
       scope: "EMT-B" as const,
       protocols: studyData.protocols || [],
       learningObjectives: studyData.learningObjectives || studyData.objectives || [],
-      keyTerms: studyData.keyTerms ? Object.entries(studyData.keyTerms).map(([term, definition]) => ({
-        term,
-        definition: String(definition)
-      })) : [],
+      keyTerms: studyData.keyTerms ? (
+        Array.isArray(studyData.keyTerms) 
+          ? studyData.keyTerms.map((item: any) => 
+              typeof item === 'object' && item.term && item.definition 
+                ? { term: item.term, definition: item.definition }
+                : { term: String(item), definition: '' }
+            )
+          : Object.entries(studyData.keyTerms).map(([term, definition]) => ({
+              term,
+              definition: String(definition)
+            }))
+      ) : [],
       sections: convertedSections,
       criticalConcepts: studyData.clinicalPearls || studyData.criticalConcepts || [],
       flashcards: flashcardData.map((card: any) => ({
