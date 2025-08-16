@@ -1306,7 +1306,7 @@ const [progress, setProgress] = useState({
             
             <div className="max-w-7xl mx-auto pb-4">
             <Routes>
-            <Route path="/" element={<StudentDashboard />} />
+            <Route path="/" element={<EMTBNavigation />} />
             <Route path="/modules" element={<StudyModulesPage />} />
             <Route path="/modules/:moduleId" element={<ModuleDetailPage />} />
             <Route path="/chapter/:chapterId" element={<ChapterPage />} />
