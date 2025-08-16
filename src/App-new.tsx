@@ -1287,22 +1287,21 @@ const [progress, setProgress] = useState({
   return (
     <AuthProvider>
       <Router>
-        {showWelcome && (
+        {showWelcome ? (
           <WelcomePage onComplete={handleWelcomeComplete} />
-        )}
-        {showFullDisclaimer && (
+        ) : showFullDisclaimer ? (
           <DisclaimerPage onComplete={handleDisclaimerComplete} autoAdvance={true} />
-        )}
-        <div className="min-h-screen font-roboto pb-16 lg:pb-0">
-          {showDisclaimerBanner && !showWelcome && !showFullDisclaimer && (
-            <MedicalDisclaimer 
-              variant="banner" 
-              onClose={() => setShowDisclaimerBanner(false)}
-              showOnce={true}
-            />
-          )}
-          
-          <div className="max-w-7xl mx-auto pb-4">
+        ) : (
+          <div className="min-h-screen font-roboto pb-16 lg:pb-0">
+            {showDisclaimerBanner && (
+              <MedicalDisclaimer 
+                variant="banner" 
+                onClose={() => setShowDisclaimerBanner(false)}
+                showOnce={true}
+              />
+            )}
+            
+            <div className="max-w-7xl mx-auto pb-4">
             <Routes>
             <Route path="/" element={<Dashboard progress={progress} />} />
             <Route path="/modules" element={<StudyModulesPage />} />
@@ -1404,6 +1403,7 @@ const [progress, setProgress] = useState({
           
           <EMSChatbot setActiveTab={(tab) => console.log('Chatbot navigation:', tab)} />
         </div>
+        )}
       </Router>
     </AuthProvider>
   );
