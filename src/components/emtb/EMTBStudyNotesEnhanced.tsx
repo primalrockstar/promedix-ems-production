@@ -118,7 +118,7 @@ interface ChapterData {
   module: string;
   scope: 'EMT-B' | 'AEMT' | 'Paramedic';
   learningObjectives: string[];
-  keyTerms: string[];
+  keyTerms: (string | { term: string; definition: string; })[];
   protocols: string[];
   sections: StudySection[];
   criticalConcepts?: string[];
@@ -186,7 +186,10 @@ const EMTBStudyNotes: React.FC = () => {
       scope: "EMT-B" as const,
       protocols: studyData.protocols || [],
       learningObjectives: studyData.learningObjectives || studyData.objectives || [],
-      keyTerms: studyData.keyTerms ? Object.keys(studyData.keyTerms) : [],
+      keyTerms: studyData.keyTerms ? Object.entries(studyData.keyTerms).map(([term, definition]) => ({
+        term,
+        definition: String(definition)
+      })) : [],
       sections: convertedSections,
       criticalConcepts: studyData.clinicalPearls || studyData.criticalConcepts || [],
       flashcards: flashcardData.map((card: any) => ({
@@ -299,7 +302,13 @@ const EMTBStudyNotes: React.FC = () => {
       "Apply cellular concepts to disease processes",
       "Integrate cellular biology with patient care"
     ],
-    keyTerms: ["Cell Membrane", "Organelles", "Diffusion", "Osmosis", "Metabolism"],
+    keyTerms: [
+      { term: "Cell Membrane", definition: "The flexible barrier that surrounds cells and controls what enters and exits" },
+      { term: "Organelles", definition: "Specialized structures within cells that perform specific functions" },
+      { term: "Diffusion", definition: "The movement of substances from high to low concentration" },
+      { term: "Osmosis", definition: "The movement of water across a membrane to balance concentrations" },
+      { term: "Metabolism", definition: "The chemical processes that maintain life in cells" }
+    ],
     criticalConcepts: [
       "All body functions depend on proper cellular function",
       "Cellular dysfunction leads to tissue and organ failure",
@@ -7994,8 +8003,12 @@ const EMTBStudyNotes: React.FC = () => {
     textContent += "\\n";
 
     textContent += "KEY TERMS:\\n";
-    currentChapter.keyTerms.forEach((term) => {
-      textContent += `• ${term}\\n`;
+    currentChapter.keyTerms.forEach((termObj) => {
+      if (typeof termObj === 'string') {
+        textContent += `• ${termObj}\\n`;
+      } else {
+        textContent += `• ${termObj.term}: ${termObj.definition}\\n`;
+      }
     });
     textContent += "\\n";
 
@@ -8110,14 +8123,27 @@ const EMTBStudyNotes: React.FC = () => {
 
       // Search key terms
       chapter.keyTerms?.forEach(term => {
-        if (term.toLowerCase().includes(searchLower)) {
-          results.push({
-            type: 'Key Term',
-            chapterTitle: chapter.title,
-            chapterKey,
-            title: term,
-            content: `Key medical term: ${term}`
-          });
+        if (typeof term === 'string') {
+          if (term.toLowerCase().includes(searchLower)) {
+            results.push({
+              type: 'Key Term',
+              chapterTitle: chapter.title,
+              chapterKey,
+              title: term,
+              content: `Key medical term: ${term}`
+            });
+          }
+        } else {
+          if (term.term.toLowerCase().includes(searchLower) || 
+              term.definition.toLowerCase().includes(searchLower)) {
+            results.push({
+              type: 'Key Term',
+              chapterTitle: chapter.title,
+              chapterKey,
+              title: term.term,
+              content: term.definition
+            });
+          }
         }
       });
 
@@ -8645,10 +8671,24 @@ const EMTBStudyNotes: React.FC = () => {
           <Shield className="h-8 w-8 text-red-600 mb-3" />
           <h3 className="text-lg font-semibold text-red-800 mb-2">Key Terms</h3>
           <div className="grid grid-cols-1 gap-2 text-red-700">
-            {currentChapter.keyTerms.map((term, index) => (
-              <div key={index} className="text-base font-medium flex items-center">
-                <span className="text-red-500 mr-3">•</span>
-                <span>{term}</span>
+            {currentChapter.keyTerms.map((termObj, index) => (
+              <div key={index} className="text-base leading-relaxed">
+                {typeof termObj === 'string' ? (
+                  <div className="font-medium flex items-center">
+                    <span className="text-red-500 mr-3">•</span>
+                    <span>{termObj}</span>
+                  </div>
+                ) : (
+                  <>
+                    <div className="font-semibold text-red-800 mb-1 flex items-start">
+                      <span className="text-red-500 mr-3 mt-1">•</span>
+                      <span>{termObj.term}</span>
+                    </div>
+                    <div className="text-red-600 text-sm ml-6 leading-relaxed">
+                      {termObj.definition}
+                    </div>
+                  </>
+                )}
               </div>
             ))}
           </div>
