@@ -1241,42 +1241,22 @@ const CalculatorRunner = ({ calculator }: { calculator: any }) => {
 
 // Main App Component
 function App() {
-    // Dark mode state management
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const saved = localStorage.getItem('darkMode');
-    return saved ? JSON.parse(saved) : false;
-  });
+  return (
+    <div style={{
+      backgroundColor: 'red', 
+      color: 'white', 
+      padding: '50px', 
+      fontSize: '30px',
+      minHeight: '100vh'
+    }}>
+      🚨 MINIMAL TEST - React is working if you see this!
+      <br />
+      Date: {new Date().toISOString()}
+    </div>
+  );
+}
 
-  const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    localStorage.setItem('darkMode', JSON.stringify(newMode));
-  };
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDarkMode);
-  }, [isDarkMode]);
-const [progress, setProgress] = useState({
-    modulesCompleted: 2,
-    totalModules: 14,
-    chaptersCompleted: 8,
-    totalChapters: 41,
-    quizAverage: 87,
-    studyTime: 24,
-    streak: 7
-  });
-
-  const [showDisclaimerBanner, setShowDisclaimerBanner] = useState(() => {
-    return false; // Disabled for testing
-  });
-
-  const [showWelcome, setShowWelcome] = useState(() => {
-    return false; // Disabled for testing - go straight to main app
-  });
-
-  const [showFullDisclaimer, setShowFullDisclaimer] = useState(false);
-
-  const handleWelcomeComplete = () => {
+export default App;
     localStorage.setItem('promedix_welcome_seen', 'true');
     setShowWelcome(false);
     setShowFullDisclaimer(true);
