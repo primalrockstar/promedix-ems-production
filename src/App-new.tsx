@@ -1994,118 +1994,6 @@ const MoreMenu: React.FC<{ items: { id: string; label: string; path: string; ico
   );
 };
 
-// Enhanced Dashboard Component
-type ProgressSummary = {
-  modulesCompleted: number;
-  totalModules: number;
-  chaptersCompleted: number;
-  totalChapters: number;
-  quizAverage: number;
-  studyTime: number;
-  streak: number;
-};
-const Dashboard: React.FC<{ progress: ProgressSummary }> = ({ progress }) => {
-  return (
-    <main className="p-6">
-      {/* Medical Disclaimer */}
-      <MedicalDisclaimer variant="inline" />
-
-  {/* Removed oversized hero to reclaim space */}
-
-      {/* Compact summary chips */}
-      <div className="mb-6 flex flex-wrap gap-2">
-        <span className="inline-flex items-center rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-700">14 Modules</span>
-        <span className="inline-flex items-center rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-700">41 Chapters</span>
-        <span className="inline-flex items-center rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-700">AI Assistant</span>
-        <span className="inline-flex items-center rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-700">500+ Questions</span>
-      </div>
-
-      {/* Quick Stats */}
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 mb-8">
-        <StatCard icon={BookOpen} title="Modules Completed" value={`${progress.modulesCompleted}/${progress.totalModules}`} color="blue" />
-        <StatCard icon={CheckCircle} title="Quiz Average" value={`${progress.quizAverage}%`} color="green" />
-        <StatCard icon={Clock} title="Study Time" value={`${progress.studyTime}h`} color="purple" />
-        <StatCard icon={Target} title="Streak" value={`${progress.streak} days`} color="orange" />
-      </div>
-
-      {/* Continue Learning & Quick Actions */}
-  <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 mb-8">
-        {/* Continue Learning */}
-        <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Continue Learning</h3>
-          <div className="space-y-4">
-            <div className="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer touch-manipulation">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold">3</span>
-              </div>
-              <div className="flex-1">
-                <h4 className="font-semibold text-gray-900">Legal Frameworks in Emergency Care</h4>
-                <p className="text-sm text-gray-500">Module 1 • Chapter 3 • 40 minutes remaining</p>
-                <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
-                  <div className="bg-primary h-2 rounded-full" style={{ width: '60%' }}></div>
-                </div>
-              </div>
-              <Link to="/chapter/3" className="btn btn-primary">
-                Continue
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* AI Assistant Quick Access */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center space-x-2">
-            <MessageCircle className="w-5 h-5 text-primary" />
-            <span>AI Assistant</span>
-          </h3>
-          <div className="space-y-3">
-            <p className="text-sm text-gray-600">Ask questions about EMT-B protocols, medications, or procedures</p>
-            <Link to="/ai-assistant" className="btn btn-primary w-full py-3">Start Conversation</Link>
-            <div className="text-xs text-gray-500 text-center">
-              Powered by ProMedix AI™
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Study Modules Preview */}
-  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-8">
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-lg font-semibold text-gray-900">Study Modules</h3>
-          <Link to="/modules" className="link text-sm font-medium flex items-center space-x-1">
-            <span>View All</span>
-            <ChevronRight className="w-4 h-4" />
-          </Link>
-        </div>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-          {moduleStructure.slice(0, 6).map((module) => (
-            <ModuleCard key={module.id} module={module} />
-          ))}
-        </div>
-      </div>
-
-      {/* Quick Tools */}
-  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-6">Quick Clinical Tools</h3>
-  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
-          {calculatorsUI.map((tool) => (
-            <Link
-              key={tool.id}
-              to={`/tools/${tool.id}`}
-              className="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors touch-manipulation min-h-[88px]"
-            >
-              <div className={`w-10 h-10 bg-${tool.color}-100 rounded-lg flex items-center justify-center mb-2`}>
-                <tool.icon className={`w-5 h-5 text-${tool.color}-600`} />
-              </div>
-              <div className="text-xs font-medium text-center">{tool.name}</div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </main>
-  );
-};
-
 // Chapter Content Parser with EMT-B Scope Indicators
 const parseContent = (content: string) => {
   const lines = content.split('\n');
@@ -7127,6 +7015,16 @@ Please ask me about any EMT-B topic, and I'll provide detailed, clinically accur
 };
 
 // Enhanced Progress Page
+type ProgressSummary = {
+  modulesCompleted: number;
+  totalModules: number;
+  chaptersCompleted: number;
+  totalChapters: number;
+  quizAverage: number;
+  studyTime: number;
+  streak: number;
+};
+
 const ProgressPage: React.FC<{ progress: ProgressSummary }> = ({ progress }) => {
   return (
     <main className="p-6">
