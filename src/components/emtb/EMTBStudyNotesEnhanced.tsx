@@ -8917,7 +8917,7 @@ const EMTBStudyNotes: React.FC = () => {
             onClick={() => toggleSection(index)}
             className="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 text-left flex items-center justify-between transition-colors"
           >
-            <h3 className="font-medium text-gray-900">{section.title}</h3>
+            <h3 className="font-semibold text-lg text-gray-900">{section.title}</h3>
             {expandedSections.has(index) ? (
               <ChevronUp className="h-5 w-5 text-gray-500" />
             ) : (
@@ -8945,7 +8945,7 @@ const EMTBStudyNotes: React.FC = () => {
                 {/* Clinical Pearls */}
                 {section.clinicalPearls && section.clinicalPearls.length > 0 && (
                   <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r">
-                    <h4 className="font-semibold text-green-800 mb-3 flex items-center text-base">
+                    <h4 className="font-semibold text-green-800 mb-3 flex items-center text-lg">
                       💎 Clinical Pearls
                     </h4>
                     <ul className="space-y-2">
@@ -8962,7 +8962,7 @@ const EMTBStudyNotes: React.FC = () => {
                 {/* Mnemonics */}
                 {section.mnemonics && section.mnemonics.length > 0 && (
                   <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r">
-                    <h4 className="font-semibold text-yellow-800 mb-3 flex items-center text-base">
+                    <h4 className="font-semibold text-yellow-800 mb-3 flex items-center text-lg">
                       🧠 Mnemonics
                     </h4>
                     <ul className="space-y-2">
@@ -8982,7 +8982,7 @@ const EMTBStudyNotes: React.FC = () => {
                 {/* Common Pitfalls */}
                 {section.commonPitfalls && section.commonPitfalls.length > 0 && (
                   <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r">
-                    <h4 className="font-semibold text-red-800 mb-3 flex items-center text-base">
+                    <h4 className="font-semibold text-red-800 mb-3 flex items-center text-lg">
                       ⚠️ Common Pitfalls
                     </h4>
                     <ul className="space-y-2">
@@ -8998,7 +8998,7 @@ const EMTBStudyNotes: React.FC = () => {
                 {/* Decision Trees */}
                 {section.decisionTrees && section.decisionTrees.length > 0 && (
                   <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-r">
-                    <h4 className="font-semibold text-indigo-800 mb-3 flex items-center text-base">
+                    <h4 className="font-semibold text-indigo-800 mb-3 flex items-center text-lg">
                       🌳 Decision Trees
                     </h4>
                     <ul className="space-y-2">
@@ -9014,7 +9014,7 @@ const EMTBStudyNotes: React.FC = () => {
                 {/* Field Applications */}
                 {section.fieldApplications && section.fieldApplications.length > 0 && (
                   <div className="bg-teal-50 border-l-4 border-teal-400 p-4 rounded-r">
-                    <h4 className="font-semibold text-teal-800 mb-3 flex items-center text-base">
+                    <h4 className="font-semibold text-teal-800 mb-3 flex items-center text-lg">
                       🚑 Field Applications
                     </h4>
                     <ul className="space-y-2">
@@ -9172,7 +9172,7 @@ const EMTBStudyNotes: React.FC = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-4 md:p-6 pb-20 lg:pb-6">
+    <div className="max-w-6xl mx-auto p-4 md:p-6 pb-20 lg:pb-6 font-roboto">
       {/* Medical Disclaimer */}
       <MedicalDisclaimer variant="inline" />
       
