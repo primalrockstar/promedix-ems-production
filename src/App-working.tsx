@@ -13,11 +13,23 @@ const MoreMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const menuItems = [
-    { label: 'Dashboard', path: '/' },
-    { label: 'Study Modules', path: '/modules' },
-    { label: 'Protocols', path: '/protocols' },
-    { label: 'Medications', path: '/medications' },
-    { label: 'Tools', path: '/tools' },
+    { label: 'Dashboard', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
+    { label: 'Study Modules', action: () => {
+      const element = document.getElementById('study');
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }},
+    { label: 'Protocols', action: () => {
+      const element = document.getElementById('emtb');
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }},
+    { label: 'Medications', action: () => {
+      const element = document.getElementById('tools');
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }},
+    { label: 'Tools', action: () => {
+      const element = document.getElementById('more');
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }},
   ];
 
   return (
@@ -34,14 +46,16 @@ const MoreMenu = () => {
       {isOpen && (
         <div className="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50">
           {menuItems.map((item, index) => (
-            <Link
+            <button
               key={index}
-              to={item.path}
-              className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 first:rounded-t-lg last:rounded-b-lg"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                item.action();
+                setIsOpen(false);
+              }}
+              className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 first:rounded-t-lg last:rounded-b-lg"
             >
               {item.label}
-            </Link>
+            </button>
           ))}
         </div>
       )}
@@ -66,10 +80,22 @@ const LoginDropdown = () => {
       
       {isOpen && (
         <div className="absolute top-full right-0 mt-1 w-40 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50">
-          <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-t-lg">
+          <button 
+            onClick={() => {
+              alert('Student Login - Coming Soon!\n\nFeatures will include:\n• Student Dashboard\n• Progress Tracking\n• Study Materials Access');
+              setIsOpen(false);
+            }}
+            className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-t-lg"
+          >
             Student Login
           </button>
-          <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-b-lg">
+          <button 
+            onClick={() => {
+              alert('Instructor Login - Coming Soon!\n\nFeatures will include:\n• Instructor Dashboard\n• Student Management\n• Content Administration');
+              setIsOpen(false);
+            }}
+            className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-b-lg"
+          >
             Instructor Login
           </button>
         </div>
@@ -177,12 +203,7 @@ function App() {
             {/* Top Row: Menu and Controls */}
             <div className="flex items-center justify-between px-4 py-2">
               {/* Left: Menu Button */}
-              <button
-                className="p-2 rounded-lg text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
-                aria-label="Open menu"
-              >
-                <Menu className="w-5 h-5" />
-              </button>
+              <MoreMenu />
 
               {/* Right: Dark Mode & Login */}
               <div className="flex items-center space-x-1">
@@ -261,11 +282,23 @@ function App() {
               <div>
                 <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Quick Links</h4>
                 <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                  <li><Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400">Dashboard</Link></li>
-                  <li><Link to="/modules" className="hover:text-blue-600 dark:hover:text-blue-400">Study Modules</Link></li>
-                  <li><Link to="/protocols" className="hover:text-blue-600 dark:hover:text-blue-400">Protocols</Link></li>
-                  <li><Link to="/medications" className="hover:text-blue-600 dark:hover:text-blue-400">Medications</Link></li>
-                  <li><Link to="/tools" className="hover:text-blue-600 dark:hover:text-blue-400">Tools</Link></li>
+                  <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-blue-600 dark:hover:text-blue-400 text-left">Dashboard</button></li>
+                  <li><button onClick={() => {
+                    const element = document.getElementById('study');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }} className="hover:text-blue-600 dark:hover:text-blue-400 text-left">Study Modules</button></li>
+                  <li><button onClick={() => {
+                    const element = document.getElementById('emtb');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }} className="hover:text-blue-600 dark:hover:text-blue-400 text-left">Protocols</button></li>
+                  <li><button onClick={() => {
+                    const element = document.getElementById('tools');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }} className="hover:text-blue-600 dark:hover:text-blue-400 text-left">Medications</button></li>
+                  <li><button onClick={() => {
+                    const element = document.getElementById('more');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }} className="hover:text-blue-600 dark:hover:text-blue-400 text-left">Tools</button></li>
                 </ul>
               </div>
 
@@ -273,12 +306,24 @@ function App() {
               <div>
                 <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Support</h4>
                 <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                  <li><button className="hover:text-blue-600 dark:hover:text-blue-400">Help Center</button></li>
-                  <li><button className="hover:text-blue-600 dark:hover:text-blue-400">Contact Us</button></li>
-                  <li><button className="hover:text-blue-600 dark:hover:text-blue-400">Privacy Policy</button></li>
-                  <li><button className="hover:text-blue-600 dark:hover:text-blue-400">Terms of Service</button></li>
                   <li><button 
-                    className="hover:text-blue-600 dark:hover:text-blue-400"
+                    onClick={() => alert('Help Center - Coming Soon!\n\nWe\'re building comprehensive help documentation including:\n• Getting Started Guide\n• Feature Tutorials\n• Troubleshooting\n• FAQ Section')}
+                    className="hover:text-blue-600 dark:hover:text-blue-400 text-left"
+                  >Help Center</button></li>
+                  <li><button 
+                    onClick={() => alert('Contact Us - Coming Soon!\n\nReach out to our team:\n• Technical Support\n• General Inquiries\n• Feature Requests\n• Bug Reports')}
+                    className="hover:text-blue-600 dark:hover:text-blue-400 text-left"
+                  >Contact Us</button></li>
+                  <li><button 
+                    onClick={() => alert('Privacy Policy - Coming Soon!\n\nOur commitment to your privacy:\n• Data Protection\n• Information Usage\n• Cookie Policy\n• User Rights')}
+                    className="hover:text-blue-600 dark:hover:text-blue-400 text-left"
+                  >Privacy Policy</button></li>
+                  <li><button 
+                    onClick={() => alert('Terms of Service - Coming Soon!\n\nPlatform usage terms:\n• User Responsibilities\n• Service Limitations\n• Account Guidelines\n• Legal Information')}
+                    className="hover:text-blue-600 dark:hover:text-blue-400 text-left"
+                  >Terms of Service</button></li>
+                  <li><button 
+                    className="hover:text-blue-600 dark:hover:text-blue-400 text-left"
                     onClick={() => setShowFullDisclaimer(true)}
                   >
                     Medical Disclaimer
