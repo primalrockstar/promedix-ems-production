@@ -148,12 +148,12 @@ function App() {
                     <img 
                       src="/assets/LOGOFINAL.png" 
                       alt="ProMedix EMS Logo" 
-                      className="w-32 h-32 object-contain"
+                      className="w-40 h-40 object-contain"
                       style={{ background: 'transparent' }}
                     />
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400 font-medium text-center">
-                    Your trusted companion to formal EMT-B training—designed for clarity, retention, and confident field application.
+                    Next-Gen Education Tool for Emergency Medical Services
                   </div>
                 </Link>
               </div>
@@ -186,11 +186,11 @@ function App() {
                   <img 
                     src="/assets/LOGOFINAL.png" 
                     alt="ProMedix EMS Logo" 
-                    className="w-16 h-16 object-contain"
+                    className="w-20 h-20 object-contain"
                     style={{ background: 'transparent' }}
                   />
                   <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center mt-1">
-                    Your trusted companion to formal EMT-B training—designed for clarity, retention, and confident field application.
+                    Next-Gen Education Tool for Emergency Medical Services
                   </div>
                 </Link>
               </div>
