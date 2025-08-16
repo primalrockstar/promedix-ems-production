@@ -1,4 +1,4 @@
-﻿import React from 'react';
+﻿import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Home, BookOpen, Heart, Calculator, Menu } from 'lucide-react';
 
@@ -6,48 +6,63 @@ import { Home, BookOpen, Heart, Calculator, Menu } from 'lucide-react';
 const BottomNavigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('Dashboard');
 
   const bottomNavItems = [
-    { name: 'Dashboard', path: '/', icon: Home, action: 'navigate' },
-    { name: 'Study', path: '#study', icon: BookOpen, action: 'scroll' },
-    { name: 'EMT-B', path: '#emtb', icon: Heart, action: 'scroll' },
-    { name: 'Tools', path: '#tools', icon: Calculator, action: 'scroll' },
-    { name: 'More', path: '#more', icon: Menu, action: 'scroll' },
+    { name: 'Dashboard', path: '/', icon: Home },
+    { name: 'Study', path: '/', icon: BookOpen },
+    { name: 'EMT-B', path: '/', icon: Heart },
+    { name: 'Tools', path: '/', icon: Calculator },
+    { name: 'More', path: '/', icon: Menu },
   ];
 
-  const handleNavigation = (item) => {
-    if (item.action === 'navigate') {
-      navigate(item.path);
-    } else if (item.action === 'scroll') {
-      // First ensure we're on the home page
-      if (location.pathname !== '/') {
-        navigate('/');
-        setTimeout(() => {
-          const element = document.querySelector(item.path);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
-      } else {
-        const element = document.querySelector(item.path);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+  const handleNavigation = (item: any) => {
+    setActiveTab(item.name);
+    
+    // Always navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/');
     }
+    
+    // Then scroll to appropriate section based on the button
+    setTimeout(() => {
+      let targetId = '';
+      switch (item.name) {
+        case 'Study':
+          targetId = 'study';
+          break;
+        case 'EMT-B':
+          targetId = 'emtb';
+          break;
+        case 'Tools':
+          targetId = 'tools';
+          break;
+        case 'More':
+          targetId = 'more';
+          break;
+        default:
+          // Dashboard - scroll to top
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+      }
+      
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   };
 
   return (
     <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 z-40">
       <div className="grid grid-cols-5 h-16">
         {bottomNavItems.map((item) => {
-          const isActive = location.pathname === '/' && location.hash === item.path.replace('#', '') ? true : 
-                          (item.path === '/' && location.pathname === '/');
+          const isActive = activeTab === item.name;
           const Icon = item.icon;
           
           return (
             <button
-              key={item.path}
+              key={item.name}
               onClick={() => handleNavigation(item)}
               className={`flex flex-col items-center justify-center space-y-1 transition-colors ${
                 isActive 
