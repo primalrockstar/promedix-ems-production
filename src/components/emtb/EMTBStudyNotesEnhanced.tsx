@@ -132,7 +132,7 @@ interface ChapterData {
 const EMTBStudyNotes: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState('overview');
-  const [activeChapter, setActiveChapter] = useState('chapter2');
+  const [activeChapter, setActiveChapter] = useState('chapter1');
   const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set());
   const [showDownloadMenu, setShowDownloadMenu] = useState(false);
   const [currentFlashcard, setCurrentFlashcard] = useState(0);
@@ -8633,8 +8633,8 @@ const EMTBStudyNotes: React.FC = () => {
           <h3 className="text-lg font-semibold text-green-800 mb-2">Learning Objectives</h3>
           <ul className="space-y-2 text-green-700">
             {currentChapter.learningObjectives.map((objective, index) => (
-              <li key={index} className="text-sm flex items-start">
-                <span className="text-green-500 mr-2 mt-1">•</span>
+              <li key={index} className="text-base flex items-start leading-relaxed">
+                <span className="text-green-500 mr-3 mt-1">•</span>
                 <span>{objective}</span>
               </li>
             ))}
@@ -8644,10 +8644,10 @@ const EMTBStudyNotes: React.FC = () => {
         <div className="bg-red-50 p-4 rounded-lg">
           <Shield className="h-8 w-8 text-red-600 mb-3" />
           <h3 className="text-lg font-semibold text-red-800 mb-2">Key Terms</h3>
-          <div className="grid grid-cols-1 gap-1 text-red-700">
+          <div className="grid grid-cols-1 gap-2 text-red-700">
             {currentChapter.keyTerms.map((term, index) => (
-              <div key={index} className="text-sm font-medium flex items-center">
-                <span className="text-red-500 mr-2">•</span>
+              <div key={index} className="text-base font-medium flex items-center">
+                <span className="text-red-500 mr-3">•</span>
                 <span>{term}</span>
               </div>
             ))}
@@ -8660,10 +8660,10 @@ const EMTBStudyNotes: React.FC = () => {
         <div className="bg-orange-50 p-4 rounded-lg">
           <Activity className="h-8 w-8 text-orange-600 mb-3" />
           <h3 className="text-lg font-semibold text-orange-800 mb-2">Protocols & Procedures</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-orange-700">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-orange-700">
             {currentChapter.protocols.map((protocol, index) => (
-              <div key={index} className="text-sm font-medium flex items-center">
-                <span className="text-orange-500 mr-2">📋</span>
+              <div key={index} className="text-base font-medium flex items-center">
+                <span className="text-orange-500 mr-3">📋</span>
                 <span>{protocol}</span>
               </div>
             ))}
@@ -8675,7 +8675,7 @@ const EMTBStudyNotes: React.FC = () => {
       <div className="bg-purple-50 p-4 rounded-lg">
         <Activity className="h-8 w-8 text-purple-600 mb-3" />
         <h3 className="text-lg font-semibold text-purple-800 mb-2">Flashcards Available</h3>
-        <p className="text-purple-700 text-sm mb-3">
+        <p className="text-purple-700 text-base mb-3">
           {currentChapter.flashcards.length} flashcards available for this chapter
         </p>
         <button
@@ -8708,10 +8708,10 @@ const EMTBStudyNotes: React.FC = () => {
             <div className="px-4 py-3 bg-white">
               <div className="space-y-4">
                 {/* Main Content */}
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {section.content.map((item, itemIndex) => (
-                    <li key={itemIndex} className="text-gray-700 text-sm leading-relaxed flex items-start">
-                      <span className="text-blue-500 mr-2 mt-1.5 text-xs">•</span>
+                    <li key={itemIndex} className="text-gray-800 text-base leading-relaxed flex items-start">
+                      <span className="text-blue-500 mr-3 mt-2 text-sm">•</span>
                       <span 
                         dangerouslySetInnerHTML={{ 
                           __html: item.replace(/\\*\\*(.*?)\\*\\*/g, '<strong class="font-semibold text-blue-700 bg-blue-50 px-1 rounded">$1</strong>') 
@@ -8723,14 +8723,14 @@ const EMTBStudyNotes: React.FC = () => {
 
                 {/* Clinical Pearls */}
                 {section.clinicalPearls && section.clinicalPearls.length > 0 && (
-                  <div className="bg-green-50 border-l-4 border-green-400 p-3 rounded-r">
-                    <h4 className="font-semibold text-green-800 mb-2 flex items-center">
+                  <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r">
+                    <h4 className="font-semibold text-green-800 mb-3 flex items-center text-base">
                       💎 Clinical Pearls
                     </h4>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {section.clinicalPearls.map((pearl, pearlIndex) => (
-                        <li key={pearlIndex} className="text-green-700 text-sm flex items-start">
-                          <span className="text-green-500 mr-2 mt-0.5">•</span>
+                        <li key={pearlIndex} className="text-green-700 text-base flex items-start leading-relaxed">
+                          <span className="text-green-500 mr-3 mt-1">•</span>
                           <span>{pearl}</span>
                         </li>
                       ))}
@@ -8740,13 +8740,13 @@ const EMTBStudyNotes: React.FC = () => {
 
                 {/* Mnemonics */}
                 {section.mnemonics && section.mnemonics.length > 0 && (
-                  <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded-r">
-                    <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
+                  <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r">
+                    <h4 className="font-semibold text-yellow-800 mb-3 flex items-center text-base">
                       🧠 Mnemonics
                     </h4>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {section.mnemonics.map((mnemonic, mnemonicIndex) => (
-                        <li key={mnemonicIndex} className="text-yellow-700 text-sm">
+                        <li key={mnemonicIndex} className="text-yellow-700 text-base leading-relaxed">
                           <span 
                             dangerouslySetInnerHTML={{ 
                               __html: mnemonic.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>') 
@@ -8760,13 +8760,13 @@ const EMTBStudyNotes: React.FC = () => {
 
                 {/* Common Pitfalls */}
                 {section.commonPitfalls && section.commonPitfalls.length > 0 && (
-                  <div className="bg-red-50 border-l-4 border-red-400 p-3 rounded-r">
-                    <h4 className="font-semibold text-red-800 mb-2 flex items-center">
+                  <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r">
+                    <h4 className="font-semibold text-red-800 mb-3 flex items-center text-base">
                       ⚠️ Common Pitfalls
                     </h4>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {section.commonPitfalls.map((pitfall, pitfallIndex) => (
-                        <li key={pitfallIndex} className="text-red-700 text-sm">
+                        <li key={pitfallIndex} className="text-red-700 text-base leading-relaxed">
                           {pitfall}
                         </li>
                       ))}
@@ -8776,13 +8776,13 @@ const EMTBStudyNotes: React.FC = () => {
 
                 {/* Decision Trees */}
                 {section.decisionTrees && section.decisionTrees.length > 0 && (
-                  <div className="bg-indigo-50 border-l-4 border-indigo-400 p-3 rounded-r">
-                    <h4 className="font-semibold text-indigo-800 mb-2 flex items-center">
+                  <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-r">
+                    <h4 className="font-semibold text-indigo-800 mb-3 flex items-center text-base">
                       🌳 Decision Trees
                     </h4>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {section.decisionTrees.map((tree, treeIndex) => (
-                        <li key={treeIndex} className="text-indigo-700 text-sm">
+                        <li key={treeIndex} className="text-indigo-700 text-base leading-relaxed">
                           {tree}
                         </li>
                       ))}
@@ -8792,14 +8792,14 @@ const EMTBStudyNotes: React.FC = () => {
 
                 {/* Field Applications */}
                 {section.fieldApplications && section.fieldApplications.length > 0 && (
-                  <div className="bg-teal-50 border-l-4 border-teal-400 p-3 rounded-r">
-                    <h4 className="font-semibold text-teal-800 mb-2 flex items-center">
+                  <div className="bg-teal-50 border-l-4 border-teal-400 p-4 rounded-r">
+                    <h4 className="font-semibold text-teal-800 mb-3 flex items-center text-base">
                       🚑 Field Applications
                     </h4>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {section.fieldApplications.map((app, appIndex) => (
-                        <li key={appIndex} className="text-teal-700 text-sm flex items-start">
-                          <span className="text-teal-500 mr-2 mt-0.5">•</span>
+                        <li key={appIndex} className="text-teal-700 text-base flex items-start leading-relaxed">
+                          <span className="text-teal-500 mr-3 mt-1">•</span>
                           <span>{app}</span>
                         </li>
                       ))}
