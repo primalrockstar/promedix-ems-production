@@ -21,12 +21,15 @@ import EMTBStudyNotesEnhanced from './components/emtb/EMTBStudyNotesEnhanced';
 import EMTBStudyNotesNew from './components/emtb/EMTBStudyNotesNew';
 import EMTBStudyNotesClean from './components/emtb/EMTBStudyNotesClean';
 import TestStudyNotes from './components/emtb/TestStudyNotes';
-import EMSChatbot from './components/EMSChatbot';
+import PracticeQuizSystem from './components/PracticeQuizSystem';
+// Removed EMSChatbot - using voice module for search instead
 import MedicalDisclaimer from './components/MedicalDisclaimer';
 import DisclaimerPage from './components/DisclaimerPage';
 import WelcomePage from './components/WelcomePage';
 import StudentProgress from './components/student/StudentProgress';
 import EnhancedSearchBar from './components/EnhancedSearchBar';
+import OptimizedSearchBar from './components/OptimizedSearchBar';
+import SearchPerformanceMonitor from './components/SearchPerformanceMonitor';
 import { clinicalCalculators } from './data/clinical-calculators';
 import { medicationSimulations } from './data/medication-simulations';
 import { searchEngine } from './utils/search';
@@ -1331,6 +1334,7 @@ const [progress, setProgress] = useState({
             <Route path="/emtb/med-simulations" element={<MedicationSimulationsPage />} />
             <Route path="/tools/:toolId" element={<ToolPage />} />
             <Route path="/flashcards" element={<EMTBFlashcards />} />
+            <Route path="/practice-quiz" element={<PracticeQuizSystem onClose={() => window.history.back()} />} />
             <Route path="/quiz" element={<QuizPage />} />
             <Route path="/ai-assistant" element={<AIAssistantPage />} />
             <Route path="/student" element={<RequireRole role="student"><StudentDashboard /></RequireRole>} />
@@ -1404,7 +1408,7 @@ const [progress, setProgress] = useState({
             </div>
           </footer>
           
-          <EMSChatbot setActiveTab={(tab) => console.log('Chatbot navigation:', tab)} />
+          {/* Chatbot removed - voice search now integrated into search bar */}
         </div>
         )}
       </Router>
@@ -1652,11 +1656,6 @@ const ProMedixHeader = () => {
 
   return (
     <header className="bg-white dark:bg-[#0f141a] border-b border-gray-200 dark:border-gray-800 shadow-sm sticky top-0 z-50">
-      {/* TEST BANNER - Remove this once build works */}
-      <div style={{backgroundColor: '#ff0000', color: 'white', padding: '5px', textAlign: 'center', fontSize: '14px', fontWeight: 'bold'}}>
-        🔥 REACT BUILD TEST - Build timestamp: {new Date().toISOString()} 🔥
-      </div>
-      
       {/* Mobile Header */}
       <div className="lg:hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
@@ -1913,10 +1912,10 @@ const ProMedixHeader = () => {
           </div>
         </div>
 
-        {/* Enhanced Desktop Search Bar */}
+        {/* Optimized Desktop Search Bar */}
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="max-w-2xl mx-auto">
-            <EnhancedSearchBar
+            <OptimizedSearchBar
               placeholder="Search protocols, medications, conditions, and study materials..."
               onSearch={(query, results) => {
                 navigate(`/search?q=${encodeURIComponent(query)}`);
@@ -1927,7 +1926,17 @@ const ProMedixHeader = () => {
               }}
               showFilters={true}
               showInstantResults={true}
+              showVoiceSearch={true}
+              variant="enhanced"
               size="lg"
+              autoFocus={false}
+              debounceMs={200}
+              accessibility={{
+                searchLabel: "Search EMT-B study materials",
+                clearLabel: "Clear search query",
+                filterLabel: "Open search filters",
+                voiceLabel: "Start voice search"
+              }}
               className="w-full"
             />
           </div>
@@ -2837,6 +2846,7 @@ const ToolsReferencePage: React.FC = () => {
     { label: 'Anatomy & Physiology', to: '/modules', icon: <Brain className="w-4 h-4" /> },
     { label: 'Procedures & Skills', to: '/med-simulations', icon: <Stethoscope className="w-4 h-4" /> },
   { label: 'Flashcards & Visuals', to: '/emtb/flashcards', icon: <ImageIcon /> },
+    { label: 'Practice Quizzes', to: '/practice-quiz', icon: <Target className="w-4 h-4" /> },
     { label: 'Simulations & Quizzes', to: '/quiz', icon: <CheckSquare className="w-4 h-4" /> },
   ];
 

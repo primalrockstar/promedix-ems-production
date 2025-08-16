@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calculator, FileText, Heart, Stethoscope, Users, Clock, Star, ChevronRight, Brain, BookOpen } from 'lucide-react';
+import { Calculator, FileText, Heart, Stethoscope, Users, Clock, Star, ChevronRight, Brain, BookOpen, Target } from 'lucide-react';
 
 const EMTBNavigation: React.FC = () => {
   const navigationCards = [
@@ -50,6 +50,15 @@ const EMTBNavigation: React.FC = () => {
       items: ['14 Core Modules', '41 Study Chapters', 'Bonus: Human Body Systems', 'Interactive Flashcards', 'Clinical Pearls']
     },
     {
+      title: 'Practice Quizzes',
+      description: 'Comprehensive practice tests for all 14 EMT-B modules',
+      icon: Target,
+      path: '/practice-quiz',
+      color: 'bg-orange-50 border-orange-200 hover:bg-orange-100',
+      iconColor: 'text-orange-600',
+      items: ['30 Questions per Module', 'Timed Practice Tests', 'Progress Tracking', 'Detailed Explanations', 'NREMT-Style Questions']
+    },
+    {
       title: 'Medication Simulations',
       description: 'Step-by-step medication administration scenarios',
       icon: Stethoscope,
@@ -64,6 +73,7 @@ const EMTBNavigation: React.FC = () => {
     { label: 'Calculators', value: '5', icon: Calculator, color: 'text-blue-600' },
     { label: 'Protocols', value: '5', icon: FileText, color: 'text-green-600' },
     { label: 'Medications', value: '8', icon: Heart, color: 'text-red-600' },
+    { label: 'Practice Questions', value: '420+', icon: Target, color: 'text-orange-600' },
     { label: 'Study Chapters', value: '55+', icon: Users, color: 'text-purple-600' },
     { label: 'Flashcards', value: '500+', icon: Brain, color: 'text-indigo-600' }
   ];

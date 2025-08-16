@@ -17,7 +17,7 @@ import { chapter3Flashcards as ch3Flash } from '../../data/emtb/chapter3-flashca
 import { chapter4StudyNotes as ch4Data } from '../../data/emtb/chapter4-study-notes';
 import { chapter4Flashcards as ch4Flash } from '../../data/emtb/chapter4-flashcards';
 
-// Module 2: Medical Foundations & Assessment (Chapters 5-8)
+// Module 2: Clinical Foundations (Chapters 5-9)
 import { chapter5StudyNotes as ch5Data } from '../../data/emtb/chapter5-study-notes';
 import { chapter5Flashcards as ch5Flash } from '../../data/emtb/chapter5-flashcards';
 import { chapter6StudyNotes as ch6Data } from '../../data/emtb/chapter6-study-notes';
@@ -26,63 +26,71 @@ import { chapter7StudyNotes as ch7Data } from '../../data/emtb/chapter7-study-no
 import { chapter7Flashcards as ch7Flash } from '../../data/emtb/chapter7-flashcards';
 import { chapter8StudyNotes as ch8Data } from '../../data/emtb/chapter8-study-notes';
 import { chapter8Flashcards as ch8Flash } from '../../data/emtb/chapter8-flashcards';
-
-// Module 3: Team Communication & Patient Assessment (Chapters 9-12)
 import { chapter9StudyNotes as ch9Data } from '../../data/emtb/chapter9-study-notes';
 import { chapter9Flashcards as ch9Flash } from '../../data/emtb/chapter9-flashcards';
+
+// Module 3: Patient Assessment Mastery (Chapter 10)
 import { chapter10StudyNotes as ch10Data } from '../../data/emtb/chapter10-study-notes';
 import { chapter10Flashcards as ch10Flash } from '../../data/emtb/chapter10-flashcards';
+
+// Module 4: Airway & Ventilatory Management (Chapter 11)
 import { chapter11StudyNotes as ch11Data } from '../../data/emtb/chapter11-study-notes';
 import { chapter11Flashcards as ch11Flash } from '../../data/emtb/chapter11-flashcards';
+
+// Module 5: Pharmacological Principles (Chapter 12)
 import { chapter12StudyNotes as ch12Data } from '../../data/emtb/chapter12-study-notes';
 import { chapter12Flashcards as ch12Flash } from '../../data/emtb/chapter12-flashcards';
 
-// Module 4: Medical Emergencies & Critical Care (Chapters 13-16)
+// Module 6: Shock & Circulatory Emergencies (Chapters 13-14)
 import { chapter13StudyNotes as ch13Data } from '../../data/emtb/chapter13-study-notes';
 import { chapter13Flashcards as ch13Flash } from '../../data/emtb/chapter13-flashcards';
 import { chapter14StudyNotes as ch14Data } from '../../data/emtb/chapter14-study-notes';
 import { chapter14Flashcards as ch14Flash } from '../../data/emtb/chapter14-flashcards';
+
+// Module 7: Medical Emergency Response (Chapters 15-17)
 import { chapter15StudyNotes as ch15Data } from '../../data/emtb/chapter15-study-notes';
 import { chapter16StudyNotes as ch16Data } from '../../data/emtb/chapter16-study-notes';
-
-// Module 5: Cardiovascular & Respiratory Care (Chapters 17-20)
 import { chapter17StudyNotes as ch17Data } from '../../data/emtb/chapter17-study-notes';
+
+// Module 8: Neurological & Systemic Emergencies (Chapters 18-20)
 import { chapter18StudyNotes as ch18Data } from '../../data/emtb/chapter18-study-notes';
 import { chapter19StudyNotes as ch19Data } from '../../data/emtb/chapter19-study-notes';
 import { chapter20StudyNotes as ch20Data } from '../../data/emtb/chapter20-study-notes';
 
-// Module 6: Pediatric & Special Population Care (Chapters 21-25)
+// Module 9: Specialized Emergency Care (Chapters 21-24)
 import { chapter21StudyNotes as ch21Data } from '../../data/emtb/chapter21-study-notes';
 import { chapter22StudyNotes as ch22Data } from '../../data/emtb/chapter22-study-notes';
 import { chapter23StudyNotes as ch23Data } from '../../data/emtb/chapter23-study-notes';
 import { chapter24StudyNotes as ch24Data } from '../../data/emtb/chapter24-study-notes';
-import { chapter25StudyNotes as ch25Data } from '../../data/emtb/chapter25-study-notes';
 
-// Module 7: Trauma & Emergency Care (Chapters 26-30)
+// Module 10: Trauma Response Principles (Chapters 25-27)
+import { chapter25StudyNotes as ch25Data } from '../../data/emtb/chapter25-study-notes';
 import { chapter26StudyNotes as ch26Data } from '../../data/emtb/chapter26-study-notes';
 import { chapter27StudyNotes as ch27Data } from '../../data/emtb/chapter27-study-notes';
+
+// Module 11: Traumatic Injury Management (Chapters 28-30)
 import { chapter28StudyNotes as ch28Data } from '../../data/emtb/chapter28-study-notes';
 import { chapter29StudyNotes as ch29Data } from '../../data/emtb/chapter29-study-notes';
 import { chapter30StudyNotes as ch30Data } from '../../data/emtb/chapter30-study-notes';
 
-// Module 8: Neurological & Systemic Emergencies (Chapters 31-35)
+// Module 12: Environmental & Musculoskeletal Emergencies (Chapters 31-33)
 import { chapter31StudyNotes as ch31Data } from '../../data/emtb/chapter31-study-notes';
 import { chapter32StudyNotes as ch32Data } from '../../data/emtb/chapter32-study-notes';
 import { chapter33StudyNotes as ch33Data } from '../../data/emtb/chapter33-study-notes';
+
+// Module 13: Special Patient Populations (Chapters 34-37)
 import { chapter34StudyNotes as ch34Data } from '../../data/emtb/chapter34-study-notes';
 import { chapter35StudyNotes as ch35Data } from '../../data/emtb/chapter35-study-notes';
-
-// Module 9: Specialized Emergency Care (Chapters 36-40)
 import { chapter36StudyNotes as ch36Data } from '../../data/emtb/chapter36-study-notes';
 import { chapter37StudyNotes as ch37Data } from '../../data/emtb/chapter37-study-notes';
+
+// Module 14: EMS Operations & Disaster Response (Chapters 38-41)
 import { chapter38StudyNotes as ch38Data } from '../../data/emtb/chapter38-study-notes';
 import { chapter39StudyNotes as ch39Data } from '../../data/emtb/chapter39-study-notes';
 import { chapter40StudyNotes as ch40Data } from '../../data/emtb/chapter40-study-notes';
-
-// Module 14: EMS Operations & Disaster Response (Chapter 41)
 import { chapter41StudyNotes as ch41Data } from '../../data/emtb/chapter41-study-notes';
 
-// BONUS Module 1: Advanced Content (Chapters 42-45)
+// BONUS Advanced Content (Chapters 42-45)
 import { chapter42StudyNotes as ch42Data } from '../../data/emtb/chapter42-study-notes';
 import { chapter43StudyNotes as ch43Data } from '../../data/emtb/chapter43-study-notes';
 import { chapter44StudyNotes as ch44Data } from '../../data/emtb/chapter44-study-notes';
@@ -8964,47 +8972,74 @@ const EMTBStudyNotes: React.FC = () => {
               onChange={(e) => setActiveChapter(e.target.value)}
               className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
+              {/* Module 1: Foundations of EMS Practice */}
               <option value="chapter1">Chapter 1: EMS System Fundamentals</option>
               <option value="chapter2">Chapter 2: Responder Safety & Resilience</option>
               <option value="chapter3">Chapter 3: EMS Law & Ethical Practice</option>
               <option value="chapter4">Chapter 4: Emergency Communication Protocols</option>
-              <option value="chapter5">Chapter 5: Medical Terminology Foundations</option>
-              <option value="chapter6">Chapter 6: Human Body Systems & Anatomy</option>
-              <option value="chapter7">Chapter 7: Life Span Development & Age-Related Care</option>
+              
+              {/* Module 2: Clinical Foundations */}
+              <option value="chapter5">Chapter 5: Medical Language for Responders</option>
+              <option value="chapter6">Chapter 6: Anatomy for Emergency Care</option>
+              <option value="chapter7">Chapter 7: Developmental Considerations in EMS</option>
               <option value="chapter8">Chapter 8: Patient Movement & Handling</option>
               <option value="chapter9">Chapter 9: Interprofessional EMS Teams</option>
+              
+              {/* Module 3: Patient Assessment Mastery */}
               <option value="chapter10">Chapter 10: Comprehensive Patient Evaluation</option>
+              
+              {/* Module 4: Airway & Ventilatory Management */}
               <option value="chapter11">Chapter 11: Advanced Airway Interventions</option>
-              <option value="chapter12">Chapter 12: Medication Administration Essentials</option>
-              <option value="chapter13">Chapter 13: Shock Recognition & Response</option>
-              <option value="chapter14">Chapter 14: BLS Resuscitation Protocols</option>
-              <option value="chapter15">Chapter 15: Medical Overview Essentials</option>
-              <option value="chapter16">Chapter 16: Respiratory Emergencies Essentials</option>
+              
+              {/* Module 5: Pharmacological Principles */}
+              <option value="chapter12">Chapter 12: Medication Administration Standards</option>
+              
+              {/* Module 6: Shock & Circulatory Emergencies */}
+              <option value="chapter13">Chapter 13: Shock Recognition & Management</option>
+              <option value="chapter14">Chapter 14: BLS Life Support Protocols</option>
+              
+              {/* Module 7: Medical Emergency Response */}
+              <option value="chapter15">Chapter 15: Medical Crisis Assessment</option>
+              <option value="chapter16">Chapter 16: Respiratory Emergency Protocols</option>
               <option value="chapter17">Chapter 17: Cardiovascular Emergency Management</option>
-              <option value="chapter18">Chapter 18: Neurological Emergencies</option>
-              <option value="chapter19">Chapter 19: Gastrointestinal and Genitourinary Emergencies</option>
+              
+              {/* Module 8: Neurological & Systemic Emergencies */}
+              <option value="chapter18">Chapter 18: Neurological Crisis Intervention</option>
+              <option value="chapter19">Chapter 19: Abdominal Emergency Protocols</option>
               <option value="chapter20">Chapter 20: Metabolic & Hematologic Emergencies</option>
+              
+              {/* Module 9: Specialized Emergency Care */}
               <option value="chapter21">Chapter 21: Allergic & Anaphylactic Response</option>
               <option value="chapter22">Chapter 22: Toxicological Emergencies</option>
               <option value="chapter23">Chapter 23: Behavioral Crisis Protocols</option>
-              <option value="chapter24">Chapter 24: Gynecologic Emergencies</option>
-              <option value="chapter25">Chapter 25: Trauma Overview</option>
-              <option value="chapter26">Chapter 26: Bleeding Control</option>
-              <option value="chapter27">Chapter 27: Soft-Tissue Injuries</option>
-              <option value="chapter28">Chapter 28: Chest Injuries</option>
-              <option value="chapter29">Chapter 29: Abdominal Injuries</option>
-              <option value="chapter30">Chapter 30: Orthopedic Injuries</option>
+              <option value="chapter24">Chapter 24: Gynecological Emergency Care</option>
+              
+              {/* Module 10: Trauma Response Principles */}
+              <option value="chapter25">Chapter 25: Trauma System Fundamentals</option>
+              <option value="chapter26">Chapter 26: Hemorrhage Control Techniques</option>
+              <option value="chapter27">Chapter 27: Soft Tissue Trauma Management</option>
+              
+              {/* Module 11: Traumatic Injury Management */}
+              <option value="chapter28">Chapter 28: Craniofacial Trauma Response</option>
+              <option value="chapter29">Chapter 29: Spinal Trauma Protocols</option>
+              <option value="chapter30">Chapter 30: Thoracic Injury Interventions</option>
+              
+              {/* Module 12: Environmental & Musculoskeletal Emergencies */}
               <option value="chapter31">Chapter 31: Abdominal & GU Trauma Essentials</option>
               <option value="chapter32">Chapter 32: Orthopedic Injury Management</option>
               <option value="chapter33">Chapter 33: Environmental Exposure Protocols</option>
+              
+              {/* Module 13: Special Patient Populations */}
               <option value="chapter34">Chapter 34: Obstetric & Neonatal Emergencies</option>
               <option value="chapter35">Chapter 35: Pediatric Emergency Response</option>
               <option value="chapter36">Chapter 36: Geriatric Emergency Care</option>
-              <option value="chapter37">Chapter 37: Special Challenges</option>
-              <option value="chapter38">Chapter 38: Incident Management</option>
-              <option value="chapter39">Chapter 39: Ambulance Operations</option>
-              <option value="chapter40">Chapter 40: Highway Safety and Vehicle Extrication</option>
-              <option value="chapter41">Chapter 41: Terrorism and Disaster Response</option>
+              <option value="chapter37">Chapter 37: Patients with Unique Needs</option>
+              
+              {/* Module 14: EMS Operations & Disaster Response */}
+              <option value="chapter38">Chapter 38: Medical Transport Operations</option>
+              <option value="chapter39">Chapter 39: Technical Rescue Protocols</option>
+              <option value="chapter40">Chapter 40: Incident Command Systems</option>
+              <option value="chapter41">Chapter 41: Mass Casualty Incident Response</option>
               <option value="chapter42">Chapter 42: Advanced Cardiovascular Anatomy 🔬</option>
               <option value="chapter43">Chapter 43: Advanced Respiratory Physiology 🫁</option>
               <option value="chapter44">Chapter 44: Nervous System in Depth 🧠</option>

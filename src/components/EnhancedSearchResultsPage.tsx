@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Filter, SortAsc, SortDesc, Grid, List, BookOpen, Pill, Calculator, FileText, Star, ChevronRight, ExternalLink } from 'lucide-react';
-import { enhancedSearchEngine, SearchResult, SearchFilters } from '../utils/enhanced-search';
-import EnhancedSearchBar from './EnhancedSearchBar';
+import { optimizedSearchEngine, SearchResult, SearchFilters } from '../utils/optimized-search';
+import OptimizedSearchBar from './OptimizedSearchBar';
+import SearchPerformanceMonitor from './SearchPerformanceMonitor';
 
 interface EnhancedSearchResultsPageProps {
   initialQuery?: string;
@@ -43,7 +44,7 @@ const EnhancedSearchResultsPage: React.FC<EnhancedSearchResultsPageProps> = ({
 
   // Load available filters on mount
   useEffect(() => {
-    const filterOptions = enhancedSearchEngine.getAvailableFilters();
+    const filterOptions = optimizedSearchEngine.getAvailableFilters();
     setAvailableFilters(filterOptions);
   }, []);
 
@@ -80,8 +81,8 @@ const EnhancedSearchResultsPage: React.FC<EnhancedSearchResultsPageProps> = ({
     if (activeFilters.categories?.length) {
       filtered = filtered.filter(result => activeFilters.categories!.includes(result.category));
     }
-    if (activeFilters.difficulty?.length) {
-      filtered = filtered.filter(result => result.difficulty && activeFilters.difficulty!.includes(result.difficulty));
+    if (activeFilters.difficulties?.length) {
+      filtered = filtered.filter(result => result.difficulty && activeFilters.difficulties!.includes(result.difficulty));
     }
     if (activeFilters.minScore) {
       filtered = filtered.filter(result => result.relevanceScore >= activeFilters.minScore!);
@@ -102,7 +103,7 @@ const EnhancedSearchResultsPage: React.FC<EnhancedSearchResultsPageProps> = ({
           comparison = a.type.localeCompare(b.type);
           break;
         case 'recent':
-          comparison = (b.lastUpdated?.getTime() || 0) - (a.lastUpdated?.getTime() || 0);
+          comparison = (new Date(b.lastUpdated || 0).getTime()) - (new Date(a.lastUpdated || 0).getTime());
           break;
       }
       
@@ -193,7 +194,7 @@ const EnhancedSearchResultsPage: React.FC<EnhancedSearchResultsPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           {/* Search Bar */}
           <div className="max-w-3xl mx-auto mb-4">
-            <EnhancedSearchBar
+            <OptimizedSearchBar
               onSearch={handleSearch}
               onResultSelect={onResultSelect}
               placeholder="Search EMT-B materials, protocols, medications..."
@@ -345,8 +346,8 @@ const EnhancedSearchResultsPage: React.FC<EnhancedSearchResultsPageProps> = ({
                         <label key={difficulty} className="flex items-center text-sm">
                           <input
                             type="checkbox"
-                            checked={(activeFilters.difficulty || []).includes(difficulty)}
-                            onChange={() => handleFilterChange('difficulty', difficulty)}
+                            checked={(activeFilters.difficulties || []).includes(difficulty)}
+                            onChange={() => handleFilterChange('difficulties', difficulty)}
                             className="mr-2 h-3 w-3"
                           />
                           <span>{difficulty}</span>
@@ -425,7 +426,7 @@ const EnhancedSearchResultsPage: React.FC<EnhancedSearchResultsPageProps> = ({
                             {result.title}
                           </h3>
                           <div className="flex items-center space-x-1 flex-shrink-0">
-                            {getPriorityIndicator(result.priority || 'low')}
+                            {/* Remove priority indicator as it's not in SearchResult interface */}
                             <ChevronRight className="h-4 w-4 text-gray-400" />
                           </div>
                         </div>
