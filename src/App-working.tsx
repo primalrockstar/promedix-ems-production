@@ -175,38 +175,47 @@ function App() {
 
           {/* Mobile Header */}
           <div className="lg:hidden">
-            <div className="grid grid-cols-3 items-center px-4 py-3">
-              {/* Left: Menu */}
-              <div className="flex justify-start">
-                <MoreMenu />
-              </div>
-
-              {/* Center: Logo & Tagline */}
-              <div className="flex justify-center">
-                <Link to="/" className="flex flex-col items-center">
-                  <img 
-                    src="/assets/LOGOFINAL.png" 
-                    alt="ProMedix EMS Logo" 
-                    className="w-48 h-48 object-contain"
-                    style={{ background: 'transparent' }}
-                  />
-                  <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center mt-1">
-                    Next-Gen Education Tool for Emergency Medical Services
-                  </div>
-                </Link>
-              </div>
+            {/* Top Row: Menu and Controls */}
+            <div className="flex items-center justify-between px-4 py-2">
+              {/* Left: Menu Button */}
+              <button
+                className="p-2 rounded-lg text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+                aria-label="Open menu"
+              >
+                <Menu className="w-5 h-5" />
+              </button>
 
               {/* Right: Dark Mode & Login */}
-              <div className="flex items-center justify-end space-x-2">
+              <div className="flex items-center space-x-1">
                 <button
                   onClick={() => setIsDark(!isDark)}
-                  className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  className="p-2 rounded-lg text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
                   aria-label="Toggle dark mode"
                 >
                   {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                 </button>
-                <LoginDropdown />
+                <button
+                  className="p-2 rounded-lg text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  aria-label="Login"
+                >
+                  <User className="w-4 h-4" />
+                </button>
               </div>
+            </div>
+
+            {/* Bottom Row: Large Logo & Tagline */}
+            <div className="flex justify-center pb-3">
+              <Link to="/" className="flex flex-col items-center">
+                <img 
+                  src="/assets/LOGOFINAL.png" 
+                  alt="ProMedix EMS Logo" 
+                  className="w-32 h-32 object-contain"
+                  style={{ background: 'transparent' }}
+                />
+                <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center mt-1">
+                  Next-Gen Education Tool for Emergency Medical Services
+                </div>
+              </Link>
             </div>
           </div>
         </header>
