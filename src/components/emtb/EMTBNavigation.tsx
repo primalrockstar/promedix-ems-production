@@ -71,7 +71,7 @@ const EMTBNavigation: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto p-6 space-y-8">
-      <div className="text-center space-y-4">
+      <div id="study" className="text-center space-y-4">
         <div className="flex justify-center items-center space-x-3">
           <Stethoscope className="h-12 w-12 text-blue-600" />
           <div>
@@ -88,11 +88,12 @@ const EMTBNavigation: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-6">
+      <div id="emtb" className="grid lg:grid-cols-2 xl:grid-cols-4 gap-6">
         {navigationCards.map((card, index) => (
           <Link
             key={index}
             to={card.path}
+            id={index === 0 ? "tools" : index === 3 ? "more" : undefined}
             className={`block p-6 border-2 rounded-xl transition-all duration-200 ${card.color} group`}
           >
             <div className="flex items-start justify-between mb-4">

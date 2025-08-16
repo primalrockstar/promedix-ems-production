@@ -149,7 +149,7 @@ function App() {
                     <img 
                       src="/assets/LOGOFINAL.png" 
                       alt="ProMedix EMS Logo" 
-                      className="w-80 h-80 object-contain"
+                      className="w-96 h-96 object-contain"
                     />
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400 font-medium text-center">
@@ -208,7 +208,7 @@ function App() {
                 <img 
                   src="/assets/LOGOFINAL.png" 
                   alt="ProMedix EMS Logo" 
-                  className="w-32 h-32 object-contain"
+                  className="w-48 h-48 object-contain"
                 />
                 <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center mt-1">
                   Next-Gen Education Tool for Emergency Medical Services
