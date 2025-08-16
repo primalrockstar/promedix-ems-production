@@ -6,6 +6,7 @@ import EMTBNavigation from './components/emtb/EMTBNavigation';
 import WelcomePage from './components/WelcomePage';
 import DisclaimerPage from './components/DisclaimerPage';
 import MedicalDisclaimer from './components/MedicalDisclaimer';
+import BottomNavigation from './components/BottomNavigation';
 
 // Simple dropdown menu component
 const MoreMenu = () => {
@@ -211,7 +212,7 @@ function App() {
         </header>
 
         {/* Main Content */}
-        <main className="max-w-7xl mx-auto p-4">
+        <main className="max-w-7xl mx-auto p-4 min-h-[calc(100vh-200px)] pb-20 lg:pb-4">
           <Routes>
             <Route path="/" element={<EMTBNavigation />} />
             <Route path="*" element={
@@ -222,6 +223,67 @@ function App() {
             } />
           </Routes>
         </main>
+
+        {/* Footer */}
+        <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-auto mb-16 lg:mb-0">
+          <div className="max-w-7xl mx-auto px-4 py-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {/* Company Info */}
+              <div className="col-span-1 md:col-span-2">
+                <div className="flex items-center mb-4">
+                  <img 
+                    src="/assets/LOGOFINAL.png" 
+                    alt="ProMedix EMS Logo" 
+                    className="w-12 h-12 object-contain mr-3"
+                  />
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">ProMedix EMS</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Next-Gen Education Tool for Emergency Medical Services</p>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  Empowering emergency medical professionals with cutting-edge training tools, 
+                  comprehensive protocols, and innovative learning solutions.
+                </p>
+                <div className="text-xs text-gray-500 dark:text-gray-500">
+                  © 2025 ProMedix EMS. All rights reserved.
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Quick Links</h4>
+                <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                  <li><Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400">Dashboard</Link></li>
+                  <li><Link to="/modules" className="hover:text-blue-600 dark:hover:text-blue-400">Study Modules</Link></li>
+                  <li><Link to="/protocols" className="hover:text-blue-600 dark:hover:text-blue-400">Protocols</Link></li>
+                  <li><Link to="/medications" className="hover:text-blue-600 dark:hover:text-blue-400">Medications</Link></li>
+                  <li><Link to="/tools" className="hover:text-blue-600 dark:hover:text-blue-400">Tools</Link></li>
+                </ul>
+              </div>
+
+              {/* Support */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Support</h4>
+                <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                  <li><button className="hover:text-blue-600 dark:hover:text-blue-400">Help Center</button></li>
+                  <li><button className="hover:text-blue-600 dark:hover:text-blue-400">Contact Us</button></li>
+                  <li><button className="hover:text-blue-600 dark:hover:text-blue-400">Privacy Policy</button></li>
+                  <li><button className="hover:text-blue-600 dark:hover:text-blue-400">Terms of Service</button></li>
+                  <li><button 
+                    className="hover:text-blue-600 dark:hover:text-blue-400"
+                    onClick={() => setShowFullDisclaimer(true)}
+                  >
+                    Medical Disclaimer
+                  </button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        {/* Mobile Bottom Navigation */}
+        <BottomNavigation />
       </div>
     </Router>
   );
