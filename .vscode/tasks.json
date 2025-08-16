@@ -51,6 +51,12 @@
 			"type": "shell",
 			"command": "git commit -m 'Update tasks.json'",
 			"group": "build"
+		},
+		{
+			"label": "Commit Header Update",
+			"type": "shell",
+			"command": "git commit -m 'Remove text from header, keep only logo and tagline'",
+			"group": "build"
 		}
 	]
 }

@@ -1662,37 +1662,43 @@ const ProMedixHeader = () => {
     <header className="bg-white dark:bg-[#0f141a] border-b border-gray-200 dark:border-gray-800 shadow-sm sticky top-0 z-50">
       {/* Mobile Header */}
       <div className="lg:hidden">
-        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
-          {/* Mobile Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="relative">
-              <img 
-                src="/assets/LOGOFINAL.png" 
-                alt="ProMedix EMS Logo" 
-                className="w-8 h-8 object-contain"
-                style={{ background: 'transparent' }}
-              />
-            </div>
-            <div>
-              <div className="text-xs text-gray-500 dark:text-gray-400">EMT-B Platform</div>
-            </div>
-          </Link>
+        <div className="grid grid-cols-3 items-center px-4 py-3 border-b border-gray-200 dark:border-gray-800">
+          {/* Left: More Menu */}
+          <div className="flex justify-start">
+            <MoreMenu 
+              currentPage={currentPage}
+              onNavigate={handleNavigation} 
+              allPages={allPages}
+              isDark={isDark}
+            />
+          </div>
 
-          {/* Mobile Actions */}
-          <div className="flex items-center space-x-2">
-            {/* Mobile Search Toggle */}
-            <button
-              onClick={() => setIsSearchExpanded(!isSearchExpanded)}
-              className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              <Search className="w-5 h-5" />
-            </button>
+          {/* Center: Logo & Tagline */}
+          <div className="flex justify-center">
+            <Link to="/" className="flex flex-col items-center">
+              <div className="flex items-center mb-1">
+                <div className="relative">
+                  <img 
+                    src="/assets/LOGOFINAL.png" 
+                    alt="ProMedix EMS Logo" 
+                    className="w-16 h-16 object-contain"
+                    style={{ background: 'transparent' }}
+                  />
+                </div>
+              </div>
+              <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center">
+                Your trusted companion to formal EMT-B training—designed for clarity, retention, and confident field application.
+              </div>
+            </Link>
+          </div>
 
-            {/* Dark Mode Toggle */}
+          {/* Right: Dark Mode & Login Dropdown */}
+          <div className="flex items-center justify-end space-x-2">
             <button
               onClick={() => setIsDark(v => !v)}
-              className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/60"
               aria-label="Toggle dark mode"
+              title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             >
               {isDark ? (
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -1701,18 +1707,7 @@ const ProMedixHeader = () => {
               )}
             </button>
 
-            {/* Mobile Menu Toggle */}
-            <button
-              id="mobile-menu-button"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </button>
+            <LoginDropdown isInstructor={isInstructor} />
           </div>
         </div>
 
@@ -1854,13 +1849,13 @@ const ProMedixHeader = () => {
                       <img 
                         src="/assets/LOGOFINAL.png" 
                         alt="ProMedix EMS Logo" 
-                        className="w-12 h-12 object-contain"
+                        className="w-32 h-32 object-contain"
                         style={{ background: 'transparent' }}
                       />
                     </div>
                   </div>
                   <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">
-                    Next-Gen Education Tool for Emergency Medical Services
+                    Your trusted companion to formal EMT-B training—designed for clarity, retention, and confident field application.
                   </div>
                 </Link>
               </div>
