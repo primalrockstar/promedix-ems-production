@@ -8792,9 +8792,9 @@ const EMTBStudyNotes: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="mt-3 text-xs text-yellow-600">
+        <div className="mt-3 text-sm text-yellow-600">
           <div className="font-semibold mb-1">Comprehensive Platform Search Includes:</div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-1 text-xs">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-1 text-sm">
             <div>• Study chapters & sections</div>
             <div>• Medications & dosages</div>
             <div>• EMS protocols & procedures</div>
@@ -8901,7 +8901,7 @@ const EMTBStudyNotes: React.FC = () => {
         </p>
         <button
           onClick={() => setActiveTab('flashcards')}
-          className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm transition-colors"
+          className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-base transition-colors"
         >
           Practice Flashcards
         </button>
@@ -9122,7 +9122,7 @@ const EMTBStudyNotes: React.FC = () => {
           <h3 className="text-lg font-semibold text-gray-900">
             Flashcard {currentFlashcard + 1} of {flashcards.length}
             {flashcards[currentFlashcard].category && (
-              <span className="ml-2 px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full">
+              <span className="ml-2 px-2 py-1 text-sm bg-blue-100 text-blue-800 rounded-full">
                 {flashcards[currentFlashcard].category}
               </span>
             )}
@@ -9131,14 +9131,14 @@ const EMTBStudyNotes: React.FC = () => {
             <button
               onClick={() => setCurrentFlashcard(Math.max(0, currentFlashcard - 1))}
               disabled={currentFlashcard === 0}
-              className="px-3 py-1 bg-gray-200 hover:bg-gray-300 disabled:opacity-50 rounded text-sm"
+              className="px-3 py-1 bg-gray-200 hover:bg-gray-300 disabled:opacity-50 rounded text-base"
             >
               Previous
             </button>
             <button
               onClick={() => setCurrentFlashcard(Math.min(flashcards.length - 1, currentFlashcard + 1))}
               disabled={currentFlashcard === flashcards.length - 1}
-              className="px-3 py-1 bg-gray-200 hover:bg-gray-300 disabled:opacity-50 rounded text-sm"
+              className="px-3 py-1 bg-gray-200 hover:bg-gray-300 disabled:opacity-50 rounded text-base"
             >
               Next
             </button>
