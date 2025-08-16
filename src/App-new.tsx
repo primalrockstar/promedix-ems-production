@@ -1267,12 +1267,11 @@ const [progress, setProgress] = useState({
   });
 
   const [showDisclaimerBanner, setShowDisclaimerBanner] = useState(() => {
-    return false; // Will be controlled by welcome/disclaimer flow
+    return false; // Disabled for testing
   });
 
   const [showWelcome, setShowWelcome] = useState(() => {
-    const welcomeSeen = localStorage.getItem('promedix_welcome_seen');
-    return !welcomeSeen; // Show welcome if not seen before
+    return false; // Disabled for testing - go straight to main app
   });
 
   const [showFullDisclaimer, setShowFullDisclaimer] = useState(false);
