@@ -45,6 +45,12 @@
 				"-Command"
 			],
 			"group": "build"
+		},
+		{
+			"label": "Commit Final",
+			"type": "shell",
+			"command": "git commit -m 'Update tasks.json'",
+			"group": "build"
 		}
 	]
 }

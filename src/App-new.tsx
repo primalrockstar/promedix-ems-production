@@ -1674,11 +1674,7 @@ const ProMedixHeader = () => {
               />
             </div>
             <div>
-              <h1 className="text-lg font-bold">
-                <span className="text-primary">ProMedix</span>
-                <span className="text-gray-500 dark:text-gray-400">EMS</span>
-              </h1>
-              <div className="text-xs text-gray-500 dark:text-gray-400 -mt-1">EMT-B Platform</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400">EMT-B Platform</div>
             </div>
           </Link>
 
@@ -1853,7 +1849,7 @@ const ProMedixHeader = () => {
               {/* Center: ProMedix Logo (Dead Center) */}
               <div className="flex justify-center">
                 <Link to="/" className="flex flex-col items-center">
-                  <div className="flex items-center space-x-3 mb-1">
+                  <div className="flex items-center mb-1">
                     <div className="relative">
                       <img 
                         src="/assets/LOGOFINAL.png" 
@@ -1861,13 +1857,6 @@ const ProMedixHeader = () => {
                         className="w-12 h-12 object-contain"
                         style={{ background: 'transparent' }}
                       />
-                    </div>
-                    <div>
-                      <h1 className="text-2xl font-bold">
-                        <span className="text-primary">ProMedix</span>
-                        <span className="text-gray-500 dark:text-gray-400">EMS</span>
-                        <sup className="text-sm text-gray-400 dark:text-gray-500">™</sup>
-                      </h1>
                     </div>
                   </div>
                   <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">
