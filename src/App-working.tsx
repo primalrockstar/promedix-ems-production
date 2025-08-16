@@ -150,7 +150,6 @@ function App() {
                       src="/assets/LOGOFINAL.png" 
                       alt="ProMedix EMS Logo" 
                       className="w-80 h-80 object-contain"
-                      style={{ background: 'transparent' }}
                     />
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400 font-medium text-center">
@@ -210,7 +209,6 @@ function App() {
                   src="/assets/LOGOFINAL.png" 
                   alt="ProMedix EMS Logo" 
                   className="w-32 h-32 object-contain"
-                  style={{ background: 'transparent' }}
                 />
                 <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center mt-1">
                   Next-Gen Education Tool for Emergency Medical Services

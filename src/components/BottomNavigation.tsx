@@ -9,10 +9,10 @@ const BottomNavigation = () => {
 
   const bottomNavItems = [
     { name: 'Dashboard', path: '/', icon: Home },
-    { name: 'Modules', path: '/modules', icon: BookOpen },
-    { name: 'EMT-B', path: '/emtb', icon: Heart },
-    { name: 'Tools', path: '/tools', icon: Calculator },
-    { name: 'More', path: '/more', icon: Menu },
+    { name: 'Study', path: '/', icon: BookOpen },
+    { name: 'EMT-B', path: '/', icon: Heart },
+    { name: 'Tools', path: '/', icon: Calculator },
+    { name: 'More', path: '/', icon: Menu },
   ];
 
   return (
