@@ -1666,18 +1666,12 @@ const ProMedixHeader = () => {
           {/* Mobile Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="relative">
-              <svg width="32" height="32" viewBox="0 0 100 100" className="text-primary">
-                <rect x="35" y="10" width="30" height="80" rx="4" fill="currentColor" />
-                <rect x="10" y="35" width="80" height="30" rx="4" fill="currentColor" />
-                <path
-                  d="M15 50 L25 50 L30 40 L35 60 L40 30 L45 70 L50 50 L85 50"
-                  stroke="#60A5FA"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <img 
+                src="/assets/LOGOFINAL.png" 
+                alt="ProMedix EMS Logo" 
+                className="w-8 h-8 object-contain"
+                style={{ background: 'transparent' }}
+              />
             </div>
             <div>
               <h1 className="text-lg font-bold">
@@ -1861,18 +1855,12 @@ const ProMedixHeader = () => {
                 <Link to="/" className="flex flex-col items-center">
                   <div className="flex items-center space-x-3 mb-1">
                     <div className="relative">
-                      <svg width="48" height="48" viewBox="0 0 100 100" className="text-primary">
-                        <rect x="35" y="10" width="30" height="80" rx="4" fill="currentColor" />
-                        <rect x="10" y="35" width="80" height="30" rx="4" fill="currentColor" />
-                        <path
-                          d="M15 50 L25 50 L30 40 L35 60 L40 30 L45 70 L50 50 L85 50"
-                          stroke="#60A5FA"
-                          strokeWidth="3"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <img 
+                        src="/assets/LOGOFINAL.png" 
+                        alt="ProMedix EMS Logo" 
+                        className="w-12 h-12 object-contain"
+                        style={{ background: 'transparent' }}
+                      />
                     </div>
                     <div>
                       <h1 className="text-2xl font-bold">
@@ -1883,7 +1871,7 @@ const ProMedixHeader = () => {
                     </div>
                   </div>
                   <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">
-                    The Next-Gen Education Tool for Emergency Medical Services
+                    Next-Gen Education Tool for Emergency Medical Services
                   </div>
                 </Link>
               </div>

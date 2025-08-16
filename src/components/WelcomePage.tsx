@@ -49,20 +49,19 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onComplete }) => {
             Welcome to
           </h1>
 
-          {/* ProMedix EMS Logo - Enlarged but Properly Sized */}
-          <div className="flex justify-center mb-8 md:mb-12">
+          {/* ProMedix EMS Logo - Centered with Transparent Background */}
+          <div className="flex flex-col items-center justify-center mb-8 md:mb-12">
             <img 
               src="/assets/LOGOFINAL.png" 
               alt="ProMedix EMS Logo" 
-              className="w-[450px] h-36 sm:w-[600px] sm:h-48 md:w-[800px] md:h-64 lg:w-[1000px] lg:h-80 xl:w-[1200px] xl:h-96 object-contain max-w-[90vw]"
-              style={{ background: 'transparent', border: 'none', boxShadow: 'none' }}
+              className="w-[450px] h-36 sm:w-[600px] sm:h-48 md:w-[800px] md:h-64 lg:w-[1000px] lg:h-80 xl:w-[1200px] xl:h-96 object-contain max-w-[90vw] mb-4"
+              style={{ background: 'transparent', border: 'none', boxShadow: 'none', backgroundColor: 'transparent' }}
             />
+            {/* Tagline directly under logo */}
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-medium leading-relaxed px-4 whitespace-nowrap">
+              The Next-Gen Education Tool for Emergency Medical Services
+            </p>
           </div>
-          
-          {/* Tagline */}
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-medium mb-8 md:mb-12 leading-relaxed px-4">
-            The Next-Gen Education Tool for Emergency Medical Services
-          </p>
         </div>
 
         {/* Auto-progress countdown */}

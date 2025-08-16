@@ -1,4 +1,9 @@
 ﻿// Updated ProMedixHeader Component - Centered Logo Design
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../auth/AuthContext';
+import { Home, BookOpen, Heart, FileText, Stethoscope, Calculator, Menu, ChevronDown, Bell, Users, User } from 'lucide-react';
+
 const ProMedixHeader = () => {
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
@@ -67,20 +72,18 @@ const ProMedixHeader = () => {
               </div>
             </div>
 
-            {/* Center: Logo and Tagline */}
+            {/* Center: ProMedix EMS Logo and Tagline */}
             <div className="flex-1 flex justify-center">
               <Link to="/" className="flex flex-col items-center space-y-1">
-                <div className="flex items-center space-x-3">
-                  <div className="relative">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">+</span>
-                    </div>
-                  </div>
-                  <span className="text-xl font-bold text-gray-900 dark:text-white">
-                    ProMedix<span className="text-blue-600">EMS</span>
-                  </span>
+                <div className="flex items-center justify-center">
+                  <img 
+                    src="/assets/LOGOFINAL.png" 
+                    alt="ProMedix EMS Logo" 
+                    className="h-8 sm:h-10 md:h-12 object-contain"
+                    style={{ background: 'transparent', border: 'none', boxShadow: 'none', backgroundColor: 'transparent' }}
+                  />
                 </div>
-                <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium text-center whitespace-nowrap">
                   The Next-Gen Education Tool for Emergency Medical Services
                 </p>
               </Link>

@@ -85,16 +85,24 @@ const EnhancedLMSNavigation: React.FC<EnhancedLMSNavigationProps> = ({
   };
 
   return (
-    <nav className={{isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'} border-b sticky top-0 z-50 transition-colors duration-200}>
+    <nav className={`${isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'} border-b sticky top-0 z-50 transition-colors duration-200`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           
-          {/* Logo and Brand */}
-          <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center">
-              <div className={{isDarkMode ? 'text-blue-400' : 'text-blue-600'} font-bold text-xl}>
-                ProMedix EMS
+          {/* Center: ProMedix EMS Logo and Tagline */}
+          <div className="flex-1 flex justify-center">
+            <Link to="/" className="flex flex-col items-center space-y-1">
+              <div className="flex items-center justify-center">
+                <img 
+                  src="/assets/LOGOFINAL.png" 
+                  alt="ProMedix EMS Logo" 
+                  className="h-8 sm:h-10 object-contain"
+                  style={{ background: 'transparent', border: 'none', boxShadow: 'none', backgroundColor: 'transparent' }}
+                />
               </div>
+              <p className="text-xs text-gray-500 dark:text-gray-400 font-medium text-center whitespace-nowrap hidden sm:block">
+                The Next-Gen Education Tool for Emergency Medical Services
+              </p>
             </Link>
           </div>
 
@@ -108,11 +116,11 @@ const EnhancedLMSNavigation: React.FC<EnhancedLMSNavigationProps> = ({
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={{
+                  className={`${
                     isActive(item.path)
                       ? isDarkMode ? 'text-blue-400 bg-gray-800' : 'text-blue-600 bg-blue-50'
                       : isDarkMode ? 'text-gray-300 hover:text-white hover:bg-gray-800' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
-                  } px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-1 transition-colors duration-200}
+                  } px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-1 transition-colors duration-200`}
                 >
                   <Icon className="h-4 w-4" />
                   <span>{item.name}</span>
