@@ -1,4 +1,5 @@
 ﻿import React from 'react';
+import { Link } from 'react-router-dom';
 import { Calculator, FileText, Heart, Stethoscope, Clock, Star, ChevronRight, Brain, BookOpen, Target } from 'lucide-react';
 
 const EMTBNavigation: React.FC = () => {
@@ -89,11 +90,11 @@ const EMTBNavigation: React.FC = () => {
 
       <div id="emtb" className="grid lg:grid-cols-2 xl:grid-cols-4 gap-6">
         {navigationCards.map((card, index) => (
-          <button
+          <Link
             key={index}
-            onClick={() => alert(`${card.title} - Coming Soon!\n\nThis feature will include:\n${card.items.slice(0, 3).map(item => `• ${item}`).join('\n')}`)}
+            to={card.path}
             id={index === 0 ? "tools" : index === 3 ? "more" : undefined}
-            className={`block p-6 border-2 rounded-xl transition-all duration-200 ${card.color} group text-left w-full cursor-pointer`}
+            className={`block p-6 border-2 rounded-xl transition-all duration-200 ${card.color} group`}
           >
             <div className="flex items-start justify-between mb-4">
               <card.icon className={`h-10 w-10 ${card.iconColor} group-hover:scale-110 transition-transform`} />
@@ -112,7 +113,7 @@ const EMTBNavigation: React.FC = () => {
                 </div>
               ))}
             </div>
-          </button>
+          </Link>
         ))}
       </div>
     </div>

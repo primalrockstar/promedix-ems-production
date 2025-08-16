@@ -115,13 +115,15 @@ function App() {
   }, [isDark]);
 
   const [showWelcome, setShowWelcome] = useState(() => {
-    return !localStorage.getItem('promedix_welcome_seen');
+    // Temporarily disable welcome for testing - set to false
+    return false; // !localStorage.getItem('promedix_welcome_seen');
   });
 
   const [showFullDisclaimer, setShowFullDisclaimer] = useState(false);
   
   const [showDisclaimerBanner, setShowDisclaimerBanner] = useState(() => {
-    return !localStorage.getItem('promedix_disclaimer_accepted');
+    // Temporarily disable disclaimer banner for testing - set to false  
+    return false; // !localStorage.getItem('promedix_disclaimer_accepted');
   });
 
   const handleWelcomeComplete = () => {
@@ -243,6 +245,174 @@ function App() {
         <main className="max-w-7xl mx-auto p-4 min-h-[calc(100vh-200px)] pb-20 lg:pb-4">
           <Routes>
             <Route path="/" element={<EMTBNavigation />} />
+            <Route path="/emtb/calculators" element={
+              <div className="p-8">
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">EMT-B Calculators</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
+                    <h3 className="text-xl font-semibold mb-4">Glasgow Coma Scale</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Assess level of consciousness</p>
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                      Open Calculator
+                    </button>
+                  </div>
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
+                    <h3 className="text-xl font-semibold mb-4">Pediatric Vital Signs</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Age-based vital sign ranges</p>
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                      Open Calculator
+                    </button>
+                  </div>
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
+                    <h3 className="text-xl font-semibold mb-4">Rule of Nines</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Calculate burn surface area</p>
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                      Open Calculator
+                    </button>
+                  </div>
+                </div>
+              </div>
+            } />
+            <Route path="/emtb/protocols" element={
+              <div className="p-8">
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">EMT-B Protocols</h1>
+                <div className="space-y-6">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
+                    <h3 className="text-xl font-semibold mb-4">Primary Assessment</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Initial patient evaluation protocol</p>
+                    <div className="space-y-2">
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                        <span>Scene safety and BSI</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                        <span>General impression</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                        <span>Airway assessment</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
+                    <h3 className="text-xl font-semibold mb-4">Airway Management</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Comprehensive airway protocols</p>
+                    <div className="space-y-2">
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 bg-green-600 rounded-full mr-3"></div>
+                        <span>Head-tilt chin-lift</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 bg-green-600 rounded-full mr-3"></div>
+                        <span>Jaw-thrust maneuver</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 bg-green-600 rounded-full mr-3"></div>
+                        <span>Suction techniques</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            } />
+            <Route path="/emtb/medications" element={
+              <div className="p-8">
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">EMT-B Medications</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
+                    <h3 className="text-xl font-semibold mb-4 text-red-600">Oxygen</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Classification:</strong> Gas</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Indications:</strong> Hypoxia, Respiratory distress</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Dosage:</strong> 2-15 LPM as needed</p>
+                    <p className="text-gray-600 dark:text-gray-400"><strong>Route:</strong> Inhalation</p>
+                  </div>
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
+                    <h3 className="text-xl font-semibold mb-4 text-red-600">Epinephrine</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Classification:</strong> Sympathomimetic</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Indications:</strong> Anaphylaxis, Severe asthma</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Dosage:</strong> 0.3mg (Adult), 0.15mg (Pediatric)</p>
+                    <p className="text-gray-600 dark:text-gray-400"><strong>Route:</strong> Intramuscular</p>
+                  </div>
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
+                    <h3 className="text-xl font-semibold mb-4 text-red-600">Aspirin</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Classification:</strong> Antiplatelet</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Indications:</strong> Chest pain, Suspected MI</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Dosage:</strong> 160-325mg chewed</p>
+                    <p className="text-gray-600 dark:text-gray-400"><strong>Route:</strong> Oral</p>
+                  </div>
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
+                    <h3 className="text-xl font-semibold mb-4 text-red-600">Oral Glucose</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Classification:</strong> Carbohydrate</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Indications:</strong> Hypoglycemia (conscious patient)</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Dosage:</strong> 15-20g tube</p>
+                    <p className="text-gray-600 dark:text-gray-400"><strong>Route:</strong> Oral</p>
+                  </div>
+                </div>
+              </div>
+            } />
+            <Route path="/emtb/flashcards" element={
+              <div className="p-8">
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">EMT-B Flashcards</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-2 border-purple-200 dark:border-purple-700">
+                    <h3 className="text-xl font-semibold mb-4 text-purple-800 dark:text-purple-200">Patient Assessment Cards</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Interactive cards for patient evaluation</p>
+                    <div className="text-sm text-purple-600 dark:text-purple-400 mb-4">47 Cards Available</div>
+                    <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+                      Start Study Session
+                    </button>
+                  </div>
+                  <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-2 border-purple-200 dark:border-purple-700">
+                    <h3 className="text-xl font-semibold mb-4 text-purple-800 dark:text-purple-200">Airway & Breathing</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Respiratory assessment and management</p>
+                    <div className="text-sm text-purple-600 dark:text-purple-400 mb-4">52 Cards Available</div>
+                    <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+                      Start Study Session
+                    </button>
+                  </div>
+                  <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-2 border-purple-200 dark:border-purple-700">
+                    <h3 className="text-xl font-semibold mb-4 text-purple-800 dark:text-purple-200">Medication Cards</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">EMT-B scope medications and dosages</p>
+                    <div className="text-sm text-purple-600 dark:text-purple-400 mb-4">38 Cards Available</div>
+                    <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+                      Start Study Session
+                    </button>
+                  </div>
+                </div>
+              </div>
+            } />
+            <Route path="/emtb/study-notes" element={
+              <div className="p-8">
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">EMT-B Study Notes</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border-2 border-yellow-200 dark:border-yellow-700">
+                    <h3 className="text-xl font-semibold mb-4 text-yellow-800 dark:text-yellow-200">Chapter 1: EMS Systems</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Introduction to Emergency Medical Services</p>
+                    <div className="text-sm text-yellow-600 dark:text-yellow-400 mb-4">Complete Study Guide</div>
+                    <button className="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">
+                      Read Chapter
+                    </button>
+                  </div>
+                  <div className="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border-2 border-yellow-200 dark:border-yellow-700">
+                    <h3 className="text-xl font-semibold mb-4 text-yellow-800 dark:text-yellow-200">Chapter 2: Workforce Safety</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Safety and wellness principles</p>
+                    <div className="text-sm text-yellow-600 dark:text-yellow-400 mb-4">Complete Study Guide</div>
+                    <button className="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">
+                      Read Chapter
+                    </button>
+                  </div>
+                  <div className="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border-2 border-yellow-200 dark:border-yellow-700">
+                    <h3 className="text-xl font-semibold mb-4 text-yellow-800 dark:text-yellow-200">Chapter 3: Medical, Legal, Ethics</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Legal and ethical considerations</p>
+                    <div className="text-sm text-yellow-600 dark:text-yellow-400 mb-4">Complete Study Guide</div>
+                    <button className="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">
+                      Read Chapter
+                    </button>
+                  </div>
+                </div>
+              </div>
+            } />
             <Route path="*" element={
               <div className="text-center p-8">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Page Not Found</h2>
