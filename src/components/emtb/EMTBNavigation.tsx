@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calculator, FileText, Heart, Stethoscope, Users, Clock, Star, ChevronRight, Brain, BookOpen, Target } from 'lucide-react';
+import { Calculator, FileText, Heart, Stethoscope, Clock, Star, ChevronRight, Brain, BookOpen, Target } from 'lucide-react';
 
 const EMTBNavigation: React.FC = () => {
   const navigationCards = [
@@ -69,15 +69,6 @@ const EMTBNavigation: React.FC = () => {
     }
   ];
 
-  const quickStats = [
-    { label: 'Calculators', value: '5', icon: Calculator, color: 'text-blue-600' },
-    { label: 'Protocols', value: '5', icon: FileText, color: 'text-green-600' },
-    { label: 'Medications', value: '8', icon: Heart, color: 'text-red-600' },
-    { label: 'Practice Questions', value: '420+', icon: Target, color: 'text-orange-600' },
-    { label: 'Study Chapters', value: '55+', icon: Users, color: 'text-purple-600' },
-    { label: 'Flashcards', value: '500+', icon: Brain, color: 'text-indigo-600' }
-  ];
-
   return (
     <div className="max-w-7xl mx-auto p-6 space-y-8">
       <div className="text-center space-y-4">
@@ -95,16 +86,6 @@ const EMTBNavigation: React.FC = () => {
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           Comprehensive training with 14 modules, 41 detailed chapters, bonus content, and professional EMT-B scope practice tools.
         </p>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        {quickStats.map((stat, index) => (
-          <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-shadow">
-            <stat.icon className={`h-8 w-8 mx-auto mb-2 ${stat.color}`} />
-            <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-            <div className="text-sm text-gray-600">{stat.label}</div>
-          </div>
-        ))}
       </div>
 
       <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-6">

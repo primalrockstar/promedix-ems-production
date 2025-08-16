@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Push Changes",
+			"type": "shell",
+			"command": "git add . && git commit -m \"Remove dashboard statistics cards\" && git push origin main",
+			"group": "build"
+		},
+		{
+			"label": "Git Add",
+			"type": "shell",
+			"command": "git add .",
+			"group": "build"
+		}
+	]
+}
