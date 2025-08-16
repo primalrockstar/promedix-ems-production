@@ -1,4 +1,4 @@
-// Complete ProMedix EMS Training Platform - Production Ready  
+ï»¿// Complete ProMedix EMS Training Platform - Production Ready  
 // Force rebuild timestamp: 2025-08-12 Disclaimer deployment fix
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useParams, useNavigate } from 'react-router-dom';
@@ -46,7 +46,7 @@ const StudentDashboard: React.FC = () => {
   );
 }
 
-// Complete EMT-B Module Structure with All 41 Chapters (Modules 1–14 only)
+// Complete EMT-B Module Structure with All 41 Chapters (Modules 1ï¿½14 only)
 // Human Body Systems is treated as a separate Bonus module below
 const moduleStructure = [
   {
@@ -535,7 +535,7 @@ const medicationsDatabase = [
     sideEffects: ["Oxygen toxicity (rare in EMS)", "Drying of respiratory tract", "Fire hazard"],
     monitoring: ["SpO2 continuous", "Respiratory rate and effort", "Mental status", "Skin color"],
     precautions: ["Fire hazard - no smoking", "Secure tanks properly", "Check flow rates"],
-  clinicalPearls: ["Oxygen is a drug—titrate to effect (SpO2 = 94%)", "High-flow NRB/BVM for severe hypoxia or CO exposure", "Monitor COPD patients carefully; avoid hyperoxia"]
+  clinicalPearls: ["Oxygen is a drugï¿½titrate to effect (SpO2 = 94%)", "High-flow NRB/BVM for severe hypoxia or CO exposure", "Monitor COPD patients carefully; avoid hyperoxia"]
   },
   {
     id: 2,
@@ -552,12 +552,12 @@ const medicationsDatabase = [
       "RELATIVE (use caution/medical direction): SBP >180 mmHg + severe headache/chest pain",
       "RELATIVE: Known severe heart disease (e.g., recent heart attack)"
     ],
-    dosing: "Adults: 0.3 mg IM (EpiPen®/Auvi-Q®) or 0.3-0.5 mg manual IM (1:1000); Pediatrics (=30 kg): 0.15 mg (Junior EpiPen®) or 0.01 mg/kg manual IM (Max 0.3 mg)",
+    dosing: "Adults: 0.3 mg IM (EpiPenï¿½/Auvi-Qï¿½) or 0.3-0.5 mg manual IM (1:1000); Pediatrics (=30 kg): 0.15 mg (Junior EpiPenï¿½) or 0.01 mg/kg manual IM (Max 0.3 mg)",
     routes: [
-      "Intramuscular (EMT-B scope) — anterolateral thigh (vastus lateralis)",
-      "Autoinjector: Jab firmly, hold =3 seconds ? massage ×10 sec",
+      "Intramuscular (EMT-B scope) ï¿½ anterolateral thigh (vastus lateralis)",
+      "Autoinjector: Jab firmly, hold =3 seconds ? massage ï¿½10 sec",
       "Manual IM: Draw from 1 mg/mL vial (1:1000) ? 22-25G needle, 5/8\"-1\" length",
-      "Repeat per local protocol (often q5–10 min if symptoms persist)"
+      "Repeat per local protocol (often q5ï¿½10 min if symptoms persist)"
     ],
     sideEffects: [
       "Expected: Rapid heartbeat, pale skin/tremors, headache, nausea",
@@ -696,7 +696,7 @@ const medicationsDatabase = [
     id: 5,
     name: "Nitroglycerin",
     category: "cardiac",
-  classification: "Vasodilator, Antianginal (AEMT/Paramedic; EMT-B may assist with patient’s Rx per protocol)",
+  classification: "Vasodilator, Antianginal (AEMT/Paramedic; EMT-B may assist with patientï¿½s Rx per protocol)",
     mechanism: "Dilates veins ? ? Preload; Dilates arteries ? ? Afterload; Key Effect: Reduces cardiac oxygen demand & improves coronary blood flow",
     indications: [
       "Cardiac chest pain (angina)",
@@ -706,17 +706,17 @@ const medicationsDatabase = [
     ],
     contraindications: [
       "ABSOLUTE: SBP < 90-100 mmHg (verify per protocol)",
-      "ABSOLUTE: Recent ED drugs - Sildenafil (Viagra®), Tadalafil (Cialis®), Vardenafil (Levitra®) within 24-48 hrs",
+      "ABSOLUTE: Recent ED drugs - Sildenafil (Viagraï¿½), Tadalafil (Cialisï¿½), Vardenafil (Levitraï¿½) within 24-48 hrs",
       "ABSOLUTE: Right ventricular infarction (suspect if JVD + hypotension)",
       "ABSOLUTE: Severe aortic stenosis",
       "ABSOLUTE: Head trauma/increased intracranial pressure (ICP)",
       "NEW CONTRAINDICATION: Riociguat use (pulmonary HTN drug)"
     ],
-    dosing: "Standard: 0.4 mg SL tablet/spray ×1 dose; Repeat: If pain persists after 5 min ? 2nd dose (0.4 mg); Max 3 doses (1.2 mg total); No relief after 3 doses ? Suspect STEMI ? Transport immediately!",
+    dosing: "Standard: 0.4 mg SL tablet/spray ï¿½1 dose; Repeat: If pain persists after 5 min ? 2nd dose (0.4 mg); Max 3 doses (1.2 mg total); No relief after 3 doses ? Suspect STEMI ? Transport immediately!",
     routes: [
       "Sublingual tablet: Place under tongue or in buccal pouch ? let dissolve",
       "Sublingual spray: Aim under tongue ? avoid inhaling",
-      "DO NOT let patient swallow, eat, drink, or rinse mouth × 5 min"
+      "DO NOT let patient swallow, eat, drink, or rinse mouth ï¿½ 5 min"
     ],
     sideEffects: [
       "Expected: Headache (sign it's working), flushing, transient dizziness",
@@ -900,7 +900,7 @@ const MedicationSimulationsPage: React.FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 mb-1">{sim.title}</h3>
               <div className="text-sm text-gray-600 mb-2">Medication: <span className="font-medium">{sim.medication}</span></div>
               <div className="text-xs text-gray-500 line-clamp-3">{sim.scenario}</div>
-              <div className="mt-3 text-xs text-gray-500">Steps: {sim.steps?.length ?? 0} • Time Limit: {sim.timeLimit ?? 0} min</div>
+              <div className="mt-3 text-xs text-gray-500">Steps: {sim.steps?.length ?? 0} ï¿½ Time Limit: {sim.timeLimit ?? 0} min</div>
             </div>
           </Link>
         ))}
@@ -1080,7 +1080,7 @@ const MedicationSimulationRunner: React.FC = () => {
               <div>RR: <span className="font-medium text-gray-900">{sim.patientPresentation?.vitals?.rr}</span></div>
               <div>SpO2: <span className="font-medium text-gray-900">{sim.patientPresentation?.vitals?.spo2}%</span></div>
               {typeof sim.patientPresentation?.vitals?.temp !== 'undefined' && (
-                <div>T: <span className="font-medium text-gray-900">{sim.patientPresentation?.vitals?.temp}°F</span></div>
+                <div>T: <span className="font-medium text-gray-900">{sim.patientPresentation?.vitals?.temp}ï¿½F</span></div>
               )}
             </div>
 
@@ -1267,11 +1267,12 @@ const [progress, setProgress] = useState({
   });
 
   const [showDisclaimerBanner, setShowDisclaimerBanner] = useState(() => {
-    return false; // Skip disclaimer banner for testing
+    return false; // Will be controlled by welcome/disclaimer flow
   });
 
   const [showWelcome, setShowWelcome] = useState(() => {
-    return false; // Skip welcome for testing
+    const welcomeSeen = localStorage.getItem('promedix_welcome_seen');
+    return !welcomeSeen; // Show welcome if not seen before
   });
 
   const [showFullDisclaimer, setShowFullDisclaimer] = useState(false);
@@ -1292,9 +1293,9 @@ const [progress, setProgress] = useState({
     <AuthProvider>
       <Router>
         {showWelcome ? (
-          <WelcomePage onComplete={handleWelcomeComplete} />
+          <WelcomePage onComplete={handleWelcomeComplete} autoAdvanceDelay={5000} />
         ) : showFullDisclaimer ? (
-          <DisclaimerPage onComplete={handleDisclaimerComplete} autoAdvance={true} />
+          <DisclaimerPage onComplete={handleDisclaimerComplete} autoAdvance={true} autoAdvanceDelay={5000} />
         ) : (
           <div className="min-h-screen font-roboto pb-20 lg:pb-0">
             {showDisclaimerBanner && (
@@ -1309,7 +1310,8 @@ const [progress, setProgress] = useState({
             
             <div className="max-w-7xl mx-auto pb-4">
             <Routes>
-            <Route path="/" element={<EMTBNavigation />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/emtb" element={<EMTBNavigation />} />
             <Route path="/modules" element={<StudyModulesPage />} />
             <Route path="/modules/:moduleId" element={<ModuleDetailPage />} />
             <Route path="/chapter/:chapterId" element={<EMTBStudyNotesEnhanced />} />
@@ -1358,7 +1360,7 @@ const [progress, setProgress] = useState({
             <div className="max-w-7xl mx-auto py-8 px-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-900 mb-4">ProMedix EMS™</h3>
+                  <h3 className="text-sm font-semibold text-gray-900 mb-4">ProMedix EMSï¿½</h3>
                   <p className="text-xs text-gray-600 leading-relaxed">
                     Professional Emergency Medical Training Platform for EMT, AEMT, and Paramedic education.
                     For training purposes only.
@@ -1399,7 +1401,7 @@ const [progress, setProgress] = useState({
               </div>
               <div className="border-t border-gray-200 mt-8 pt-6 text-center">
                 <p className="text-xs text-gray-500">
-                  © 2025 ProMedix EMS™ - FOR EDUCATIONAL PURPOSES ONLY
+                  ï¿½ 2025 ProMedix EMSï¿½ - FOR EDUCATIONAL PURPOSES ONLY
                 </p>
                 <p className="text-xs text-red-600 font-medium mt-1">
                   Always follow current local EMS protocols and medical direction
@@ -1686,7 +1688,7 @@ const ProMedixHeader = () => {
                 </div>
               </div>
               <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center">
-                Your trusted companion to formal EMT-B training—designed for clarity, retention, and confident field application.
+                Your trusted companion to formal EMT-B trainingï¿½designed for clarity, retention, and confident field application.
               </div>
             </Link>
           </div>
@@ -1854,7 +1856,7 @@ const ProMedixHeader = () => {
                     </div>
                   </div>
                   <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">
-                    Your trusted companion to formal EMT-B training—designed for clarity, retention, and confident field application.
+                    Your trusted companion to formal EMT-B trainingï¿½designed for clarity, retention, and confident field application.
                   </div>
                 </Link>
               </div>
@@ -2349,7 +2351,7 @@ const GIQuadrantsDiagramSVG: React.FC = () => (
     <text x="230" y="155" textAnchor="middle" fontSize="12" fill="#111827">LLQ</text>
   <text x="370" y="155" textAnchor="middle" fontSize="12" fill="#111827">RLQ</text>
   {/* Caption */}
-  <text x="300" y="210" textAnchor="middle" fontSize="11" fill="#111827">RUQ: liver/GB • LUQ: spleen/stomach • RLQ: appendix • LLQ: sigmoid colon</text>
+  <text x="300" y="210" textAnchor="middle" fontSize="11" fill="#111827">RUQ: liver/GB ï¿½ LUQ: spleen/stomach ï¿½ RLQ: appendix ï¿½ LLQ: sigmoid colon</text>
   {/* Plain language */}
   <text x="300" y="195" textAnchor="middle" fontSize="11" fill="#4b5563">Plain: RUQ = right upper belly, LUQ = left upper, RLQ = right lower, LLQ = left lower (GB = gallbladder)</text>
   </svg>
@@ -2532,7 +2534,7 @@ const MedicationsPage = () => {
                     <h4 className="font-medium text-gray-700 mb-1">Routes:</h4>
                     <ul className="text-sm text-gray-600">
                       {selectedMedication.routes.map((route, index) => (
-                        <li key={index}>• {route}</li>
+                        <li key={index}>ï¿½ {route}</li>
                       ))}
                     </ul>
                   </div>
@@ -2542,7 +2544,7 @@ const MedicationsPage = () => {
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Side Effects</h3>
                   <ul className="space-y-1">
                     {selectedMedication.sideEffects.map((effect, index) => (
-                      <li key={index} className="text-gray-700 text-sm">• {effect}</li>
+                      <li key={index} className="text-gray-700 text-sm">ï¿½ {effect}</li>
                     ))}
                   </ul>
                 </div>
@@ -2551,7 +2553,7 @@ const MedicationsPage = () => {
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Monitoring</h3>
                   <ul className="space-y-1">
                     {selectedMedication.monitoring.map((monitor, index) => (
-                      <li key={index} className="text-gray-700 text-sm">• {monitor}</li>
+                      <li key={index} className="text-gray-700 text-sm">ï¿½ {monitor}</li>
                     ))}
                   </ul>
                 </div>
@@ -2639,7 +2641,7 @@ const MedicationsPage = () => {
               <h4 className="font-semibold text-gray-700 text-sm mb-2">Primary Indications:</h4>
               <ul className="text-sm text-gray-600 space-y-1">
                 {medication.indications.slice(0, 3).map((indication, index) => (
-                  <li key={index}>• {indication}</li>
+                  <li key={index}>ï¿½ {indication}</li>
                 ))}
                 {medication.indications.length > 3 && (
                   <li className="text-primary">+ {medication.indications.length - 3} more...</li>
@@ -2990,7 +2992,7 @@ const PCRPracticePage: React.FC = () => {
       allergies: rand(allergyPool),
       vitals: [v1, v2],
       exam: rand([
-        'Awake, oriented ×3. Skin warm, pink, diaphoretic. Lungs clear/wheezes noted. Pupils equal/reactive. No focal deficits. Tenderness at site of pain.',
+        'Awake, oriented ï¿½3. Skin warm, pink, diaphoretic. Lungs clear/wheezes noted. Pupils equal/reactive. No focal deficits. Tenderness at site of pain.',
         'Lethargic but arousable. Skin cool, pale. Wheezes posteriorly. Abdomen soft with RLQ tenderness. Neuro grossly intact.',
         'Anxious, speaking in short phrases. Accessory muscle use. Hives on chest/arms. No stridor.']) ,
       impressionHints: ['Think life threats first; link findings to probable causes.'],
@@ -3002,7 +3004,7 @@ const PCRPracticePage: React.FC = () => {
     const twists = [
       'Pulse oximeter not reading; batteries dead',
       'Patient vomits into BVM mask mid-ventilation',
-      'Language barrier—patient speaks limited English; no interpreter',
+      'Language barrierï¿½patient speaks limited English; no interpreter',
       'Apartment is dark and cluttered; limited room to maneuver',
       'Multiple patients: 3 ambulatory, 1 screaming, 1 unresponsive',
       'Leaking gasoline odor nearby; bystanders with lit cigarettes',
@@ -3047,7 +3049,7 @@ const PCRPracticePage: React.FC = () => {
     if (len < 200) f.push('Narrative is short; add detail to paint the picture.');
     // Structure checks
     if (method === 'SOAP') {
-      if (!S.trim()) f.push('Subjective is empty: include chief complaint in quotes and history in patient’s words.');
+      if (!S.trim()) f.push('Subjective is empty: include chief complaint in quotes and history in patientï¿½s words.');
       if (!O.trim()) f.push('Objective is empty: include scene, assessment findings, and full vitals with times.');
       if (!A.trim()) f.push('Assessment is empty: provide differential/priorities (e.g., ACS vs. GERD, asthma vs. CHF).');
       if (!P.trim()) f.push('Plan is empty: treatments performed, patient response, transport decision, destination, and handoff.');
@@ -3133,11 +3135,11 @@ const PCRPracticePage: React.FC = () => {
       }
     }
     // Language quality
-    if (text.match(/pt\b/i)) f.push('Use “patient” instead of “pt” in formal documentation.');
-    if (text.match(/approx|~|about/i)) f.push('Avoid “about/approx”; document exact or “estimated” with rationale.');
-    if (text.match(/appears|seems/i) && !text.match(/by report|per bystander|per patient/i)) f.push('Avoid subjective words like “appears/seems” unless attributed (per patient/bystander).');
+    if (text.match(/pt\b/i)) f.push('Use ï¿½patientï¿½ instead of ï¿½ptï¿½ in formal documentation.');
+    if (text.match(/approx|~|about/i)) f.push('Avoid ï¿½about/approxï¿½; document exact or ï¿½estimatedï¿½ with rationale.');
+    if (text.match(/appears|seems/i) && !text.match(/by report|per bystander|per patient/i)) f.push('Avoid subjective words like ï¿½appears/seemsï¿½ unless attributed (per patient/bystander).');
     if (!text.match(/".*"/)) f.push('Add a direct quote from the patient for chief complaint or key statements.');
-    if (!text.match(/position/i)) f.push('Document patient position during transport (e.g., semi-Fowler’s, left lateral).');
+    if (!text.match(/position/i)) f.push('Document patient position during transport (e.g., semi-Fowlerï¿½s, left lateral).');
     if (!text.match(/safety|secured|belts|rails/i)) f.push('Include safety measures (belts, rails, cot secured).');
 
     // Simple scoring (0-100)
@@ -3185,7 +3187,7 @@ const PCRPracticePage: React.FC = () => {
     }
   };
 
-  if (!scenario) return <main className="p-6"><div className="text-gray-600">Loading scenario…</div></main>;
+  if (!scenario) return <main className="p-6"><div className="text-gray-600">Loading scenarioï¿½</div></main>;
 
   return (
     <main className="p-6">
@@ -3220,7 +3222,7 @@ const PCRPracticePage: React.FC = () => {
               <div><strong>Vitals:</strong> {scenario.vitals.map(v=>`[${v.time}] BP ${v.bp}, HR ${v.hr}, RR ${v.rr}, SpO2 ${v.spo2}${v.bgl?`, BGL ${v.bgl}`:''}`).join(' ? ')}</div>
               <div><strong>Exam:</strong> {scenario.exam}</div>
               {scenario.complications && scenario.complications.length>0 && (
-                <div className="pt-1"><strong>Complications:</strong> <span className="inline-block text-xs bg-amber-100 text-amber-800 border border-amber-200 rounded px-2 py-0.5">Chaos Mode</span> — {scenario.complications.join('; ')}</div>
+                <div className="pt-1"><strong>Complications:</strong> <span className="inline-block text-xs bg-amber-100 text-amber-800 border border-amber-200 rounded px-2 py-0.5">Chaos Mode</span> ï¿½ {scenario.complications.join('; ')}</div>
               )}
             </div>
           </div>
@@ -3240,19 +3242,19 @@ const PCRPracticePage: React.FC = () => {
     {method === 'SOAP' ? (
               <div className="space-y-3">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">S — Subjective</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">S ï¿½ Subjective</label>
       <textarea value={S} onChange={(e)=>setS(e.target.value)} rows={4} className="w-full border rounded-lg p-2 text-sm border-amber-300 bg-amber-50/30" placeholder={'"It feels like pressure in my chest". Onset/time; OPQRST; SAMPLE history.'} />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">O — Objective</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">O ï¿½ Objective</label>
       <textarea value={O} onChange={(e)=>setO(e.target.value)} rows={5} className="w-full border rounded-lg p-2 text-sm border-sky-300 bg-sky-50/30" placeholder={'Scene/safety, patient position/appearance, ABCs, exam findings, serial vitals with 24h times.'} />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">A — Assessment</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">A ï¿½ Assessment</label>
       <textarea value={A} onChange={(e)=>setA(e.target.value)} rows={3} className="w-full border rounded-lg p-2 text-sm border-rose-300 bg-rose-50/30" placeholder={'Working impression and differentials; time-sensitive risks.'} />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">P — Plan</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">P ï¿½ Plan</label>
       <textarea value={P} onChange={(e)=>setP(e.target.value)} rows={4} className="w-full border rounded-lg p-2 text-sm border-emerald-300 bg-emerald-50/30" placeholder={'Treatments with times/doses/routes, patient response, transport mode/position/destination, handoff.'} />
                 </div>
               </div>
@@ -3304,8 +3306,8 @@ const PCRPracticePage: React.FC = () => {
             <h3 className="text-md font-semibold text-gray-900">Pro Tips</h3>
             <ul className="mt-2 list-disc pl-5 text-sm text-gray-800 space-y-1">
               <li>Use 24-hour times and include serial vitals.</li>
-              <li>Quote the patient for chief complaint: "It feels like…"</li>
-              <li>State findings, not judgments. Avoid “appears/seems” without attribution.</li>
+              <li>Quote the patient for chief complaint: "It feels likeï¿½"</li>
+              <li>State findings, not judgments. Avoid ï¿½appears/seemsï¿½ without attribution.</li>
               <li>Document consent/refusal, transport mode/position, destination, and handoff.</li>
               <li>Spell out terms; limit abbreviations to standards (BP, HR, RR, SpO2).</li>
             </ul>
@@ -3316,7 +3318,7 @@ const PCRPracticePage: React.FC = () => {
             <ul className="mt-2 text-sm text-gray-800 space-y-1">
               {essentials.map((e, i)=> (
                 <li key={i} className="flex items-center">
-                  <span className={`inline-flex items-center justify-center w-4 h-4 mr-2 rounded ${e.ok? 'bg-green-100 text-green-700 border border-green-300':'bg-gray-100 text-gray-600 border border-gray-300'}`}>{e.ok? '?':'•'}</span>
+                  <span className={`inline-flex items-center justify-center w-4 h-4 mr-2 rounded ${e.ok? 'bg-green-100 text-green-700 border border-green-300':'bg-gray-100 text-gray-600 border border-gray-300'}`}>{e.ok? '?':'ï¿½'}</span>
                   <span>{e.label}</span>
                 </li>
               ))}
@@ -3835,7 +3837,7 @@ const PatientAssessmentPractice: React.FC = () => {
       </style></head>
       <body>
         <h1>Patient Assessment Practice Report</h1>
-        <div class="muted">Mode: ${mode.charAt(0).toUpperCase() + mode.slice(1)} • Scenario time: ${formatTime(elapsed)} / Limit ${formatTime(limitSecs)}</div>
+        <div class="muted">Mode: ${mode.charAt(0).toUpperCase() + mode.slice(1)} ï¿½ Scenario time: ${formatTime(elapsed)} / Limit ${formatTime(limitSecs)}</div>
         <div style="margin:10px 0;">
           <span class="badge ${criticalFail ? 'fail' : 'pass'}">${passFail}</span>
           <span style="margin-left:8px;">Score: ${autoScore.earned} / ${autoScore.total}</span>
@@ -3912,7 +3914,7 @@ const PatientAssessmentPractice: React.FC = () => {
           </div>
         </div>
         <div className="mt-3 text-sm text-gray-800"><strong>Scenario:</strong> {scenario}</div>
-        <div className="mt-1 text-xs text-gray-500">Proctor speaking: {proctorSpeaking ? 'Yes' : 'No'} • Listening: {listening ? 'Yes' : 'No'} {browserSupportsSpeechRecognition ? '' : '• Speech recognition not supported in this browser'} • Transport decision: {transportAt!==null?`at ${formatTime(transportAt)}`:'not yet'} • Proctor: {interactiveProctor ? 'Interactive' : 'Silent'}</div>
+        <div className="mt-1 text-xs text-gray-500">Proctor speaking: {proctorSpeaking ? 'Yes' : 'No'} ï¿½ Listening: {listening ? 'Yes' : 'No'} {browserSupportsSpeechRecognition ? '' : 'ï¿½ Speech recognition not supported in this browser'} ï¿½ Transport decision: {transportAt!==null?`at ${formatTime(transportAt)}`:'not yet'} ï¿½ Proctor: {interactiveProctor ? 'Interactive' : 'Silent'}</div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -4022,7 +4024,7 @@ const PatientAssessmentStepTrainer: React.FC = () => {
         'Power outage; apartment is dark and cluttered; limited space to work.',
         'Patient collapses in the bathroom; doorway is narrow; scale tips block stretcher access.',
         'Medication list shows multiple look-alike/sound-alike drugs; bottles unlabeled.',
-        'Service dog is protective and won’t allow approach until calmed.'
+        'Service dog is protective and wonï¿½t allow approach until calmed.'
       ];
       const constraint = [
         'Oxygen tank regulator is stuck at 6 L/min.',
@@ -4046,7 +4048,7 @@ const PatientAssessmentStepTrainer: React.FC = () => {
         'Active thunderstorm; hail and high winds while packaging.',
         'Trapped arm under debris; patient is combative; law enforcement en route.',
         'Massive emesis with suspected aspiration during movement.',
-        'Tourniquet already applied by bystander—unknown time.'
+        'Tourniquet already applied by bystanderï¿½unknown time.'
       ];
       const constraint = [
         'Suction unit battery low; only manual suction works intermittently.',
@@ -4198,11 +4200,11 @@ const PatientAssessmentStepTrainer: React.FC = () => {
   const rationaleFor = (sectionId: string, correctLabel: string, chosen: string): { msg: string; ok: boolean } => {
     if (chosen === correctLabel) {
       const bySection: Record<string, string> = {
-        scene: 'Correct — scene size-up and PPE ensure safety and guide initial resources.',
-        primary: 'Correct — primary survey addresses life threats first (ABCs, bleeding, priority).',
-        history: 'Correct — gather HPI/SAMPLE once life threats are addressed and transport decision is forming.',
-        secondary: 'Correct — perform the appropriate focused/head-to-toe exam and baseline vitals.',
-        reassess: 'Correct — trend vitals, reassess interventions, and deliver a concise handoff.'
+        scene: 'Correct ï¿½ scene size-up and PPE ensure safety and guide initial resources.',
+        primary: 'Correct ï¿½ primary survey addresses life threats first (ABCs, bleeding, priority).',
+        history: 'Correct ï¿½ gather HPI/SAMPLE once life threats are addressed and transport decision is forming.',
+        secondary: 'Correct ï¿½ perform the appropriate focused/head-to-toe exam and baseline vitals.',
+        reassess: 'Correct ï¿½ trend vitals, reassess interventions, and deliver a concise handoff.'
       };
       return { msg: bySection[sectionId] || 'Correct.', ok: true };
     }
@@ -4215,7 +4217,7 @@ const PatientAssessmentStepTrainer: React.FC = () => {
       'Walk patient to stretcher for efficiency': 'Unsafe before assessing ABCs and stability; consider rapid transport decision instead.',
       'Apply tourniquet for minor venous bleed': 'Tourniquets are for life-threatening hemorrhage; this would be inappropriate here.',
       'Perform head-to-toe exam before chief complaint': 'Secondary exam comes after primary and history or when indicated by MOI.',
-      'Start CPR on an awake patient': 'Contraindicated — patient is conscious; CPR is for cardiac arrest.',
+      'Start CPR on an awake patient': 'Contraindicated ï¿½ patient is conscious; CPR is for cardiac arrest.',
       'Remove C-collar to improve comfort': 'Do not remove immobilization without assessment and indication.',
       'Delay transport to finish paperwork': 'Never delay transport for paperwork in time-sensitive cases.',
       'Ignore exposed hypothermia risk': 'Prevent hypothermia after exposure; maintain patient warmth.',
@@ -4352,7 +4354,7 @@ const PatientAssessmentStepTrainer: React.FC = () => {
   table{border-collapse:collapse;width:100%;margin-top:10px} th,td{border:1px solid #e5e7eb;padding:6px;text-align:left;vertical-align:top} .crit{color:#b91c1c}
       </style></head><body>
       <h1>Patient Assessment Step Trainer</h1>
-  <div class="muted">Mode: ${mode.charAt(0).toUpperCase()+mode.slice(1)} • Chaos: ${chaos ? 'On' : 'Off'} • Manual advance: ${manualAdvance ? 'On' : 'Off'} • Reveal correct: ${revealCorrect ? 'On' : 'Off'} • Time: ${formatTime(elapsed)} / ${formatTime(limitSecs)} • Result: <span class="badge ${passFail==='PASS'?'pass':'fail'}">${passFail}</span></div>
+  <div class="muted">Mode: ${mode.charAt(0).toUpperCase()+mode.slice(1)} ï¿½ Chaos: ${chaos ? 'On' : 'Off'} ï¿½ Manual advance: ${manualAdvance ? 'On' : 'Off'} ï¿½ Reveal correct: ${revealCorrect ? 'On' : 'Off'} ï¿½ Time: ${formatTime(elapsed)} / ${formatTime(limitSecs)} ï¿½ Result: <span class="badge ${passFail==='PASS'?'pass':'fail'}">${passFail}</span></div>
       <h3>Scenario</h3><p>${scenario}</p>
   <h3>Results (${answers.length}/${totalSteps} steps answered)</h3>
   <table><thead><tr><th>#</th><th>Section</th><th>Correct Step</th><th>Your Choice</th><th>Result</th><th>Why</th></tr></thead><tbody>
@@ -4411,7 +4413,7 @@ const PatientAssessmentStepTrainer: React.FC = () => {
             <button onClick={printReport} className="text-sm bg-white border px-3 py-1.5 rounded hover:bg-gray-50">Print Report</button>
           </div>
         </div>
-    <div className="mt-2 text-xs text-gray-500">Shortcuts: 1–4 select options • Enter start/pause • N new scenario • R restart</div>
+    <div className="mt-2 text-xs text-gray-500">Shortcuts: 1ï¿½4 select options ï¿½ Enter start/pause ï¿½ N new scenario ï¿½ R restart</div>
   <div className="mt-3 text-sm text-gray-800"><strong>Scenario:</strong> {scenario}</div>
   {chaos && <div className="mt-1 inline-block text-xs bg-amber-100 text-amber-800 border border-amber-200 rounded px-2 py-0.5">Chaos Mode</div>}
       </div>
@@ -4455,7 +4457,7 @@ const PatientAssessmentStepTrainer: React.FC = () => {
               <div className="flex items-center justify-between gap-3">
                 <div className="pr-3 flex-1">{feedback.msg}</div>
                 {revealing && !manualAdvance && revealCountdown > 0 && (
-                  <span className="inline-flex items-center text-xs font-medium rounded-full bg-gray-100 text-gray-700 border border-gray-300 px-2 py-0.5">Advancing in {revealCountdown}…</span>
+                  <span className="inline-flex items-center text-xs font-medium rounded-full bg-gray-100 text-gray-700 border border-gray-300 px-2 py-0.5">Advancing in {revealCountdown}ï¿½</span>
                 )}
                 {revealing && manualAdvance && (
                   <button onClick={advanceStep} className="text-xs btn btn-ghost">Next ?</button>
@@ -4564,8 +4566,8 @@ const ToolPage = () => {
     },
     'heart-score': {
       how: [
-        'Score five elements: History, ECG, Age, Risk factors, Troponin (0–2 each)',
-        'Sum to get 0–10; higher scores indicate higher short-term MACE risk',
+        'Score five elements: History, ECG, Age, Risk factors, Troponin (0ï¿½2 each)',
+        'Sum to get 0ï¿½10; higher scores indicate higher short-term MACE risk',
         'Interpret risk tier and follow recommended disposition'
       ],
       why: [
@@ -4574,7 +4576,7 @@ const ToolPage = () => {
       ],
       notes: [
         'Troponin is typically not available prehospital; use primarily for study/training unless labs are present',
-        'Always follow local protocols and medical control—HEART score complements clinical judgment'
+        'Always follow local protocols and medical controlï¿½HEART score complements clinical judgment'
       ]
     },
     'burn-bsa': {
@@ -4649,7 +4651,7 @@ const ToolPage = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="text-sm font-medium text-gray-700 mb-2">Why it’s used</h4>
+                <h4 className="text-sm font-medium text-gray-700 mb-2">Why itï¿½s used</h4>
                 <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
                   {calculatorDescriptions[id].why.map((item, idx) => (
                     <li key={idx}>{item}</li>
@@ -4697,7 +4699,7 @@ const ToolPage = () => {
 // Study Notes: Module 2 (Clinical Fundamentals), Chapter 5 (Essential Terminology for Responders)
 const chapter5StudyNotes = `# Chapter 5: Essential Terminology for Responders
 
-Clinically accurate terminology you’ll use in assessment, radio reports, and documentation. Mastering precise language improves care, reduces errors, and builds trust with receiving teams.
+Clinically accurate terminology youï¿½ll use in assessment, radio reports, and documentation. Mastering precise language improves care, reduces errors, and builds trust with receiving teams.
 
 ## Learning objectives
 - Use standard anatomical position and planes to describe findings consistently
@@ -4715,21 +4717,21 @@ Assume: standing upright, facing forward, arms at sides, palms forward, feet tog
 - Transverse (axial): divides superior/inferior
 
 ## Directional terms (with field examples)
-- Anterior (ventral) / Posterior (dorsal): “Anterior chest pressure,” “Posterior scalp hematoma.”
-- Superior / Inferior: “Superior to the umbilicus,” “Inferior rib pain.”
-- Medial / Lateral: “Lateral malleolus tenderness,” “Medial epistaxis.”
-- Proximal / Distal: “Distal pulses present in the right LE,” “Proximal humerus deformity.”
-- Superficial / Deep: “Superficial abrasion,” “Deep laceration through dermis.”
-- Ipsilateral / Contralateral: “Contralateral weakness following head injury.”
-- Plantar / Palmar / Dorsum (hand/foot): “Laceration to palmar surface,” “Dorsum of foot edema,” “Plantar pain.”
+- Anterior (ventral) / Posterior (dorsal): ï¿½Anterior chest pressure,ï¿½ ï¿½Posterior scalp hematoma.ï¿½
+- Superior / Inferior: ï¿½Superior to the umbilicus,ï¿½ ï¿½Inferior rib pain.ï¿½
+- Medial / Lateral: ï¿½Lateral malleolus tenderness,ï¿½ ï¿½Medial epistaxis.ï¿½
+- Proximal / Distal: ï¿½Distal pulses present in the right LE,ï¿½ ï¿½Proximal humerus deformity.ï¿½
+- Superficial / Deep: ï¿½Superficial abrasion,ï¿½ ï¿½Deep laceration through dermis.ï¿½
+- Ipsilateral / Contralateral: ï¿½Contralateral weakness following head injury.ï¿½
+- Plantar / Palmar / Dorsum (hand/foot): ï¿½Laceration to palmar surface,ï¿½ ï¿½Dorsum of foot edema,ï¿½ ï¿½Plantar pain.ï¿½
 - Cephalad / Caudal: toward the head / toward the feet (often in procedures/airway discussions).
 - Prone / Supine / Lateral recumbent: patient positioning. Recovery position = left lateral recumbent when appropriate.
 
 ### Surface anatomy lines (useful landmarks)
 - Midline; Midclavicular (MCL); Parasternal; Anterior axillary; Midaxillary (MAL); Posterior axillary; Midscapular.
-- Common references: “4th–5th intercostal space, mid-axillary line for lateral chest assessment,” “2nd ICS MCL for decompression (per protocol/scope).”
+- Common references: ï¿½4thï¿½5th intercostal space, mid-axillary line for lateral chest assessment,ï¿½ ï¿½2nd ICS MCL for decompression (per protocol/scope).ï¿½
 
-## Regional references you’ll actually use
+## Regional references youï¿½ll actually use
 - Abdomen: RUQ/LUQ/RLQ/LLQ. Nine-region terms may appear in hospital notes (e.g., epigastric, periumbilical, suprapubic).
 - Spine regions: Cervical, thoracic, lumbar, sacral, coccygeal.
 - Extremities: UE (upper extremity), LE (lower extremity); specify side and joint/bone.
@@ -4739,7 +4741,7 @@ Assume: standing upright, facing forward, arms at sides, palms forward, feet tog
 - Flexion/Extension; Abduction/Adduction; Internal/External rotation; Circumduction.
 - Pronation/Supination (forearm/hand); Inversion/Eversion (ankle); Dorsiflexion/Plantarflexion (foot).
 - Special tests are beyond EMT scope but knowing motion language improves documentation of mechanism and pain with movement.
-- Positioning: High-Fowler’s (˜ 60–90°), Fowler’s (˜ 45°), Semi-Fowler’s (˜ 30°). Trendelenburg is not recommended for shock resuscitation; default for hypotension is supine unless contraindicated.
+- Positioning: High-Fowlerï¿½s (ï¿½ 60ï¿½90ï¿½), Fowlerï¿½s (ï¿½ 45ï¿½), Semi-Fowlerï¿½s (ï¿½ 30ï¿½). Trendelenburg is not recommended for shock resuscitation; default for hypotension is supine unless contraindicated.
 
 ## Injury and skin terminology (precision matters)
 - Abrasion: superficial scraping of epidermis.
@@ -4755,15 +4757,15 @@ Assume: standing upright, facing forward, arms at sides, palms forward, feet tog
 - Respirations: rate; shallow/labored; accessory muscle use; one-word dyspnea; audible wheeze/stridor.
 - Skin: warm/cool/cold; dry/moist/diaphoretic; color: normal/pale/flushed/cyanotic/jaundiced/mottled.
 - BP: hypotensive/normotensive/hypertensive trends; check manual if automated seems inaccurate.
-- Mental status: A&O×4 (person, place, time, event); “follows commands,” “responds to verbal/pain,” “GCS 14 (E4 V4 M6).”
+- Mental status: A&Oï¿½4 (person, place, time, event); ï¿½follows commands,ï¿½ ï¿½responds to verbal/pain,ï¿½ ï¿½GCS 14 (E4 V4 M6).ï¿½
 
 ## Neuro/eye terms commonly used
-- PERRL (pupils equal, round, reactive to light). Accommodation is rarely needed in EMS—document PERRL when appropriate.
+- PERRL (pupils equal, round, reactive to light). Accommodation is rarely needed in EMSï¿½document PERRL when appropriate.
 - Facial symmetry, slurred speech, arm drift (stroke screening). Sensory/motor intact distally.
 
 ## Abdominal language
 - Tenderness, guarding, rigidity, rebound (do not provoke pain; document findings as encountered).
-- Distension, tympany vs dullness (basic EMS—note distension, avoid advanced percussion interpretation if untrained).
+- Distension, tympany vs dullness (basic EMSï¿½note distension, avoid advanced percussion interpretation if untrained).
 
 ## OB/pediatric quick terms
 - Gravida (pregnancies), Para (births =20 wks), Aborta (pregnancy losses): e.g., G3P2A0.
@@ -4782,46 +4784,46 @@ Quick decode examples:
 - Hematemesis vs Hematochezia vs Melena ? blood in vomit vs bright-red blood per rectum vs black tarry stool.
 
 ## Documentation that reads well (concise and specific)
-- Avoid vague: “patient stable.” Prefer: “vitals stable for transport; no deterioration during 12-min interval.”
-- Use complete words in the legal chart (avoid slang). “Patient” instead of “pt” in many systems.
+- Avoid vague: ï¿½patient stable.ï¿½ Prefer: ï¿½vitals stable for transport; no deterioration during 12-min interval.ï¿½
+- Use complete words in the legal chart (avoid slang). ï¿½Patientï¿½ instead of ï¿½ptï¿½ in many systems.
 - Examples:
-  - “Neuro intact distally; PMS present before/after splinting.”
-  - “Mechanism significant for high-energy deceleration; no intrusion; airbags deployed; patient restrained.”
-  - “A&O×4, speaking full sentences; moderate respiratory distress with audible wheeze; SpO2 90% RA ? 95% on 4 L/min NC.”
+  - ï¿½Neuro intact distally; PMS present before/after splinting.ï¿½
+  - ï¿½Mechanism significant for high-energy deceleration; no intrusion; airbags deployed; patient restrained.ï¿½
+  - ï¿½A&Oï¿½4, speaking full sentences; moderate respiratory distress with audible wheeze; SpO2 90% RA ? 95% on 4 L/min NC.ï¿½
 
-## Abbreviations: do and don’t
-- Commonly used in EMS: A&O×4, PMS/CSM (pulse/circulation-sensation-movement), NKA/NKDA, PRN, PO/IV/IM/IN, NRB/NC/BVM, CPAP, ETOH, PTA (prior to arrival), CC (chief complaint), HPI, SOB (use with caution—context matters), NPA/OPA.
-- Avoid ambiguous or unsafe (per Joint Commission “Do Not Use” principles): U (write “units”), IU, Q.D./QOD (write “daily”/“every other day”), trailing zeros (write 1 mg, not 1.0 mg), lack of leading zero (write 0.5 mg).
-- Local policies prevail—follow agency and receiving facility guidance.
+## Abbreviations: do and donï¿½t
+- Commonly used in EMS: A&Oï¿½4, PMS/CSM (pulse/circulation-sensation-movement), NKA/NKDA, PRN, PO/IV/IM/IN, NRB/NC/BVM, CPAP, ETOH, PTA (prior to arrival), CC (chief complaint), HPI, SOB (use with cautionï¿½context matters), NPA/OPA.
+- Avoid ambiguous or unsafe (per Joint Commission ï¿½Do Not Useï¿½ principles): U (write ï¿½unitsï¿½), IU, Q.D./QOD (write ï¿½dailyï¿½/ï¿½every other dayï¿½), trailing zeros (write 1 mg, not 1.0 mg), lack of leading zero (write 0.5 mg).
+- Local policies prevailï¿½follow agency and receiving facility guidance.
 
 ## Radio report and handoff frameworks
 - SBAR (Situation, Background, Assessment, Recommendation) for medical control/receiving RN.
 - MIST (Mechanism/Medical complaint, Injuries/Illness, Signs, Treatment) for trauma.
-- Example SBAR: “S: 58-year-old male with chest pressure for 30 min. B: HTN, HLD, aspirin allergy denied. A: A&O×4, diaphoretic, anterior chest pressure 8/10; vitals 148/88, HR 104, RR 22, SpO2 92% RA. Lungs clear; no JVD. R: Oxygen titrated to 94%, aspirin 324 mg chewed given, nitro withheld due to suspected RV involvement—awaiting 12-lead at ED.”
+- Example SBAR: ï¿½S: 58-year-old male with chest pressure for 30 min. B: HTN, HLD, aspirin allergy denied. A: A&Oï¿½4, diaphoretic, anterior chest pressure 8/10; vitals 148/88, HR 104, RR 22, SpO2 92% RA. Lungs clear; no JVD. R: Oxygen titrated to 94%, aspirin 324 mg chewed given, nitro withheld due to suspected RV involvementï¿½awaiting 12-lead at ED.ï¿½
 
 ## Pronunciation/spelling pitfalls (avoid wrong-site/wrong-word errors)
 - Ileum (small intestine) vs Ilium (hip bone)
 - Perineum (between genitalia and anus) vs Peroneal (lateral leg/nerve)
 - Dysphagia (swallowing) vs Dysphasia (speech)
-- Ulnar (forearm bone) vs “ulnar nerve” numbness in 4th/5th digits
+- Ulnar (forearm bone) vs ï¿½ulnar nerveï¿½ numbness in 4th/5th digits
 
 ## Red-flag pitfalls
-- Left/right documentation errors—verify before procedures and in the chart.
-- Missed distal neurovascular checks—document pre- and post-splinting.
+- Left/right documentation errorsï¿½verify before procedures and in the chart.
+- Missed distal neurovascular checksï¿½document pre- and post-splinting.
 - Overuse of slang/ambiguous abbreviations in legal documentation.
-- Using Trendelenburg for shock—evidence doesn’t support benefit; prioritize supine, bleeding control, oxygenation, warmth, rapid transport.
+- Using Trendelenburg for shockï¿½evidence doesnï¿½t support benefit; prioritize supine, bleeding control, oxygenation, warmth, rapid transport.
 
 ## Rapid practice
-1) Localize: “2-cm superficial laceration lateral to the left eye.”
-2) Translate: “Right lower quadrant abdominal tenderness with guarding.”
-3) Reword for handoff: “Pt c/o dyspnea, tachypnea 28, SpO2 90% RA.”
+1) Localize: ï¿½2-cm superficial laceration lateral to the left eye.ï¿½
+2) Translate: ï¿½Right lower quadrant abdominal tenderness with guarding.ï¿½
+3) Reword for handoff: ï¿½Pt c/o dyspnea, tachypnea 28, SpO2 90% RA.ï¿½
 4) Write a one-sentence MIST for restrained driver, front-end collision at 40 mph, airbag deployed, chest pain, normal vitals, seatbelt sign absent.
 
 Suggested answers:
-1) Left lateral periorbital area; superficial cut near the eye’s outer canthus.
+1) Left lateral periorbital area; superficial cut near the eyeï¿½s outer canthus.
 2) Pain and muscle tension in the right lower abdomen.
-3) “Short of breath; RR 28; SpO2 90% on room air—placed on oxygen with improvement.”
-4) “M: 35-y/o restrained driver MVC ~40 mph; I: reports anterior chest pain, no obvious injuries; S: ABCs intact, vitals WNL; T: oxygen to maintain SpO2 =94%, monitoring, transport code 2.”
+3) ï¿½Short of breath; RR 28; SpO2 90% on room airï¿½placed on oxygen with improvement.ï¿½
+4) ï¿½M: 35-y/o restrained driver MVC ~40 mph; I: reports anterior chest pain, no obvious injuries; S: ABCs intact, vitals WNL; T: oxygen to maintain SpO2 =94%, monitoring, transport code 2.ï¿½
 
 ---
 Field tip: When uncertain, describe location two ways (directional + surface landmark), then confirm with your partner before interventions and in the radio report.
@@ -4857,7 +4859,7 @@ Deliver a repeatable, time-efficient assessment that finds life threats fast, st
 
 ## High-yield flow (memorize the order)
 1) Standard precautions ? Scene safety ? MOI/NOI ? Number of patients ? Additional resources ? Consider spinal motion restriction (SMR).
-2) Primary assessment (60–90 seconds): General impression ? AVPU/LOC ? Chief complaint/life threats ? Airway ? Breathing ? Circulation ? Disability (neuro quick check) ? Exposure/Environment ? Priority/transport decision.
+2) Primary assessment (60ï¿½90 seconds): General impression ? AVPU/LOC ? Chief complaint/life threats ? Airway ? Breathing ? Circulation ? Disability (neuro quick check) ? Exposure/Environment ? Priority/transport decision.
 3) History and focused exam: SAMPLE, OPQRST; target the system involved; obtain baseline vitals.
 4) Secondary exam: Focused (medical) or head-to-toe (significant MOI/unknown); repeat vitals; form working impression and care plan.
 5) Reassessment: Unstable every 5 min; stable every 15 min; trend vitals and mental status.
@@ -4893,12 +4895,12 @@ Deliver a repeatable, time-efficient assessment that finds life threats fast, st
 - Update destination decision if new red flags appear; notify receiving facility early for stroke/STEMI/trauma alerts.
 
 ## Special populations
-- Pediatric: Use PAT (Appearance, Work of breathing, Circulation to skin). Hypotension is late—act on early distress. Weight-based dosing; involve caregiver.
+- Pediatric: Use PAT (Appearance, Work of breathing, Circulation to skin). Hypotension is lateï¿½act on early distress. Weight-based dosing; involve caregiver.
 - Obstetric: Gestational age; left lateral tilt in late pregnancy; vaginal bleeding vs. rupture of membranes; look for preeclampsia/eclampsia signs; prepare for delivery if imminent.
 - Geriatric: Atypical presentations; high anticoagulant use; fragile skin; cognitive baseline from family.
 
 ## Documentation (PCR) essentials
-- Chief complaint in patient’s words; times for assessments/interventions; vitals with trends; negative findings; decision-making and medical direction consults; handoff details.
+- Chief complaint in patientï¿½s words; times for assessments/interventions; vitals with trends; negative findings; decision-making and medical direction consults; handoff details.
 
 ## Common pitfalls
 - Failing to treat life threats during the primary; delaying transport for exhaustive on-scene testing; missing hypoglycemia in AMS; not reassessing after interventions.
@@ -4938,7 +4940,7 @@ A concise, clinically focused guide to major body systems: what each system does
 ### 5) Integumentary system (skin)
 - Function: Barrier, thermoregulation, sensation, fluid balance.
 - Red flags: Extensive burns, full-thickness burns, inhalation injury, rapidly spreading infections (crepitus, bullae), large avulsions or degloving, cyanosis or mottling.
-- EMT-B actions: Control bleeding; cover open wounds with sterile dressings; burn care—cool thermal burns briefly (10–20 min) avoiding hypothermia, cover with dry sterile dressings; remove rings/jewelry early; manage airway/oxygen for inhalation injuries; rapid transport based on severity/criteria.
+- EMT-B actions: Control bleeding; cover open wounds with sterile dressings; burn careï¿½cool thermal burns briefly (10ï¿½20 min) avoiding hypothermia, cover with dry sterile dressings; remove rings/jewelry early; manage airway/oxygen for inhalation injuries; rapid transport based on severity/criteria.
 
 ### 6) Gastrointestinal system
 - Function: Digestion, absorption, waste elimination.
@@ -4957,22 +4959,22 @@ A concise, clinically focused guide to major body systems: what each system does
 
 ### 9) Immune/Lymphatic system
 - Function: Defense against pathogens, fluid balance.
-- Red flags: Anaphylaxis—rapid onset hives, wheeze/stridor, hypotension, GI symptoms; fever with toxicity signs.
+- Red flags: Anaphylaxisï¿½rapid onset hives, wheeze/stridor, hypotension, GI symptoms; fever with toxicity signs.
 - EMT-B actions: Epinephrine IM first-line for anaphylaxis; airway/oxygen; consider albuterol for wheeze; position and rapid transport; monitor for biphasic reactions.
 
 ## Cross-system physiology essentials
 - Perfusion requires adequate pump (CO), pipes (SVR), and volume (preload). Shock = failure of perfusion; treat reversible causes and transport.
-- Ventilation, diffusion, and perfusion must align (V/Q matching). Oxygen alone cannot fix ventilation failure—assist ventilations when inadequate.
-- Temperature management: prevent hypothermia in trauma—improves coagulation and outcomes.
+- Ventilation, diffusion, and perfusion must align (V/Q matching). Oxygen alone cannot fix ventilation failureï¿½assist ventilations when inadequate.
+- Temperature management: prevent hypothermia in traumaï¿½improves coagulation and outcomes.
 
 ## Assessment priorities (primary ? secondary)
 - Primary: Airway, breathing, circulation, disability (neuro), exposure/environment. Control life-threatening hemorrhage immediately.
 - Secondary: Focused/systemic exam guided by chief complaint and MOI/NOI. Reassess vitals and mental status; trend changes.
 
 ## Field pearls
-- A normal single vital sign can hide deterioration—look at trends and overall picture.
-- “Silent chest” in asthma is ominous. “Normal” SpO2 with high work of breathing can still require ventilatory support.
-- Pelvic instability or femur fracture can bleed significantly—treat as potential shock.
+- A normal single vital sign can hide deteriorationï¿½look at trends and overall picture.
+- ï¿½Silent chestï¿½ in asthma is ominous. ï¿½Normalï¿½ SpO2 with high work of breathing can still require ventilatory support.
+- Pelvic instability or femur fracture can bleed significantlyï¿½treat as potential shock.
 
 ## Related tools and references
 - Tools: GCS, Burn BSA, Pediatric dosing, Stroke screening.
@@ -4984,7 +4986,7 @@ A concise, clinically focused guide to major body systems: what each system does
     return `# Chapter 11: Airway Management Techniques
 
 ## Goals for EMT-B
-Maintain or restore airway patency, ensure adequate ventilation and oxygenation, and prevent aspiration—all with the least invasive, safest approach.
+Maintain or restore airway patency, ensure adequate ventilation and oxygenation, and prevent aspirationï¿½all with the least invasive, safest approach.
 
 ## Core principles
 - Open the airway: Head-tilt chin-lift (no trauma). Jaw-thrust (suspected spinal injury).
@@ -5004,13 +5006,13 @@ Maintain or restore airway patency, ensure adequate ventilation and oxygenation,
 
 ## Ventilation with BVM
 - Indications: Inadequate rate or tidal volume, apnea, severe hypoventilation, or failure to protect airway.
-- Technique: Two-person preferred—one maintains mask seal (E–C clamp) and airway, the other squeezes bag.
-- Rate targets (with pulse): Adult 1 breath every 5–6 sec; Child/Infant 1 breath every 3–5 sec; each breath over ~1 sec to visible chest rise.
+- Technique: Two-person preferredï¿½one maintains mask seal (Eï¿½C clamp) and airway, the other squeezes bag.
+- Rate targets (with pulse): Adult 1 breath every 5ï¿½6 sec; Child/Infant 1 breath every 3ï¿½5 sec; each breath over ~1 sec to visible chest rise.
 - Avoid hyperventilation; allow full exhalation; monitor for gastric distension.
 
 ## Oxygen delivery
-- Nasal cannula: 1–6 L/min (~24–44% FiO2) for mild hypoxemia.
-- Nonrebreather mask: 10–15 L/min (~60–90% FiO2) for moderate–severe hypoxemia with adequate breathing.
+- Nasal cannula: 1ï¿½6 L/min (~24ï¿½44% FiO2) for mild hypoxemia.
+- Nonrebreather mask: 10ï¿½15 L/min (~60ï¿½90% FiO2) for moderateï¿½severe hypoxemia with adequate breathing.
 - BVM with reservoir: 15 L/min; near 100% when seal and ventilation are adequate.
 
 ## Foreign-body airway obstruction (FBAO)
@@ -5039,12 +5041,12 @@ Maintain or restore airway patency, ensure adequate ventilation and oxygenation,
 Right patient, right medication, right dose, right route, right time, right documentation; plus right indication and check for contraindications.
 
 ## Key medications
-- Oxygen: Indication—hypoxemia, respiratory distress, shock. Titrate to SpO2 = 94% (higher for CO poisoning/pregnancy per protocol). Avoid unnecessary hyperoxia.
-- Oral Glucose: Indication—symptomatic hypoglycemia with intact gag and ability to swallow. Dose 15–24 g buccal; reassess mental status and glucose if equipped.
-- Epinephrine (anaphylaxis): Adult typical 0.3 mg IM (1 mg/mL); Pediatric 0.15 mg IM; repeat per protocol. Indication—anaphylaxis with respiratory compromise and/or hypotension.
-- Naloxone: Indication—suspected opioid overdose with hypoventilation/respiratory depression. Typical IN 4 mg (single spray) or 0.4–2 mg IN/IM; repeat per protocol. Prioritize ventilation; naloxone should not delay BVM/CPR.
-- Aspirin (ACS): 162–324 mg chewable if no allergy/bleeding risk; not for pediatric fever; contraindicated in active GI bleed, true allergy.
-- Nitroglycerin (assist): 0.4 mg SL; q5 min up to 3 doses per protocol; ensure SBP is adequate (e.g., >100–110 mmHg), no PDE5 inhibitor in past 24–48 h, and no suspected RV infarct.
+- Oxygen: Indicationï¿½hypoxemia, respiratory distress, shock. Titrate to SpO2 = 94% (higher for CO poisoning/pregnancy per protocol). Avoid unnecessary hyperoxia.
+- Oral Glucose: Indicationï¿½symptomatic hypoglycemia with intact gag and ability to swallow. Dose 15ï¿½24 g buccal; reassess mental status and glucose if equipped.
+- Epinephrine (anaphylaxis): Adult typical 0.3 mg IM (1 mg/mL); Pediatric 0.15 mg IM; repeat per protocol. Indicationï¿½anaphylaxis with respiratory compromise and/or hypotension.
+- Naloxone: Indicationï¿½suspected opioid overdose with hypoventilation/respiratory depression. Typical IN 4 mg (single spray) or 0.4ï¿½2 mg IN/IM; repeat per protocol. Prioritize ventilation; naloxone should not delay BVM/CPR.
+- Aspirin (ACS): 162ï¿½324 mg chewable if no allergy/bleeding risk; not for pediatric fever; contraindicated in active GI bleed, true allergy.
+- Nitroglycerin (assist): 0.4 mg SL; q5 min up to 3 doses per protocol; ensure SBP is adequate (e.g., >100ï¿½110 mmHg), no PDE5 inhibitor in past 24ï¿½48 h, and no suspected RV infarct.
 - Bronchodilator (assist/administer per local): Albuterol MDI or nebulized (2.5 mg nebulized common); watch for tachycardia/tremor.
 
 ## Process
@@ -5053,7 +5055,7 @@ Right patient, right medication, right dose, right route, right time, right docu
 3) Administer; monitor for effect and adverse reactions; document dose/time/response.
 
 ## Pediatric considerations
-- Weight-based dosing; use length-based tape; epi 0.15 mg for ~15–30 kg; 0.3 mg for larger children when per protocol.
+- Weight-based dosing; use length-based tape; epi 0.15 mg for ~15ï¿½30 kg; 0.3 mg for larger children when per protocol.
 
 ## Pitfalls
 - Giving oral glucose to patients without airway protection; nitro without BP/PDE5 checks; delaying epinephrine in anaphylaxis; failure to reassess and document effects.
@@ -5088,8 +5090,8 @@ Shock is inadequate tissue perfusion leading to cellular hypoxia and organ dysfu
 6) Reassess every 5 minutes; prepare for deterioration.
 
 ## Pediatric/OB notes
-- Children compensate then crash—act on early signs.
-- Pregnancy: late term may have supine hypotension—tilt 15–30° left.
+- Children compensate then crashï¿½act on early signs.
+- Pregnancy: late term may have supine hypotensionï¿½tilt 15ï¿½30ï¿½ left.
 
 ## Pitfalls
 - Missing internal bleeding; failing to keep the patient warm; delaying epinephrine; prolonged on-scene time when definitive care is needed.
@@ -5099,39 +5101,39 @@ Shock is inadequate tissue perfusion leading to cellular hypoxia and organ dysfu
     return `# Chapter 14: BLS Resuscitation Protocols
 
 ## Goals
-Provide high-quality CPR with minimal interruptions, early defibrillation, effective ventilation, and rapid post-ROSC care—according to current BLS guidance.
+Provide high-quality CPR with minimal interruptions, early defibrillation, effective ventilation, and rapid post-ROSC careï¿½according to current BLS guidance.
 
 ## Cardiac arrest recognition
 - Unresponsive, not breathing normally (gasping/agonal = not normal), and no pulse (or pulse check uncertain within 10 seconds) ? start CPR.
 
 ## High-quality CPR
-- Compression rate: 100–120/min.
-- Compression depth: Adults at least 2 inches (5–6 cm); Children at least 1/3 AP diameter (~2 in/5 cm); Infants at least 1/3 AP (~1.5 in/4 cm).
+- Compression rate: 100ï¿½120/min.
+- Compression depth: Adults at least 2 inches (5ï¿½6 cm); Children at least 1/3 AP diameter (~2 in/5 cm); Infants at least 1/3 AP (~1.5 in/4 cm).
 - Full chest recoil; minimize pauses; change compressors about every 2 minutes.
 - Ratio (no advanced airway):
   - Adults: 30:2 for all rescuer counts.
   - Children/Infants: 30:2 single rescuer; 15:2 with two rescuers.
-- With advanced airway (if placed by ALS): continuous compressions at 100–120/min with 1 breath every 6 seconds (10/min) without pausing compressions.
+- With advanced airway (if placed by ALS): continuous compressions at 100ï¿½120/min with 1 breath every 6 seconds (10/min) without pausing compressions.
 
 ## AED use
 - Apply as soon as available; follow prompts.
 - Witnessed adult arrest: consider immediate shock if shockable rhythm detected.
-- Pediatric use: Prefer pediatric-attenuated pads for <8 years or <25 kg; if unavailable, use adult pads ensuring no overlap (anterolateral or anterior–posterior placement).
+- Pediatric use: Prefer pediatric-attenuated pads for <8 years or <25 kg; if unavailable, use adult pads ensuring no overlap (anterolateral or anteriorï¿½posterior placement).
 
 ## Ventilation and oxygenation
 - For apneic/pulseless: prioritize compressions; add ventilations with BVM at recommended ratios.
-- For patients with a pulse but inadequate breathing: Adult 1 breath every 5–6 sec; Child/Infant 1 breath every 3–5 sec; observe visible chest rise.
+- For patients with a pulse but inadequate breathing: Adult 1 breath every 5ï¿½6 sec; Child/Infant 1 breath every 3ï¿½5 sec; observe visible chest rise.
 - Avoid excessive ventilation; use airway adjuncts and suction as needed.
 
 ## Special circumstances
-- Opioid-associated emergencies: If pulseless—start CPR and ventilate first; give naloxone when available but do not delay CPR/AED. If pulse but respiratory depression—assist ventilations and give naloxone.
+- Opioid-associated emergencies: If pulselessï¿½start CPR and ventilate first; give naloxone when available but do not delay CPR/AED. If pulse but respiratory depressionï¿½assist ventilations and give naloxone.
 - Drowning: Emphasize ventilation early; remove from water safely; begin CPR; AED as soon as available.
 - Hypothermia: Check pulse and breathing up to 10 seconds; begin CPR unless obvious signs of death; limit shocks/meds per local protocol until rewarmed; handle gently.
 - Pregnancy (late): Manual left uterine displacement or left lateral tilt to improve venous return; prepare for perimortem resuscitative efforts per local policies (ALS/ED).
 - Trauma: Control hemorrhage; prioritize airway/ventilation and rapid transport.
 
 ## Post-ROSC care (BLS priorities)
-- Support airway/breathing; titrate oxygen to SpO2 94–99%; avoid hyperventilation.
+- Support airway/breathing; titrate oxygen to SpO2 94ï¿½99%; avoid hyperventilation.
 - Monitor mental status, airway protection, and hemodynamics; keep patient warm.
 - Reassess frequently and prepare for re-arrest; early transport and notification.
 
@@ -5152,34 +5154,34 @@ Provide high-quality CPR with minimal interruptions, early defibrillation, effec
     return `# Chapter 7: Lifespan Considerations in EMS
 
 ## Purpose for EMT-B
-Adapt assessment, communication, and interventions across the lifespan—from neonates to older adults, including pregnancy. Recognize normal ranges and atypical presentations to avoid mis-triage.
+Adapt assessment, communication, and interventions across the lifespanï¿½from neonates to older adults, including pregnancy. Recognize normal ranges and atypical presentations to avoid mis-triage.
 
 ## Age groups and typical vital sign ranges (awake, resting)
 Note: Ranges may vary by source and context; use local pediatric/clinical references and treat the patient, not just the number.
 
-- Neonate (0–28 days)
-  - RR ~ 30–60/min; HR ~ 100–205/min; SBP ~ 67–84 mmHg
+- Neonate (0ï¿½28 days)
+  - RR ~ 30ï¿½60/min; HR ~ 100ï¿½205/min; SBP ~ 67ï¿½84 mmHg
   - Features: obligate nasal breathing; large occiput; soft chest wall; poor thermoregulation.
-- Infant (1–12 months)
-  - RR ~ 30–53/min; HR ~ 100–190/min; SBP ~ 72–104 mmHg
+- Infant (1ï¿½12 months)
+  - RR ~ 30ï¿½53/min; HR ~ 100ï¿½190/min; SBP ~ 72ï¿½104 mmHg
   - Features: separation anxiety; rapid dehydration; bigger head-to-body ratio.
-- Toddler (1–3 years)
-  - RR ~ 22–37/min; HR ~ 98–140/min; SBP ~ 86–106 mmHg
+- Toddler (1ï¿½3 years)
+  - RR ~ 22ï¿½37/min; HR ~ 98ï¿½140/min; SBP ~ 86ï¿½106 mmHg
   - Features: limited vocabulary; fear of strangers; examine from toe-to-head.
-- Preschool (3–5 years)
-  - RR ~ 20–28/min; HR ~ 80–120/min; SBP ~ 89–112 mmHg
+- Preschool (3ï¿½5 years)
+  - RR ~ 20ï¿½28/min; HR ~ 80ï¿½120/min; SBP ~ 89ï¿½112 mmHg
   - Features: concrete thinking; use simple explanations and allow choices when safe.
-- School-age (6–12 years)
-  - RR ~ 18–25/min; HR ~ 75–118/min; SBP ~ 97–115 mmHg
+- School-age (6ï¿½12 years)
+  - RR ~ 18ï¿½25/min; HR ~ 75ï¿½118/min; SBP ~ 97ï¿½115 mmHg
   - Features: cooperative; can localize pain; involve in simple decisions.
-- Adolescent (13–18 years)
-  - RR ~ 12–20/min; HR ~ 60–100/min; SBP ~ 110–131 mmHg
+- Adolescent (13ï¿½18 years)
+  - RR ~ 12ï¿½20/min; HR ~ 60ï¿½100/min; SBP ~ 110ï¿½131 mmHg
   - Features: privacy concerns; consider confidentiality; risk-taking behaviors.
-- Adult (19–64 years)
-  - RR ~ 12–20/min; HR ~ 60–100/min; SBP variable (commonly 100–129 systolic)
+- Adult (19ï¿½64 years)
+  - RR ~ 12ï¿½20/min; HR ~ 60ï¿½100/min; SBP variable (commonly 100ï¿½129 systolic)
   - Features: broad variability; comorbidities may alter baselines.
 - Older adult (65+ years)
-  - RR often 12–20/min; HR baseline may be lower with meds; BP often higher
+  - RR often 12ï¿½20/min; HR baseline may be lower with meds; BP often higher
   - Features: decreased physiologic reserve; atypical presentations (e.g., silent MI, sepsis without fever, confusion instead of pain).
 
 ## Pediatric anatomical/physiological considerations
@@ -5187,11 +5189,11 @@ Note: Ranges may vary by source and context; use local pediatric/clinical refere
 - Breathing: diaphragm-dependent; fatigue quickly; look for retractions (subcostal/intercostal/suprasternal), nasal flaring, grunting, head bobbing.
 - Circulation: compensate with tachycardia/vasoconstriction until sudden decompensation; hypotension is a late sign.
 - Thermoregulation: infants lose heat quickly; warm environment and minimize exposure.
-- Assessment: use PAT (Pediatric Assessment Triangle)—appearance, work of breathing, circulation to skin—for initial impression.
+- Assessment: use PAT (Pediatric Assessment Triangle)ï¿½appearance, work of breathing, circulation to skinï¿½for initial impression.
 
 ## Communication strategies
-- Infants/toddlers: involve caregiver; examine on caregiver’s lap; use distraction; examine toe-to-head.
-- School-age: explain what you’re doing; allow them to control small choices; be honest about discomfort.
+- Infants/toddlers: involve caregiver; examine on caregiverï¿½s lap; use distraction; examine toe-to-head.
+- School-age: explain what youï¿½re doing; allow them to control small choices; be honest about discomfort.
 - Adolescents: respect privacy; offer same-gender provider when feasible; screen for risk behaviors with sensitivity.
 - Older adults: speak clearly, allow time, verify hearing/vision aids; avoid medical jargon; confirm baseline from family/caregivers.
 
@@ -5201,7 +5203,7 @@ Note: Ranges may vary by source and context; use local pediatric/clinical refere
 - Older adults: polypharmacy risks (anticoagulants, beta blockers, sedatives); bring all meds/list if possible.
 
 ## Pregnancy overview (time-critical differences)
-- Trimester changes: increased blood volume and heart rate; relative anemia; decreased functional residual capacity; delayed gastric emptying; hypotension when supine (aortocaval compression)—tilt 15–30° left.
+- Trimester changes: increased blood volume and heart rate; relative anemia; decreased functional residual capacity; delayed gastric emptying; hypotension when supine (aortocaval compression)ï¿½tilt 15ï¿½30ï¿½ left.
 - Red flags: vaginal bleeding, abdominal pain, severe headache/visual changes (preeclampsia), seizures (eclampsia), decreased fetal movement, trauma (high risk for concealed hemorrhage).
 - EMT-B actions: Manage ABCs; oxygen to effect; left lateral tilt; control bleeding; prepare for delivery when imminent (crowning, urge to push, contractions close/frequent); neonatal care and warm environment post-delivery; rapid transport to obstetric-capable facility for high-risk presentations.
 
@@ -5217,9 +5219,9 @@ Note: Ranges may vary by source and context; use local pediatric/clinical refere
 - Use SBAR for medical and MIST for trauma across all ages; include baseline status (developmental stage or cognitive baseline), pertinent negatives, and caregiver reports.
 
 ## Field pearls
-- “Parents’ instinct” can be a helpful clue; always correlate with objective findings.
-- In children, hypotension is late—act on early signs of respiratory distress or poor perfusion.
-- In pregnancy, any significant trauma is a maternal and fetal emergency—early transport and alert.
+- ï¿½Parentsï¿½ instinctï¿½ can be a helpful clue; always correlate with objective findings.
+- In children, hypotension is lateï¿½act on early signs of respiratory distress or poor perfusion.
+- In pregnancy, any significant trauma is a maternal and fetal emergencyï¿½early transport and alert.
 `;
   }
   if (parseInt(chapterId || '0') === 42) {
@@ -5229,13 +5231,13 @@ Note: Ranges may vary by source and context; use local pediatric/clinical refere
 This chapter gives a concise, clinically focused map of major body systems and what matters at the scene. Emphasis: recognizing red flags, linking findings to EMT-B treatments, and knowing when to escalate to ALS.
 
 ## What Body Systems Do (Big Picture)
-• Respiratory brings O2 in and removes CO2; Cardiovascular moves blood and nutrients; Nervous controls and coordinates; Musculoskeletal supports and moves; Integumentary protects and regulates temperature; GI digests/absorbs; Renal filters wastes and balances fluids; Endocrine sends hormone signals; Immune/lymph defends and drains fluids.
+ï¿½ Respiratory brings O2 in and removes CO2; Cardiovascular moves blood and nutrients; Nervous controls and coordinates; Musculoskeletal supports and moves; Integumentary protects and regulates temperature; GI digests/absorbs; Renal filters wastes and balances fluids; Endocrine sends hormone signals; Immune/lymph defends and drains fluids.
 
 ## Where They Are (Landmarks)
-• Chest: lungs and heart. Abdomen: GI solid organs (liver, spleen, pancreas) and hollow organs (stomach, intestines). Flanks/back: kidneys. Head/spine: brain and cord. Everywhere: skin, vessels, nerves, muscles/bones.
+ï¿½ Chest: lungs and heart. Abdomen: GI solid organs (liver, spleen, pancreas) and hollow organs (stomach, intestines). Flanks/back: kidneys. Head/spine: brain and cord. Everywhere: skin, vessels, nerves, muscles/bones.
 
 ## How Key Processes Work
-• Blood flow (with valves and O2 status):
+ï¿½ Blood flow (with valves and O2 status):
   - Deoxygenated blood from body ? Superior & Inferior Vena Cavae ? Right Atrium (RA)
   - RA ? Tricuspid valve ? Right Ventricle (RV)
   - RV ? Pulmonic (pulmonary semilunar) valve ? Pulmonary arteries ? Lungs
@@ -5245,27 +5247,27 @@ This chapter gives a concise, clinically focused map of major body systems and w
   - LV ? Aortic valve ? Aorta ? Systemic arteries ? Arterioles ? Capillaries (deliver O2)
   - Return: Venules ? Veins ? Vena cavae ? RA (deoxygenated again)
   - Coronary circulation: First branches of aorta (RCA/LCA) feed the heart muscle itself
-• Gas exchange (in lungs and tissues): Air to alveoli ? O2 diffuses into blood, CO2 diffuses out; adequate ventilation (air movement), perfusion (blood flow), and matching (V/Q) are required.
-• Perfusion = delivery of oxygenated blood to tissues; depends on pump (heart), pipes (vessels), and fluid (blood volume).
+ï¿½ Gas exchange (in lungs and tissues): Air to alveoli ? O2 diffuses into blood, CO2 diffuses out; adequate ventilation (air movement), perfusion (blood flow), and matching (V/Q) are required.
+ï¿½ Perfusion = delivery of oxygenated blood to tissues; depends on pump (heart), pipes (vessels), and fluid (blood volume).
 
 ## How Systems Interact
-• Resp + Cardio: lungs load O2, heart delivers it. Renal + Endocrine: regulate BP/volume (RAAS, ADH). Nervous + all: autonomic tone modulates HR, RR, vessel size. Skin + Cardio: thermoregulation via vasodilation/constriction.
+ï¿½ Resp + Cardio: lungs load O2, heart delivers it. Renal + Endocrine: regulate BP/volume (RAAS, ADH). Nervous + all: autonomic tone modulates HR, RR, vessel size. Skin + Cardio: thermoregulation via vasodilation/constriction.
 
 ## Rapid Systems Snapshot (Primary Survey)
-• Airway/Breathing: Patency, rate/effort, sounds (wheezes/stridor/rales). SpO2 target = 94%.
-• Circulation: Pulse quality, skin signs, cap refill, obvious bleeding. Shock = time-critical.
-• Neurologic: GCS trend, focal deficits, pupils, glucose when trained/equipped.
-• Disability/Exposure: Look for hidden injuries; prevent hypothermia.
+ï¿½ Airway/Breathing: Patency, rate/effort, sounds (wheezes/stridor/rales). SpO2 target = 94%.
+ï¿½ Circulation: Pulse quality, skin signs, cap refill, obvious bleeding. Shock = time-critical.
+ï¿½ Neurologic: GCS trend, focal deficits, pupils, glucose when trained/equipped.
+ï¿½ Disability/Exposure: Look for hidden injuries; prevent hypothermia.
 
 ## Cross-References
-• Tools: Glasgow Coma Scale (GCS), Pediatric dosing, Burn BSA.
-• Medications: Oxygen, Albuterol, Epinephrine, Aspirin, Naloxone, Oral Glucose.
-• Protocols: Stroke Alert, Anaphylaxis, Respiratory Failure, Diabetic Emergency, Trauma, Shock.
+ï¿½ Tools: Glasgow Coma Scale (GCS), Pediatric dosing, Burn BSA.
+ï¿½ Medications: Oxygen, Albuterol, Epinephrine, Aspirin, Naloxone, Oral Glucose.
+ï¿½ Protocols: Stroke Alert, Anaphylaxis, Respiratory Failure, Diabetic Emergency, Trauma, Shock.
 
 ## Field Pearls
-• Titrate oxygen to effect—avoid hyperoxia except CO exposure scenarios.
-• Trend matters: a single “normal” value can hide deterioration.
-• When in doubt: early transport and early notification.`;
+ï¿½ Titrate oxygen to effectï¿½avoid hyperoxia except CO exposure scenarios.
+ï¿½ Trend matters: a single ï¿½normalï¿½ value can hide deterioration.
+ï¿½ When in doubt: early transport and early notification.`;
     }
 
   if (parseInt(chapterId || '0') === 43) {
@@ -5278,8 +5280,8 @@ Moves blood to deliver O2/nutrients and remove CO2/wastes; maintains BP and perf
 Heart in mediastinum; arteries/veins throughout body; capillaries in all tissues; coronary arteries feed the heart.
 
 ## How It Works (Follow the Blood)
-• Right heart sends deoxygenated blood to lungs; left heart sends oxygenated blood to body.
-• Step-by-step (valves and O2 status):
+ï¿½ Right heart sends deoxygenated blood to lungs; left heart sends oxygenated blood to body.
+ï¿½ Step-by-step (valves and O2 status):
   - Body (deoxygenated) ? Superior/Inferior Vena Cavae ? Right Atrium (RA)
   - RA ? Tricuspid valve ? Right Ventricle (RV)
   - RV ? Pulmonic valve ? Pulmonary arteries ? Lungs (gas exchange at alveoli)
@@ -5287,34 +5289,34 @@ Heart in mediastinum; arteries/veins throughout body; capillaries in all tissues
   - LA ? Mitral (bicuspid) valve ? Left Ventricle (LV)
   - LV ? Aortic valve ? Aorta ? Arteries/Arterioles ? Capillaries (deliver O2 to tissues)
   - Venules/Veins ? Vena cavae ? RA (cycle repeats)
-• Coronary first: Right & left coronary arteries branch off proximal aorta to perfuse myocardium.
-• Valve mnemonic: "Tri before bi" (Tricuspid on the right, Bicuspid/Mitral on the left).
-• Electrical: SA node ? AV node ? His-Purkinje coordinates contraction. CO = HR × SV; MAP ˜ DBP + 1/3 PP.
+ï¿½ Coronary first: Right & left coronary arteries branch off proximal aorta to perfuse myocardium.
+ï¿½ Valve mnemonic: "Tri before bi" (Tricuspid on the right, Bicuspid/Mitral on the left).
+ï¿½ Electrical: SA node ? AV node ? His-Purkinje coordinates contraction. CO = HR ï¿½ SV; MAP ï¿½ DBP + 1/3 PP.
 
 ## How It Relates to Other Systems
-• Respiratory supplies O2 for hemoglobin; renal/endocrine regulate volume/BP (RAAS, ADH); nervous system controls rate/contractility.
+ï¿½ Respiratory supplies O2 for hemoglobin; renal/endocrine regulate volume/BP (RAAS, ADH); nervous system controls rate/contractility.
 
 ## What EMTs Must Recognize
-• Perfusion: mental status, skin, pulses, BP trends.
-• ACS red flags: pressure-like chest pain, radiation, diaphoresis, dyspnea, nausea.
-• Shock: tachycardia, cool/clammy skin, delayed cap refill, AMS.
+ï¿½ Perfusion: mental status, skin, pulses, BP trends.
+ï¿½ ACS red flags: pressure-like chest pain, radiation, diaphoresis, dyspnea, nausea.
+ï¿½ Shock: tachycardia, cool/clammy skin, delayed cap refill, AMS.
 
 ## EMT-B Actions
-• Position of comfort; limit exertion.
-• Oxygen to SpO2 = 94%; avoid excessive oxygen unless CO exposure.
-• Aspirin 324 mg chewable if no contraindication.
-• Assist with patient’s nitroglycerin per protocol (check SBP, PDE5 use; consider RV infarct caution).
-• Rapid transport; early STEMI center notification per local policy.
+ï¿½ Position of comfort; limit exertion.
+ï¿½ Oxygen to SpO2 = 94%; avoid excessive oxygen unless CO exposure.
+ï¿½ Aspirin 324 mg chewable if no contraindication.
+ï¿½ Assist with patientï¿½s nitroglycerin per protocol (check SBP, PDE5 use; consider RV infarct caution).
+ï¿½ Rapid transport; early STEMI center notification per local policy.
 
 ## Cross-References
-• Protocols: Acute Coronary Syndrome; Shock; Cardiac Arrest (ALS meds only).
-• Medications: Aspirin; Nitroglycerin (assist); Oxygen.
-• ECG tip: Inferior STEMI ? consider RV involvement (use caution with nitro).
+ï¿½ Protocols: Acute Coronary Syndrome; Shock; Cardiac Arrest (ALS meds only).
+ï¿½ Medications: Aspirin; Nitroglycerin (assist); Oxygen.
+ï¿½ ECG tip: Inferior STEMI ? consider RV involvement (use caution with nitro).
 
 ## Pitfalls
-• Nitro without SBP/PDE5 check.
-• Missing atypical ACS (older, diabetic, female patients).
-• Delaying transport for repeated assessments.`;
+ï¿½ Nitro without SBP/PDE5 check.
+ï¿½ Missing atypical ACS (older, diabetic, female patients).
+ï¿½ Delaying transport for repeated assessments.`;
     }
 
   if (parseInt(chapterId || '0') === 44) {
@@ -5327,31 +5329,31 @@ Brings oxygen in and removes carbon dioxide; maintains acid-base balance and spe
 Upper airway (nose, mouth, pharynx, larynx); lower airway (trachea, bronchi, bronchioles); lungs/alveoli; diaphragm/intercostals.
 
 ## How Gas Exchange Works
-• Ventilation: air movement to alveoli. Diffusion: O2 ? CO2 across alveolar-capillary membrane. Perfusion: blood flow past alveoli.
-• V/Q matching is essential. Low V (e.g., asthma, COPD) or low Q (e.g., PE) ? hypoxemia.
-• Oxyhemoglobin curve: low SpO2 and acidosis reduce O2 loading; titrate O2 to = 94%.
+ï¿½ Ventilation: air movement to alveoli. Diffusion: O2 ? CO2 across alveolar-capillary membrane. Perfusion: blood flow past alveoli.
+ï¿½ V/Q matching is essential. Low V (e.g., asthma, COPD) or low Q (e.g., PE) ? hypoxemia.
+ï¿½ Oxyhemoglobin curve: low SpO2 and acidosis reduce O2 loading; titrate O2 to = 94%.
 
 ## How It Relates to Other Systems
-• Cardiovascular delivers gases; nervous system controls rate/depth; skin and musculoskeletal assist ventilation and thermoregulation.
+ï¿½ Cardiovascular delivers gases; nervous system controls rate/depth; skin and musculoskeletal assist ventilation and thermoregulation.
 
 ## Assessment Priorities
-• Work of breathing, rate, sounds (wheezes, rales, stridor).
-• Pulse oximetry; target SpO2 = 94%.
-• Speaking ability (full sentences?), accessory muscle use, cyanosis.
+ï¿½ Work of breathing, rate, sounds (wheezes, rales, stridor).
+ï¿½ Pulse oximetry; target SpO2 = 94%.
+ï¿½ Speaking ability (full sentences?), accessory muscle use, cyanosis.
 
 ## EMT-B Actions
-• Position upright if tolerated; manage airway; suction as needed.
-• Oxygen: titrate to = 94%; NRB or BVM for severe distress.
-• Assist with bronchodilator inhaler; albuterol per protocol.
-• Anaphylaxis: epinephrine IM first; add albuterol if wheezing persists.
+ï¿½ Position upright if tolerated; manage airway; suction as needed.
+ï¿½ Oxygen: titrate to = 94%; NRB or BVM for severe distress.
+ï¿½ Assist with bronchodilator inhaler; albuterol per protocol.
+ï¿½ Anaphylaxis: epinephrine IM first; add albuterol if wheezing persists.
 
 ## Cross-References
-• Protocols: Acute Respiratory Failure; Anaphylaxis; Pediatric Respiratory Distress.
-• Medications: Oxygen, Albuterol, Epinephrine.
-• Calculators: Pediatric dosing.
+ï¿½ Protocols: Acute Respiratory Failure; Anaphylaxis; Pediatric Respiratory Distress.
+ï¿½ Medications: Oxygen, Albuterol, Epinephrine.
+ï¿½ Calculators: Pediatric dosing.
 
 ## Red Flags
-• Silent chest in asthma; rapidly worsening fatigue; stridor; SpO2 not improving.`;
+ï¿½ Silent chest in asthma; rapidly worsening fatigue; stridor; SpO2 not improving.`;
     }
 
   if (parseInt(chapterId || '0') === 45) {
@@ -5364,30 +5366,30 @@ Controls and coordinates body functions; conscious thought, movement, sensation;
 Central (brain, spinal cord) and peripheral (spinal/peripheral nerves). Brain regions: cerebrum (thought), cerebellum (coordination), brainstem (vitals).
 
 ## How It Works
-• Neurons signal via electrical impulses and chemical synapses.
-• Autonomic: Sympathetic (fight/flight) ? HR/BP, bronchodilation; Parasympathetic (rest/digest) ? HR, bronchoconstriction.
-• Stroke = sudden loss of blood flow to brain; seizure = abnormal synchronized neuronal firing.
+ï¿½ Neurons signal via electrical impulses and chemical synapses.
+ï¿½ Autonomic: Sympathetic (fight/flight) ? HR/BP, bronchodilation; Parasympathetic (rest/digest) ? HR, bronchoconstriction.
+ï¿½ Stroke = sudden loss of blood flow to brain; seizure = abnormal synchronized neuronal firing.
 
 ## How It Relates to Other Systems
-• Modulates cardiovascular and respiratory drive; controls endocrine axes via hypothalamus; interacts with musculoskeletal for movement.
+ï¿½ Modulates cardiovascular and respiratory drive; controls endocrine axes via hypothalamus; interacts with musculoskeletal for movement.
 
 ## Core Concepts for EMT-B
-• GCS trend; stroke screening (FAST/CPSS); pupils; focal deficits; post-ictal states.
+ï¿½ GCS trend; stroke screening (FAST/CPSS); pupils; focal deficits; post-ictal states.
 
 ## EMT-B Actions
-• Protect airway; recovery position when safe; suction as needed.
-• Check glucose when trained/equipped in altered patients.
-• Stroke: determine last known well; rapid transport to stroke center; oxygen to = 94%.
-• Seizure: protect from injury; cooling for febrile pediatric seizures.
+ï¿½ Protect airway; recovery position when safe; suction as needed.
+ï¿½ Check glucose when trained/equipped in altered patients.
+ï¿½ Stroke: determine last known well; rapid transport to stroke center; oxygen to = 94%.
+ï¿½ Seizure: protect from injury; cooling for febrile pediatric seizures.
 
 ## Cross-References
-• Protocols: Stroke Alert; Seizure (Adult/Pediatric); Diabetic Emergency.
-• Tools: GCS calculator; Pediatric dosing.
-• Medications: Oral Glucose.
+ï¿½ Protocols: Stroke Alert; Seizure (Adult/Pediatric); Diabetic Emergency.
+ï¿½ Tools: GCS calculator; Pediatric dosing.
+ï¿½ Medications: Oral Glucose.
 
 ## Pitfalls
-• Missing hypoglycemia in AMS.
-• Delayed stroke recognition and transport.`;
+ï¿½ Missing hypoglycemia in AMS.
+ï¿½ Delayed stroke recognition and transport.`;
     }
 
   if (parseInt(chapterId || '0') === 46) {
@@ -5400,28 +5402,28 @@ Supports body, protects organs, allows movement, stores minerals, makes blood ce
 Bones (axial and appendicular), joints/ligaments, skeletal muscles/tendons.
 
 ## How It Works
-• Muscles contract via sliding filaments (actin-myosin) triggered by calcium and nerve impulses.
-• Joints allow range of motion; stability vs mobility trade-off.
-• Long bone and pelvic fractures can bleed significantly; closed spaces (compartment syndrome) endanger perfusion and nerves.
+ï¿½ Muscles contract via sliding filaments (actin-myosin) triggered by calcium and nerve impulses.
+ï¿½ Joints allow range of motion; stability vs mobility trade-off.
+ï¿½ Long bone and pelvic fractures can bleed significantly; closed spaces (compartment syndrome) endanger perfusion and nerves.
 
 ## How It Relates to Other Systems
-• Movement requires nervous input and cardiovascular oxygen delivery; skin protects and signals injury.
+ï¿½ Movement requires nervous input and cardiovascular oxygen delivery; skin protects and signals injury.
 
 ## Priorities (Trauma)
-• Hemorrhage control first; then splinting when appropriate.
-• Assess distal PMS (pulse, motor, sensation) before/after splints.
+ï¿½ Hemorrhage control first; then splinting when appropriate.
+ï¿½ Assess distal PMS (pulse, motor, sensation) before/after splints.
 
 ## EMT-B Actions
-• Direct pressure, tourniquet, hemostatic gauze as indicated.
-• Spinal motion restriction based on decision rules and local policy.
-• Prevent hypothermia; gentle handling.
+ï¿½ Direct pressure, tourniquet, hemostatic gauze as indicated.
+ï¿½ Spinal motion restriction based on decision rules and local policy.
+ï¿½ Prevent hypothermia; gentle handling.
 
 ## Cross-References
-• Protocols: Multi-System Trauma; SMR; MCI Triage.
-• Tools: Burn BSA calculator.
+ï¿½ Protocols: Multi-System Trauma; SMR; MCI Triage.
+ï¿½ Tools: Burn BSA calculator.
 
 ## Pitfalls
-• Delaying transport for prolonged splinting in unstable patients.`;
+ï¿½ Delaying transport for prolonged splinting in unstable patients.`;
     }
 
   if (parseInt(chapterId || '0') === 47) {
@@ -5434,26 +5436,26 @@ Protects against infection/trauma, prevents fluid loss, regulates temperature, e
 Skin layers: epidermis (barrier), dermis (vessels, nerves), subcutaneous fat (insulation). Hair, nails, glands.
 
 ## How It Works
-• Thermoregulation via sweating and vasodilation/vasoconstriction.
-• Barrier function seals fluids in and pathogens out; breaks increase infection risk and fluid loss.
+ï¿½ Thermoregulation via sweating and vasodilation/vasoconstriction.
+ï¿½ Barrier function seals fluids in and pathogens out; breaks increase infection risk and fluid loss.
 
 ## How It Relates to Other Systems
-• Cardiovascular supports perfusion; nervous provides sensation/pain; immune responds to breaches.
+ï¿½ Cardiovascular supports perfusion; nervous provides sensation/pain; immune responds to breaches.
 
 ## Assessment & Care
-• Identify depth/extent of burns; look for inhalation injury.
-• Irrigate chemical exposures; remove contaminated clothing.
+ï¿½ Identify depth/extent of burns; look for inhalation injury.
+ï¿½ Irrigate chemical exposures; remove contaminated clothing.
 
 ## EMT-B Actions
-• Room-temp water cooling 10–20 min for thermal burns; avoid hypothermia.
-• Cover with sterile dressings; monitor pain and perfusion.
+ï¿½ Room-temp water cooling 10ï¿½20 min for thermal burns; avoid hypothermia.
+ï¿½ Cover with sterile dressings; monitor pain and perfusion.
 
 ## Cross-References
-• Protocols: Burn Injury Management; Chemical Exposure – Gross Decon.
-• Tools: Burn BSA calculator.
+ï¿½ Protocols: Burn Injury Management; Chemical Exposure ï¿½ Gross Decon.
+ï¿½ Tools: Burn BSA calculator.
 
 ## Pitfalls
-• Ice application to burns; inadequate decon before transport.`;
+ï¿½ Ice application to burns; inadequate decon before transport.`;
     }
 
   if (parseInt(chapterId || '0') === 48) {
@@ -5466,25 +5468,25 @@ Breaks down food, absorbs nutrients/water, eliminates waste; supports immunity (
 Mouth ? esophagus ? stomach ? small intestine (duodenum/jejunum/ileum) ? large intestine (colon) ? rectum/anus; solid organs: liver, gallbladder, pancreas, spleen.
 
 ## How It Works
-• Mechanical and chemical digestion; bile emulsifies fats; pancreas provides enzymes and bicarbonate; liver processes nutrients and makes clotting factors.
-• Quadrants help localization (RUQ liver/GB, LUQ spleen/stomach, RLQ appendix, LLQ sigmoid).
+ï¿½ Mechanical and chemical digestion; bile emulsifies fats; pancreas provides enzymes and bicarbonate; liver processes nutrients and makes clotting factors.
+ï¿½ Quadrants help localization (RUQ liver/GB, LUQ spleen/stomach, RLQ appendix, LLQ sigmoid).
 
 ## How It Relates to Other Systems
-• Cardiovascular (GI bleed ? shock); endocrine (glucose handling); immune (spleen, gut immunity).
+ï¿½ Cardiovascular (GI bleed ? shock); endocrine (glucose handling); immune (spleen, gut immunity).
 
 ## Assessment
-• OPQRST pain; palpation (tenderness, guarding, rebound); N/V/D; GI bleeding signs.
-• Pregnancy status where applicable; consider AAA risk in older patients.
+ï¿½ OPQRST pain; palpation (tenderness, guarding, rebound); N/V/D; GI bleeding signs.
+ï¿½ Pregnancy status where applicable; consider AAA risk in older patients.
 
 ## EMT-B Actions
-• Position of comfort; oxygen if hypoxic; limit PO intake.
-• Watch for shock signs; rapid transport for peritonitis, GI bleed, or AAA concern.
+ï¿½ Position of comfort; oxygen if hypoxic; limit PO intake.
+ï¿½ Watch for shock signs; rapid transport for peritonitis, GI bleed, or AAA concern.
 
 ## Cross-References
-• Protocols: Syncope; Shock; Patient Refusal/AMA (capacity with abdominal pain complaints).
+ï¿½ Protocols: Syncope; Shock; Patient Refusal/AMA (capacity with abdominal pain complaints).
 
 ## Pitfalls
-• Missing GI bleed in patients on anticoagulants; under-recognizing AAA red flags.`;
+ï¿½ Missing GI bleed in patients on anticoagulants; under-recognizing AAA red flags.`;
     }
 
   if (parseInt(chapterId || '0') === 49) {
@@ -5497,24 +5499,24 @@ Kidneys filter blood, remove wastes, balance fluids/electrolytes, regulate acid-
 Kidneys retroperitoneal in flanks; ureters to bladder; urethra exits pelvis; dialysis access often forearm fistula/graft.
 
 ## How It Works
-• Nephrons: filtration (glomerulus) ? reabsorption/secretion (tubules) ? urine.
-• RAAS and ADH control volume and BP; kidneys manage potassium and acid-base.
+ï¿½ Nephrons: filtration (glomerulus) ? reabsorption/secretion (tubules) ? urine.
+ï¿½ RAAS and ADH control volume and BP; kidneys manage potassium and acid-base.
 
 ## How It Relates to Other Systems
-• Cardiovascular (BP/volume); endocrine (ADH/aldosterone); affects ECG via potassium.
+ï¿½ Cardiovascular (BP/volume); endocrine (ADH/aldosterone); affects ECG via potassium.
 
 ## Essentials for EMT-B
-• Dehydration recognition; renal failure/dialysis considerations; urinary complaints.
+ï¿½ Dehydration recognition; renal failure/dialysis considerations; urinary complaints.
 
 ## EMT-B Actions
-• Assess perfusion; manage nausea/vomiting; transport for evaluation.
-• Protect dialysis access sites; avoid BP cuffs/IVs in fistula arm.
+ï¿½ Assess perfusion; manage nausea/vomiting; transport for evaluation.
+ï¿½ Protect dialysis access sites; avoid BP cuffs/IVs in fistula arm.
 
 ## Cross-References
-• Protocols: Sepsis Screening; Patient Refusal/AMA; Operations (SMR where trauma).
+ï¿½ Protocols: Sepsis Screening; Patient Refusal/AMA; Operations (SMR where trauma).
 
 ## Pitfalls
-• Ignoring volume status; compromising fistula access.`;
+ï¿½ Ignoring volume status; compromising fistula access.`;
     }
 
   if (parseInt(chapterId || '0') === 50) {
@@ -5527,28 +5529,28 @@ Hormones coordinate long-range control of metabolism, growth, stress, fluids/ele
 Major glands: pancreas (insulin/glucagon), adrenal (cortisol/aldosterone), pituitary, thyroid/parathyroid, gonads.
 
 ## How It Works
-• Negative feedback loops maintain homeostasis (e.g., insulin lowers BG; glucagon raises BG).
-• Stress response: adrenal medulla (epi/norepi), cortex (cortisol) ? ? glucose, ? BP.
+ï¿½ Negative feedback loops maintain homeostasis (e.g., insulin lowers BG; glucagon raises BG).
+ï¿½ Stress response: adrenal medulla (epi/norepi), cortex (cortisol) ? ? glucose, ? BP.
 
 ## How It Relates to Other Systems
-• Cardiovascular (BP via aldosterone), renal (sodium/water), nervous (stress responses), metabolic coupling to GI/liver.
+ï¿½ Cardiovascular (BP via aldosterone), renal (sodium/water), nervous (stress responses), metabolic coupling to GI/liver.
 
 ## Assessment
-• Hypoglycemia: AMS, diaphoresis, tachycardia, seizures.
-• Hyperglycemia/possible DKA: polyuria, polydipsia, vomiting, Kussmaul respirations.
+ï¿½ Hypoglycemia: AMS, diaphoresis, tachycardia, seizures.
+ï¿½ Hyperglycemia/possible DKA: polyuria, polydipsia, vomiting, Kussmaul respirations.
 
 ## EMT-B Actions
-• Glucose check when trained/equipped.
-• Oral glucose for conscious, able-to-swallow patients with low BG.
-• Oxygen to = 94% if hypoxic; rapid transport if altered/uncooperative.
+ï¿½ Glucose check when trained/equipped.
+ï¿½ Oral glucose for conscious, able-to-swallow patients with low BG.
+ï¿½ Oxygen to = 94% if hypoxic; rapid transport if altered/uncooperative.
 
 ## Cross-References
-• Protocols: Diabetic Emergency; Sepsis Screening.
-• Medications: Oral Glucose.
-• Tools: Pediatric dosing.
+ï¿½ Protocols: Diabetic Emergency; Sepsis Screening.
+ï¿½ Medications: Oral Glucose.
+ï¿½ Tools: Pediatric dosing.
 
 ## Pitfalls
-• Giving PO glucose to a drowsy patient who can’t protect airway.`;
+ï¿½ Giving PO glucose to a drowsy patient who canï¿½t protect airway.`;
     }
 
   if (parseInt(chapterId || '0') === 51) {
@@ -5561,33 +5563,33 @@ Immune system defends against pathogens; lymphatic system drains interstitial fl
 Widespread lymph vessels/nodes; spleen, thymus, tonsils; immune cells circulate in blood and tissues.
 
 ## How They Work
-• Innate immunity: fast, non-specific (barriers, phagocytes, inflammation).
-• Adaptive immunity: specific, memory (B/T cells, antibodies).
-• Anaphylaxis: IgE-mediated mast cell activation ? histamine release ? vasodilation, leaky capillaries (hypotension), bronchoconstriction, edema.
+ï¿½ Innate immunity: fast, non-specific (barriers, phagocytes, inflammation).
+ï¿½ Adaptive immunity: specific, memory (B/T cells, antibodies).
+ï¿½ Anaphylaxis: IgE-mediated mast cell activation ? histamine release ? vasodilation, leaky capillaries (hypotension), bronchoconstriction, edema.
 
 ## How They Relate to Other Systems
-• Cardiovascular (shock in anaphylaxis), respiratory (airway edema/bronchospasm), skin (hives/angioedema), GI (vomiting/diarrhea).
+ï¿½ Cardiovascular (shock in anaphylaxis), respiratory (airway edema/bronchospasm), skin (hives/angioedema), GI (vomiting/diarrhea).
 
 ## Recognition
-• Multi-system involvement: skin (hives/angioedema), respiratory (wheeze/stridor), cardiovascular (hypotension), GI symptoms.
+ï¿½ Multi-system involvement: skin (hives/angioedema), respiratory (wheeze/stridor), cardiovascular (hypotension), GI symptoms.
 
 ## EMT-B Actions
-• Epinephrine IM via auto-injector/manual per local protocol—don’t delay.
-• Oxygen to SpO2 = 94%; assist with bronchodilator if wheezing persists.
-• Rapid transport; monitor for biphasic reaction.
+ï¿½ Epinephrine IM via auto-injector/manual per local protocolï¿½donï¿½t delay.
+ï¿½ Oxygen to SpO2 = 94%; assist with bronchodilator if wheezing persists.
+ï¿½ Rapid transport; monitor for biphasic reaction.
 
 ## Cross-References
-• Protocols: Anaphylaxis; Allergic Reaction (Mild/Moderate).
-• Medications: Epinephrine, Albuterol, Oxygen.
-• Simulations: Medication Administration – Anaphylaxis.
+ï¿½ Protocols: Anaphylaxis; Allergic Reaction (Mild/Moderate).
+ï¿½ Medications: Epinephrine, Albuterol, Oxygen.
+ï¿½ Simulations: Medication Administration ï¿½ Anaphylaxis.
 
 ## Pitfalls
-• Waiting for ALS in clear anaphylaxis; under-dosing pediatrics.`;
+ï¿½ Waiting for ALS in clear anaphylaxis; under-dosing pediatrics.`;
     }
   if (parseInt(chapterId || '0') === 18) {
     return `# Chapter 18: Brain & Nerve Emergencies
 
-ProMedixEMS™ Study Guide — concise, field-focused content for EMT-B. Verify local protocols.
+ProMedixEMSï¿½ Study Guide ï¿½ concise, field-focused content for EMT-B. Verify local protocols.
 
 ## EMT-B focus
 - Rapid neuro recognition and transport decisions for stroke, seizures, and altered mental status.
@@ -5596,11 +5598,11 @@ ProMedixEMS™ Study Guide — concise, field-focused content for EMT-B. Verify loca
 
 ## High-yield conditions and red flags
 - Ischemic stroke: sudden focal neuro deficit (face/arm weakness, speech trouble), gaze deviation, vision loss.
-- Hemorrhagic stroke: “worst headache,” vomiting, rapid decline, severe HTN, neck stiffness, focal deficits.
-- TIA: stroke-like symptoms that fully resolve = 24 h—still high risk; treat as stroke alert if within window.
-- Seizure: tonic–clonic, focal, absence, or unknown; status epilepticus = seizure(s) = 5 min or recurrent without recovery.
+- Hemorrhagic stroke: ï¿½worst headache,ï¿½ vomiting, rapid decline, severe HTN, neck stiffness, focal deficits.
+- TIA: stroke-like symptoms that fully resolve = 24 hï¿½still high risk; treat as stroke alert if within window.
+- Seizure: tonicï¿½clonic, focal, absence, or unknown; status epilepticus = seizure(s) = 5 min or recurrent without recovery.
 - Hypoglycemia: altered, seizure-like, diaphoresis, tachycardia; glucose check when trained/equipped.
-- Increased ICP/TBI: vomiting, worsening headache, bradycardia/HTN/irregular respirations (Cushing triad—late), unequal pupils.
+- Increased ICP/TBI: vomiting, worsening headache, bradycardia/HTN/irregular respirations (Cushing triadï¿½late), unequal pupils.
 
 ## Assessment essentials
 - Primary: airway patency, protective reflexes, breathing adequacy, circulation/perfusion; treat life threats as found.
@@ -5612,7 +5614,7 @@ ProMedixEMS™ Study Guide — concise, field-focused content for EMT-B. Verify loca
 - Oxygen: titrate to SpO2 = 94% (avoid routine hyperoxia if not hypoxic).
 - Check glucose early; correct hypoglycemia if indicated.
 - Do not give aspirin for suspected stroke in the field unless explicitly directed by medical control.
-- Position head midline; elevate head of bed 20–30° if tolerated and not hypotensive.
+- Position head midline; elevate head of bed 20ï¿½30ï¿½ if tolerated and not hypotensive.
 - Rapid transport to appropriate stroke center; pre-notify with LKW, deficits, glucose, and anticoagulants.
 - Avoid hypotension and hyperventilation; keep patient warm; do not delay transport for prolonged on-scene testing.
 
@@ -5621,15 +5623,15 @@ ProMedixEMS™ Study Guide — concise, field-focused content for EMT-B. Verify loca
 - Time the seizure; after cessation, place in recovery position when safe; suction as needed.
 - Airway/ventilation: assist with BVM if inadequate respirations or persistent post-ictal hypoventilation.
 - Check glucose; treat hypoglycemia per protocol. Consider pregnancy, eclampsia (if late pregnancy/postpartum with seizures and hypertension).
-- Status epilepticus is time-critical—rapid transport; ALS may administer benzodiazepines per protocol.
+- Status epilepticus is time-criticalï¿½rapid transport; ALS may administer benzodiazepines per protocol.
 
 ## Headache and neurologic red flags
-- Thunderclap onset (seconds), “worst headache,” exertional onset, neck stiffness, fever with altered mental status, new neuro deficit, cancer/immunosuppression, anticoagulant use, head trauma.
+- Thunderclap onset (seconds), ï¿½worst headache,ï¿½ exertional onset, neck stiffness, fever with altered mental status, new neuro deficit, cancer/immunosuppression, anticoagulant use, head trauma.
 - EMT-B actions: ABCs, oxygen to effect, glucose check, temperature if available, minimize stimulation; rapid transport for red flags.
 
 ## Special situations
 - TBI/trauma: maintain SMR when indicated, prevent hypoxia/hypotension/hypothermia; manage life-threatening hemorrhage first.
-- Sepsis-associated encephalopathy: fever or hypothermia, hypotension, altered mentation—treat shock, rapid transport.
+- Sepsis-associated encephalopathy: fever or hypothermia, hypotension, altered mentationï¿½treat shock, rapid transport.
 - Pediatric seizures: febrile seizures common; focus on airway, cooling if febrile (avoid shivering), and glucose.
 
 ## Documentation and handoff
@@ -5644,7 +5646,7 @@ ProMedixEMS™ Study Guide — concise, field-focused content for EMT-B. Verify loca
   if (parseInt(chapterId || '0') === 19) {
     return `# Chapter 19: GI/GU Crisis Intervention
 
-ProMedixEMS™ Study Guide — abdominal and genitourinary emergencies with EMT-B priorities. Verify local protocols.
+ProMedixEMSï¿½ Study Guide ï¿½ abdominal and genitourinary emergencies with EMT-B priorities. Verify local protocols.
 
 ## EMT-B focus
 - Identify time-sensitive abdominal and GU red flags; prevent aspiration; treat shock; rapid transport when indicated.
@@ -5656,14 +5658,14 @@ ProMedixEMS™ Study Guide — abdominal and genitourinary emergencies with EMT-B pr
 
 ## Red flags ? high-risk causes
 - GI bleed: hematemesis (bright red/coffee-ground), melena (black tarry stool), hematochezia (bright red per rectum) with syncope, tachycardia, hypotension.
-- AAA: older age, male, smoking history; sudden tearing back/abdominal pain, hypotension, pulsatile mass (don’t press hard), syncope.
+- AAA: older age, male, smoking history; sudden tearing back/abdominal pain, hypotension, pulsatile mass (donï¿½t press hard), syncope.
 - Peritonitis: rebound/guarding, rigid abdomen, fever; consider appendicitis, perforation.
 - Cholecystitis/biliary colic: RUQ pain after fatty meal, shoulder/right scapular radiation, Murphy sign, N/V.
 - Pancreatitis: epigastric pain radiating to back, N/V, worse after meals or EtOH; may have tachycardia/fever.
 - Bowel obstruction: crampy pain, vomiting, distension, no flatus; high-risk with prior surgeries/hernia.
 - Renal colic (stones): severe flank to groin colicky pain, hematuria, restlessness.
 - Pyelonephritis: fever, CVA tenderness, dysuria history, malaise.
-- Testicular torsion: sudden unilateral scrotal pain, high-riding testis, N/V—time critical.
+- Testicular torsion: sudden unilateral scrotal pain, high-riding testis, N/Vï¿½time critical.
 - Dialysis complications: access bleeding, hypotension, dyspnea (fluid overload), hyperkalemia risk (weakness, peaked T waves reported).
 
 ## Assessment essentials
@@ -5684,7 +5686,7 @@ ProMedixEMS™ Study Guide — abdominal and genitourinary emergencies with EMT-B pr
 - AAA suspicion: handle gently; minimize movement; rapid transport with early notification.
 - Upper vs lower GI bleed clues: hematemesis/coffee-ground suggests upper; melena often upper; hematochezia often lower but can be brisk upper.
 - Female lower abdominal pain: consider ectopic pregnancy until ruled out; rapid transport if unstable.
-- Torsion is a surgical emergency—time sensitive; transport without delay.
+- Torsion is a surgical emergencyï¿½time sensitive; transport without delay.
 
 ## Documentation and handoff
 - Onset/character of pain, associated symptoms (fever, vomiting, GI bleed signs), LMP/pregnancy possibility, dialysis schedule/access issues, vitals trends, shock signs, interventions and responses.
@@ -5697,28 +5699,28 @@ ProMedixEMS™ Study Guide — abdominal and genitourinary emergencies with EMT-B pr
   if (parseInt(chapterId || '0') === 20) {
     return `# Chapter 20: Endocrine & Blood Emergencies
 
-ProMedixEMS™ Study Guide — recognition-first approach for EMT-B. Verify local protocols.
+ProMedixEMSï¿½ Study Guide ï¿½ recognition-first approach for EMT-B. Verify local protocols.
 
 ## EMT-B focus
 - Rapidly identify glucose emergencies; support airway/ventilation; prevent secondary injury; transport appropriately.
 - Recognize hematologic crises (sickle cell, bleeding disorders) and endocrine decompensation (DKA/HHS, adrenal, thyroid).
 
 ## Diabetes and glucose emergencies
-- Hypoglycemia: altered behavior, confusion, diaphoresis, tachycardia, seizure, focal deficit mimic; BG often < 70 mg/dL (device dependent). Most time-critical—treat immediately.
+- Hypoglycemia: altered behavior, confusion, diaphoresis, tachycardia, seizure, focal deficit mimic; BG often < 70 mg/dL (device dependent). Most time-criticalï¿½treat immediately.
 - Hyperglycemia: polyuria, polydipsia, polyphagia, blurred vision, fatigue; slower onset.
 - DKA: type 1 common; abdominal pain, vomiting, Kussmaul respirations, fruity breath, dehydration; BG often > 250 mg/dL.
 - HHS: type 2; profound dehydration, AMS, minimal/no Kussmaul; BG often > 600 mg/dL.
-- EMT-B actions: check glucose when trained/equipped; if symptomatic hypoglycemia and patient can protect airway and follow commands—give oral glucose (typically 15–24 g buccal); reassess mental status and BG if possible. If unable to protect airway—do not give PO; support ABCs and transport.
+- EMT-B actions: check glucose when trained/equipped; if symptomatic hypoglycemia and patient can protect airway and follow commandsï¿½give oral glucose (typically 15ï¿½24 g buccal); reassess mental status and BG if possible. If unable to protect airwayï¿½do not give PO; support ABCs and transport.
 
 ## Adrenal and thyroid emergencies (recognition)
-- Adrenal crisis (addisonian): fatigue, hypotension, vomiting, abdominal pain, possible fever—often in steroid-dependent patients or recent withdrawal; treat shock supportively, avoid delays.
-- Thyroid storm: fever, agitation, tachycardia, possible heart failure—support ABCs, cooling, transport.
-- Myxedema coma: hypothermia, bradycardia, hypoventilation, AMS—gentle rewarming, airway/ventilation support.
+- Adrenal crisis (addisonian): fatigue, hypotension, vomiting, abdominal pain, possible feverï¿½often in steroid-dependent patients or recent withdrawal; treat shock supportively, avoid delays.
+- Thyroid storm: fever, agitation, tachycardia, possible heart failureï¿½support ABCs, cooling, transport.
+- Myxedema coma: hypothermia, bradycardia, hypoventilation, AMSï¿½gentle rewarming, airway/ventilation support.
 
 ## Hematologic conditions
 - Sickle cell vaso-occlusive crisis: severe pain (chest, limbs, abdomen), fever/infection risk, priapism, acute chest syndrome (pleuritic pain, hypoxia). EMT-B: oxygen to effect, keep warm, gentle handling, transport; pain management per local protocols.
 - Hemophilia/anticoagulated patients: prolonged bleeding, joint swelling; apply firm pressure; avoid unnecessary invasive procedures; bring factor/medication list.
-- Symptomatic anemia: pallor, fatigue, dyspnea, syncope—supportive care and transport.
+- Symptomatic anemia: pallor, fatigue, dyspnea, syncopeï¿½supportive care and transport.
 
 ## Assessment essentials
 - Primary: airway and ventilation; look for hypoventilation in hypo/hyperglycemic and myxedema cases.
@@ -5750,7 +5752,7 @@ ProMedixEMS™ Study Guide — recognition-first approach for EMT-B. Verify local pr
 
 Emergency Responders face more risks than other jobs. EMTs work in tough, fast-changing situations where they can get exposed to diseases, injuries, and violence. Studies show that 84% of first responders have seen traumatic events, and 34% have been diagnosed with mental health issues like depression or PTSD.
 
-The suicide rate for EMTs and paramedics is much higher than for other adults. **EMTs must take care of their physical, mental, and emotional health to properly care for patients**. This is not just a personal responsibility—it's a professional requirement that directly impacts patient care quality.
+The suicide rate for EMTs and paramedics is much higher than for other adults. **EMTs must take care of their physical, mental, and emotional health to properly care for patients**. This is not just a personal responsibilityï¿½it's a professional requirement that directly impacts patient care quality.
 
 ## General Health, Wellness, and Resilience
 
@@ -5784,7 +5786,7 @@ Complex carbohydrates like pasta and rice are good sources for long-term energy.
 
 ## Safe Lifting Practices
 
-Lifting patients and equipment is a common and unavoidable task for EMTs. **Back injuries are frequent in EMS work** and can end careers prematurely. Proper lifting technique is not just about personal safety—it's about ensuring you can continue to serve patients throughout your career.
+Lifting patients and equipment is a common and unavoidable task for EMTs. **Back injuries are frequent in EMS work** and can end careers prematurely. Proper lifting technique is not just about personal safetyï¿½it's about ensuring you can continue to serve patients throughout your career.
 
 Key principles for safe lifting include pre-planning the move, bending your legs rather than your waist, keeping the weight as close to your body as possible, and lifting straight up using your leg muscles. **These techniques must become second nature** and should be practiced regularly.
 
@@ -6040,7 +6042,7 @@ These diverse social and personal influences create significant variations in co
 
 ## Understanding Non-Verbal Communication Cues
 
-Patients communicate their feelings and concerns through multiple channels including spoken words, physical gestures, written notes, and various non-verbal indicators. The manner in which someone speaks—including their tone of voice, speaking speed, and volume levels—provides valuable insight into their emotional state and current level of distress.
+Patients communicate their feelings and concerns through multiple channels including spoken words, physical gestures, written notes, and various non-verbal indicators. The manner in which someone speaksï¿½including their tone of voice, speaking speed, and volume levelsï¿½provides valuable insight into their emotional state and current level of distress.
 
 These communication cues also reveal the relative importance and urgency that patients place on their messages. For instance, a patient who is yelling may be experiencing anger, fear, or both emotions simultaneously. EMTs must develop skills to notice not only the actual words being spoken but also the manner in which they are delivered.
 
@@ -6136,7 +6138,7 @@ Emotional intelligence encompasses five main components: **Self-awareness** invo
 
 Individuals with high emotional intelligence demonstrate kindness, caring attitudes, and excellent listening skills in their professional interactions. EMTs should continuously work to improve their own emotional intelligence through self-reflection and practice.
 
-Examine how you react to stressful situations—do you become easily upset or frustrated? Practice maintaining calm responses under pressure. Develop mindfulness by focusing on present moments without judging yourself or others harshly. Take responsibility for your actions rather than immediately blaming others, and consider how your behavior affects those around you.
+Examine how you react to stressful situationsï¿½do you become easily upset or frustrated? Practice maintaining calm responses under pressure. Develop mindfulness by focusing on present moments without judging yourself or others harshly. Take responsibility for your actions rather than immediately blaming others, and consider how your behavior affects those around you.
 
 The **Behavioral Change Stairway Model** represents a five-step communication method for managing difficult situations, originally developed by the FBI for hostage negotiation scenarios. The steps include: **1. Employ active listening** by listening carefully and demonstrating that you are actively engaged without interrupting or arguing. **2. Display empathy** by understanding the patient's viewpoint even if you disagree with their actions or decisions. **3. Build rapport** by establishing connection once you have listened and demonstrated understanding. **4. Exert influence** by identifying realistic approaches to move situations forward positively while considering both patient needs and your professional obligations. **5. Initiate behavior change** by suggesting solutions that make sense to patients while remaining acceptable to you as a healthcare provider.
 
@@ -6144,7 +6146,7 @@ The **Behavioral Change Stairway Model** represents a five-step communication me
 
 **Older patients** represent a growing demographic in emergency medical services. Focus on patients' **functional age** (their ability to perform daily activities) rather than chronological age when determining communication approaches. Demonstrate competence, confidence, and genuine caring in all interactions.
 
-Listen carefully and act on information you gather rather than focusing solely on obvious presenting problems. Never assume that older patients are confused or senile—if confusion exists, it may result from medical conditions such as hypoxia or infection rather than age-related cognitive decline.
+Listen carefully and act on information you gather rather than focusing solely on obvious presenting problems. Never assume that older patients are confused or senileï¿½if confusion exists, it may result from medical conditions such as hypoxia or infection rather than age-related cognitive decline.
 
 Exercise patience and compassion consistently. Approach slowly and calmly, allowing adequate time for responses. Watch for signs of confusion or hearing and vision impairments that may affect communication. Some older patients with chronic diseases may not experience typical pain responses, so observe carefully for subtle physical changes.
 
@@ -6166,7 +6168,7 @@ If patients can walk, guide them by placing their hand on your arm rather than g
 
 **Non-English speaking patients** still require thorough medical history gathering. Determine how much English patients understand before proceeding with assessment. Use short, simple questions and basic vocabulary while avoiding complex medical terminology.
 
-Point to relevant body parts while asking questions to aid comprehension. Speaking louder does not improve understanding for language barriers. Learn common medical words in local languages—pocket reference cards are often available for this purpose.
+Point to relevant body parts while asking questions to aid comprehension. Speaking louder does not improve understanding for language barriers. Learn common medical words in local languagesï¿½pocket reference cards are often available for this purpose.
 
 Utilize smartphone translation applications or locate qualified interpreters when available. Family members or friends can provide translation assistance during emergencies until professional interpreters arrive at receiving facilities. Request professional translators at hospitals when patients' primary languages are known.
 
@@ -6218,7 +6220,7 @@ Document all patient care activities clearly in PCRs, demonstrating that appropr
 
 Essential information includes: Chief complaint or primary concern, mechanism of injury or nature of illness, level of consciousness using standardized scales such as AVPU, vital signs measurements, initial and ongoing assessment findings, patient demographic details including age, sex, and ethnic background when relevant, and transport information describing how patients were moved and destination selection reasoning.
 
-PCRs directly reflect professional competence and attention to detail—neat, well-written reports demonstrate high-quality patient care delivery. The common saying "if the report looks sloppy, the patient care was probably sloppy too" emphasizes this important relationship between documentation quality and care quality.
+PCRs directly reflect professional competence and attention to detailï¿½neat, well-written reports demonstrate high-quality patient care delivery. The common saying "if the report looks sloppy, the patient care was probably sloppy too" emphasizes this important relationship between documentation quality and care quality.
 
 Reports provide essential administrative information including incident times, arrival times, and care transfer times for system management and quality assurance purposes. **Military time** represents the standard format for EMS documentation to eliminate confusion between AM and PM designations.
 
@@ -6228,7 +6230,7 @@ Most modern PCRs utilize electronic formats (ePCRs) that can transmit patient in
 
 The **narrative section** represents a critically important component that tells the complete story of each emergency response. Include negative findings and relevant scene observations that might impact patient care or provide context for clinical decisions.
 
-Document facts rather than personal opinions—for example, write "patient had strong odor of alcohol on breath" rather than "patient was intoxicated." **Standardized narrative formats** such as CHART and SOAP ensure that all important information is included systematically.
+Document facts rather than personal opinionsï¿½for example, write "patient had strong odor of alcohol on breath" rather than "patient was intoxicated." **Standardized narrative formats** such as CHART and SOAP ensure that all important information is included systematically.
 
 **CHART Method:** **C** - Chief Complaint/Concern, **H** - History (current event and relevant medical history), **A** - Assessment (vital signs and physical examination findings), **R** - Treatments (all interventions performed and patient responses), **T** - Transport (method of patient movement, destination selection, and receiving personnel).
 
@@ -6259,7 +6261,7 @@ Understanding these comprehensive documentation and communication principles ens
 - Real-world scenarios and case studies
 
 ## Key Topics to be Covered
-*Detailed content structure for ${chapter.title} will be added following ProMedixEMS™ training standards.*
+*Detailed content structure for ${chapter.title} will be added following ProMedixEMSï¿½ training standards.*
 
 ## Coming Soon
 This chapter content will be integrated with the same professional medical formatting, EMT-B scope indicators, and interactive features as Chapter 1. Content will include comprehensive text, clinical scenarios, assessment tools, and multimedia elements.`;
@@ -6329,7 +6331,7 @@ This chapter content will be integrated with the same professional medical forma
     
     <hr>
     <footer>
-  <p><em>Generated from ProMedixEMS™ Training Platform - ${new Date().toLocaleDateString()}</em></p>
+  <p><em>Generated from ProMedixEMSï¿½ Training Platform - ${new Date().toLocaleDateString()}</em></p>
     </footer>
 </body>
 </html>`;
@@ -6357,7 +6359,7 @@ This chapter content will be integrated with the same professional medical forma
 ${content}
 
 ---
-*Generated from ProMedixEMS™ Training Platform - ${new Date().toLocaleDateString()}*
+*Generated from ProMedixEMSï¿½ Training Platform - ${new Date().toLocaleDateString()}*
 `;
 
     const blob = new Blob([mdContent], { type: 'text/markdown' });
@@ -6382,7 +6384,7 @@ ${content}
             </Link>
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Chapter {chapter.id}: {chapter.title}</h1>
-          <p className="text-gray-600">{isBonus ? `Bonus: ${module.title}` : `Module ${module.id}: ${module.title}`} • {chapter.duration}</p>
+          <p className="text-gray-600">{isBonus ? `Bonus: ${module.title}` : `Module ${module.id}: ${module.title}`} ï¿½ {chapter.duration}</p>
         </div>
        
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
@@ -6412,7 +6414,7 @@ ${content}
             {contentElements.map((element, index) => renderContent(element, index))}
           </div>
 
-          {/* System visuals for Human Body Systems (42–51) */}
+          {/* System visuals for Human Body Systems (42ï¿½51) */}
           {[42,43,44,45,46,47,48,49,50,51].includes(parseInt(chapterId || '0')) && (
             <div className="mt-8 space-y-6">
               {parseInt(chapterId || '0') === 42 && (
@@ -6604,7 +6606,7 @@ const StudyModulesPage = () => (
   <main className="p-6">
     <div className="mb-8">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Study Modules</h1>
-  <p className="text-gray-600">ProMedixEMS™ Study Guides • Organized into 14 modules • 41 focused study units (not full chapters)</p>
+  <p className="text-gray-600">ProMedixEMSï¿½ Study Guides ï¿½ Organized into 14 modules ï¿½ 41 focused study units (not full chapters)</p>
     </div>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {moduleStructure.map((module) => (
@@ -6768,7 +6770,7 @@ const AIAssistantPage = () => {
     {
       id: 1,
       type: 'assistant',
-  content: `Hello! I'm your ProMedixEMS™ AI Assistant. I can help you with:
+  content: `Hello! I'm your ProMedixEMSï¿½ AI Assistant. I can help you with:
 
 ?? **EMT-B Protocols & Procedures**
 ?? **Medication Information & Dosing**
@@ -6797,7 +6799,7 @@ What would you like to learn about today?`
 
 **Indications:** SpO2 < 94% or signs of hypoxia, respiratory distress, chest pain
 **Delivery:** Titrate to maintain SpO2 = 94%; use NRB or BVM if severe distress/CO exposure
-**Target:** SpO2 94-99% (avoid hyperoxia in COPD—titrate)
+**Target:** SpO2 94-99% (avoid hyperoxia in COPDï¿½titrate)
 **Monitoring:** Continuous pulse oximetry
 
 **Remember:** Oxygen is a drug - use appropriate concentration!`,
@@ -6805,31 +6807,31 @@ What would you like to learn about today?`
     'gcs': `**Glasgow Coma Scale (GCS) Assessment:**
 
 **Components:**
-• **Eye Opening:** 4-1 points
-• **Verbal Response:** 5-1 points  
-• **Motor Response:** 6-1 points
+ï¿½ **Eye Opening:** 4-1 points
+ï¿½ **Verbal Response:** 5-1 points  
+ï¿½ **Motor Response:** 6-1 points
 
 **Interpretation:**
-• 13-15: Mild TBI
-• 9-12: Moderate TBI
-• 3-8: Severe TBI
+ï¿½ 13-15: Mild TBI
+ï¿½ 9-12: Moderate TBI
+ï¿½ 3-8: Severe TBI
 
 **EMT Tip:** Document initial and trending scores`,
     
-  'Shock Recognition & Response': `**Shock Recognition & Response – Recognition & Management:**
+  'Shock Recognition & Response': `**Shock Recognition & Response ï¿½ Recognition & Management:**
 
 **Early Signs:**
-• Altered mental status
-• Tachycardia
-• Cool, clammy skin
+ï¿½ Altered mental status
+ï¿½ Tachycardia
+ï¿½ Cool, clammy skin
 ? Delayed capillary refill
 
 **EMT Treatment:**
-• Oxygen to maintain SpO2 = 94%
-• Position supine (legs elevated if no spinal injury)
-• Keep warm
-• Rapid transport
-• Monitor vitals frequently`
+ï¿½ Oxygen to maintain SpO2 = 94%
+ï¿½ Position supine (legs elevated if no spinal injury)
+ï¿½ Keep warm
+ï¿½ Rapid transport
+ï¿½ Monitor vitals frequently`
   };
 
   const getAIResponse = (userMessage: string) => {
@@ -6925,7 +6927,7 @@ Please ask me about any EMT-B topic, and I'll provide detailed, clinically accur
                 <MessageCircle className="w-6 h-6 text-blue-600" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-gray-900">ProMedixEMS™ AI Assistant</h2>
+                <h2 className="text-xl font-bold text-gray-900">ProMedixEMSï¿½ AI Assistant</h2>
                 <p className="text-sm text-gray-600">Your intelligent EMT-B study companion</p>
               </div>
             </div>
@@ -7754,11 +7756,11 @@ const SearchResultsPage = () => {
                           </h3>
                           <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
                             <span className="capitalize">{result.type.replace('-', ' ')}</span>
-                            <span>•</span>
+                            <span>ï¿½</span>
                             <span>{result.category}</span>
                             {result.chapter && (
                               <>
-                                <span>•</span>
+                                <span>ï¿½</span>
                                 <span>Chapter {result.chapter}</span>
                               </>
                             )}
@@ -7794,10 +7796,10 @@ const SearchResultsPage = () => {
                 </p>
                 <div className="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-4">
                   <ul className="text-left text-gray-700 dark:text-gray-300 space-y-1">
-                    <li>• Checking your spelling</li>
-                    <li>• Using different keywords</li>
-                    <li>• Being more specific or more general</li>
-                    <li>• Trying medical abbreviations (CPR, BLS, etc.)</li>
+                    <li>ï¿½ Checking your spelling</li>
+                    <li>ï¿½ Using different keywords</li>
+                    <li>ï¿½ Being more specific or more general</li>
+                    <li>ï¿½ Trying medical abbreviations (CPR, BLS, etc.)</li>
                   </ul>
                 </div>
               </div>
