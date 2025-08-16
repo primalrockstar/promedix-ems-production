@@ -1268,11 +1268,11 @@ const [progress, setProgress] = useState({
   });
 
   const [showDisclaimerBanner, setShowDisclaimerBanner] = useState(() => {
-    return !localStorage.getItem('promedix_disclaimer_accepted');
+    return false; // Skip disclaimer banner for testing
   });
 
   const [showWelcome, setShowWelcome] = useState(() => {
-    return !localStorage.getItem('promedix_welcome_seen');
+    return false; // Skip welcome for testing
   });
 
   const [showFullDisclaimer, setShowFullDisclaimer] = useState(false);
