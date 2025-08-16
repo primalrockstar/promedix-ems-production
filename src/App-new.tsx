@@ -1663,13 +1663,13 @@ const ProMedixHeader = () => {
       {/* Mobile Header */}
       <div className="lg:hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
-          {/* Mobile Logo - Compact version per website guide */}
+          {/* Mobile Logo - Much larger for prominence */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="relative">
               <img 
                 src="/assets/LOGOFINAL.png" 
                 alt="ProMedix EMS Logo" 
-                className="w-20 h-12 object-contain"
+                className="w-32 h-20 object-contain"
                 style={{ background: 'transparent' }}
               />
             </div>
@@ -1846,7 +1846,7 @@ const ProMedixHeader = () => {
                 <MoreMenu items={tabs} />
               </div>
 
-              {/* Center: ProMedix Logo (Header Logo Desktop per guide) */}
+              {/* Center: ProMedix Logo - Much larger for maximum prominence */}
               <div className="flex justify-center">
                 <Link to="/" className="flex flex-col items-center">
                   <div className="flex items-center mb-1">
@@ -1854,7 +1854,7 @@ const ProMedixHeader = () => {
                       <img 
                         src="/assets/LOGOFINAL.png" 
                         alt="ProMedix EMS Logo" 
-                        className="w-80 h-16 object-contain"
+                        className="w-96 h-24 object-contain"
                         style={{ background: 'transparent' }}
                       />
                     </div>
