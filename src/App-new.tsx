@@ -1312,7 +1312,7 @@ const [progress, setProgress] = useState({
             <Route path="/" element={<EMTBNavigation />} />
             <Route path="/modules" element={<StudyModulesPage />} />
             <Route path="/modules/:moduleId" element={<ModuleDetailPage />} />
-            <Route path="/chapter/:chapterId" element={<ChapterPage />} />
+            <Route path="/chapter/:chapterId" element={<EMTBStudyNotesEnhanced />} />
             <Route path="/bonus" element={<BonusModulePage />} />
             <Route path="/protocols" element={<ProtocolsPage />} />
             <Route path="/medications" element={<MedicationsPage />} />
