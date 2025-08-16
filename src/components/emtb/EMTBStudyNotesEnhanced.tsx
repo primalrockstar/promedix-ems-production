@@ -98,7 +98,10 @@ import { chapter45StudyNotes as ch45Data } from '../../data/emtb/chapter45-study
 
 interface StudySection {
   title: string;
-  content: string[];
+  content: string[] | string;
+  keyPoints?: string[];
+  clinicalNote?: string;
+  rememberThis?: string;
   clinicalPearls?: string[];
   mnemonics?: string[];
   commonPitfalls?: string[];
@@ -9008,41 +9011,125 @@ const EMTBStudyNotes: React.FC = () => {
         </div>
       )}
 
-      {/* Fall back to sections if available */}
-      {!currentChapter.historicalOverview && !currentChapter.systemComponents && filteredSections.length > 0 && (
-        <div className="space-y-4">
+      {/* Enhanced Sections Display for all other chapters */}
+      {filteredSections.length > 0 && (
+        <div className="space-y-6">
           {filteredSections.map((section, index) => (
-            <div key={index} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-              <button
-                onClick={() => toggleSection(index)}
-                className="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 text-left flex items-center justify-between transition-colors"
-              >
-                <h3 className="font-semibold text-lg text-gray-900">{section.title}</h3>
-                {expandedSections.has(index) ? (
-                  <ChevronUp className="h-5 w-5 text-gray-500" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                )}
-              </button>
+            <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">{section.title}</h3>
               
-              {expandedSections.has(index) && (
-                <div className="px-4 py-3 bg-white">
-                  <div className="space-y-4">
-                    {section.content && (
-                      <ul className="space-y-4">
-                        {section.content.map((item, itemIndex) => (
-                          <li key={itemIndex} className="text-gray-800 text-lg leading-relaxed flex items-start font-roboto">
-                            <span className="text-blue-500 mr-3 mt-2 text-lg">•</span>
-                            <span 
-                              dangerouslySetInnerHTML={{ 
-                                __html: item.replace(/\\*\\*(.*?)\\*\\*/g, '<strong class="font-semibold text-blue-700 bg-blue-50 px-1 rounded">$1</strong>') 
-                              }} 
-                            />
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
+              {/* Handle different section content formats */}
+              
+              {/* Format 1: Array of content strings (Chapter 3 style) */}
+              {Array.isArray(section.content) && section.content.length > 0 && (
+                <div className="space-y-3 mb-4">
+                  {section.content.map((item, itemIndex) => (
+                    <p key={itemIndex} className="text-gray-800 text-lg leading-relaxed font-roboto"
+                       dangerouslySetInnerHTML={{ 
+                         __html: item.replace(/\\*\\*(.*?)\\*\\*/g, '<strong class="font-semibold text-blue-700">$1</strong>') 
+                       }} 
+                    />
+                  ))}
+                </div>
+              )}
+              
+              {/* Format 2: Single content string (Chapter 2 style) */}
+              {typeof section.content === 'string' && section.content && (
+                <p className="text-gray-800 text-lg leading-relaxed font-roboto mb-4">
+                  {section.content}
+                </p>
+              )}
+              
+              {/* Key Points (Chapter 2 style) */}
+              {section.keyPoints && section.keyPoints.length > 0 && (
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r mb-4">
+                  <h4 className="font-semibold text-blue-800 mb-3">Key Points</h4>
+                  <ul className="space-y-2">
+                    {section.keyPoints.map((point, pointIndex) => (
+                      <li key={pointIndex} className="text-blue-700 text-lg leading-relaxed font-roboto flex items-start">
+                        <span className="text-blue-500 mr-3 mt-1">•</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              {/* Clinical Note (Chapter 2 style) */}
+              {section.clinicalNote && (
+                <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r mb-4">
+                  <h4 className="font-semibold text-green-800 mb-2 flex items-center">
+                    💡 Clinical Note
+                  </h4>
+                  <p className="text-green-700 text-lg leading-relaxed font-roboto">
+                    {section.clinicalNote}
+                  </p>
+                </div>
+              )}
+              
+              {/* Remember This (Chapter 2 style) */}
+              {section.rememberThis && (
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r">
+                  <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
+                    🎯 Remember This
+                  </h4>
+                  <p className="text-yellow-700 text-lg leading-relaxed font-roboto font-medium">
+                    {section.rememberThis}
+                  </p>
+                </div>
+              )}
+
+              {/* Clinical Pearls */}
+              {section.clinicalPearls && section.clinicalPearls.length > 0 && (
+                <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r mb-4">
+                  <h4 className="font-semibold text-green-800 mb-3 flex items-center text-base">
+                    💎 Clinical Pearls
+                  </h4>
+                  <ul className="space-y-2">
+                    {section.clinicalPearls.map((pearl, pearlIndex) => (
+                      <li key={pearlIndex} className="text-green-700 text-base flex items-start leading-relaxed">
+                        <span className="text-green-500 mr-3 mt-1">•</span>
+                        <span>{pearl}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Mnemonics */}
+              {section.mnemonics && section.mnemonics.length > 0 && (
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r mb-4">
+                  <h4 className="font-semibold text-yellow-800 mb-3 flex items-center text-base">
+                    🧠 Mnemonics
+                  </h4>
+                  <ul className="space-y-2">
+                    {section.mnemonics.map((mnemonic, mnemonicIndex) => (
+                      <li key={mnemonicIndex} className="text-yellow-700 text-base leading-relaxed">
+                        <span 
+                          dangerouslySetInnerHTML={{ 
+                            __html: mnemonic.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>') 
+                          }} 
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Field Applications */}
+              {section.fieldApplications && section.fieldApplications.length > 0 && (
+                <div className="bg-teal-50 border-l-4 border-teal-400 p-4 rounded-r">
+                  <h4 className="font-semibold text-teal-800 mb-3 flex items-center text-base">
+                    🚑 Field Applications
+                  </h4>
+                  <ul className="space-y-2">
+                    {section.fieldApplications.map((app, appIndex) => (
+                      <li key={appIndex} className="text-teal-700 text-base flex items-start leading-relaxed">
+                        <span className="text-teal-500 mr-3 mt-1">•</span>
+                        <span>{app}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>
