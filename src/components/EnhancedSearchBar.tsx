@@ -1,6 +1,12 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Search, X, Filter, Clock, TrendingUp } from 'lucide-react';
-import { enhancedSearchEngine, SearchResult, SearchSuggestion, SearchFilters } from '../utils/enhanced-search';
+import { searchEngine, SearchResult, SearchFilters } from '../utils/search';
+
+// Simple suggestion type for compatibility
+interface SearchSuggestion {
+  text: string;
+  type?: string;
+}
 
 interface EnhancedSearchBarProps {
   placeholder?: string;
@@ -50,11 +56,15 @@ const EnhancedSearchBar: React.FC<EnhancedSearchBarProps> = ({
 
   // Load trending terms and filters on mount
   useEffect(() => {
-    const trending = enhancedSearchEngine.getTrendingSearches();
+    const trending = searchEngine.getPopularSearches();
     setTrendingTerms(trending);
     
-    const filterOptions = enhancedSearchEngine.getAvailableFilters();
-    setAvailableFilters(filterOptions);
+    // Set basic filter options since our search engine doesn't have getAvailableFilters
+    setAvailableFilters({
+      types: ['study-notes', 'flashcard', 'calculator', 'medication', 'protocol', 'scenario'],
+      categories: ['Airway', 'Cardiac', 'Pharmacology', 'Trauma', 'Medical'],
+      chapters: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    });
   }, []);
 
   // Debounced search suggestions

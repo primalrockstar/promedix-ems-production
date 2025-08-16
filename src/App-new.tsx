@@ -26,6 +26,7 @@ import MedicalDisclaimer from './components/MedicalDisclaimer';
 import DisclaimerPage from './components/DisclaimerPage';
 import WelcomePage from './components/WelcomePage';
 import StudentProgress from './components/student/StudentProgress';
+import EnhancedSearchBar from './components/EnhancedSearchBar';
 import { clinicalCalculators } from './data/clinical-calculators';
 import { medicationSimulations } from './data/medication-simulations';
 import { searchEngine } from './utils/search';
@@ -1301,9 +1302,11 @@ const [progress, setProgress] = useState({
               />
             )}
             
+            <ProMedixHeader />
+            
             <div className="max-w-7xl mx-auto pb-4">
             <Routes>
-            <Route path="/" element={<Dashboard progress={progress} />} />
+            <Route path="/" element={<StudentDashboard />} />
             <Route path="/modules" element={<StudyModulesPage />} />
             <Route path="/modules/:moduleId" element={<ModuleDetailPage />} />
             <Route path="/chapter/:chapterId" element={<ChapterPage />} />
@@ -1910,61 +1913,25 @@ const ProMedixHeader = () => {
           </div>
         </div>
 
-        {/* Desktop Search Bar */}
+        {/* Enhanced Desktop Search Bar */}
         <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="max-w-2xl mx-auto relative" ref={searchRef}>
-            <form onSubmit={(e) => handleSearch(e)}>
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Search protocols, medications, conditions, and study materials..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onFocus={() => searchQuery.length > 1 && setShowSuggestions(true)}
-                  className="w-full pl-12 pr-20 py-3 border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-gray-50 dark:bg-gray-800 dark:text-gray-100"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 btn btn-primary"
-                >
-                  Search
-                </button>
-              </div>
-            </form>
-
-            {/* Desktop Search Suggestions Dropdown */}
-            {showSuggestions && suggestions.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg z-50 max-h-64 overflow-y-auto">
-                <div className="py-2">
-                  {suggestions.map((suggestion, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handleSuggestionClick(suggestion)}
-                      className="w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors flex items-center"
-                    >
-                      <Search className="w-4 h-4 text-gray-400 mr-3" />
-                      <span className="truncate">{suggestion}</span>
-                    </button>
-                  ))}
-                </div>
-                
-                {/* Popular Searches Footer */}
-                <div className="border-t border-gray-200 dark:border-gray-700 px-4 py-2 bg-gray-50 dark:bg-gray-900 rounded-b-xl">
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">Popular searches:</div>
-                  <div className="flex flex-wrap gap-2">
-                    {['CPR', 'Airway', 'Trauma', 'Medications'].map((term) => (
-                      <button
-                        key={term}
-                        onClick={() => handleSuggestionClick(term)}
-                        className="px-2 py-1 text-xs bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
-                      >
-                        {term}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
+          <div className="max-w-2xl mx-auto">
+            <EnhancedSearchBar
+              placeholder="Search protocols, medications, conditions, and study materials..."
+              onSearch={(query, results) => {
+                navigate(`/search?q=${encodeURIComponent(query)}`);
+              }}
+              onResultSelect={(result) => {
+                // Handle direct result selection if needed
+                navigate(`/search?q=${encodeURIComponent(result.title)}`);
+              }}
+              showFilters={true}
+              showInstantResults={true}
+              size="lg"
+              className="w-full"
+            />
+          </div>
+        </div>
             )}
           </div>
         </div>
