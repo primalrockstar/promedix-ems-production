@@ -1932,9 +1932,6 @@ const ProMedixHeader = () => {
             />
           </div>
         </div>
-            )}
-          </div>
-        </div>
       </div>
     </header>
   );
