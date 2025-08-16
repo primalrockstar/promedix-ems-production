@@ -127,6 +127,15 @@ interface ChapterData {
   examTips?: string[];
   crossReferences?: string[];
   flashcards: Flashcard[];
+  historicalOverview?: {
+    title: string;
+    militaryInfluence?: {
+      description: string;
+      keyDevelopments: string[];
+    };
+    civilianDevelopment?: Record<string, string>;
+  };
+  systemComponents?: Record<string, any>;
 }
 
 const EMTBStudyNotes: React.FC = () => {
@@ -378,7 +387,9 @@ const EMTBStudyNotes: React.FC = () => {
         back: card.answer,
         category: card.type || card.category || 'definition'
       })) || [],
-      crossReferences: studyData.crossReferences || []
+      crossReferences: studyData.crossReferences || [],
+      historicalOverview: studyData.historicalOverview,
+      systemComponents: studyData.systemComponents
     };
   };
 
@@ -8910,128 +8921,134 @@ const EMTBStudyNotes: React.FC = () => {
   );
 
   const renderStudyMaterial = () => (
-    <div className="space-y-4">
-      {filteredSections.map((section, index) => (
-        <div key={index} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-          <button
-            onClick={() => toggleSection(index)}
-            className="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 text-left flex items-center justify-between transition-colors"
-          >
-            <h3 className="font-semibold text-lg text-gray-900">{section.title}</h3>
-            {expandedSections.has(index) ? (
-              <ChevronUp className="h-5 w-5 text-gray-500" />
-            ) : (
-              <ChevronDown className="h-5 w-5 text-gray-500" />
-            )}
-          </button>
+    <div className="space-y-6">
+      {/* Historical Overview */}
+      {currentChapter.historicalOverview && (
+        <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r">
+          <h3 className="text-xl font-semibold text-blue-800 mb-4">{currentChapter.historicalOverview.title}</h3>
           
-          {expandedSections.has(index) && (
-            <div className="px-4 py-3 bg-white">
-              <div className="space-y-4">
-                {/* Main Content */}
-                <ul className="space-y-4">
-                  {section.content.map((item, itemIndex) => (
-                    <li key={itemIndex} className="text-gray-800 text-lg leading-relaxed flex items-start font-roboto">
-                      <span className="text-blue-500 mr-3 mt-2 text-lg">•</span>
-                      <span 
-                        dangerouslySetInnerHTML={{ 
-                          __html: item.replace(/\\*\\*(.*?)\\*\\*/g, '<strong class="font-semibold text-blue-700 bg-blue-50 px-1 rounded">$1</strong>') 
-                        }} 
-                      />
-                    </li>
-                  ))}
-                </ul>
+          {/* Military Influence */}
+          {currentChapter.historicalOverview.militaryInfluence && (
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold text-blue-700 mb-3">Military Influence</h4>
+              <p className="text-blue-800 text-lg leading-relaxed font-roboto mb-4">
+                {currentChapter.historicalOverview.militaryInfluence.description}
+              </p>
+              <ul className="space-y-2">
+                {currentChapter.historicalOverview.militaryInfluence.keyDevelopments.map((development, index) => (
+                  <li key={index} className="text-blue-700 text-lg leading-relaxed font-roboto flex items-start">
+                    <span className="text-blue-500 mr-3 mt-1">•</span>
+                    <span>{development}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-                {/* Clinical Pearls */}
-                {section.clinicalPearls && section.clinicalPearls.length > 0 && (
-                  <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r">
-                    <h4 className="font-semibold text-green-800 mb-3 flex items-center text-base">
-                      💎 Clinical Pearls
-                    </h4>
-                    <ul className="space-y-2">
-                      {section.clinicalPearls.map((pearl, pearlIndex) => (
-                        <li key={pearlIndex} className="text-green-700 text-base flex items-start leading-relaxed">
-                          <span className="text-green-500 mr-3 mt-1">•</span>
-                          <span>{pearl}</span>
-                        </li>
-                      ))}
-                    </ul>
+          {/* Civilian Development Timeline */}
+          {currentChapter.historicalOverview.civilianDevelopment && (
+            <div>
+              <h4 className="text-lg font-semibold text-blue-700 mb-3">Civilian Development Timeline</h4>
+              <div className="space-y-3">
+                {Object.entries(currentChapter.historicalOverview.civilianDevelopment).map(([year, description]) => (
+                  <div key={year} className="flex items-start">
+                    <span className="font-semibold text-blue-600 text-lg mr-4 flex-shrink-0">{year}:</span>
+                    <p className="text-blue-800 text-lg leading-relaxed font-roboto">{description}</p>
                   </div>
-                )}
-
-                {/* Mnemonics */}
-                {section.mnemonics && section.mnemonics.length > 0 && (
-                  <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r">
-                    <h4 className="font-semibold text-yellow-800 mb-3 flex items-center text-base">
-                      🧠 Mnemonics
-                    </h4>
-                    <ul className="space-y-2">
-                      {section.mnemonics.map((mnemonic, mnemonicIndex) => (
-                        <li key={mnemonicIndex} className="text-yellow-700 text-base leading-relaxed">
-                          <span 
-                            dangerouslySetInnerHTML={{ 
-                              __html: mnemonic.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>') 
-                            }} 
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Common Pitfalls */}
-                {section.commonPitfalls && section.commonPitfalls.length > 0 && (
-                  <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r">
-                    <h4 className="font-semibold text-red-800 mb-3 flex items-center text-base">
-                      ⚠️ Common Pitfalls
-                    </h4>
-                    <ul className="space-y-2">
-                      {section.commonPitfalls.map((pitfall, pitfallIndex) => (
-                        <li key={pitfallIndex} className="text-red-700 text-base leading-relaxed">
-                          {pitfall}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Decision Trees */}
-                {section.decisionTrees && section.decisionTrees.length > 0 && (
-                  <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-r">
-                    <h4 className="font-semibold text-indigo-800 mb-3 flex items-center text-base">
-                      🌳 Decision Trees
-                    </h4>
-                    <ul className="space-y-2">
-                      {section.decisionTrees.map((tree, treeIndex) => (
-                        <li key={treeIndex} className="text-indigo-700 text-base leading-relaxed">
-                          {tree}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Field Applications */}
-                {section.fieldApplications && section.fieldApplications.length > 0 && (
-                  <div className="bg-teal-50 border-l-4 border-teal-400 p-4 rounded-r">
-                    <h4 className="font-semibold text-teal-800 mb-3 flex items-center text-base">
-                      🚑 Field Applications
-                    </h4>
-                    <ul className="space-y-2">
-                      {section.fieldApplications.map((app, appIndex) => (
-                        <li key={appIndex} className="text-teal-700 text-base flex items-start leading-relaxed">
-                          <span className="text-teal-500 mr-3 mt-1">•</span>
-                          <span>{app}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+                ))}
               </div>
             </div>
           )}
         </div>
-      ))}
+      )}
+
+      {/* System Components */}
+      {currentChapter.systemComponents && (
+        <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r">
+          <h3 className="text-xl font-semibold text-green-800 mb-4">EMS System Components</h3>
+          
+          {Object.entries(currentChapter.systemComponents).map(([key, component]) => (
+            <div key={key} className="mb-6 last:mb-0">
+              <h4 className="text-lg font-semibold text-green-700 mb-3">{component.component || component.title}</h4>
+              <p className="text-green-800 text-lg leading-relaxed font-roboto mb-4">
+                {component.description}
+              </p>
+              
+              {/* Handle different component structures */}
+              {component.levels && (
+                <div className="space-y-3">
+                  {Object.entries(component.levels).map(([level, details]) => (
+                    <div key={level} className="bg-white p-3 rounded border-l-2 border-green-300">
+                      <h5 className="font-semibold text-green-700 text-lg mb-2">{level}</h5>
+                      <div className="space-y-1 text-green-700 text-base">
+                        <p><strong>Scope:</strong> {details.scope}</p>
+                        <p><strong>Training:</strong> {details.training}</p>
+                        <p><strong>Certification:</strong> {details.certification}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+              
+              {component.keyPerformanceIndicators && (
+                <div>
+                  <h5 className="font-semibold text-green-700 mb-2">Key Performance Indicators:</h5>
+                  <ul className="space-y-1">
+                    {component.keyPerformanceIndicators.map((indicator, index) => (
+                      <li key={index} className="text-green-700 text-lg leading-relaxed font-roboto flex items-start">
+                        <span className="text-green-500 mr-3 mt-1">•</span>
+                        <span>{indicator}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Fall back to sections if available */}
+      {!currentChapter.historicalOverview && !currentChapter.systemComponents && filteredSections.length > 0 && (
+        <div className="space-y-4">
+          {filteredSections.map((section, index) => (
+            <div key={index} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+              <button
+                onClick={() => toggleSection(index)}
+                className="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 text-left flex items-center justify-between transition-colors"
+              >
+                <h3 className="font-semibold text-lg text-gray-900">{section.title}</h3>
+                {expandedSections.has(index) ? (
+                  <ChevronUp className="h-5 w-5 text-gray-500" />
+                ) : (
+                  <ChevronDown className="h-5 w-5 text-gray-500" />
+                )}
+              </button>
+              
+              {expandedSections.has(index) && (
+                <div className="px-4 py-3 bg-white">
+                  <div className="space-y-4">
+                    {section.content && (
+                      <ul className="space-y-4">
+                        {section.content.map((item, itemIndex) => (
+                          <li key={itemIndex} className="text-gray-800 text-lg leading-relaxed flex items-start font-roboto">
+                            <span className="text-blue-500 mr-3 mt-2 text-lg">•</span>
+                            <span 
+                              dangerouslySetInnerHTML={{ 
+                                __html: item.replace(/\\*\\*(.*?)\\*\\*/g, '<strong class="font-semibold text-blue-700 bg-blue-50 px-1 rounded">$1</strong>') 
+                              }} 
+                            />
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 
