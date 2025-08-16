@@ -1310,7 +1310,7 @@ const [progress, setProgress] = useState({
             
             <div className="max-w-7xl mx-auto pb-4">
             <Routes>
-            <Route path="/" element={<Dashboard progress={progress} />} />
+            <Route path="/" element={<div style={{padding: '50px', backgroundColor: 'lightblue', fontSize: '24px'}}>🎯 DASHBOARD TEST - If you see this, routing works!</div>} />
             <Route path="/emtb" element={<EMTBNavigation />} />
             <Route path="/modules" element={<StudyModulesPage />} />
             <Route path="/modules/:moduleId" element={<ModuleDetailPage />} />
