@@ -148,7 +148,7 @@ function App() {
                     <img 
                       src="/assets/LOGOFINAL.png" 
                       alt="ProMedix EMS Logo" 
-                      className="w-40 h-40 object-contain"
+                      className="w-48 h-48 object-contain"
                       style={{ background: 'transparent' }}
                     />
                   </div>
@@ -186,7 +186,7 @@ function App() {
                   <img 
                     src="/assets/LOGOFINAL.png" 
                     alt="ProMedix EMS Logo" 
-                    className="w-20 h-20 object-contain"
+                    className="w-24 h-24 object-contain"
                     style={{ background: 'transparent' }}
                   />
                   <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center mt-1">
