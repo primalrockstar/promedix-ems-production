@@ -84,7 +84,7 @@ const EMTBNavigation: React.FC = () => {
           </div>
         </div>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Comprehensive training with 14 modules, 41 detailed chapters, bonus content, and professional EMT-B scope practice tools.
+          Your trusted companion to formal EMT-B training—designed for clarity, retention, and confident field application.
         </p>
       </div>
 
