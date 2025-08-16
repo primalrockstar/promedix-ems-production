@@ -49,12 +49,12 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onComplete }) => {
             Welcome to
           </h1>
 
-          {/* ProMedix EMS Logo - Mobile Optimized - 3x Larger for Dominance */}
+          {/* ProMedix EMS Logo - Enlarged but Properly Sized */}
           <div className="flex justify-center mb-8 md:mb-12">
             <img 
               src="/assets/LOGOFINAL.png" 
               alt="ProMedix EMS Logo" 
-              className="w-[900px] h-72 sm:w-[1200px] sm:h-96 md:w-[1800px] md:h-[576px] lg:w-[2400px] lg:h-[768px] xl:w-[3000px] xl:h-[960px] object-contain max-w-[95vw]"
+              className="w-[450px] h-36 sm:w-[600px] sm:h-48 md:w-[800px] md:h-64 lg:w-[1000px] lg:h-80 xl:w-[1200px] xl:h-96 object-contain max-w-[90vw]"
               style={{ background: 'transparent', border: 'none', boxShadow: 'none' }}
             />
           </div>
