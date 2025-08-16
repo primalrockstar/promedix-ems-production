@@ -143,8 +143,16 @@ const EMTBStudyNotes: React.FC = () => {
   const convertToChapterData = (studyData: any, flashcardData: any[] = []): ChapterData => {
     let convertedSections: StudySection[] = [];
 
+    console.log('=== CONVERSION DEBUG ===');
+    console.log('Chapter Title:', studyData.title);
+    console.log('Has systemComponents:', !!studyData.systemComponents);
+    console.log('Has historicalOverview:', !!studyData.historicalOverview);
+    console.log('Has emergingTrends:', !!studyData.emergingTrends);
+    console.log('Has sections:', !!studyData.sections);
+
     // Handle enhanced chapter structure (like Chapter 1)
     if (studyData.systemComponents || studyData.historicalOverview || studyData.emergingTrends || studyData.regulatoryFramework || studyData.serviceModels) {
+      console.log('✅ USING ENHANCED CONVERSION LOGIC');
       // Historical Overview Section
       if (studyData.historicalOverview) {
         const historyContent: string[] = [];
@@ -293,6 +301,7 @@ const EMTBStudyNotes: React.FC = () => {
     }
     // Handle standard sections structure
     else if (studyData.sections) {
+      console.log('⚠️ USING STANDARD SECTIONS LOGIC');
       convertedSections = studyData.sections.map((section: any) => {
         if (section.content) {
           // Handle content that might be arrays of objects or strings
@@ -330,6 +339,7 @@ const EMTBStudyNotes: React.FC = () => {
         };
       });
     } else {
+      console.log('❌ NO CONTENT STRUCTURE FOUND');
       convertedSections = [{
         title: "Content",
         content: ["No enhanced content structure found"],
@@ -338,6 +348,9 @@ const EMTBStudyNotes: React.FC = () => {
         fieldApplications: []
       }];
     }
+
+    console.log('Final sections count:', convertedSections.length);
+    console.log('=== END DEBUG ===');
 
     return {
       title: studyData.title || studyData.chapterTitle || "Enhanced Chapter",
