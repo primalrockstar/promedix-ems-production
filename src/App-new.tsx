@@ -1669,7 +1669,7 @@ const ProMedixHeader = () => {
               <img 
                 src="/assets/LOGOFINAL.png" 
                 alt="ProMedix EMS Logo" 
-                className="w-8 h-8 object-contain"
+                className="w-16 h-16 object-contain"
                 style={{ background: 'transparent' }}
               />
             </div>
@@ -1854,7 +1854,7 @@ const ProMedixHeader = () => {
                       <img 
                         src="/assets/LOGOFINAL.png" 
                         alt="ProMedix EMS Logo" 
-                        className="w-12 h-12 object-contain"
+                        className="w-24 h-24 object-contain"
                         style={{ background: 'transparent' }}
                       />
                     </div>
