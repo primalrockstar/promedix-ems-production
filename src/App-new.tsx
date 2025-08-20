@@ -28,6 +28,10 @@ import MedicalDisclaimer from './components/MedicalDisclaimer';
 import DisclaimerPage from './components/DisclaimerPage';
 import WelcomePage from './components/WelcomePage';
 import StudentProgress from './components/student/StudentProgress';
+import EnhancedInstructorDashboard from './components/enhancements/dashboards/EnhancedInstructorDashboard';
+import StudentDashboardEnhanced from './components/enhancements/dashboards/StudentDashboard';
+import EnhancedStudyChapter from './components/enhancements/study/EnhancedStudyChapter';
+import StudyAnalyticsDashboard from './components/enhancements/analytics/StudyAnalyticsDashboard';
 import EnhancedSearchBar from './components/EnhancedSearchBar';
 import OptimizedSearchBar from './components/OptimizedSearchBar';
 import SearchPerformanceMonitor from './components/SearchPerformanceMonitor';
@@ -1328,6 +1332,8 @@ const [progress, setProgress] = useState({
             <Route path="/disclaimer" element={<DisclaimerPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/instructor" element={<RequireRole role="instructor"><InstructorDashboard /></RequireRole>} />
+              <Route path="/instructor/enhanced" element={<RequireRole role="instructor"><EnhancedInstructorDashboard /></RequireRole>} />
+              <Route path="/student/dashboard" element={<RequireRole role="student"><StudentDashboardEnhanced /></RequireRole>} />
             {/* EMT-B aliases for calculators/protocols/medications */}
             <Route path="/emtb/calculators" element={<ClinicalToolsPage />} />
             <Route path="/emtb/protocols" element={<ProtocolsPage />} />
@@ -1339,6 +1345,9 @@ const [progress, setProgress] = useState({
             <Route path="/quiz" element={<QuizPage />} />
             <Route path="/ai-assistant" element={<AIAssistantPage />} />
             <Route path="/student" element={<RequireRole role="student"><StudentDashboard /></RequireRole>} />
+            {/* Enhanced Study Components */}
+            <Route path="/enhanced/study/:chapterId" element={<EnhancedStudyChapter />} />
+            <Route path="/enhanced/analytics" element={<StudyAnalyticsDashboard />} />
             <Route path="/progress" element={<ProgressPage progress={progress} />} />
             <Route path="/search" element={<SearchResultsPage />} />
             <Route path="/emtb/debug" element={<div style={{backgroundColor: 'yellow', padding: '50px', fontSize: '30px'}}>🐛 DEBUG ROUTE WORKS!</div>} />
@@ -1453,7 +1462,7 @@ const LoginDropdown: React.FC = () => {
               <button
                 onClick={() => {
                   setOpen(false);
-                  navigate('/login', { state: { redirectTo: '/progress', prefillEmail: 'student@example.com' } });
+                  navigate('/login', { state: { redirectTo: '/student/dashboard', prefillEmail: 'student@example.com' } });
                 }}
                 className="w-full flex items-center px-4 py-2 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
               >
@@ -1463,7 +1472,7 @@ const LoginDropdown: React.FC = () => {
               <button
                 onClick={() => {
                   setOpen(false);
-                  navigate('/login', { state: { redirectTo: '/instructor', prefillEmail: 'instructor@example.com' } });
+                  navigate('/login', { state: { redirectTo: '/instructor/enhanced', prefillEmail: 'instructor@example.com' } });
                 }}
                 className="w-full flex items-center px-4 py-2 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
               >
@@ -1663,18 +1672,18 @@ const ProMedixHeader = () => {
       {/* Mobile Header */}
       <div className="lg:hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
-          {/* Mobile Logo - Much larger for prominence */}
-          <Link to="/" className="flex items-center space-x-2">
+          {/* Mobile Logo with Tagline */}
+          <Link to="/" className="flex flex-col items-center">
             <div className="relative">
               <img 
                 src="/assets/LOGOFINAL.png" 
                 alt="ProMedix EMS Logo" 
-                className="w-64 h-40 object-contain"
+                className="w-48 h-16 object-contain"
                 style={{ background: 'transparent' }}
               />
             </div>
-            <div>
-              <div className="text-xs text-gray-500 dark:text-gray-400">EMT-B Platform</div>
+            <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center mt-1">
+              The Next-Gen Education Tool for Emergency Medical Services
             </div>
           </Link>
 
@@ -1846,21 +1855,21 @@ const ProMedixHeader = () => {
                 <MoreMenu items={tabs} />
               </div>
 
-              {/* Center: ProMedix Logo - Much larger for maximum prominence */}
+              {/* Center: ProMedix Logo with Tagline */}
               <div className="flex justify-center">
                 <Link to="/" className="flex flex-col items-center">
-                  <div className="flex items-center mb-1">
+                  <div className="flex items-center mb-2">
                     <div className="relative">
                       <img 
                         src="/assets/LOGOFINAL.png" 
                         alt="ProMedix EMS Logo" 
-                        className="w-[48rem] h-36 object-contain"
+                        className="w-80 h-24 object-contain"
                         style={{ background: 'transparent' }}
                       />
                     </div>
                   </div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">
-                    Next-Gen Education Tool for Emergency Medical Services
+                  <div className="text-sm text-gray-700 dark:text-gray-300 font-semibold tracking-wide">
+                    The Next-Gen Education Tool for Emergency Medical Services
                   </div>
                 </Link>
               </div>
