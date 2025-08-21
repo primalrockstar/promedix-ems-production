@@ -1663,20 +1663,10 @@ const ProMedixHeader = () => {
       {/* Mobile Header */}
       <div className="lg:hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
-          {/* Mobile Logo - Much larger for prominence */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="relative">
-              <img 
-                src="/assets/LOGOFINAL.png" 
-                alt="ProMedix EMS Logo" 
-                className="w-64 h-40 object-contain"
-                style={{ background: 'transparent' }}
-              />
-            </div>
-            <div>
-              <div className="text-xs text-gray-500 dark:text-gray-400">EMT-B Platform</div>
-            </div>
-          </Link>
+          {/* Mobile - No Logo */}
+          <div className="flex items-center">
+            <span className="text-lg font-semibold text-gray-900 dark:text-gray-100">ProMedix EMS</span>
+          </div>
 
           {/* Mobile Actions */}
           <div className="flex items-center space-x-2">
@@ -1846,18 +1836,11 @@ const ProMedixHeader = () => {
                 <MoreMenu items={tabs} />
               </div>
 
-              {/* Center: ProMedix Logo - Much larger for maximum prominence */}
+              {/* Center: No Logo - Just Text */}
               <div className="flex justify-center">
                 <Link to="/" className="flex flex-col items-center">
-                  <div className="flex items-center mb-1">
-                    <div className="relative">
-                      <img 
-                        src="/assets/LOGOFINAL.png" 
-                        alt="ProMedix EMS Logo" 
-                        className="w-[48rem] h-36 object-contain"
-                        style={{ background: 'transparent' }}
-                      />
-                    </div>
+                  <div className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">
+                    ProMedix EMS
                   </div>
                   <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">
                     Next-Gen Education Tool for Emergency Medical Services
