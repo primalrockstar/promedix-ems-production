@@ -76,8 +76,8 @@ const EMTBNavigation: React.FC = () => {
           <div className="flex flex-col items-center">
             <Link to="/">
               <img 
-                src="/assets/Paramediclogo.png" 
-                alt="ProMedix EMS Paramedic Logo" 
+                src="/assets/ambulance-logo.png" 
+                alt="ProMedix EMS Ambulance" 
                 className="w-96 h-auto object-contain mb-4"
                 style={{ background: 'transparent' }}
               />
