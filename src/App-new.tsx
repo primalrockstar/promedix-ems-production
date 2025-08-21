@@ -1663,34 +1663,8 @@ const ProMedixHeader = () => {
       {/* Mobile Header */}
       <div className="lg:hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
-          {/* Mobile - No Logo, No Text */}
+          {/* Left: Mobile Menu Dropdown */}
           <div className="flex items-center">
-          </div>
-
-          {/* Mobile Actions */}
-          <div className="flex items-center space-x-2">
-            {/* Mobile Search Toggle */}
-            <button
-              onClick={() => setIsSearchExpanded(!isSearchExpanded)}
-              className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              <Search className="w-5 h-5" />
-            </button>
-
-            {/* Dark Mode Toggle */}
-            <button
-              onClick={() => setIsDark(v => !v)}
-              className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
-              aria-label="Toggle dark mode"
-            >
-              {isDark ? (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
-              )}
-            </button>
-
-            {/* Mobile Menu Toggle */}
             <button
               id="mobile-menu-button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -1703,11 +1677,9 @@ const ProMedixHeader = () => {
               )}
             </button>
           </div>
-        </div>
 
-        {/* Mobile Expanded Search */}
-        {isSearchExpanded && (
-          <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
+          {/* Center: Search Bar */}
+          <div className="flex-1 mx-4">
             <div className="relative" ref={searchRef}>
               <form onSubmit={(e) => handleSearch(e)}>
                 <div className="relative">
@@ -1718,12 +1690,11 @@ const ProMedixHeader = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => searchQuery.length > 1 && setShowSuggestions(true)}
-                    className="w-full pl-10 pr-16 py-2.5 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-800 dark:text-gray-100"
-                    autoFocus
+                    className="w-full pl-10 pr-16 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-800 dark:text-gray-100 text-sm"
                   />
                   <button
                     type="submit"
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-blue-600 text-white text-xs rounded-md hover:bg-blue-700"
                   >
                     Go
                   </button>
@@ -1733,14 +1704,13 @@ const ProMedixHeader = () => {
               {showSuggestions && suggestions.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 max-h-48 overflow-y-auto">
                   <div className="py-1">
-                    {suggestions.slice(0, 6).map((suggestion, index) => (
+                    {suggestions.slice(0, 4).map((suggestion, index) => (
                       <button
                         key={index}
                         onClick={() => handleSuggestionClick(suggestion)}
-                        className="w-full px-3 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors flex items-center text-sm"
+                        className="w-full px-3 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors text-sm"
                       >
-                        <Search className="w-3 h-3 text-gray-400 mr-2" />
-                        <span className="truncate">{suggestion}</span>
+                        {suggestion}
                       </button>
                     ))}
                   </div>
@@ -1748,7 +1718,26 @@ const ProMedixHeader = () => {
               )}
             </div>
           </div>
-        )}
+
+          {/* Right: Dark Mode Toggle + Login */}
+          <div className="flex items-center space-x-2">
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={() => setIsDark(v => !v)}
+              className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+              aria-label="Toggle dark mode"
+            >
+              {isDark ? (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+              )}
+            </button>
+            
+            {/* Login Dropdown */}
+            <LoginDropdown />
+          </div>
+        </div>
 
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
