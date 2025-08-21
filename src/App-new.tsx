@@ -1532,7 +1532,7 @@ const ProMedixHeader = () => {
     <header className="bg-white dark:bg-[#0f141a] border-b border-gray-200 dark:border-gray-800 shadow-sm sticky top-0 z-50">
       {/* Mobile Header */}
       <div className="lg:hidden">
-        {/* Row 1: Menu and Controls */}
+        {/* Row 1: Menu, Logo, and Controls */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
           {/* Left: Mobile Menu Dropdown */}
           <div className="flex items-center">
@@ -1547,6 +1547,18 @@ const ProMedixHeader = () => {
                 <Menu className="w-5 h-5" />
               )}
             </button>
+          </div>
+
+          {/* Center: Logo and Tagline */}
+          <div className="flex flex-col items-center">
+            <img 
+              src="/assets/LOGOFINALTRANS.png" 
+              alt="ProMedix EMS" 
+              className="h-6 w-auto"
+            />
+            <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">
+              EMS Training Platform
+            </span>
           </div>
 
           {/* Right: Dark Mode Toggle Only */}
@@ -1681,8 +1693,18 @@ const ProMedixHeader = () => {
                 <MoreMenu items={tabs} />
               </div>
 
-              {/* Center: Empty - No Logo, No Text */}
-              <div className="flex justify-center">
+              {/* Center: Logo and Tagline */}
+              <div className="flex justify-center items-center">
+                <div className="flex flex-col items-center">
+                  <img 
+                    src="/assets/LOGOFINALTRANS.png" 
+                    alt="ProMedix EMS" 
+                    className="h-8 w-auto"
+                  />
+                  <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">
+                    Professional EMS Training Platform
+                  </span>
+                </div>
               </div>
 
               {/* Right: Dark Mode & Notifications */}
