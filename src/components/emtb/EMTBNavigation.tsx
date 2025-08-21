@@ -72,14 +72,23 @@ const EMTBNavigation: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto p-6 space-y-8">
       <div id="study" className="text-center space-y-4">
-        <div className="flex justify-center items-center space-x-3">
-          <Stethoscope className="h-12 w-12 text-blue-600" />
-          <div>
-            <h1 className="text-4xl font-bold text-gray-900">EMT-B Training Platform</h1>
-            <div className="flex justify-center mt-2">
+        <div className="flex justify-center items-center">
+          <div className="flex flex-col items-center">
+            <Link to="/">
+              <img 
+                src="/assets/LOGOFINAL.png" 
+                alt="ProMedix EMS Logo" 
+                className="w-64 h-auto object-contain mb-1"
+                style={{ background: 'transparent' }}
+              />
+            </Link>
+            <div className="flex justify-center">
               <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
                 Emergency Medical Technician - Basic
               </span>
+            </div>
+            <div className="text-sm text-gray-600 text-center mt-2 max-w-md">
+              The Next-Gen Education Tool for Emergency Medical Services
             </div>
           </div>
         </div>

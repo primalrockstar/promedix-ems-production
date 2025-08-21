@@ -52,10 +52,9 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onComplete }) => {
           {/* ProMedix EMS Logo - Centered with Transparent Background */}
           <div className="flex flex-col items-center justify-center mb-8 md:mb-12">
             <img 
-              src="/assets/LOGOFINAL.png" 
+              src="/assets/promedix-transparent.svg" 
               alt="ProMedix EMS Logo" 
               className="w-[450px] h-36 sm:w-[600px] sm:h-48 md:w-[800px] md:h-64 lg:w-[1000px] lg:h-80 xl:w-[1200px] xl:h-96 object-contain max-w-[90vw] mb-4"
-              style={{ background: 'transparent', border: 'none', boxShadow: 'none', backgroundColor: 'transparent' }}
             />
             {/* Tagline directly under logo */}
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-medium leading-relaxed px-4 whitespace-nowrap">

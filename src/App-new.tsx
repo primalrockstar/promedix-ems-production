@@ -21,7 +21,7 @@ import EMTBStudyNotesEnhanced from './components/emtb/EMTBStudyNotesEnhanced';
 import EMTBStudyNotesNew from './components/emtb/EMTBStudyNotesNew';
 import EMTBStudyNotesClean from './components/emtb/EMTBStudyNotesClean';
 import TestStudyNotes from './components/emtb/TestStudyNotes';
-import PracticeQuizSystem from './components/PracticeQuizSystem';
+import QuizSystemSelector from './components/QuizSystemSelector';
 import BottomNavigation from './components/BottomNavigation';
 // Removed EMSChatbot - using voice module for search instead
 import MedicalDisclaimer from './components/MedicalDisclaimer';
@@ -1341,7 +1341,7 @@ const [progress, setProgress] = useState({
             <Route path="/emtb/med-simulations" element={<MedicationSimulationsPage />} />
             <Route path="/tools/:toolId" element={<ToolPage />} />
             <Route path="/flashcards" element={<EMTBFlashcards />} />
-            <Route path="/practice-quiz" element={<PracticeQuizSystem onClose={() => window.history.back()} />} />
+            <Route path="/practice-quiz" element={<QuizSystemSelector />} />
             <Route path="/quiz" element={<QuizPage />} />
             <Route path="/ai-assistant" element={<AIAssistantPage />} />
             <Route path="/student" element={<RequireRole role="student"><StudentDashboard /></RequireRole>} />
@@ -1658,55 +1658,75 @@ const ProMedixHeader = () => {
   const mobileTabs = primaryTabs.filter(t => mobileIds.has(t.id));
 
   return (
-    <header className="bg-white dark:bg-[#0f141a] border-b border-gray-200 dark:border-gray-800 shadow-sm sticky top-0 z-50">
-      {/* Unified Mobile & Desktop Header */}
-      <div className="w-full">
-        {/* Top Row: Menu, Logo, Controls */}
-        <div className="flex items-center justify-between px-4 lg:px-6 py-4">
+    <header className="bg-white dark:bg-[#0f141a] border-b border-gray-200 dark:border-gray-800 shadow-sm sticky top-0 z-50 w-full">
+      {/* Mobile Header */}
+      <div className="lg:hidden bg-white dark:bg-[#0f141a]">
+        {/* Top Row: Controls only on mobile */}
+        <div className="flex items-center justify-between px-4 py-2">
           {/* Left: Navigation Menu */}
-          <div className="flex items-center">
-            <MoreMenu items={tabs} />
-          </div>
-
-          {/* Center: Large Logo with Tagline */}
-          <div className="flex-1 flex justify-center">
-            <Link to="/" className="flex flex-col items-center">
-              <div className="relative">
-                <img 
-                  src="/assets/LOGOFINAL.png" 
-                  alt="ProMedix EMS Logo" 
-                  className="w-80 sm:w-96 lg:w-[40rem] h-20 sm:h-24 lg:h-32 object-contain"
-                  style={{ background: 'transparent' }}
-                />
-              </div>
-              <div className="text-xs sm:text-sm lg:text-base text-gray-600 dark:text-gray-400 font-medium text-center mt-2 max-w-lg">
-                The Next-Gen Education Tool for Emergency Medical Services
-              </div>
-            </Link>
-          </div>
-
+          <MoreMenu items={tabs} />
+          
           {/* Right: Controls */}
-          <div className="flex items-center space-x-2 lg:space-x-3">
-            {/* Dark Mode Toggle */}
+          <div className="flex items-center space-x-2">
             <button
               onClick={() => setIsDark(v => !v)}
               className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
               aria-label="Toggle dark mode"
             >
               {isDark ? (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 lg:w-5 lg:h-5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
               ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 lg:w-5 lg:h-5"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
               )}
             </button>
-
-            {/* Login Dropdown */}
             <LoginDropdown />
           </div>
         </div>
 
-        {/* Bottom Row: Search Bar (Under Logo) */}
-        <div className="px-4 lg:px-6 pb-4">
+        {/* Mobile Search Bar - Compact */}
+        <div className="px-2 py-2">
+          <OptimizedSearchBar
+            placeholder="Search protocols, medications..."
+            onSearch={(query, results) => {
+              navigate(`/search?q=${encodeURIComponent(query)}`);
+            }}
+            onResultSelect={(result) => {
+              navigate(`/search?q=${encodeURIComponent(result.title)}`);
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Desktop Header */}
+      <div className="hidden lg:block bg-white dark:bg-[#0f141a]">
+        <div className="flex items-center justify-between px-6 py-2">
+          {/* Left: Navigation Menu */}
+          <div className="flex items-center">
+            <MoreMenu items={tabs} />
+          </div>
+
+          {/* Center: Empty space */}
+          <div className="flex-1"></div>
+
+          {/* Right: Controls */}
+          <div className="flex items-center space-x-3">
+            <button
+              onClick={() => setIsDark(v => !v)}
+              className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+              aria-label="Toggle dark mode"
+            >
+              {isDark ? (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+              )}
+            </button>
+            <LoginDropdown />
+          </div>
+        </div>
+
+        {/* Desktop Search Bar (Under Logo) */}
+        <div className="px-6 pb-3">
           <div className="max-w-2xl mx-auto">
             <OptimizedSearchBar
               placeholder="Search protocols, medications, conditions, and study materials..."

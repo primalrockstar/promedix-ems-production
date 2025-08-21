@@ -94,10 +94,9 @@ const EnhancedLMSNavigation: React.FC<EnhancedLMSNavigationProps> = ({
             <Link to="/" className="flex flex-col items-center space-y-1">
               <div className="flex items-center justify-center">
                 <img 
-                  src="/assets/LOGOFINAL.png" 
+                  src="/assets/promedix-transparent.svg" 
                   alt="ProMedix EMS Logo" 
                   className="h-8 sm:h-10 object-contain"
-                  style={{ background: 'transparent', border: 'none', boxShadow: 'none', backgroundColor: 'transparent' }}
                 />
               </div>
               <p className="text-xs text-gray-500 dark:text-gray-400 font-medium text-center whitespace-nowrap hidden sm:block">
