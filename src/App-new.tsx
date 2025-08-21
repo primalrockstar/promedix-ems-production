@@ -1662,6 +1662,7 @@ const ProMedixHeader = () => {
     <header className="bg-white dark:bg-[#0f141a] border-b border-gray-200 dark:border-gray-800 shadow-sm sticky top-0 z-50">
       {/* Mobile Header */}
       <div className="lg:hidden">
+        {/* Row 1: Menu and Controls */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
           {/* Left: Mobile Menu Dropdown */}
           <div className="flex items-center">
@@ -1676,47 +1677,6 @@ const ProMedixHeader = () => {
                 <Menu className="w-5 h-5" />
               )}
             </button>
-          </div>
-
-          {/* Center: Search Bar */}
-          <div className="flex-1 mx-4">
-            <div className="relative" ref={searchRef}>
-              <form onSubmit={(e) => handleSearch(e)}>
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 w-4 h-4" />
-                  <input
-                    type="text"
-                    placeholder="Search protocols, medications..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onFocus={() => searchQuery.length > 1 && setShowSuggestions(true)}
-                    className="w-full pl-10 pr-16 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-800 dark:text-gray-100 text-sm"
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-blue-600 text-white text-xs rounded-md hover:bg-blue-700"
-                  >
-                    Go
-                  </button>
-                </div>
-              </form>
-              {/* Mobile Search Suggestions */}
-              {showSuggestions && suggestions.length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 max-h-48 overflow-y-auto">
-                  <div className="py-1">
-                    {suggestions.slice(0, 4).map((suggestion, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleSuggestionClick(suggestion)}
-                        className="w-full px-3 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors text-sm"
-                      >
-                        {suggestion}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
           </div>
 
           {/* Right: Dark Mode Toggle + Login */}
@@ -1736,6 +1696,47 @@ const ProMedixHeader = () => {
             
             {/* Login Dropdown */}
             <LoginDropdown />
+          </div>
+        </div>
+
+        {/* Row 2: Search Bar */}
+        <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
+          <div className="relative" ref={searchRef}>
+            <form onSubmit={(e) => handleSearch(e)}>
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 w-4 h-4" />
+                <input
+                  type="text"
+                  placeholder="Search protocols, medications..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onFocus={() => searchQuery.length > 1 && setShowSuggestions(true)}
+                  className="w-full pl-10 pr-16 py-2.5 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-800 dark:text-gray-100"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700"
+                >
+                  Go
+                </button>
+              </div>
+            </form>
+            {/* Mobile Search Suggestions */}
+            {showSuggestions && suggestions.length > 0 && (
+              <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 max-h-48 overflow-y-auto">
+                <div className="py-1">
+                  {suggestions.slice(0, 4).map((suggestion, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleSuggestionClick(suggestion)}
+                      className="w-full px-3 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors text-sm"
+                    >
+                      {suggestion}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
