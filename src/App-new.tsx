@@ -1554,7 +1554,7 @@ const ProMedixHeader = () => {
             <img 
               src="/assets/LOGOFINALTRANS.png" 
               alt="ProMedix EMS" 
-              className="h-24 w-auto"
+              className="h-32 w-auto"
             />
             <span className="text-xs text-gray-700 dark:text-gray-300 font-medium text-center px-1 whitespace-nowrap">
               Next-Gen EMS Education Tool
@@ -1699,7 +1699,7 @@ const ProMedixHeader = () => {
                   <img 
                     src="/assets/LOGOFINALTRANS.png" 
                     alt="ProMedix EMS" 
-                    className="h-32 w-auto"
+                    className="h-48 w-auto"
                   />
                   <span className="text-xs text-gray-700 dark:text-gray-300 font-medium text-center whitespace-nowrap">
                     The Next-Gen Education Tool for Emergency Medical Services
