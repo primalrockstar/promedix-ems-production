@@ -28,10 +28,10 @@ import MedicalDisclaimer from './components/MedicalDisclaimer';
 import DisclaimerPage from './components/DisclaimerPage';
 import WelcomePage from './components/WelcomePage';
 import StudentProgress from './components/student/StudentProgress';
-import EnhancedInstructorDashboard from './components/enhancements/dashboards/EnhancedInstructorDashboard';
-import StudentDashboardEnhanced from './components/enhancements/dashboards/StudentDashboard';
-import EnhancedStudyChapter from './components/enhancements/study/EnhancedStudyChapter';
-import StudyAnalyticsDashboard from './components/enhancements/analytics/StudyAnalyticsDashboard';
+// import EnhancedInstructorDashboard from './components/enhancements/dashboards/EnhancedInstructorDashboard';
+// import StudentDashboardEnhanced from './components/enhancements/dashboards/StudentDashboard';
+// import EnhancedStudyChapter from './components/enhancements/study/EnhancedStudyChapter';
+// import StudyAnalyticsDashboard from './components/enhancements/analytics/StudyAnalyticsDashboard';
 import EnhancedSearchBar from './components/EnhancedSearchBar';
 import OptimizedSearchBar from './components/OptimizedSearchBar';
 import SearchPerformanceMonitor from './components/SearchPerformanceMonitor';
@@ -1332,8 +1332,8 @@ const [progress, setProgress] = useState({
             <Route path="/disclaimer" element={<DisclaimerPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/instructor" element={<RequireRole role="instructor"><InstructorDashboard /></RequireRole>} />
-              <Route path="/instructor/enhanced" element={<RequireRole role="instructor"><EnhancedInstructorDashboard /></RequireRole>} />
-              <Route path="/student/dashboard" element={<RequireRole role="student"><StudentDashboardEnhanced /></RequireRole>} />
+              {/* <Route path="/instructor/enhanced" element={<RequireRole role="instructor"><EnhancedInstructorDashboard /></RequireRole>} /> */}
+              {/* <Route path="/student/dashboard" element={<RequireRole role="student"><StudentDashboardEnhanced /></RequireRole>} /> */}
             {/* EMT-B aliases for calculators/protocols/medications */}
             <Route path="/emtb/calculators" element={<ClinicalToolsPage />} />
             <Route path="/emtb/protocols" element={<ProtocolsPage />} />
@@ -1346,8 +1346,8 @@ const [progress, setProgress] = useState({
             <Route path="/ai-assistant" element={<AIAssistantPage />} />
             <Route path="/student" element={<RequireRole role="student"><StudentDashboard /></RequireRole>} />
             {/* Enhanced Study Components */}
-            <Route path="/enhanced/study/:chapterId" element={<EnhancedStudyChapter />} />
-            <Route path="/enhanced/analytics" element={<StudyAnalyticsDashboard />} />
+            {/* <Route path="/enhanced/study/:chapterId" element={<EnhancedStudyChapter />} /> */}
+            {/* <Route path="/enhanced/analytics" element={<StudyAnalyticsDashboard />} /> */}
             <Route path="/progress" element={<ProgressPage progress={progress} />} />
             <Route path="/search" element={<SearchResultsPage />} />
             <Route path="/emtb/debug" element={<div style={{backgroundColor: 'yellow', padding: '50px', fontSize: '30px'}}>🐛 DEBUG ROUTE WORKS!</div>} />
@@ -1462,7 +1462,7 @@ const LoginDropdown: React.FC = () => {
               <button
                 onClick={() => {
                   setOpen(false);
-                  navigate('/login', { state: { redirectTo: '/student/dashboard', prefillEmail: 'student@example.com' } });
+                  navigate('/login', { state: { redirectTo: '/progress', prefillEmail: 'student@example.com' } });
                 }}
                 className="w-full flex items-center px-4 py-2 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
               >
@@ -1472,7 +1472,7 @@ const LoginDropdown: React.FC = () => {
               <button
                 onClick={() => {
                   setOpen(false);
-                  navigate('/login', { state: { redirectTo: '/instructor/enhanced', prefillEmail: 'instructor@example.com' } });
+                  navigate('/login', { state: { redirectTo: '/instructor', prefillEmail: 'instructor@example.com' } });
                 }}
                 className="w-full flex items-center px-4 py-2 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
               >
@@ -1678,11 +1678,11 @@ const ProMedixHeader = () => {
               <img 
                 src="/assets/LOGOFINAL.png" 
                 alt="ProMedix EMS Logo" 
-                className="w-48 h-16 object-contain"
+                className="w-72 h-24 object-contain"
                 style={{ background: 'transparent' }}
               />
             </div>
-            <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center mt-1">
+            <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center mt-1 whitespace-nowrap">
               The Next-Gen Education Tool for Emergency Medical Services
             </div>
           </Link>
@@ -1849,33 +1849,47 @@ const ProMedixHeader = () => {
         {/* Top Bar with Navigation Menu, Logo, and Login */}
         <div className="border-b border-gray-100 dark:border-gray-800">
           <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="grid grid-cols-3 items-center">
-              {/* Left: Navigation Menu Only */}
-              <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-between space-x-6">
+              {/* Left: Navigation Dropdown Menu */}
+              <div className="flex items-center">
                 <MoreMenu items={tabs} />
               </div>
 
               {/* Center: ProMedix Logo with Tagline */}
-              <div className="flex justify-center">
+              <div className="flex-1 flex justify-center">
                 <Link to="/" className="flex flex-col items-center">
                   <div className="flex items-center mb-2">
                     <div className="relative">
                       <img 
                         src="/assets/LOGOFINAL.png" 
                         alt="ProMedix EMS Logo" 
-                        className="w-80 h-24 object-contain"
+                        className="w-[32rem] h-32 object-contain"
                         style={{ background: 'transparent' }}
                       />
                     </div>
                   </div>
-                  <div className="text-sm text-gray-700 dark:text-gray-300 font-semibold tracking-wide">
+                  <div className="text-base text-gray-700 dark:text-gray-300 font-semibold tracking-wide whitespace-nowrap">
                     The Next-Gen Education Tool for Emergency Medical Services
                   </div>
                 </Link>
               </div>
 
-              {/* Right: Dark Mode, Notifications & Login Dropdown */}
-              <div className="flex items-center justify-end space-x-3">
+              {/* Right: Search, Dark Mode & Login Dropdown */}
+              <div className="flex items-center space-x-4">
+                {/* Search Bar */}
+                <div className="w-80">
+                  <OptimizedSearchBar
+                    placeholder="Search protocols, medications, conditions..."
+                    onSearch={(query, results) => {
+                      navigate(`/search?q=${encodeURIComponent(query)}`);
+                    }}
+                    onResultSelect={(result) => {
+                      navigate(`/search?q=${encodeURIComponent(result.title)}`);
+                    }}
+                  />
+                </div>
+                
+                {/* Dark Mode Toggle */}
                 <button
                   onClick={() => setIsDark(v => !v)}
                   className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/60"
@@ -1889,46 +1903,10 @@ const ProMedixHeader = () => {
                   )}
                 </button>
                 
-                <button
-                  className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/60"
-                  title="Notifications"
-                >
-                  <Bell className="w-5 h-5" />
-                </button>
-                
+                {/* Login Dropdown */}
                 <LoginDropdown />
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Optimized Desktop Search Bar */}
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="max-w-2xl mx-auto">
-            <OptimizedSearchBar
-              placeholder="Search protocols, medications, conditions, and study materials..."
-              onSearch={(query, results) => {
-                navigate(`/search?q=${encodeURIComponent(query)}`);
-              }}
-              onResultSelect={(result) => {
-                // Handle direct result selection if needed
-                navigate(`/search?q=${encodeURIComponent(result.title)}`);
-              }}
-              showFilters={true}
-              showInstantResults={true}
-              showVoiceSearch={true}
-              variant="enhanced"
-              size="lg"
-              autoFocus={false}
-              debounceMs={200}
-              accessibility={{
-                searchLabel: "Search EMT-B study materials",
-                clearLabel: "Clear search query",
-                filterLabel: "Open search filters",
-                voiceLabel: "Start voice search"
-              }}
-              className="w-full"
-            />
           </div>
         </div>
       </div>
