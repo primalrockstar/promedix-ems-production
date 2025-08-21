@@ -1545,8 +1545,6 @@ const ProMedixHeader = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
   const navigate = useNavigate();
   const { user } = useAuth();
   const searchRef = useRef<HTMLDivElement>(null);
@@ -1617,14 +1615,6 @@ const ProMedixHeader = () => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setShowSuggestions(false);
       }
-      // Close mobile menu when clicking outside
-      const mobileMenuElement = document.getElementById('mobile-menu');
-      if (mobileMenuElement && !mobileMenuElement.contains(event.target as Node)) {
-        const menuButton = document.getElementById('mobile-menu-button');
-        if (menuButton && !menuButton.contains(event.target as Node)) {
-          setIsMobileMenuOpen(false);
-        }
-      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -1669,34 +1659,34 @@ const ProMedixHeader = () => {
 
   return (
     <header className="bg-white dark:bg-[#0f141a] border-b border-gray-200 dark:border-gray-800 shadow-sm sticky top-0 z-50">
-      {/* Mobile Header */}
-      <div className="lg:hidden">
-        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
-          {/* Mobile Logo with Tagline */}
-          <Link to="/" className="flex flex-col items-center">
-            <div className="relative">
-              <img 
-                src="/assets/LOGOFINAL.png" 
-                alt="ProMedix EMS Logo" 
-                className="w-72 h-24 object-contain"
-                style={{ background: 'transparent' }}
-              />
-            </div>
-            <div className="text-xs text-gray-600 dark:text-gray-400 font-medium text-center mt-1 whitespace-nowrap">
-              The Next-Gen Education Tool for Emergency Medical Services
-            </div>
-          </Link>
+      {/* Unified Mobile & Desktop Header */}
+      <div className="w-full">
+        {/* Top Row: Menu, Logo, Controls */}
+        <div className="flex items-center justify-between px-4 lg:px-6 py-4">
+          {/* Left: Navigation Menu */}
+          <div className="flex items-center">
+            <MoreMenu items={tabs} />
+          </div>
 
-          {/* Mobile Actions */}
-          <div className="flex items-center space-x-2">
-            {/* Mobile Search Toggle */}
-            <button
-              onClick={() => setIsSearchExpanded(!isSearchExpanded)}
-              className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              <Search className="w-5 h-5" />
-            </button>
+          {/* Center: Large Logo with Tagline */}
+          <div className="flex-1 flex justify-center">
+            <Link to="/" className="flex flex-col items-center">
+              <div className="relative">
+                <img 
+                  src="/assets/LOGOFINAL.png" 
+                  alt="ProMedix EMS Logo" 
+                  className="w-80 sm:w-96 lg:w-[40rem] h-20 sm:h-24 lg:h-32 object-contain"
+                  style={{ background: 'transparent' }}
+                />
+              </div>
+              <div className="text-xs sm:text-sm lg:text-base text-gray-600 dark:text-gray-400 font-medium text-center mt-2 max-w-lg">
+                The Next-Gen Education Tool for Emergency Medical Services
+              </div>
+            </Link>
+          </div>
 
+          {/* Right: Controls */}
+          <div className="flex items-center space-x-2 lg:space-x-3">
             {/* Dark Mode Toggle */}
             <button
               onClick={() => setIsDark(v => !v)}
@@ -1704,209 +1694,29 @@ const ProMedixHeader = () => {
               aria-label="Toggle dark mode"
             >
               {isDark ? (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 lg:w-5 lg:h-5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
               ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 lg:w-5 lg:h-5"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
               )}
             </button>
 
-            {/* Mobile Menu Toggle */}
-            <button
-              id="mobile-menu-button"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </button>
+            {/* Login Dropdown */}
+            <LoginDropdown />
           </div>
         </div>
 
-        {/* Mobile Expanded Search */}
-        {isSearchExpanded && (
-          <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
-            <div className="relative" ref={searchRef}>
-              <form onSubmit={(e) => handleSearch(e)}>
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 w-4 h-4" />
-                  <input
-                    type="text"
-                    placeholder="Search protocols, medications..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onFocus={() => searchQuery.length > 1 && setShowSuggestions(true)}
-                    className="w-full pl-10 pr-16 py-2.5 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-800 dark:text-gray-100"
-                    autoFocus
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700"
-                  >
-                    Go
-                  </button>
-                </div>
-              </form>
-              {/* Mobile Search Suggestions */}
-              {showSuggestions && suggestions.length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 max-h-48 overflow-y-auto">
-                  <div className="py-1">
-                    {suggestions.slice(0, 6).map((suggestion, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleSuggestionClick(suggestion)}
-                        className="w-full px-3 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors flex items-center text-sm"
-                      >
-                        <Search className="w-3 h-3 text-gray-400 mr-2" />
-                        <span className="truncate">{suggestion}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Mobile Navigation Menu */}
-        {isMobileMenuOpen && (
-          <div id="mobile-menu" className="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-[#0f141a] max-h-screen overflow-y-auto">
-            <nav className="py-2">
-              {tabs.map((tab) => {
-                const isActive = location.pathname === tab.path ||
-                               (tab.path !== '/' && location.pathname.startsWith(tab.path));
-               
-                return (
-                  <Link
-                    key={tab.id}
-                    to={tab.path}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`flex items-center space-x-3 px-4 py-3 text-base font-medium border-l-4 transition-colors ${
-                      isActive
-                        ? 'text-primary border-primary bg-blue-50 dark:bg-blue-900/20'
-                        : 'text-gray-700 dark:text-gray-300 border-transparent hover:text-primary hover:border-gray-300 dark:hover:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900'
-                    }`}
-                  >
-                    <tab.icon className="w-5 h-5" />
-                    <span>{tab.label}</span>
-                    {isActive && (
-                      <div className="ml-auto">
-                        <CheckCircle className="w-4 h-4 text-primary" />
-                      </div>
-                    )}
-                  </Link>
-                );
-              })}
-              
-              {/* User Section in Mobile Menu */}
-              {user && (
-                <div className="border-t border-gray-200 dark:border-gray-800 mt-2 pt-2">
-                  <div className="px-4 py-2">
-                    <div className="text-sm text-gray-500 dark:text-gray-400">Signed in as</div>
-                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">{user.name || user.email}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400 capitalize">{user.role} Account</div>
-                  </div>
-                </div>
-              )}
-            </nav>
-          </div>
-        )}
-
-        {/* Fixed Bottom Mobile Navigation */}
-        <nav
-          className={`fixed bottom-0 inset-x-0 bg-white/95 dark:bg-[#0f141a]/95 backdrop-blur border-t border-gray-200 dark:border-gray-800 z-50 transition-transform duration-200 ${hideMobileNav ? 'translate-y-full' : 'translate-y-0'}`}
-          aria-label="Primary mobile"
-          style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
-        >
-          <ul className="grid grid-cols-5">
-            {mobileTabs.map((tab) => {
-              const isActive = location.pathname === tab.path ||
-                               (tab.path !== '/' && location.pathname.startsWith(tab.path));
-              return (
-                <li key={tab.id}>
-                  <Link
-                    to={tab.path}
-                    className={`flex flex-col items-center justify-center py-2.5 text-xs font-medium transition-colors ${
-                      isActive
-                        ? 'text-primary'
-                        : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-                    }`}
-                  >
-                    <tab.icon className="w-5 h-5" />
-                    <span className="mt-0.5">{tab.label}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </div>
-
-      {/* Desktop Header */}
-      <div className="hidden lg:block">
-        {/* Top Bar with Navigation Menu, Logo, and Login */}
-        <div className="border-b border-gray-100 dark:border-gray-800">
-          <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="flex items-center justify-between space-x-6">
-              {/* Left: Navigation Dropdown Menu */}
-              <div className="flex items-center">
-                <MoreMenu items={tabs} />
-              </div>
-
-              {/* Center: ProMedix Logo with Tagline */}
-              <div className="flex-1 flex justify-center">
-                <Link to="/" className="flex flex-col items-center">
-                  <div className="flex items-center mb-2">
-                    <div className="relative">
-                      <img 
-                        src="/assets/LOGOFINAL.png" 
-                        alt="ProMedix EMS Logo" 
-                        className="w-[32rem] h-32 object-contain"
-                        style={{ background: 'transparent' }}
-                      />
-                    </div>
-                  </div>
-                  <div className="text-base text-gray-700 dark:text-gray-300 font-semibold tracking-wide whitespace-nowrap">
-                    The Next-Gen Education Tool for Emergency Medical Services
-                  </div>
-                </Link>
-              </div>
-
-              {/* Right: Search, Dark Mode & Login Dropdown */}
-              <div className="flex items-center space-x-4">
-                {/* Search Bar */}
-                <div className="w-80">
-                  <OptimizedSearchBar
-                    placeholder="Search protocols, medications, conditions..."
-                    onSearch={(query, results) => {
-                      navigate(`/search?q=${encodeURIComponent(query)}`);
-                    }}
-                    onResultSelect={(result) => {
-                      navigate(`/search?q=${encodeURIComponent(result.title)}`);
-                    }}
-                  />
-                </div>
-                
-                {/* Dark Mode Toggle */}
-                <button
-                  onClick={() => setIsDark(v => !v)}
-                  className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/60"
-                  aria-label="Toggle dark mode"
-                  title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-                >
-                  {isDark ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                  ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
-                  )}
-                </button>
-                
-                {/* Login Dropdown */}
-                <LoginDropdown />
-              </div>
-            </div>
+        {/* Bottom Row: Search Bar (Under Logo) */}
+        <div className="px-4 lg:px-6 pb-4">
+          <div className="max-w-2xl mx-auto">
+            <OptimizedSearchBar
+              placeholder="Search protocols, medications, conditions, and study materials..."
+              onSearch={(query, results) => {
+                navigate(`/search?q=${encodeURIComponent(query)}`);
+              }}
+              onResultSelect={(result) => {
+                navigate(`/search?q=${encodeURIComponent(result.title)}`);
+              }}
+            />
           </div>
         </div>
       </div>
