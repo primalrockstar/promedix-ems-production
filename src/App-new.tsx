@@ -1731,14 +1731,13 @@ const ProMedixHeader = () => {
           <img 
             src="/assets/LOGOFINAL.png" 
             alt="ProMedix EMS" 
-            className="w-48 h-auto mx-auto block"
+            className="h-auto mx-auto block"
             style={{ 
-              maxHeight: '120px', 
+              maxHeight: '80px', 
+              width: 'auto',
               margin: '0 auto', 
               padding: '0', 
-              display: 'block',
-              objectFit: 'contain',
-              objectPosition: 'center'
+              display: 'block'
             }}
           />
           <div className="text-center">
