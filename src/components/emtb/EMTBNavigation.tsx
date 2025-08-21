@@ -76,10 +76,14 @@ const EMTBNavigation: React.FC = () => {
           <div className="flex flex-col items-center">
             <Link to="/">
               <img 
-                src="/assets/LOGOFINALTRANS.png" 
-                alt="ProMedix EMS Logo" 
+                src="/assets/Paramediclogo.png" 
+                alt="ProMedix EMS Paramedic Logo" 
                 className="w-96 h-auto object-contain mb-4"
                 style={{ background: 'transparent' }}
+                onError={(e) => {
+                  console.error('Paramediclogo.png failed to load, using LOGOFINAL.png as fallback');
+                  (e.target as HTMLImageElement).src = '/assets/LOGOFINAL.png';
+                }}
               />
             </Link>
             <div className="flex justify-center">

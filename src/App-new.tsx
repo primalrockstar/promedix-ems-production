@@ -1552,10 +1552,10 @@ const ProMedixHeader = () => {
           {/* Center: Logo and Tagline */}
           <div className="flex flex-col items-center space-y-1">
             <img 
-              src="/assets/LOGOFINALTRANS.png" 
+              src="/assets/LOGOFINAL.png" 
               alt="ProMedix EMS" 
-              className="w-72 h-auto"
-              style={{ minHeight: '200px' }}
+              className="w-64 h-auto"
+              style={{ minHeight: '150px' }}
             />
             <span className="text-xs text-gray-700 dark:text-gray-300 font-medium text-center px-1 whitespace-nowrap">
               Next-Gen EMS Education Tool
@@ -1698,10 +1698,10 @@ const ProMedixHeader = () => {
               <div className="flex justify-center items-center">
                 <div className="flex flex-col items-center space-y-2">
                   <img 
-                    src="/assets/LOGOFINALTRANS.png" 
+                    src="/assets/LOGOFINAL.png" 
                     alt="ProMedix EMS" 
-                    className="w-96 h-auto"
-                    style={{ minHeight: '300px' }}
+                    className="w-80 h-auto"
+                    style={{ minHeight: '200px' }}
                   />
                   <span className="text-xs text-gray-700 dark:text-gray-300 font-medium text-center whitespace-nowrap">
                     The Next-Gen Education Tool for Emergency Medical Services
