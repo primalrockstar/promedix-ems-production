@@ -1663,9 +1663,8 @@ const ProMedixHeader = () => {
       {/* Mobile Header */}
       <div className="lg:hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
-          {/* Mobile - No Logo */}
+          {/* Mobile - No Logo, No Text */}
           <div className="flex items-center">
-            <span className="text-lg font-semibold text-gray-900 dark:text-gray-100">ProMedix EMS</span>
           </div>
 
           {/* Mobile Actions */}
@@ -1836,16 +1835,8 @@ const ProMedixHeader = () => {
                 <MoreMenu items={tabs} />
               </div>
 
-              {/* Center: No Logo - Just Text */}
+              {/* Center: Empty - No Logo, No Text */}
               <div className="flex justify-center">
-                <Link to="/" className="flex flex-col items-center">
-                  <div className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">
-                    ProMedix EMS
-                  </div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">
-                    Next-Gen Education Tool for Emergency Medical Services
-                  </div>
-                </Link>
               </div>
 
               {/* Right: Dark Mode, Notifications & Login Dropdown */}
