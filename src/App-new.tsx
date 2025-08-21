@@ -1532,7 +1532,26 @@ const ProMedixHeader = () => {
     <header className="bg-white dark:bg-[#0f141a] border-b border-gray-200 dark:border-gray-800 shadow-sm sticky top-0 z-50">
       {/* Mobile Header */}
       <div className="lg:hidden">
-        {/* Row 1: Menu, Logo, and Controls */}
+        {/* Row 1: Logo and Tagline Only */}
+        <div className="border-b border-gray-200 dark:border-gray-800">
+          <div className="px-4 py-4">
+            <div className="flex justify-center items-center">
+              <div className="flex flex-col items-center space-y-2">
+                <img 
+                  src="/assets/LOGOFINAL.png" 
+                  alt="ProMedix EMS" 
+                  className="w-64 h-auto"
+                  style={{ minHeight: '150px' }}
+                />
+                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center px-2">
+                  The Next-Gen Education Tool for Emergency Medical Services
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Row 2: Menu and Controls */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
           {/* Left: Mobile Menu Dropdown */}
           <div className="flex items-center">
@@ -1547,19 +1566,6 @@ const ProMedixHeader = () => {
                 <Menu className="w-5 h-5" />
               )}
             </button>
-          </div>
-
-          {/* Center: Logo and Tagline */}
-          <div className="flex flex-col items-center space-y-1">
-            <img 
-              src="/assets/LOGOFINAL.png" 
-              alt="ProMedix EMS" 
-              className="w-64 h-auto"
-              style={{ minHeight: '150px' }}
-            />
-            <span className="text-xs text-gray-700 dark:text-gray-300 font-medium text-center px-1 whitespace-nowrap">
-              Next-Gen EMS Education Tool
-            </span>
           </div>
 
           {/* Right: Dark Mode Toggle Only */}
@@ -1685,32 +1691,36 @@ const ProMedixHeader = () => {
 
       {/* Desktop Header */}
       <div className="hidden lg:block">
-        {/* Top Bar with Navigation Menu, Logo, and Login */}
+        {/* Row 1: Logo and Tagline Only */}
         <div className="border-b border-gray-100 dark:border-gray-800">
           <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="grid grid-cols-3 items-center">
-              {/* Left: Navigation Menu Only */}
-              <div className="flex items-center space-x-4">
+            <div className="flex justify-center items-center">
+              <div className="flex flex-col items-center space-y-2">
+                <img 
+                  src="/assets/LOGOFINAL.png" 
+                  alt="ProMedix EMS" 
+                  className="w-80 h-auto"
+                  style={{ minHeight: '200px' }}
+                />
+                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center">
+                  The Next-Gen Education Tool for Emergency Medical Services
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Row 2: Navigation and Controls */}
+        <div className="border-b border-gray-100 dark:border-gray-800">
+          <div className="max-w-7xl mx-auto px-6 py-3">
+            <div className="flex justify-between items-center">
+              {/* Left: Navigation Menu */}
+              <div className="flex items-center">
                 <MoreMenu items={tabs} />
               </div>
 
-              {/* Center: Logo and Tagline */}
-              <div className="flex justify-center items-center">
-                <div className="flex flex-col items-center space-y-2">
-                  <img 
-                    src="/assets/LOGOFINAL.png" 
-                    alt="ProMedix EMS" 
-                    className="w-80 h-auto"
-                    style={{ minHeight: '200px' }}
-                  />
-                  <span className="text-xs text-gray-700 dark:text-gray-300 font-medium text-center whitespace-nowrap">
-                    The Next-Gen Education Tool for Emergency Medical Services
-                  </span>
-                </div>
-              </div>
-
               {/* Right: Dark Mode & Notifications */}
-              <div className="flex items-center justify-end space-x-3">
+              <div className="flex items-center space-x-3">
                 <button
                   onClick={() => setIsDark(v => !v)}
                   className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/60"
