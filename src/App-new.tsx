@@ -1727,31 +1727,24 @@ const ProMedixHeader = () => {
         </div>
 
         {/* Row 2: Logo and Tagline */}
-        <div className="border-b border-gray-100 dark:border-gray-800" style={{ margin: '0', padding: '0' }}>
-          <div className="max-w-7xl mx-auto" style={{ margin: '0 auto', padding: '0' }}>
-            <div className="flex justify-center items-center" style={{ margin: '0', padding: '0' }}>
-              <div className="flex flex-col items-center" style={{ margin: '0', padding: '0' }}>
-                <img 
-                  src="/assets/LOGOFINAL.png" 
-                  alt="ProMedix EMS" 
-                  className="w-48 h-auto"
-                  style={{ 
-                    maxHeight: '120px', 
-                    margin: '0', 
-                    padding: '0', 
-                    display: 'block',
-                    border: 'none',
-                    outline: 'none',
-                    boxSizing: 'border-box',
-                    lineHeight: '0',
-                    verticalAlign: 'top'
-                  }}
-                />
-                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center whitespace-nowrap" style={{ margin: '0', padding: '0', lineHeight: '1' }}>
-                  The Next-Gen Education Tool for Emergency Medical Services
-                </span>
-              </div>
-            </div>
+        <div className="border-b border-gray-100 dark:border-gray-800">
+          <img 
+            src="/assets/LOGOFINAL.png" 
+            alt="ProMedix EMS" 
+            className="w-48 h-auto mx-auto block"
+            style={{ 
+              maxHeight: '120px', 
+              margin: '0 auto', 
+              padding: '0', 
+              display: 'block',
+              objectFit: 'contain',
+              objectPosition: 'center'
+            }}
+          />
+          <div className="text-center">
+            <span className="text-sm text-gray-700 dark:text-gray-300 font-medium whitespace-nowrap" style={{ margin: '0', padding: '0', lineHeight: '1', display: 'inline-block' }}>
+              The Next-Gen Education Tool for Emergency Medical Services
+            </span>
           </div>
         </div>
 
