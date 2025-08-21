@@ -1672,6 +1672,22 @@ const ProMedixHeader = () => {
 
       {/* Desktop Header */}
       <div className="hidden lg:block">
+        {/* Top Logo */}
+        <div className="border-b border-gray-100 dark:border-gray-800">
+          <div className="flex justify-center py-4">
+            <img 
+              src="/assets/roundlogo.png" 
+              alt="ProMedix EMS" 
+              className="h-auto"
+              style={{ 
+                maxHeight: '120px', 
+                width: 'auto',
+                display: 'block'
+              }}
+            />
+          </div>
+        </div>
+
         {/* Row 1: Navigation and Controls */}
         <div className="border-b border-gray-100 dark:border-gray-800">
           <div className="max-w-7xl mx-auto px-6 py-3">
