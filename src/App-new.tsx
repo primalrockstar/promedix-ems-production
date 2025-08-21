@@ -1568,7 +1568,7 @@ const ProMedixHeader = () => {
 
         {/* Row 2: Logo and Tagline */}
         <div className="border-b border-gray-200 dark:border-gray-800">
-          <div className="px-4 py-2">
+          <div className="px-4">
             <div className="flex justify-center items-center">
               <div className="flex flex-col items-center space-y-0">
                 <img 
@@ -1577,7 +1577,7 @@ const ProMedixHeader = () => {
                   className="w-64 h-auto block"
                   style={{ minHeight: '150px', marginBottom: '0' }}
                 />
-                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center px-2" style={{ marginTop: '4px', paddingTop: '0' }}>
+                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center px-2 whitespace-nowrap" style={{ marginTop: '4px', paddingTop: '0' }}>
                   The Next-Gen Education Tool for Emergency Medical Services
                 </span>
               </div>
@@ -1728,7 +1728,7 @@ const ProMedixHeader = () => {
 
         {/* Row 2: Logo and Tagline */}
         <div className="border-b border-gray-100 dark:border-gray-800">
-          <div className="max-w-7xl mx-auto px-6 py-1">
+          <div className="max-w-7xl mx-auto px-6">
             <div className="flex justify-center items-center">
               <div className="flex flex-col items-center space-y-0">
                 <img 
@@ -1737,7 +1737,7 @@ const ProMedixHeader = () => {
                   className="w-48 h-auto block"
                   style={{ maxHeight: '120px' }}
                 />
-                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center" style={{ marginTop: '2px', paddingTop: '0' }}>
+                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center whitespace-nowrap" style={{ marginTop: '2px', paddingTop: '0' }}>
                   The Next-Gen Education Tool for Emergency Medical Services
                 </span>
               </div>
