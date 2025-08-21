@@ -1532,26 +1532,7 @@ const ProMedixHeader = () => {
     <header className="bg-white dark:bg-[#0f141a] border-b border-gray-200 dark:border-gray-800 shadow-sm sticky top-0 z-50">
       {/* Mobile Header */}
       <div className="lg:hidden">
-        {/* Row 1: Logo and Tagline Only */}
-        <div className="border-b border-gray-200 dark:border-gray-800">
-          <div className="px-4 py-4">
-            <div className="flex justify-center items-center">
-              <div className="flex flex-col items-center space-y-2">
-                <img 
-                  src="/assets/LOGOFINAL.png" 
-                  alt="ProMedix EMS" 
-                  className="w-64 h-auto"
-                  style={{ minHeight: '150px' }}
-                />
-                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center px-2">
-                  The Next-Gen Education Tool for Emergency Medical Services
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Row 2: Menu and Controls */}
+        {/* Row 1: Menu and Controls */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
           {/* Left: Mobile Menu Dropdown */}
           <div className="flex items-center">
@@ -1582,6 +1563,25 @@ const ProMedixHeader = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
               )}
             </button>
+          </div>
+        </div>
+
+        {/* Row 2: Logo and Tagline */}
+        <div className="border-b border-gray-200 dark:border-gray-800">
+          <div className="px-4 py-4">
+            <div className="flex justify-center items-center">
+              <div className="flex flex-col items-center space-y-0">
+                <img 
+                  src="/assets/LOGOFINAL.png" 
+                  alt="ProMedix EMS" 
+                  className="w-64 h-auto block"
+                  style={{ minHeight: '150px', marginBottom: '0' }}
+                />
+                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center px-2" style={{ marginTop: '4px', paddingTop: '0' }}>
+                  The Next-Gen Education Tool for Emergency Medical Services
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1691,26 +1691,7 @@ const ProMedixHeader = () => {
 
       {/* Desktop Header */}
       <div className="hidden lg:block">
-        {/* Row 1: Logo and Tagline Only */}
-        <div className="border-b border-gray-100 dark:border-gray-800">
-          <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="flex justify-center items-center">
-              <div className="flex flex-col items-center space-y-2">
-                <img 
-                  src="/assets/LOGOFINAL.png" 
-                  alt="ProMedix EMS" 
-                  className="w-80 h-auto"
-                  style={{ minHeight: '200px' }}
-                />
-                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center">
-                  The Next-Gen Education Tool for Emergency Medical Services
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Row 2: Navigation and Controls */}
+        {/* Row 1: Navigation and Controls */}
         <div className="border-b border-gray-100 dark:border-gray-800">
           <div className="max-w-7xl mx-auto px-6 py-3">
             <div className="flex justify-between items-center">
@@ -1740,6 +1721,25 @@ const ProMedixHeader = () => {
                 >
                   <Bell className="w-5 h-5" />
                 </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Row 2: Logo and Tagline */}
+        <div className="border-b border-gray-100 dark:border-gray-800">
+          <div className="max-w-7xl mx-auto px-6 py-4">
+            <div className="flex justify-center items-center">
+              <div className="flex flex-col items-center space-y-1">
+                <img 
+                  src="/assets/LOGOFINAL.png" 
+                  alt="ProMedix EMS" 
+                  className="w-80 h-auto block"
+                  style={{ minHeight: '200px', marginBottom: '0' }}
+                />
+                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center" style={{ marginTop: '0', paddingTop: '0' }}>
+                  The Next-Gen Education Tool for Emergency Medical Services
+                </span>
               </div>
             </div>
           </div>
