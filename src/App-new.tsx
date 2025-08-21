@@ -1566,26 +1566,7 @@ const ProMedixHeader = () => {
           </div>
         </div>
 
-        {/* Row 2: Logo and Tagline */}
-        <div className="border-b border-gray-200 dark:border-gray-800">
-          <div>
-            <div className="flex justify-center items-center">
-              <div className="flex flex-col items-center">
-                <img 
-                  src="/assets/LOGOFINAL.png" 
-                  alt="ProMedix EMS" 
-                  className="w-64 h-auto block"
-                  style={{ minHeight: '150px', margin: '0', padding: '0', display: 'block' }}
-                />
-                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium text-center whitespace-nowrap" style={{ margin: '0', padding: '0' }}>
-                  The Next-Gen Education Tool for Emergency Medical Services
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Row 2: Search Bar */}
+        {/* Search Bar */}
         <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
           <div className="relative" ref={searchRef}>
             <form onSubmit={(e) => handleSearch(e)}>
@@ -1723,27 +1704,6 @@ const ProMedixHeader = () => {
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Row 2: Logo and Tagline */}
-        <div className="border-b border-gray-100 dark:border-gray-800">
-          <img 
-            src="/assets/LOGOFINAL.png" 
-            alt="ProMedix EMS" 
-            className="h-auto mx-auto block"
-            style={{ 
-              maxHeight: '80px', 
-              width: 'auto',
-              margin: '0 auto', 
-              padding: '0', 
-              display: 'block'
-            }}
-          />
-          <div className="text-center">
-            <span className="text-sm text-gray-700 dark:text-gray-300 font-medium whitespace-nowrap" style={{ margin: '0', padding: '0', lineHeight: '1', display: 'inline-block' }}>
-              The Next-Gen Education Tool for Emergency Medical Services
-            </span>
           </div>
         </div>
 
