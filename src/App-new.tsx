@@ -1550,13 +1550,13 @@ const ProMedixHeader = () => {
           </div>
 
           {/* Center: Logo and Tagline */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center space-y-1">
             <img 
               src="/assets/LOGOFINALTRANS.png" 
               alt="ProMedix EMS" 
-              className="h-6 w-auto"
+              className="h-10 w-auto"
             />
-            <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">
+            <span className="text-sm text-gray-700 dark:text-gray-300 font-semibold">
               EMS Training Platform
             </span>
           </div>
@@ -1695,13 +1695,13 @@ const ProMedixHeader = () => {
 
               {/* Center: Logo and Tagline */}
               <div className="flex justify-center items-center">
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center space-y-1">
                   <img 
                     src="/assets/LOGOFINALTRANS.png" 
                     alt="ProMedix EMS" 
-                    className="h-8 w-auto"
+                    className="h-12 w-auto"
                   />
-                  <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">
+                  <span className="text-sm text-gray-700 dark:text-gray-300 font-semibold">
                     Professional EMS Training Platform
                   </span>
                 </div>
